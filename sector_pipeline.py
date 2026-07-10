@@ -129,7 +129,10 @@ def fetch_twse_prices(d: date) -> list[dict]:
     i_val = col_idx(fields, "成交金額")
     i_close = col_idx(fields, "收盤價")
     out = []
+    need = max(i_id, i_name, i_close, i_vol, i_val)
     for r in rows:
+        if len(r) <= need:
+            continue  # 欄位不完整的資料列(官方偶發格式差異),略過
         sid = str(r[i_id]).strip()
         if not STOCK_ID_RE.match(sid):
             continue
@@ -160,7 +163,10 @@ def fetch_tpex_prices(d: date) -> list[dict]:
     i_vol = col_idx(fields, "成交股數")
     i_val = col_idx(fields, "成交金額")
     out = []
+    need = max(i_id, i_name, i_close, i_vol, i_val)
     for r in rows:
+        if len(r) <= need:
+            continue  # 欄位不完整的資料列,略過
         sid = str(r[i_id]).strip()
         if not STOCK_ID_RE.match(sid):
             continue
@@ -191,6 +197,8 @@ def fetch_twse_inst(d: date) -> list[dict]:
         i_net = len(fields) - 1  # 慣例上為最後一欄
     out = []
     for r in rows:
+        if len(r) <= max(i_id, i_net):
+            continue  # 欄位不完整的資料列,略過
         sid = str(r[i_id]).strip()
         if not STOCK_ID_RE.match(sid):
             continue
@@ -226,6 +234,8 @@ def fetch_tpex_inst(d: date) -> list[dict]:
         i_net = len(fields) - 1
     out = []
     for r in rows:
+        if len(r) <= max(i_id, i_net):
+            continue  # 欄位不完整的資料列,略過
         sid = str(r[i_id]).strip()
         if not STOCK_ID_RE.match(sid):
             continue
