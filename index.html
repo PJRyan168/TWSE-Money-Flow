@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>盤後族群資金熱力</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#10141d;         /* 深墨藍:盤後夜盤感,非純黑 */
+  --panel:#171d2a;
+  --panel-2:#1d2536;
+  --line:#2a3348;
+  --text:#e8ecf4;
+  --muted:#8b96ad;
+  --up:#ff5a5a;         /* 台股慣例:紅漲 */
+  --up-deep:#c92a2a;
+  --down:#2fbf71;       /* 綠跌 */
+  --down-deep:#1a7a4a;
+  --gold:#e8b93c;       /* 資金熱度 */
+  --flat:#3a4358;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{
+  background:var(--bg);color:var(--text);
+  font-family:"Noto Sans TC",sans-serif;
+  min-height:100vh;padding:20px 16px 60px;
+}
+.num{font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums}
+.wrap{max-width:1180px;margin:0 auto}
+
+/* ---------- 頁首 ---------- */
+header{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px 18px;margin-bottom:6px}
+h1{font-size:26px;font-weight:900;letter-spacing:.06em}
+h1 .fire{color:var(--gold)}
+.meta{color:var(--muted);font-size:13px}
+.meta b{color:var(--text);font-weight:500}
+.basebar{color:var(--muted);font-size:12px;margin-bottom:18px}
+
+/* ---------- 控制列 ---------- */
+.controls{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:20px}
+.seg{display:flex;background:var(--panel);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.seg button{
+  appearance:none;border:0;background:transparent;color:var(--muted);
+  font:inherit;font-size:14px;font-weight:500;padding:9px 18px;cursor:pointer;
+  transition:background .15s,color .15s;
+}
+.seg button:hover{color:var(--text)}
+.seg button.on{background:var(--panel-2);color:var(--text);font-weight:700}
+.seg button:focus-visible{outline:2px solid var(--gold);outline-offset:-2px}
+
+/* ---------- 強勢族群面板 ---------- */
+.strong{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:10px;margin-bottom:22px;
+}
+.strong .card{
+  background:linear-gradient(160deg,var(--panel-2),var(--panel));
+  border:1px solid var(--line);border-left:3px solid var(--gold);
+  border-radius:10px;padding:12px 14px;
+}
+.strong .rank{color:var(--gold);font-size:11px;font-weight:700;letter-spacing:.15em}
+.strong .name{font-size:17px;font-weight:700;margin:2px 0 6px}
+.strong .row{display:flex;justify-content:space-between;font-size:12.5px;color:var(--muted);margin-top:2px}
+.strong .row .num{color:var(--text)}
+
+/* ---------- 熱力磚牆 ---------- */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(158px,1fr));gap:8px}
+.tile{
+  border-radius:9px;padding:11px 12px;cursor:pointer;border:1px solid transparent;
+  transition:transform .12s,border-color .12s;position:relative;min-height:96px;
+}
+.tile:hover{transform:translateY(-2px);border-color:rgba(255,255,255,.35)}
+.tile:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.tile.hot::after{ /* 資金熱度金框 */
+  content:"";position:absolute;inset:-1px;border-radius:9px;
+  border:1.5px solid var(--gold);pointer-events:none;
+}
+.tile .t-name{font-size:14.5px;font-weight:700;line-height:1.25;text-shadow:0 1px 2px rgba(0,0,0,.35)}
+.tile .t-chg{font-size:20px;font-weight:600;margin-top:5px;text-shadow:0 1px 2px rgba(0,0,0,.35)}
+.tile .t-sub{font-size:11px;opacity:.92;margin-top:5px;line-height:1.5;text-shadow:0 1px 2px rgba(0,0,0,.3)}
+.legend{display:flex;flex-wrap:wrap;gap:14px;margin:14px 2px 0;color:var(--muted);font-size:12px;align-items:center}
+.chip{display:inline-block;width:12px;height:12px;border-radius:3px;vertical-align:-1px;margin-right:5px}
+
+/* ---------- 明細抽屜 ---------- */
+.drawer{margin-top:26px;background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:none}
+.drawer.open{display:block}
+.drawer .d-head{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;border-bottom:1px solid var(--line)}
+.drawer .d-head h2{font-size:17px;font-weight:700}
+.drawer .d-head button{appearance:none;border:1px solid var(--line);background:transparent;color:var(--muted);border-radius:7px;padding:5px 12px;font:inherit;font-size:13px;cursor:pointer}
+.drawer .d-head button:hover{color:var(--text)}
+.tblwrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:640px}
+th,td{padding:9px 14px;text-align:right;white-space:nowrap}
+th{color:var(--muted);font-weight:500;font-size:12px;border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--panel)}
+th:first-child,td:first-child{text-align:left}
+tbody tr:hover{background:var(--panel-2)}
+td.up{color:var(--up)}td.down{color:var(--down)}
+.state{padding:60px 20px;text-align:center;color:var(--muted);font-size:15px;line-height:1.9}
+
+@media (max-width:520px){
+  body{padding:14px 10px 50px}
+  h1{font-size:21px}
+  .grid{grid-template-columns:repeat(auto-fill,minmax(120px,1fr))}
+  .tile .t-chg{font-size:17px}
+}
+@media (prefers-reduced-motion:reduce){
+  .tile,.seg button{transition:none}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>盤後族群資金<span class="fire">熱力</span></h1>
+    <span class="meta" id="meta"></span>
+  </header>
+  <div class="basebar" id="basebar"></div>
+
+  <div class="controls">
+    <div class="seg" id="segClass" role="group" aria-label="分類切換">
+      <button data-v="themes" class="on">自訂題材</button>
+      <button data-v="official_sectors">官方類股</button>
+    </div>
+    <div class="seg" id="segPeriod" role="group" aria-label="期間切換">
+      <button data-v="daily" class="on">當日</button>
+      <button data-v="wtd">當周</button>
+      <button data-v="mtd">當月</button>
+    </div>
+  </div>
+
+  <div class="strong" id="strong"></div>
+  <div class="grid" id="grid"></div>
+  <div class="legend" id="legend"></div>
+
+  <section class="drawer" id="drawer" aria-live="polite">
+    <div class="d-head">
+      <h2 id="dTitle"></h2>
+      <button id="dClose">收合</button>
+    </div>
+    <div class="tblwrap"><table>
+      <thead><tr>
+        <th>個股</th><th>收盤</th><th>當日%</th><th>當周%</th><th>當月%</th>
+        <th>成交金額(億)</th><th>法人買賣超(億)</th>
+      </tr></thead>
+      <tbody id="dBody"></tbody>
+    </table></div>
+  </section>
+
+  <div class="state" id="state">資料載入中…</div>
+</div>
+
+<script>
+"use strict";
+const $=id=>document.getElementById(id);
+let DATA=null, mode="themes", period="daily", openName=null;
+
+/* ---------- 資料載入 ---------- */
+(async function load(){
+  try{
+    const r=await fetch("output/sector_stats.json?t="+Date.now());
+    if(!r.ok) throw new Error("HTTP "+r.status);
+    DATA=await r.json();
+    $("state").style.display="none";
+    $("meta").innerHTML=`交易日 <b class="num">${DATA.trade_date}</b>・更新於 <b class="num">${(DATA.generated_at||"").replace("T"," ")}</b>`;
+    const b=DATA.base_dates||{};
+    $("basebar").textContent=`比較基準 — 當日:${b.daily}收盤起算・當周:${b.wtd}收盤起算・當月:${b.mtd}收盤起算|法人金額為估算值(買賣超股數 × 收盤價)`;
+    render();
+  }catch(e){
+    $("state").innerHTML=`讀取資料失敗(${e.message})。<br>請確認本頁與 output/sector_stats.json 位於同一個 GitHub Pages 網站中,<br>且管線已成功執行至少一次。`;
+  }
+})();
+
+/* ---------- 控制列 ---------- */
+$("segClass").addEventListener("click",e=>{
+  const b=e.target.closest("button"); if(!b)return;
+  mode=b.dataset.v; openName=null;
+  [...$("segClass").children].forEach(x=>x.classList.toggle("on",x===b));
+  render();
+});
+$("segPeriod").addEventListener("click",e=>{
+  const b=e.target.closest("button"); if(!b)return;
+  period=b.dataset.v;
+  [...$("segPeriod").children].forEach(x=>x.classList.toggle("on",x===b));
+  render();
+});
+$("dClose").addEventListener("click",()=>{openName=null;render();});
+
+/* ---------- 工具 ---------- */
+const yi=v=>v==null?"—":(v/1e8).toFixed(v>=1e10||v<=-1e10?0:1);        // 億
+const pct=v=>v==null?"—":(v>0?"+":"")+v.toFixed(2)+"%";
+function tileColor(chg){
+  if(chg==null) return "var(--flat)";
+  const a=Math.min(Math.abs(chg)/ (period==="daily"?4:period==="wtd"?8:15),1); // 期間越長,飽和門檻越高
+  const mix=(c1,c2)=>`color-mix(in srgb, ${c1} ${Math.round(a*100)}%, ${c2})`;
+  if(chg>0.03) return mix("var(--up-deep)","#5a2530");
+  if(chg<-0.03) return mix("var(--down-deep)","#1d3a2e");
+  return "var(--flat)";
+}
+/* 複合強度:漲幅42% / 量能28% / 法人18% / 齊漲12%(以組內排名正規化) */
+function scores(items){
+  const rank=(arr,key)=>{ // 回傳 0~1 排名分數
+    const sorted=[...arr].map((x,i)=>[key(x)??-Infinity,i]).sort((a,b)=>a[0]-b[0]);
+    const s=new Array(arr.length).fill(0);
+    sorted.forEach(([_,idx],r)=>s[idx]=arr.length>1?r/(arr.length-1):1);
+    return s;
+  };
+  const p=x=>x[period]||{};
+  const r1=rank(items,x=>p(x).avg_change_pct),
+        r2=rank(items,x=>p(x).trading_value),
+        r3=rank(items,x=>p(x).inst_net_value),
+        r4=rank(items,x=>p(x).up_ratio);
+  return items.map((x,i)=>.42*r1[i]+.28*r2[i]+.18*r3[i]+.12*r4[i]);
+}
+
+/* ---------- 主渲染 ---------- */
+function render(){
+  if(!DATA) return;
+  const items=(DATA[mode]||[]).filter(x=>x[period]&&x[period].avg_change_pct!=null);
+  const sc=scores(items);
+  const order=items.map((x,i)=>({x,s:sc[i]})).sort((a,b)=>(b.x[period].avg_change_pct??-99)-(a.x[period].avg_change_pct??-99));
+
+  /* 強勢族群 TOP3(依複合分數) */
+  const top=[...items.map((x,i)=>({x,s:sc[i]}))].sort((a,b)=>b.s-a.s).slice(0,3);
+  $("strong").innerHTML=top.map((t,i)=>{
+    const p=t.x[period];
+    return `<div class="card">
+      <div class="rank">強勢族群 NO.${i+1}</div>
+      <div class="name">${t.x.name}</div>
+      <div class="row"><span>平均漲跌</span><span class="num">${pct(p.avg_change_pct)}</span></div>
+      <div class="row"><span>成交金額</span><span class="num">${yi(p.trading_value)} 億</span></div>
+      <div class="row"><span>法人買賣超</span><span class="num">${yi(p.inst_net_value)} 億</span></div>
+      <div class="row"><span>齊漲率</span><span class="num">${p.up_ratio==null?"—":p.up_ratio+"%"}</span></div>
+    </div>`;
+  }).join("");
+
+  /* 熱力磚:法人買賣超前 20% 加金框 */
+  const netVals=items.map(x=>x[period].inst_net_value??0).sort((a,b)=>b-a);
+  const hotBar=netVals.length?netVals[Math.max(0,Math.floor(netVals.length*.2)-1)]:Infinity;
+  $("grid").innerHTML=order.map(({x})=>{
+    const p=x[period];
+    const hot=(p.inst_net_value??0)>0&&(p.inst_net_value>=hotBar);
+    return `<div class="tile num ${hot?"hot":""}" tabindex="0" role="button"
+      data-name="${x.name}" style="background:${tileColor(p.avg_change_pct)}">
+      <div class="t-name" style="font-family:'Noto Sans TC'">${x.name}</div>
+      <div class="t-chg">${pct(p.avg_change_pct)}</div>
+      <div class="t-sub">額 ${yi(p.trading_value)}億・法人 ${yi(p.inst_net_value)}億<br>齊漲 ${p.up_ratio==null?"—":p.up_ratio+"%"}(${x.stock_count}檔)</div>
+    </div>`;
+  }).join("");
+  $("legend").innerHTML=`<span><span class="chip" style="background:var(--up-deep)"></span>上漲(越深越強)</span>
+    <span><span class="chip" style="background:var(--down-deep)"></span>下跌(越深越弱)</span>
+    <span><span class="chip" style="border:1.5px solid var(--gold);background:transparent"></span>法人資金熱區(買超前20%)</span>
+    <span>點磚塊看成分股明細</span>`;
+
+  /* 磚塊點擊 → 明細 */
+  $("grid").querySelectorAll(".tile").forEach(t=>{
+    const open=()=>{openName=t.dataset.name;render();
+      $("drawer").scrollIntoView({behavior:"smooth",block:"nearest"});};
+    t.addEventListener("click",open);
+    t.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();open();}});
+  });
+
+  /* 明細抽屜 */
+  const cur=items.find(x=>x.name===openName);
+  $("drawer").classList.toggle("open",!!cur);
+  if(cur){
+    $("dTitle").textContent=cur.name+" 成分股明細";
+    $("dBody").innerHTML=cur.stocks.map(s=>{
+      const cls=v=>v==null?"":v>0?"up":v<0?"down":"";
+      return `<tr>
+        <td>${s.stock_id} ${s.stock_name||""}</td>
+        <td class="num">${s.close==null?"—":s.close}</td>
+        <td class="num ${cls(s.chg_daily)}">${pct(s.chg_daily)}</td>
+        <td class="num ${cls(s.chg_wtd)}">${pct(s.chg_wtd)}</td>
+        <td class="num ${cls(s.chg_mtd)}">${pct(s.chg_mtd)}</td>
+        <td class="num">${yi(s.value_d)}</td>
+        <td class="num ${cls(s.inst_net_d)}">${yi(s.inst_net_d)}</td>
+      </tr>`;
+    }).join("");
+  }
+}
+</script>
+</body>
+</html>
