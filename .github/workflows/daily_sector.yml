@@ -1,0 +1,37 @@
+name: 台股盤後族群統計
+
+on:
+  schedule:
+    # UTC 09:30 = 台北 17:30(三大法人資料約 16:00 後公布,保留緩衝)
+    - cron: "30 9 * * 1-5"
+  workflow_dispatch: {}   # 允許手動觸發補跑
+
+permissions:
+  contents: write
+
+jobs:
+  run-pipeline:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 安裝套件
+        run: pip install pandas requests
+
+      - name: 執行統計腳本
+        env:
+          FINMIND_TOKEN: ${{ secrets.FINMIND_TOKEN }}
+          TZ: Asia/Taipei
+        run: python sector_pipeline.py
+
+      - name: 提交結果回 repo
+        run: |
+          git config user.name "sector-bot"
+          git config user.email "actions@github.com"
+          git add output/
+          git diff --cached --quiet || git commit -m "盤後統計 $(TZ=Asia/Taipei date +%F)"
+          git push
