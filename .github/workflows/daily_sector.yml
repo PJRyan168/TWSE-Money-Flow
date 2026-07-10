@@ -53,8 +53,8 @@ jobs:
           fi
           
       - name: Telegram 收盤通知
-              if: success()
-              env:
-                TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-                TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-              run: python notify_telegram.py
+        if: success()
+        env:
+           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+         run: python notify_telegram.py
