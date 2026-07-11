@@ -61,6 +61,14 @@ h1 .fire{color:var(--gold)}
 .tpanel .tp-name{font-size:15px;font-weight:700}
 .tpanel .tp-chg{font-size:15px;font-weight:600}
 .tpanel .tp-sub{font-size:11px;color:var(--muted);padding:0 14px 8px;background:var(--panel-2)}
+.tier{display:flex;align-items:center;gap:8px;padding:7px 14px 5px;border-top:1px solid var(--line);background:rgba(255,255,255,.02);position:relative}
+.tier-tag{font-size:11px;font-weight:700;padding:1px 8px;border-radius:4px;letter-spacing:.1em}
+.tier-tag.t0{background:#2b3a5e;color:#9db8ff}
+.tier-tag.t1{background:#4a3a1e;color:var(--gold)}
+.tier-tag.t2{background:#1e3a4a;color:#7fd8e8}
+.tier-sub{font-size:10.5px;color:var(--muted)}
+.tier-avg{font-size:12px;font-weight:600;margin-left:auto}
+.tier-arrow{position:absolute;left:24px;bottom:-9px;color:var(--muted);font-size:9px;opacity:.55;z-index:1}
 .srow{display:flex;align-items:center;gap:10px;padding:8px 14px;border-top:1px solid var(--line);cursor:pointer}
 .srow:hover,.srow:focus-visible{background:var(--panel-2);outline:none}
 .sdot{width:8px;height:8px;border-radius:50%;flex:none}
@@ -350,7 +358,7 @@ function renderMap(){
     <section class="cat"><h2>${cat.name}</h2>
       <div class="tpanels">${cat.themes.map(th=>{
         const st=themeStats[th.name]||{};
-        const rows=th.stocks.map(s=>{
+        const srow=s=>{
           const d=stockLookup[s.id];
           const chg=d?chgOf(d):null;
           const xn=MAP.theme_count[s.id]||1;
@@ -360,6 +368,18 @@ function renderMap(){
             ${xn>=3?`<span class="sx">×${xn}</span>`:""}
             <span class="srole">${s.role||""}</span>
             <span class="schg num ${cls(chg)}">${pct(chg)}</span></div>`;
+        };
+        const LAYERS=[["上游","材料/設備"],["中游","製造/零組件"],["下游","模組/系統/應用"]];
+        const rows=LAYERS.map(([ly,sub],li)=>{
+          const g=th.stocks.filter(s=>(s.layer||"中游")===ly);
+          if(!g.length) return "";
+          // 分層平均漲跌
+          const chgs=g.map(s=>stockLookup[s.id]).filter(Boolean).map(chgOf).filter(v=>v!=null);
+          const avg=chgs.length?chgs.reduce((a,b)=>a+b,0)/chgs.length:null;
+          return `<div class="tier">
+            <span class="tier-tag t${li}">${ly}</span><span class="tier-sub">${sub}</span>
+            <span class="tier-avg num ${cls(avg)}">${pct(avg)}</span>
+            ${li<2?'<span class="tier-arrow">▼</span>':''}</div>`+g.map(srow).join("");
         }).join("");
         return `<div class="tpanel">
           <div class="tp-head" tabindex="0" role="button" data-theme="${th.name}">
