@@ -268,6 +268,15 @@ def fetch_industry_map() -> pd.DataFrame:
 # ------------------------------------------------------------- 日期與統計計算
 
 
+def safe_fetch(fn, d, label):
+    """單日資料抓取失敗時記錄警告並跳過,不中斷整體統計。"""
+    try:
+        return fn(d)
+    except Exception as e:  # noqa: BLE001
+        print(f"[warn] {label} {d} 抓取失敗({e}),略過該日該來源。")
+        return []
+
+
 def ref_dates(trade_dates: list[str], today: str) -> dict:
     ds = sorted(d for d in trade_dates if d <= today)
     idx = ds.index(today)
@@ -392,8 +401,8 @@ def main() -> None:
     d = fetch_start
     while d <= t:
         if d.weekday() < 5:
-            rows = today_rows if d == t else fetch_twse_prices(d)
-            rows_otc = fetch_tpex_prices(d)
+            rows = today_rows if d == t else safe_fetch(fetch_twse_prices, d, "上市行情")
+            rows_otc = safe_fetch(fetch_tpex_prices, d, "上櫃行情")
             if rows:
                 price_rows.extend(rows)
                 price_rows.extend(rows_otc)
@@ -411,8 +420,8 @@ def main() -> None:
     inst_rows = []
     for ds in [x for x in trade_dates if x > bases["mtd"]]:
         dd = datetime.strptime(ds, "%Y-%m-%d").date()
-        a = fetch_twse_inst(dd)
-        b = fetch_tpex_inst(dd)
+        a = safe_fetch(fetch_twse_inst, dd, "上市法人")
+        b = safe_fetch(fetch_tpex_inst, dd, "上櫃法人")
         inst_rows.extend(a)
         inst_rows.extend(b)
         print(f"  {ds} 上市 {len(a)} 筆 / 上櫃 {len(b)} 筆")
