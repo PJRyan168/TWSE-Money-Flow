@@ -68,7 +68,7 @@ def build_message(data: dict) -> str:
     inst_sell = min(themes, key=lambda x: x["daily"].get("inst_net_value") or 0)
 
     lines = [f"📊 <b>盤後族群熱力|{data.get('trade_date', '')}</b>", ""]
-    lines.append("🔥 <b>強勢族群 TOP3</b>")
+    lines.append("🔥 <b>資金焦點 TOP3</b>  <i>(漲幅+量能+法人+齊漲綜合)</i>")
     medals = ["🥇", "🥈", "🥉"]
     for i, t in enumerate(top3):
         d = t["daily"]
