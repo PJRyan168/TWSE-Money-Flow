@@ -31,7 +31,8 @@ h1 .fire{color:var(--gold)}
 .seg button.on{background:var(--panel-2);color:var(--text);font-weight:700}
 .seg button:focus-visible{outline:2px solid var(--gold);outline-offset:-2px}
 
-/* 強勢族群 */
+/* 資金焦點 */
+.focus-note{color:var(--muted);font-size:11.5px;line-height:1.7;margin-bottom:9px;padding-left:3px}
 .strong{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:10px;margin-bottom:22px}
 .strong .card{background:linear-gradient(160deg,var(--panel-2),var(--panel));border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:10px;padding:12px 14px}
 .strong .rank{color:var(--gold);font-size:11px;font-weight:700;letter-spacing:.15em}
@@ -148,6 +149,7 @@ td.up{color:var(--up)}td.down{color:var(--down)}
 
   <!-- 熱力磚牆檢視 -->
   <div id="viewHeat">
+    <div class="focus-note">資金焦點 — 綜合漲跌幅(42%)、成交金額(28%)、法人買賣超(18%)、齊漲率(12%)排名計分,衡量資金關注度而非單純漲勢;弱勢盤中抗跌且法人買超的族群同樣會入榜。</div>
     <div class="strong" id="strong"></div>
     <div class="grid" id="grid"></div>
     <div class="legend" id="legend"></div>
@@ -302,7 +304,7 @@ function renderHeat(){
   const top=[...items.map((x,i)=>({x,s:sc[i]}))].sort((a,b)=>b.s-a.s).slice(0,3);
   $("strong").innerHTML=top.map((t,i)=>{
     const p=t.x[period];
-    return `<div class="card"><div class="rank">強勢族群 NO.${i+1}</div><div class="name">${t.x.name}</div>
+    return `<div class="card"><div class="rank">資金焦點 NO.${i+1}</div><div class="name">${t.x.name}</div>
       <div class="row"><span>平均漲跌</span><span class="num">${pct(p.avg_change_pct)}</span></div>
       <div class="row"><span>成交金額</span><span class="num">${yi(p.trading_value)} 億</span></div>
       <div class="row"><span>法人買賣超</span><span class="num">${yi(p.inst_net_value)} 億</span></div>
