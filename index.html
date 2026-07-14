@@ -103,7 +103,7 @@ h1 .fire{color:var(--gold)}
 .drawer .d-head h2{font-size:17px;font-weight:700}
 .drawer .d-head button{appearance:none;border:1px solid var(--line);background:transparent;color:var(--muted);border-radius:7px;padding:5px 12px;font:inherit;font-size:13px;cursor:pointer}
 .tblwrap{overflow-x:auto}
-table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:780px}
+table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:900px}
 th.sortable{cursor:pointer;user-select:none}
 th.sortable:hover{color:var(--text)}
 th,td{padding:9px 14px;text-align:right;white-space:nowrap}
@@ -192,7 +192,8 @@ let DATA=null, MAP=null, view="heat", mode="themes", period="daily", openName=nu
 let dSort={key:"chg_daily",dir:-1};   // 明細表排序狀態
 const DCOLS=[["stock","個股"],["close","收盤"],["chg_daily","當日%"],["chg_wtd","當周%"],
   ["chg_mtd","當月%"],["chg_qtd","當季%"],["chg_ytd","當年%"],
-  ["value_d","成交金額(億)"],["inst_net_d","法人買賣超(億)"]];
+  ["value_d","成交金額(億)"],["fore_net_d","外資(億)"],["trust_net_d","投信(億)"],
+  ["inst_net_d","三大法人(億)"]];
 let stockLookup={};   // stock_id → 統計資料
 let stockThemes={};   // stock_id → [題材名]
 
@@ -296,7 +297,9 @@ function openStock(sid,name,role){
     $("pRows").innerHTML=
       `<div class="p-row"><span>收盤價</span><span class="num">${s.close==null?"—":s.close}</span></div>
        <div class="p-row"><span>當日成交金額</span><span class="num">${yi(s.value_d)} 億</span></div>
-       <div class="p-row"><span>當日法人買賣超</span><span class="num ${cls(s.inst_net_d)}">${yi(s.inst_net_d)} 億</span></div>`;
+       <div class="p-row"><span>當日外資買賣超</span><span class="num ${cls(s.fore_net_d)}">${yi(s.fore_net_d)} 億</span></div>
+       <div class="p-row"><span>當日投信買賣超</span><span class="num ${cls(s.trust_net_d)}">${yi(s.trust_net_d)} 億</span></div>
+       <div class="p-row"><span>當日三大法人合計</span><span class="num ${cls(s.inst_net_d)}">${yi(s.inst_net_d)} 億</span></div>`;
   }else{
     $("pGrid").innerHTML="";
     $("pRows").innerHTML=`<div class="p-row"><span>今日無成交資料</span><span></span></div>`;
@@ -326,7 +329,9 @@ function renderHeat(){
     return `<div class="card"><div class="rank">資金焦點 NO.${i+1}</div><div class="name">${t.x.name}</div>
       <div class="row"><span>平均漲跌</span><span class="num">${pct(p.avg_change_pct)}</span></div>
       <div class="row"><span>成交金額</span><span class="num">${yi(p.trading_value)} 億</span></div>
-      <div class="row"><span>法人買賣超</span><span class="num">${yi(p.inst_net_value)} 億</span></div>
+      <div class="row"><span>三大法人</span><span class="num">${yi(p.inst_net_value)} 億</span></div>
+      <div class="row"><span>├ 外資</span><span class="num ${cls(p.foreign_net_value)}">${yi(p.foreign_net_value)} 億</span></div>
+      <div class="row"><span>└ 投信</span><span class="num ${cls(p.trust_net_value)}">${yi(p.trust_net_value)} 億</span></div>
       <div class="row"><span>齊漲率</span><span class="num">${p.up_ratio==null?"—":p.up_ratio+"%"}</span></div></div>`;
   }).join("");
 
@@ -338,7 +343,7 @@ function renderHeat(){
     return `<div class="tile num ${hot?"hot":""}" tabindex="0" role="button" data-name="${x.name}" style="background:${tileColor(p.avg_change_pct)}">
       <div class="t-name" style="font-family:'Noto Sans TC'">${x.name}</div>
       <div class="t-chg">${pct(p.avg_change_pct)}</div>
-      <div class="t-sub">額 ${yi(p.trading_value)}億・法人 ${yi(p.inst_net_value)}億<br>齊漲 ${p.up_ratio==null?"—":p.up_ratio+"%"}(${x.stock_count}檔)</div></div>`;
+      <div class="t-sub">額 ${yi(p.trading_value)}億・外資 ${yi(p.foreign_net_value)}億<br>投信 ${yi(p.trust_net_value)}億・齊漲 ${p.up_ratio==null?"—":p.up_ratio+"%"}(${x.stock_count}檔)</div></div>`;
   }).join("");
   $("legend").innerHTML=`<span><span class="chip" style="background:var(--up-deep)"></span>上漲(越深越強)</span>
     <span><span class="chip" style="background:var(--down-deep)"></span>下跌(越深越弱)</span>
@@ -382,6 +387,8 @@ function renderHeat(){
         <td class="num ${c(s.chg_qtd)}">${pct(s.chg_qtd)}</td>
         <td class="num ${c(s.chg_ytd)}">${pct(s.chg_ytd)}</td>
         <td class="num">${yi(s.value_d)}</td>
+        <td class="num ${c(s.fore_net_d)}">${yi(s.fore_net_d)}</td>
+        <td class="num ${c(s.trust_net_d)}">${yi(s.trust_net_d)}</td>
         <td class="num ${c(s.inst_net_d)}">${yi(s.inst_net_d)}</td></tr>`;
     }).join("");
   }
@@ -424,7 +431,7 @@ function renderMap(){
             <span class="tp-name">${th.name}</span>
             <span class="tp-chg num ${cls(st.avg_change_pct)}">${pct(st.avg_change_pct)}</span>
           </div>
-          <div class="tp-sub num">額 ${yi(st.trading_value)}億・法人 ${yi(st.inst_net_value)}億・齊漲 ${st.up_ratio==null?"—":st.up_ratio+"%"}</div>
+          <div class="tp-sub num">額 ${yi(st.trading_value)}億・外資 ${yi(st.foreign_net_value)}億・投信 ${yi(st.trust_net_value)}億・齊漲 ${st.up_ratio==null?"—":st.up_ratio+"%"}</div>
           ${rows}</div>`;
       }).join("")}</div>
     </section>`).join("");
