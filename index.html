@@ -153,7 +153,7 @@ td.up{color:var(--up)}td.down{color:var(--down)}
 
   <!-- 熱力磚牆檢視 -->
   <div id="viewHeat">
-    <div class="focus-note">資金焦點 — 綜合漲跌幅(42%)、成交金額(28%)、法人買賣超(18%)、齊漲率(12%)排名計分,衡量資金關注度而非單純漲勢;弱勢盤中抗跌且法人買超的族群同樣會入榜。</div>
+    <div class="focus-note" id="focusNote"></div>
     <div class="strong" id="strong"></div>
     <div class="grid" id="grid"></div>
     <div class="legend" id="legend"></div>
@@ -270,9 +270,17 @@ function scores(items){
     return s;
   };
   const p=x=>x[period]||{};
-  const r1=rank(items,x=>p(x).avg_change_pct),r2=rank(items,x=>p(x).trading_value),
-        r3=rank(items,x=>p(x).inst_net_value),r4=rank(items,x=>p(x).up_ratio);
-  return items.map((x,i)=>.42*r1[i]+.28*r2[i]+.18*r3[i]+.12*r4[i]);
+  // 只納入「該期間確實有資料」的指標,權重按比例重新分配
+  // (季/年檢視無成交金額與法人資料,計分自動退回漲幅+齊漲率)
+  const defs=[
+    [.42, x=>p(x).avg_change_pct],
+    [.28, x=>p(x).trading_value],
+    [.18, x=>p(x).inst_net_value],
+    [.12, x=>p(x).up_ratio],
+  ].filter(([_,key])=>items.some(x=>key(x)!=null));
+  const total=defs.reduce((a,[w])=>a+w,0)||1;
+  const ranks=defs.map(([_,key])=>rank(items,key));
+  return items.map((_,i)=>defs.reduce((sum,[w],j)=>sum+(w/total)*ranks[j][i],0));
 }
 
 /* ---------- 個股詳情浮層 ---------- */
@@ -306,6 +314,9 @@ function render(){
 
 /* ===== 熱力磚牆 ===== */
 function renderHeat(){
+  $("focusNote").textContent=(period==="qtd"||period==="ytd")
+    ? "資金焦點 — 本期間無逐日累計的成交金額與法人資料,計分改以漲跌幅(78%)、齊漲率(22%)排名計算。"
+    : "資金焦點 — 綜合漲跌幅(42%)、成交金額(28%)、法人買賣超(18%)、齊漲率(12%)排名計分,衡量資金關注度而非單純漲勢;弱勢盤中抗跌且法人買超的族群同樣會入榜。";
   const items=(DATA[mode]||[]).filter(x=>x[period]&&x[period].avg_change_pct!=null);
   const sc=scores(items);
   const order=items.map((x,i)=>({x,s:sc[i]})).sort((a,b)=>(b.x[period].avg_change_pct??-99)-(a.x[period].avg_change_pct??-99));
