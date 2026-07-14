@@ -289,6 +289,9 @@ def ref_dates(trade_dates: list[str], today: str) -> dict:
     return {"daily": prev_day, "wtd": wtd, "mtd": mtd}
 
 
+SUM_PERIODS = ("daily", "wtd", "mtd")  # 需要逐日加總的期間(季/年僅計算漲跌幅)
+
+
 def stock_period_stats(px: pd.DataFrame, inst: pd.DataFrame,
                        today: str, bases: dict) -> pd.DataFrame:
     today_px = px[px["date"] == today].drop_duplicates("stock_id").set_index("stock_id")
@@ -303,54 +306,72 @@ def stock_period_stats(px: pd.DataFrame, inst: pd.DataFrame,
     }).set_index("stock_id")
 
     for period, base_date in bases.items():
+        if not base_date:
+            out[f"chg_{period}"] = float("nan")
+            continue
         base_close = px[px["date"] == base_date].drop_duplicates("stock_id") \
             .set_index("stock_id")["close"]
         out[f"chg_{period}"] = (close_today / base_close - 1) * 100
 
     for period, base_date in bases.items():
-        mask = (px["date"] > base_date) & (px["date"] <= today)
-        agg = px[mask].groupby("stock_id")[["value", "volume"]].sum()
-        out[f"value_{period}"] = agg["value"]
-        out[f"vol_{period}"] = agg["volume"]
+        if period in SUM_PERIODS and base_date:
+            mask = (px["date"] > base_date) & (px["date"] <= today)
+            agg = px[mask].groupby("stock_id")[["value", "volume"]].sum()
+            out[f"value_{period}"] = agg["value"]
+            out[f"vol_{period}"] = agg["volume"]
+        else:
+            out[f"value_{period}"] = float("nan")
+            out[f"vol_{period}"] = float("nan")
 
-    if not inst.empty:
-        for period, base_date in bases.items():
+    for period, base_date in bases.items():
+        if period in SUM_PERIODS and base_date and not inst.empty:
             mask = (inst["date"] > base_date) & (inst["date"] <= today)
             net = inst[mask].groupby("stock_id")["net_shares"].sum()
             out[f"inst_net_{period}"] = (net * close_today).round(0)
-    for period in bases:
-        col = f"inst_net_{period}"
-        if col not in out:
-            out[col] = 0.0
+        else:
+            out[f"inst_net_{period}"] = float("nan")
 
     return out.reset_index()
 
 
 def aggregate(stats: pd.DataFrame, mapping: pd.DataFrame, group_col: str) -> list[dict]:
     df = stats.merge(mapping, on="stock_id", how="inner")
+
+    def opt_sum(g, col):
+        return int(g[col].sum(skipna=True)) if g[col].notna().any() else None
+
     results = []
     for name, g in df.groupby(group_col):
         if not str(name).strip():
             continue
         item = {"name": name, "stock_count": int(len(g)), "stocks": []}
-        for p in ("daily", "wtd", "mtd"):
+        for p in ("daily", "wtd", "mtd", "qtd", "ytd"):
+            if f"chg_{p}" not in g.columns:
+                item[p] = {"avg_change_pct": None, "median_change_pct": None,
+                           "up_ratio": None, "trading_value": None,
+                           "trading_volume": None, "inst_net_value": None}
+                continue
             chg = g[f"chg_{p}"].dropna()
             item[p] = {
                 "avg_change_pct": round(chg.mean(), 2) if len(chg) else None,
                 "median_change_pct": round(chg.median(), 2) if len(chg) else None,
                 "up_ratio": round((chg > 0).mean() * 100, 1) if len(chg) else None,
-                "trading_value": int(g[f"value_{p}"].fillna(0).sum()),
-                "trading_volume": int(g[f"vol_{p}"].fillna(0).sum()),
-                "inst_net_value": int(g[f"inst_net_{p}"].fillna(0).sum()),
+                "trading_value": opt_sum(g, f"value_{p}"),
+                "trading_volume": opt_sum(g, f"vol_{p}"),
+                "inst_net_value": opt_sum(g, f"inst_net_{p}"),
             }
         for _, r in g.sort_values("chg_daily", ascending=False).iterrows():
+            def num(v, nd=2):
+                return None if pd.isna(v) else round(float(v), nd)
             item["stocks"].append({
                 "stock_id": r["stock_id"],
                 "stock_name": r.get("stock_name", ""),
-                "close": None if pd.isna(r["close"]) else float(r["close"]),
-                "chg_daily": None if pd.isna(r["chg_daily"]) else round(r["chg_daily"], 2),
-                "chg_wtd": None if pd.isna(r["chg_wtd"]) else round(r["chg_wtd"], 2),
-                "chg_mtd": None if pd.isna(r["chg_mtd"]) else round(r["chg_mtd"], 2),
+                "close": num(r["close"]),
+                "chg_daily": num(r["chg_daily"]),
+                "chg_wtd": num(r["chg_wtd"]),
+                "chg_mtd": num(r["chg_mtd"]),
+                "chg_qtd": num(r.get("chg_qtd")),
+                "chg_ytd": num(r.get("chg_ytd")),
                 "value_d": int(r["value_d"]) if not pd.isna(r["value_d"]) else 0,
                 "inst_net_d": int(r["inst_net_daily"]) if not pd.isna(r["inst_net_daily"]) else 0,
             })
@@ -413,7 +434,41 @@ def main() -> None:
 
     trade_dates = sorted(px["date"].unique())
     bases = ref_dates(trade_dates, today_s)
-    print(f"[3/6] 基準日 → 日:{bases['daily']} 週:{bases['wtd']} 月:{bases['mtd']}")
+
+    # 季基準:本季第一天之前的最後交易日(七月時 = 六月底,與月基準相同)
+    q_month = ((t.month - 1) // 3) * 3 + 1
+    q_start = t.replace(month=q_month, day=1)
+
+    def probe_base(target: date, label: str):
+        """往回探測某個基準日的收盤資料,回傳 (日期字串, 資料列)。"""
+        for back in range(12):
+            probe = target - timedelta(days=back)
+            if probe.weekday() >= 5:
+                continue
+            rows = safe_fetch(fetch_twse_prices, probe, f"{label}基準行情")
+            if rows:
+                rows += safe_fetch(fetch_tpex_prices, probe, f"{label}基準行情(櫃)")
+                return probe.isoformat(), rows
+        print(f"[warn] 找不到{label}基準日資料,該期間統計將略過。")
+        return None, []
+
+    extra_rows = []
+    qtd_base = max((d for d in trade_dates if d < q_start.isoformat()), default=None)
+    if qtd_base is None:
+        qtd_base, rows = probe_base(q_start - timedelta(days=1), "季")
+        extra_rows += rows
+    bases["qtd"] = qtd_base
+
+    ytd_base, rows = probe_base(date(t.year - 1, 12, 31), "年")
+    extra_rows += rows
+    bases["ytd"] = ytd_base
+
+    if extra_rows:
+        px = pd.concat([px, pd.DataFrame(extra_rows)], ignore_index=True)
+        px = px[px["close"].notna()]
+
+    print(f"[3/6] 基準日 → 日:{bases['daily']} 週:{bases['wtd']} 月:{bases['mtd']}"
+          f" 季:{bases['qtd']} 年:{bases['ytd']}")
 
     # 三大法人(僅需 mtd 基準日之後的區間)
     print("[4/6] 抓取三大法人買賣超...")
