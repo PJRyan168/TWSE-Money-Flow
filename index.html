@@ -103,7 +103,9 @@ h1 .fire{color:var(--gold)}
 .drawer .d-head h2{font-size:17px;font-weight:700}
 .drawer .d-head button{appearance:none;border:1px solid var(--line);background:transparent;color:var(--muted);border-radius:7px;padding:5px 12px;font:inherit;font-size:13px;cursor:pointer}
 .tblwrap{overflow-x:auto}
-table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:640px}
+table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:780px}
+th.sortable{cursor:pointer;user-select:none}
+th.sortable:hover{color:var(--text)}
 th,td{padding:9px 14px;text-align:right;white-space:nowrap}
 th{color:var(--muted);font-weight:500;font-size:12px;border-bottom:1px solid var(--line)}
 th:first-child,td:first-child{text-align:left}
@@ -144,6 +146,8 @@ td.up{color:var(--up)}td.down{color:var(--down)}
       <button data-v="daily" class="on">當日</button>
       <button data-v="wtd">當周</button>
       <button data-v="mtd">當月</button>
+      <button data-v="qtd">當季</button>
+      <button data-v="ytd">今年</button>
     </div>
   </div>
 
@@ -156,7 +160,7 @@ td.up{color:var(--up)}td.down{color:var(--down)}
     <section class="drawer" id="drawer" aria-live="polite">
       <div class="d-head"><h2 id="dTitle"></h2><button id="dClose">收合</button></div>
       <div class="tblwrap"><table>
-        <thead><tr><th>個股</th><th>收盤</th><th>當日%</th><th>當周%</th><th>當月%</th><th>成交金額(億)</th><th>法人買賣超(億)</th></tr></thead>
+        <thead id="dHead"></thead>
         <tbody id="dBody"></tbody>
       </table></div>
     </section>
@@ -185,6 +189,10 @@ td.up{color:var(--up)}td.down{color:var(--down)}
 "use strict";
 const $=id=>document.getElementById(id);
 let DATA=null, MAP=null, view="heat", mode="themes", period="daily", openName=null;
+let dSort={key:"chg_daily",dir:-1};   // 明細表排序狀態
+const DCOLS=[["stock","個股"],["close","收盤"],["chg_daily","當日%"],["chg_wtd","當周%"],
+  ["chg_mtd","當月%"],["chg_qtd","當季%"],["chg_ytd","當年%"],
+  ["value_d","成交金額(億)"],["inst_net_d","法人買賣超(億)"]];
 let stockLookup={};   // stock_id → 統計資料
 let stockThemes={};   // stock_id → [題材名]
 
@@ -210,7 +218,7 @@ let stockThemes={};   // stock_id → [題材名]
     $("state").style.display="none";
     $("meta").innerHTML=`交易日 <b class="num">${DATA.trade_date}</b>・更新於 <b class="num">${(DATA.generated_at||"").replace("T"," ")}</b>`;
     const b=DATA.base_dates||{};
-    $("basebar").textContent=`比較基準 — 當日:${b.daily}收盤起算・當周:${b.wtd}收盤起算・當月:${b.mtd}收盤起算`;
+    $("basebar").textContent=`比較基準 — 日:${b.daily}・周:${b.wtd}・月:${b.mtd}`+(b.qtd?`・季:${b.qtd}`:"")+(b.ytd?`・年:${b.ytd}`:"")+`(各期間自基準日收盤起算;季/年檢視僅提供漲跌幅)`;
     render();
   }catch(e){
     $("state").innerHTML=`讀取資料失敗(${e.message})。請確認管線已成功執行,且 industry_map.json 已上傳。`;
@@ -244,11 +252,11 @@ $("pop").addEventListener("click",e=>{if(e.target===$("pop"))$("pop").classList.
 /* ---------- 工具 ---------- */
 const yi=v=>v==null?"—":(v/1e8).toFixed(Math.abs(v)>=1e10?0:1);
 const pct=v=>v==null?"—":(v>0?"+":"")+v.toFixed(2)+"%";
-const chgOf=s=>period==="daily"?s.chg_daily:period==="wtd"?s.chg_wtd:s.chg_mtd;
+const chgOf=s=>({daily:s.chg_daily,wtd:s.chg_wtd,mtd:s.chg_mtd,qtd:s.chg_qtd,ytd:s.chg_ytd})[period];
 const cls=v=>v==null?"c-flat":v>0.001?"c-up":v<-0.001?"c-down":"c-flat";
 function tileColor(chg){
   if(chg==null) return "var(--flat)";
-  const a=Math.min(Math.abs(chg)/(period==="daily"?4:period==="wtd"?8:15),1);
+  const a=Math.min(Math.abs(chg)/({daily:4,wtd:8,mtd:15,qtd:25,ytd:40}[period]||15),1);
   const mix=(c1,c2)=>`color-mix(in srgb, ${c1} ${Math.round(a*100)}%, ${c2})`;
   if(chg>0.03) return mix("var(--up-deep)","#5a2530");
   if(chg<-0.03) return mix("var(--down-deep)","#1d3a2e");
@@ -338,13 +346,30 @@ function renderHeat(){
   $("drawer").classList.toggle("open",!!cur);
   if(cur){
     $("dTitle").textContent=cur.name+" 成分股明細";
-    $("dBody").innerHTML=cur.stocks.map(s=>{
+    $("dHead").innerHTML="<tr>"+DCOLS.map(([k,label])=>
+      `<th class="sortable" data-key="${k}">${label}${dSort.key===k?(dSort.dir<0?" ▼":" ▲"):""}</th>`).join("")+"</tr>";
+    $("dHead").querySelectorAll("th").forEach(h=>h.addEventListener("click",()=>{
+      const k=h.dataset.key;
+      dSort=dSort.key===k?{key:k,dir:-dSort.dir}:{key:k,dir:-1};
+      renderHeat();
+    }));
+    const val=(s,k)=>k==="stock"?s.stock_id:s[k];
+    const sorted=[...cur.stocks].sort((a,b)=>{
+      const x=val(a,dSort.key),y=val(b,dSort.key);
+      if(x==null&&y==null)return 0;
+      if(x==null)return 1;            // 空值永遠排最後
+      if(y==null)return -1;
+      return (x<y?-1:x>y?1:0)*dSort.dir*(dSort.key==="stock"?-1:1);
+    });
+    $("dBody").innerHTML=sorted.map(s=>{
       const c=v=>v==null?"":v>0?"up":v<0?"down":"";
       return `<tr><td>${s.stock_id} ${s.stock_name||""}</td>
         <td class="num">${s.close==null?"—":s.close}</td>
         <td class="num ${c(s.chg_daily)}">${pct(s.chg_daily)}</td>
         <td class="num ${c(s.chg_wtd)}">${pct(s.chg_wtd)}</td>
         <td class="num ${c(s.chg_mtd)}">${pct(s.chg_mtd)}</td>
+        <td class="num ${c(s.chg_qtd)}">${pct(s.chg_qtd)}</td>
+        <td class="num ${c(s.chg_ytd)}">${pct(s.chg_ytd)}</td>
         <td class="num">${yi(s.value_d)}</td>
         <td class="num ${c(s.inst_net_d)}">${yi(s.inst_net_d)}</td></tr>`;
     }).join("");
