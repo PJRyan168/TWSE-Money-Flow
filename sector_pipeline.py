@@ -181,7 +181,7 @@ def fetch_tpex_prices(d: date) -> list[dict]:
 
 
 def fetch_twse_inst(d: date) -> list[dict]:
-    """證交所上市三大法人買賣超(股數)。"""
+    """證交所上市三大法人買賣超(股數),拆分外資 / 投信 / 自營商。"""
     payload = http_get_json(
         "https://www.twse.com.tw/fund/T86",
         {"response": "json", "date": d.strftime("%Y%m%d"), "selectType": "ALLBUT0999"},
@@ -191,25 +191,49 @@ def fetch_twse_inst(d: date) -> list[dict]:
     fields, rows = find_table(payload, "證券代號")
     if not fields:
         return []
+    print(f"[fields] TWSE T86 欄位:{fields}")
+
     i_id = col_idx(fields, "證券代號")
     i_net = col_idx(fields, "三大法人買賣超股數")
     if i_net is None:
-        i_net = len(fields) - 1  # 慣例上為最後一欄
+        i_net = len(fields) - 1
+    # 外資:優先取「外陸資買賣超股數(不含外資自營商)」,其次任何含外資的買賣超欄
+    i_fore = col_idx(fields, "外陸資買賣超股數(不含外資自營商)", "外資買賣超股數")
+    if i_fore is None:
+        for i, f in enumerate(fields):
+            if "外" in f and "買賣超" in f and "自營" not in f:
+                i_fore = i
+                break
+    i_trust = col_idx(fields, "投信買賣超股數")
+    if i_trust is None:
+        for i, f in enumerate(fields):
+            if "投信" in f and "買賣超" in f:
+                i_trust = i
+                break
+
     out = []
+    need = max(x for x in (i_id, i_net) if x is not None)
     for r in rows:
-        if len(r) <= max(i_id, i_net):
-            continue  # 欄位不完整的資料列,略過
+        if len(r) <= need:
+            continue
         sid = str(r[i_id]).strip()
         if not STOCK_ID_RE.match(sid):
             continue
         net = to_num(r[i_net])
-        if net is not None:
-            out.append({"date": d.isoformat(), "stock_id": sid, "net_shares": net})
+        if net is None:
+            continue
+        rec = {"date": d.isoformat(), "stock_id": sid, "net_shares": net,
+               "foreign_shares": 0.0, "trust_shares": 0.0}
+        if i_fore is not None and len(r) > i_fore:
+            rec["foreign_shares"] = to_num(r[i_fore]) or 0.0
+        if i_trust is not None and len(r) > i_trust:
+            rec["trust_shares"] = to_num(r[i_trust]) or 0.0
+        out.append(rec)
     return out
 
 
 def fetch_tpex_inst(d: date) -> list[dict]:
-    """櫃買中心上櫃三大法人買賣超(股數)。端點若異動則略過,不影響整體。"""
+    """櫃買中心上櫃三大法人買賣超(股數),拆分外資 / 投信。端點異動時退回合計。"""
     try:
         payload = http_get_json(
             "https://www.tpex.org.tw/www/zh-tw/insti/dailyTrade",
@@ -225,6 +249,8 @@ def fetch_tpex_inst(d: date) -> list[dict]:
     fields, rows = find_table(payload, "代號")
     if not fields:
         return []
+    print(f"[fields] TPEx 法人欄位:{fields}")
+
     i_id = col_idx(fields, "代號")
     i_net = None
     for i, f in enumerate(fields):
@@ -232,16 +258,34 @@ def fetch_tpex_inst(d: date) -> list[dict]:
             i_net = i
     if i_net is None:
         i_net = len(fields) - 1
+    # 外資合計(含自營):優先取含「外資及陸資」且為買賣超的欄位
+    i_fore = None
+    for i, f in enumerate(fields):
+        if ("外資" in f or "外陸資" in f) and ("買賣超" in f or "買賣超股數" in f) \
+                and "自營" not in f:
+            i_fore = i
+    i_trust = None
+    for i, f in enumerate(fields):
+        if "投信" in f and "買賣超" in f:
+            i_trust = i
+
     out = []
     for r in rows:
         if len(r) <= max(i_id, i_net):
-            continue  # 欄位不完整的資料列,略過
+            continue
         sid = str(r[i_id]).strip()
         if not STOCK_ID_RE.match(sid):
             continue
         net = to_num(r[i_net])
-        if net is not None:
-            out.append({"date": d.isoformat(), "stock_id": sid, "net_shares": net})
+        if net is None:
+            continue
+        rec = {"date": d.isoformat(), "stock_id": sid, "net_shares": net,
+               "foreign_shares": 0.0, "trust_shares": 0.0}
+        if i_fore is not None and len(r) > i_fore:
+            rec["foreign_shares"] = to_num(r[i_fore]) or 0.0
+        if i_trust is not None and len(r) > i_trust:
+            rec["trust_shares"] = to_num(r[i_trust]) or 0.0
+        out.append(rec)
     return out
 
 
@@ -323,13 +367,16 @@ def stock_period_stats(px: pd.DataFrame, inst: pd.DataFrame,
             out[f"value_{period}"] = float("nan")
             out[f"vol_{period}"] = float("nan")
 
+    INST_COLS = {"inst_net": "net_shares", "fore_net": "foreign_shares",
+                 "trust_net": "trust_shares"}
     for period, base_date in bases.items():
-        if period in SUM_PERIODS and base_date and not inst.empty:
-            mask = (inst["date"] > base_date) & (inst["date"] <= today)
-            net = inst[mask].groupby("stock_id")["net_shares"].sum()
-            out[f"inst_net_{period}"] = (net * close_today).round(0)
-        else:
-            out[f"inst_net_{period}"] = float("nan")
+        for prefix, col in INST_COLS.items():
+            if period in SUM_PERIODS and base_date and not inst.empty and col in inst:
+                mask = (inst["date"] > base_date) & (inst["date"] <= today)
+                net = inst[mask].groupby("stock_id")[col].sum()
+                out[f"{prefix}_{period}"] = (net * close_today).round(0)
+            else:
+                out[f"{prefix}_{period}"] = float("nan")
 
     return out.reset_index()
 
@@ -359,6 +406,8 @@ def aggregate(stats: pd.DataFrame, mapping: pd.DataFrame, group_col: str) -> lis
                 "trading_value": opt_sum(g, f"value_{p}"),
                 "trading_volume": opt_sum(g, f"vol_{p}"),
                 "inst_net_value": opt_sum(g, f"inst_net_{p}"),
+                "foreign_net_value": opt_sum(g, f"fore_net_{p}"),
+                "trust_net_value": opt_sum(g, f"trust_net_{p}"),
             }
         for _, r in g.sort_values("chg_daily", ascending=False).iterrows():
             def num(v, nd=2):
@@ -374,6 +423,8 @@ def aggregate(stats: pd.DataFrame, mapping: pd.DataFrame, group_col: str) -> lis
                 "chg_ytd": num(r.get("chg_ytd")),
                 "value_d": int(r["value_d"]) if not pd.isna(r["value_d"]) else 0,
                 "inst_net_d": int(r["inst_net_daily"]) if not pd.isna(r["inst_net_daily"]) else 0,
+                "fore_net_d": int(r["fore_net_daily"]) if not pd.isna(r["fore_net_daily"]) else 0,
+                "trust_net_d": int(r["trust_net_daily"]) if not pd.isna(r["trust_net_daily"]) else 0,
             })
         results.append(item)
     results.sort(key=lambda x: (x["daily"]["avg_change_pct"]
@@ -481,7 +532,7 @@ def main() -> None:
         inst_rows.extend(b)
         print(f"  {ds} 上市 {len(a)} 筆 / 上櫃 {len(b)} 筆")
     inst = pd.DataFrame(inst_rows) if inst_rows else pd.DataFrame(
-        columns=["date", "stock_id", "net_shares"])
+        columns=["date", "stock_id", "net_shares", "foreign_shares", "trust_shares"])
 
     print("[5/6] 計算個股期間統計與族群聚合...")
     stats = stock_period_stats(px, inst, today_s, bases)
@@ -502,7 +553,7 @@ def main() -> None:
         "generated_at": datetime.now().isoformat(timespec="seconds"),
         "trade_date": today_s,
         "base_dates": bases,
-        "note": "inst_net_value 為估算值:買賣超股數 × 當日收盤價",
+        "note": "法人金額為估算值:買賣超股數 × 當日收盤價;foreign=外資、trust=投信、inst=三大法人合計",
         "official_sectors": official,
         "themes": themes_result,
     }
