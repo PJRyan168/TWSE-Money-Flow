@@ -233,7 +233,21 @@ def fetch_twse_inst(d: date) -> list[dict]:
 
 
 def fetch_tpex_inst(d: date) -> list[dict]:
-    """櫃買中心上櫃三大法人買賣超(股數),拆分外資 / 投信。端點異動時退回合計。"""
+    """
+    櫃買中心上櫃三大法人買賣超(股數),拆分外資 / 投信。
+
+    TPEx 欄位名稱不含法人前綴(皆為「買進股數/賣出股數/買賣超股數」重複六組),
+    只能依固定順序判讀。實際欄位順序:
+      [0]代號 [1]名稱
+      [2:5]   外資及陸資(不含外資自營商)   → 買賣超在 index 4
+      [5:8]   外資自營商
+      [8:11]  投信                          → 買賣超在 index 10
+      [11:14] 自營商(自行買賣)
+      [14:17] 自營商(避險)
+      [17:20] 自營商合計
+      [-1]    三大法人買賣超股數合計
+    以「合計 ≈ 外資+投信+自營」交叉驗證,對不上則該日退回僅取合計。
+    """
     try:
         payload = http_get_json(
             "https://www.tpex.org.tw/www/zh-tw/insti/dailyTrade",
@@ -249,29 +263,23 @@ def fetch_tpex_inst(d: date) -> list[dict]:
     fields, rows = find_table(payload, "代號")
     if not fields:
         return []
-    print(f"[fields] TPEx 法人欄位:{fields}")
 
     i_id = col_idx(fields, "代號")
     i_net = None
     for i, f in enumerate(fields):
-        if "三大法人" in f and ("買賣超" in f or "合計" in f):
+        if "三大法人" in f:
             i_net = i
     if i_net is None:
         i_net = len(fields) - 1
-    # 外資合計(含自營):優先取含「外資及陸資」且為買賣超的欄位
-    i_fore = None
-    for i, f in enumerate(fields):
-        if ("外資" in f or "外陸資" in f) and ("買賣超" in f or "買賣超股數" in f) \
-                and "自營" not in f:
-            i_fore = i
-    i_trust = None
-    for i, f in enumerate(fields):
-        if "投信" in f and "買賣超" in f:
-            i_trust = i
 
-    out = []
+    # 依固定順序定位;若欄位數不符預期則不拆分,僅取合計
+    i_fore, i_trust = (4, 10) if i_net >= 20 else (None, None)
+    if i_fore is None:
+        print(f"[warn] 上櫃法人欄位數 {len(fields)} 與預期不符,{d} 僅取合計不拆分。")
+
+    out, checked = [], False
     for r in rows:
-        if len(r) <= max(i_id, i_net):
+        if len(r) <= i_net:
             continue
         sid = str(r[i_id]).strip()
         if not STOCK_ID_RE.match(sid):
@@ -281,10 +289,22 @@ def fetch_tpex_inst(d: date) -> list[dict]:
             continue
         rec = {"date": d.isoformat(), "stock_id": sid, "net_shares": net,
                "foreign_shares": 0.0, "trust_shares": 0.0}
-        if i_fore is not None and len(r) > i_fore:
-            rec["foreign_shares"] = to_num(r[i_fore]) or 0.0
-        if i_trust is not None and len(r) > i_trust:
-            rec["trust_shares"] = to_num(r[i_trust]) or 0.0
+        if i_fore is not None:
+            fore = to_num(r[i_fore]) or 0.0
+            trust = to_num(r[i_trust]) or 0.0
+            # 首筆交叉驗證:外資+外資自營+投信+自營合計 應等於三大法人合計
+            if not checked:
+                checked = True
+                parts = sum((to_num(r[i]) or 0.0) for i in (4, 7, 10, 19)
+                            if len(r) > i)
+                if abs(parts - net) > max(abs(net) * 0.02, 1000):
+                    print(f"[warn] 上櫃法人欄位交叉驗證失敗"
+                          f"(分項合計 {parts:.0f} vs 官方合計 {net:.0f}),"
+                          f"{d} 起停用拆分,僅取合計。")
+                    i_fore = i_trust = None
+            if i_fore is not None:
+                rec["foreign_shares"] = fore
+                rec["trust_shares"] = trust
         out.append(rec)
     return out
 
