@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-15T00:40:53",
+ "generated_at": "2026-07-15T01:03:38",
  "trade_date": "2026-07-14",
  "base_dates": {
   "daily": "2026-07-13",
@@ -336,8 +336,8 @@
     "trading_value": 20095455488,
     "trading_volume": 317160430,
     "inst_net_value": 1686160275,
-    "foreign_net_value": 1505265942,
-    "trust_net_value": 57114929
+    "foreign_net_value": 1522903116,
+    "trust_net_value": 74752103
    },
    "qtd": {
     "avg_change_pct": 0.56,
@@ -756,8 +756,8 @@
     "trading_value": 247701384180,
     "trading_volume": 4745649976,
     "inst_net_value": 1214345802,
-    "foreign_net_value": -10663104152,
-    "trust_net_value": 10544184848
+    "foreign_net_value": -10684698686,
+    "trust_net_value": 10522590314
    },
    "qtd": {
     "avg_change_pct": 1.54,
@@ -868,8 +868,8 @@
     "trading_value": 48626970,
     "trading_volume": 2153572,
     "inst_net_value": -2714796,
-    "foreign_net_value": 0,
-    "trust_net_value": 0
+    "foreign_net_value": -522150,
+    "trust_net_value": -522150
    },
    "qtd": {
     "avg_change_pct": 0.45,
@@ -1414,8 +1414,8 @@
     "trading_value": 19068464532,
     "trading_volume": 341098070,
     "inst_net_value": 1021339708,
-    "foreign_net_value": 1509495948,
-    "trust_net_value": 152780618
+    "foreign_net_value": 1165484021,
+    "trust_net_value": -191231309
    },
    "qtd": {
     "avg_change_pct": 0.97,
@@ -2268,8 +2268,8 @@
     "trading_value": 46993844735,
     "trading_volume": 1613142717,
     "inst_net_value": 1486115721,
-    "foreign_net_value": 77616804,
-    "trust_net_value": 1594520488
+    "foreign_net_value": 75240353,
+    "trust_net_value": 1592144037
    },
    "qtd": {
     "avg_change_pct": 0.89,
@@ -2436,8 +2436,8 @@
     "trading_value": 728150826,
     "trading_volume": 16702170,
     "inst_net_value": 66360888,
-    "foreign_net_value": 0,
-    "trust_net_value": 0
+    "foreign_net_value": 30510677,
+    "trust_net_value": 30510677
    },
    "qtd": {
     "avg_change_pct": -3.63,
@@ -2968,8 +2968,8 @@
     "trading_value": 370526875,
     "trading_volume": 1455974,
     "inst_net_value": -2487571,
-    "foreign_net_value": 0,
-    "trust_net_value": 0
+    "foreign_net_value": 5714156,
+    "trust_net_value": 5714156
    },
    "qtd": {
     "avg_change_pct": 10.6,
@@ -4830,8 +4830,8 @@
     "trading_value": 94480142811,
     "trading_volume": 1437897090,
     "inst_net_value": 1854988937,
-    "foreign_net_value": 3588256925,
-    "trust_net_value": -871268385
+    "foreign_net_value": 3341723436,
+    "trust_net_value": -1117801874
    },
    "qtd": {
     "avg_change_pct": 0.36,
@@ -5544,8 +5544,8 @@
     "trading_value": 24670991114,
     "trading_volume": 758947516,
     "inst_net_value": -361985900,
-    "foreign_net_value": -2149156431,
-    "trust_net_value": 1383689300
+    "foreign_net_value": -1994046956,
+    "trust_net_value": 1538798775
    },
    "qtd": {
     "avg_change_pct": -1.03,
@@ -6202,8 +6202,8 @@
     "trading_value": 4990200612,
     "trading_volume": 56991490,
     "inst_net_value": -122768885,
-    "foreign_net_value": -162872287,
-    "trust_net_value": 42036444
+    "foreign_net_value": -145805247,
+    "trust_net_value": 59103484
    },
    "qtd": {
     "avg_change_pct": -2.01,
@@ -6706,8 +6706,8 @@
     "trading_value": 20113113066,
     "trading_volume": 329242674,
     "inst_net_value": 3063799547,
-    "foreign_net_value": 2165188619,
-    "trust_net_value": 365445624
+    "foreign_net_value": 2159571543,
+    "trust_net_value": 359828548
    },
    "qtd": {
     "avg_change_pct": -1.59,
@@ -7322,8 +7322,8 @@
     "trading_value": 98795121688,
     "trading_volume": 2594778292,
     "inst_net_value": 212705468,
-    "foreign_net_value": -700441387,
-    "trust_net_value": 1111114400
+    "foreign_net_value": -678833586,
+    "trust_net_value": 1132722201
    },
    "qtd": {
     "avg_change_pct": -2.55,
@@ -8554,8 +8554,8 @@
     "trading_value": 18578140634,
     "trading_volume": 683120362,
     "inst_net_value": 555149058,
-    "foreign_net_value": -23583759,
-    "trust_net_value": 557707635
+    "foreign_net_value": 81784696,
+    "trust_net_value": 663076090
    },
    "qtd": {
     "avg_change_pct": -1.48,
@@ -9212,8 +9212,8 @@
     "trading_value": 161098573661,
     "trading_volume": 2775257012,
     "inst_net_value": 12452397682,
-    "foreign_net_value": 11250749729,
-    "trust_net_value": 1161630089
+    "foreign_net_value": 11301100867,
+    "trust_net_value": 1211981227
    },
    "qtd": {
     "avg_change_pct": 2.6,
@@ -10094,8 +10094,8 @@
     "trading_value": 35413098203,
     "trading_volume": 365432458,
     "inst_net_value": -1743329716,
-    "foreign_net_value": -5592152818,
-    "trust_net_value": 4878307737
+    "foreign_net_value": -5901495872,
+    "trust_net_value": 4568964683
    },
    "qtd": {
     "avg_change_pct": -3.38,
@@ -11914,8 +11914,8 @@
     "trading_value": 92407869038,
     "trading_volume": 613539600,
     "inst_net_value": 249606009,
-    "foreign_net_value": -1077444223,
-    "trust_net_value": 498958900
+    "foreign_net_value": 232384714,
+    "trust_net_value": 1808787837
    },
    "qtd": {
     "avg_change_pct": 0.42,
@@ -13384,8 +13384,8 @@
     "trading_value": 176744404620,
     "trading_volume": 1196435420,
     "inst_net_value": -2950297077,
-    "foreign_net_value": -1041665285,
-    "trust_net_value": -1139684897
+    "foreign_net_value": -1447627122,
+    "trust_net_value": -1545646734
    },
    "qtd": {
     "avg_change_pct": -0.87,
@@ -13622,8 +13622,8 @@
     "trading_value": 2576492378,
     "trading_volume": 16718166,
     "inst_net_value": 18851503,
-    "foreign_net_value": 500620,
-    "trust_net_value": 21302375
+    "foreign_net_value": 32958019,
+    "trust_net_value": 53759774
    },
    "qtd": {
     "avg_change_pct": -1.66,
@@ -13706,8 +13706,8 @@
     "trading_value": 175728694,
     "trading_volume": 642741,
     "inst_net_value": -25725412,
-    "foreign_net_value": 0,
-    "trust_net_value": 0
+    "foreign_net_value": 4527100,
+    "trust_net_value": 4527100
    },
    "qtd": {
     "avg_change_pct": -6.5,
@@ -14350,8 +14350,8 @@
     "trading_value": 8826027647,
     "trading_volume": 137297924,
     "inst_net_value": 383102551,
-    "foreign_net_value": 202520991,
-    "trust_net_value": 654288
+    "foreign_net_value": 210337667,
+    "trust_net_value": 8470964
    },
    "qtd": {
     "avg_change_pct": -1.41,
@@ -15736,8 +15736,8 @@
     "trading_value": 40928919,
     "trading_volume": 1078582,
     "inst_net_value": 2046001,
-    "foreign_net_value": 0,
-    "trust_net_value": 0
+    "foreign_net_value": 1595950,
+    "trust_net_value": 1595950
    },
    "qtd": {
     "avg_change_pct": -0.72,
@@ -16058,8 +16058,8 @@
     "trading_value": 134892042,
     "trading_volume": 3407054,
     "inst_net_value": -36700,
-    "foreign_net_value": 1162650,
-    "trust_net_value": 0
+    "foreign_net_value": 1283050,
+    "trust_net_value": 120400
    },
    "qtd": {
     "avg_change_pct": -2.0,
@@ -16464,8 +16464,8 @@
     "trading_value": 16785570619,
     "trading_volume": 58284663,
     "inst_net_value": 1305946420,
-    "foreign_net_value": 0,
-    "trust_net_value": 0
+    "foreign_net_value": -936830429,
+    "trust_net_value": -936830429
    },
    "qtd": {
     "avg_change_pct": -5.11,
@@ -16772,8 +16772,8 @@
     "trading_value": 19523392098,
     "trading_volume": 488386206,
     "inst_net_value": -1132003565,
-    "foreign_net_value": -811455899,
-    "trust_net_value": 27122778
+    "foreign_net_value": -804635059,
+    "trust_net_value": 33943618
    },
    "qtd": {
     "avg_change_pct": -2.05,
@@ -16884,8 +16884,8 @@
     "trading_value": 1421626177,
     "trading_volume": 8079926,
     "inst_net_value": -3915014,
-    "foreign_net_value": -10431096,
-    "trust_net_value": 17472124
+    "foreign_net_value": -10359296,
+    "trust_net_value": 17543924
    },
    "qtd": {
     "avg_change_pct": -4.08,
@@ -17150,8 +17150,8 @@
     "trading_value": 18503035788,
     "trading_volume": 51300276,
     "inst_net_value": 1867934319,
-    "foreign_net_value": 1982368999,
-    "trust_net_value": -29046805
+    "foreign_net_value": 1983616249,
+    "trust_net_value": -27799555
    },
    "qtd": {
     "avg_change_pct": -1.21,
@@ -17738,8 +17738,8 @@
     "trading_value": 309957550087,
     "trading_volume": 1089961977,
     "inst_net_value": -14323992015,
-    "foreign_net_value": -13560987080,
-    "trust_net_value": -135111289
+    "foreign_net_value": -13869832981,
+    "trust_net_value": -443957190
    },
    "qtd": {
     "avg_change_pct": -4.18,
@@ -17920,8 +17920,8 @@
     "trading_value": 7574326903,
     "trading_volume": 215159006,
     "inst_net_value": -638138684,
-    "foreign_net_value": 0,
-    "trust_net_value": 0
+    "foreign_net_value": -241362879,
+    "trust_net_value": -241362879
    },
    "qtd": {
     "avg_change_pct": -5.93,
@@ -19152,8 +19152,8 @@
     "trading_value": 342400430070,
     "trading_volume": 1972210303,
     "inst_net_value": -11372014109,
-    "foreign_net_value": -14535695588,
-    "trust_net_value": 9807115760
+    "foreign_net_value": -17275158292,
+    "trust_net_value": 7067653056
    },
    "qtd": {
     "avg_change_pct": -3.93,
@@ -19936,8 +19936,8 @@
     "trading_value": 129003222936,
     "trading_volume": 548596405,
     "inst_net_value": -203720874,
-    "foreign_net_value": 22203394,
-    "trust_net_value": 0
+    "foreign_net_value": 1828881939,
+    "trust_net_value": 1806678545
    },
    "qtd": {
     "avg_change_pct": -5.97,
@@ -21490,8 +21490,8 @@
     "trading_value": 737993653274,
     "trading_volume": 11238555524,
     "inst_net_value": -22836251384,
-    "foreign_net_value": -16398948480,
-    "trust_net_value": -1898754587
+    "foreign_net_value": -17624990800,
+    "trust_net_value": -3124796907
    },
    "qtd": {
     "avg_change_pct": -5.54,
@@ -23534,8 +23534,8 @@
     "trading_value": 1321216815212,
     "trading_volume": 4271866292,
     "inst_net_value": -8331426243,
-    "foreign_net_value": 24344337754,
-    "trust_net_value": -15336036122
+    "foreign_net_value": 17033982272,
+    "trust_net_value": -22646391604
    },
    "qtd": {
     "avg_change_pct": -6.88,
@@ -26572,8 +26572,8 @@
     "trading_value": 2728382540970,
     "trading_volume": 11199499392,
     "inst_net_value": -60484652531,
-    "foreign_net_value": -113460921408,
-    "trust_net_value": 56124411994
+    "foreign_net_value": -113610495113,
+    "trust_net_value": 55974838289
    },
    "qtd": {
     "avg_change_pct": -5.51,
@@ -27608,8 +27608,8 @@
     "trading_value": 324003785715,
     "trading_volume": 1373583946,
     "inst_net_value": 14739422286,
-    "foreign_net_value": -6011315702,
-    "trust_net_value": 18892433349
+    "foreign_net_value": -6710025503,
+    "trust_net_value": 18193723548
    },
    "qtd": {
     "avg_change_pct": -3.19,
@@ -30044,8 +30044,8 @@
     "trading_value": 4211623715118,
     "trading_volume": 13787725167,
     "inst_net_value": -153468520152,
-    "foreign_net_value": -175292888839,
-    "trust_net_value": 8066646192
+    "foreign_net_value": -168622600534,
+    "trust_net_value": 14736934497
    },
    "qtd": {
     "avg_change_pct": -6.22,
@@ -30128,8 +30128,8 @@
     "trading_value": 1140444,
     "trading_volume": 32579,
     "inst_net_value": -31450,
-    "foreign_net_value": 0,
-    "trust_net_value": 0
+    "foreign_net_value": -31450,
+    "trust_net_value": -31450
    },
    "qtd": {
     "avg_change_pct": null,
@@ -30256,8 +30256,8 @@
     "trading_value": 449273049228,
     "trading_volume": 1930055916,
     "inst_net_value": 24221529043,
-    "foreign_net_value": -1381554910,
-    "trust_net_value": 3744114000
+    "foreign_net_value": 10182526940,
+    "trust_net_value": 15308195850
    },
    "qtd": {
     "avg_change_pct": 35.18,
@@ -30424,8 +30424,8 @@
     "trading_value": 148615493156,
     "trading_volume": 1325410400,
     "inst_net_value": 3420220137,
-    "foreign_net_value": 4318136365,
-    "trust_net_value": 4872600
+    "foreign_net_value": 4836722658,
+    "trust_net_value": 523458893
    },
    "qtd": {
     "avg_change_pct": 13.09,
@@ -30886,8 +30886,8 @@
     "trading_value": 189029853439,
     "trading_volume": 1410617234,
     "inst_net_value": -5166902569,
-    "foreign_net_value": -14181387072,
-    "trust_net_value": 10425645650
+    "foreign_net_value": -15839727869,
+    "trust_net_value": 8767304853
    },
    "qtd": {
     "avg_change_pct": -11.41,
@@ -31152,8 +31152,8 @@
     "trading_value": 1158479456044,
     "trading_volume": 5876768423,
     "inst_net_value": -51302380604,
-    "foreign_net_value": -25931192900,
-    "trust_net_value": -21497047538
+    "foreign_net_value": -29216238815,
+    "trust_net_value": -24782093453
    },
    "qtd": {
     "avg_change_pct": -8.44,
@@ -31348,8 +31348,8 @@
     "trading_value": 239101189516,
     "trading_volume": 641232127,
     "inst_net_value": -12561396400,
-    "foreign_net_value": -12556459948,
-    "trust_net_value": -743441308
+    "foreign_net_value": -12640635892,
+    "trust_net_value": -827617252
    },
    "qtd": {
     "avg_change_pct": -3.09,
@@ -31684,8 +31684,8 @@
     "trading_value": 1189573631272,
     "trading_volume": 6160835800,
     "inst_net_value": -60459106964,
-    "foreign_net_value": -87374879421,
-    "trust_net_value": 29867545687
+    "foreign_net_value": -87176674329,
+    "trust_net_value": 30065750779
    },
    "qtd": {
     "avg_change_pct": -8.2,
@@ -31936,8 +31936,8 @@
     "trading_value": 368766473483,
     "trading_volume": 1069222995,
     "inst_net_value": -29235289225,
-    "foreign_net_value": -30946729509,
-    "trust_net_value": 1734900712
+    "foreign_net_value": -30718674592,
+    "trust_net_value": 1962955629
    },
    "qtd": {
     "avg_change_pct": -2.88,
@@ -32216,8 +32216,8 @@
     "trading_value": 1130057506164,
     "trading_volume": 1142326483,
     "inst_net_value": -96473618831,
-    "foreign_net_value": -140392431705,
-    "trust_net_value": 32685601341
+    "foreign_net_value": -138710307097,
+    "trust_net_value": 34367725949
    },
    "qtd": {
     "avg_change_pct": -4.41,
@@ -32384,8 +32384,8 @@
     "trading_value": 583080629600,
     "trading_volume": 241770291,
     "inst_net_value": -31380099709,
-    "foreign_net_value": -23524361787,
-    "trust_net_value": -3451952674
+    "foreign_net_value": -23050461568,
+    "trust_net_value": -2978052455
    },
    "qtd": {
     "avg_change_pct": -9.06,
@@ -32608,8 +32608,8 @@
     "trading_value": 1156173553094,
     "trading_volume": 801133145,
     "inst_net_value": -96896191778,
-    "foreign_net_value": -133810732304,
-    "trust_net_value": 29328859672
+    "foreign_net_value": -137381629140,
+    "trust_net_value": 25757962836
    },
    "qtd": {
     "avg_change_pct": -9.52,
@@ -32804,8 +32804,8 @@
     "trading_value": 115233875832,
     "trading_volume": 457350144,
     "inst_net_value": 1163124970,
-    "foreign_net_value": 2132960194,
-    "trust_net_value": -631464090
+    "foreign_net_value": 1822759970,
+    "trust_net_value": -941664314
    },
    "qtd": {
     "avg_change_pct": -8.8,
@@ -32944,8 +32944,8 @@
     "trading_value": 496385353741,
     "trading_volume": 1149679545,
     "inst_net_value": -8696085789,
-    "foreign_net_value": -20091211019,
-    "trust_net_value": 15117340280
+    "foreign_net_value": -22914077724,
+    "trust_net_value": 12294473575
    },
    "qtd": {
     "avg_change_pct": -6.79,
@@ -33196,8 +33196,8 @@
     "trading_value": 313963926923,
     "trading_volume": 708353896,
     "inst_net_value": -10608373024,
-    "foreign_net_value": -12583776447,
-    "trust_net_value": -926470658
+    "foreign_net_value": -14572281337,
+    "trust_net_value": -2914975548
    },
    "qtd": {
     "avg_change_pct": -3.68,
@@ -33392,8 +33392,8 @@
     "trading_value": 152921011229,
     "trading_volume": 127356386,
     "inst_net_value": 1280515924,
-    "foreign_net_value": 3217783496,
-    "trust_net_value": 169899335
+    "foreign_net_value": 2798676491,
+    "trust_net_value": -249207670
    },
    "qtd": {
     "avg_change_pct": -13.07,
@@ -33602,8 +33602,8 @@
     "trading_value": 673962567152,
     "trading_volume": 1373771397,
     "inst_net_value": -30790482038,
-    "foreign_net_value": -34459927161,
-    "trust_net_value": 5097305160
+    "foreign_net_value": -34732846987,
+    "trust_net_value": 4824385334
    },
    "qtd": {
     "avg_change_pct": -11.54,
@@ -33756,8 +33756,8 @@
     "trading_value": 33203563172,
     "trading_volume": 307586168,
     "inst_net_value": -614475239,
-    "foreign_net_value": -9674545,
-    "trust_net_value": -438407000
+    "foreign_net_value": 1809036,
+    "trust_net_value": -426923419
    },
    "qtd": {
     "avg_change_pct": -3.62,
@@ -33980,8 +33980,8 @@
     "trading_value": 165227464495,
     "trading_volume": 250089567,
     "inst_net_value": -2593647535,
-    "foreign_net_value": 1962936175,
-    "trust_net_value": -94117625
+    "foreign_net_value": -830001033,
+    "trust_net_value": -2887054833
    },
    "qtd": {
     "avg_change_pct": -10.71,
@@ -34190,8 +34190,8 @@
     "trading_value": 1393386624587,
     "trading_volume": 5520169165,
     "inst_net_value": -129196405346,
-    "foreign_net_value": -167740551625,
-    "trust_net_value": 30934937989
+    "foreign_net_value": -167298436333,
+    "trust_net_value": 31377053281
    },
    "qtd": {
     "avg_change_pct": -10.25,
@@ -34442,8 +34442,8 @@
     "trading_value": 648589051113,
     "trading_volume": 2666184483,
     "inst_net_value": -21058321341,
-    "foreign_net_value": -28891166767,
-    "trust_net_value": 6874496812
+    "foreign_net_value": -27976417876,
+    "trust_net_value": 7789245703
    },
    "qtd": {
     "avg_change_pct": -6.23,
@@ -34624,8 +34624,8 @@
     "trading_value": 121176993355,
     "trading_volume": 568508093,
     "inst_net_value": 2455592067,
-    "foreign_net_value": 2486167454,
-    "trust_net_value": -810644394
+    "foreign_net_value": 2813832721,
+    "trust_net_value": -482979127
    },
    "qtd": {
     "avg_change_pct": -2.6,
@@ -34848,8 +34848,8 @@
     "trading_value": 845637592748,
     "trading_volume": 1602742921,
     "inst_net_value": 4689741762,
-    "foreign_net_value": 19001592220,
-    "trust_net_value": -8166884338
+    "foreign_net_value": 18009053078,
+    "trust_net_value": -9159423480
    },
    "qtd": {
     "avg_change_pct": -22.28,
@@ -34988,8 +34988,8 @@
     "trading_value": 762667042570,
     "trading_volume": 1096871627,
     "inst_net_value": 3655404884,
-    "foreign_net_value": 19403383918,
-    "trust_net_value": -10336832593
+    "foreign_net_value": 18663982687,
+    "trust_net_value": -11076233824
    },
    "qtd": {
     "avg_change_pct": -22.59,
