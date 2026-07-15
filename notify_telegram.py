@@ -2,13 +2,15 @@
 """
 Telegram 收盤通知
 =================
-讀取 output/sector_stats.json,整理當日重點摘要後推播到 Telegram。
+推播兩則獨立訊息:
+  1. 盤後族群熱力    ← output/sector_stats.json
+  2. 期貨標的熱力    ← output/futures_stats.json(母體 = 期交所股票期貨標的)
 
 需要環境變數(GitHub Secrets 提供):
   TELEGRAM_BOT_TOKEN : BotFather 給的機器人 token
   TELEGRAM_CHAT_ID   : 你的聊天室 ID
 
-設計原則:通知失敗不影響主管線(永遠以 exit 0 結束)。
+設計原則:通知失敗不影響主管線(永遠以 exit 0 結束);任一則無資料則略過該則。
 """
 
 import json
@@ -18,7 +20,10 @@ from pathlib import Path
 
 import requests
 
-STATS_FILE = Path(__file__).resolve().parent / "output" / "sector_stats.json"
+BASE = Path(__file__).resolve().parent
+STATS_FILE = BASE / "output" / "sector_stats.json"
+FUT_STATS_FILE = BASE / "output" / "futures_stats.json"
+SITE = "https://pjryan168.github.io/TWSE-Money-Flow"
 
 W = {"chg": 0.42, "value": 0.28, "inst": 0.18, "breadth": 0.12}  # 複合強度權重
 
@@ -55,7 +60,29 @@ def pct(v) -> str:
     return "—" if v is None else f"{v:+.2f}%"
 
 
+def _divergence_lines(themes: list[dict]) -> list[str]:
+    """價量籌碼背離:漲但法人大賣 / 跌但法人大買。"""
+    div_up = [t for t in themes
+              if (t["daily"]["avg_change_pct"] or 0) > 1
+              and (t["daily"].get("inst_net_value") or 0) < -10 * 1e8]
+    div_dn = [t for t in themes
+              if (t["daily"]["avg_change_pct"] or 0) < -1
+              and (t["daily"].get("inst_net_value") or 0) > 10 * 1e8]
+    lines = []
+    if div_up or div_dn:
+        lines.append("")
+        lines.append("⚠️ <b>價量籌碼背離</b>")
+        for t in div_up:
+            lines.append(f"・{t['name']} 漲 {pct(t['daily']['avg_change_pct'])} "
+                         f"但法人賣超 {yi(t['daily']['inst_net_value'])}億")
+        for t in div_dn:
+            lines.append(f"・{t['name']} 跌 {pct(t['daily']['avg_change_pct'])} "
+                         f"但法人買超 {yi(t['daily']['inst_net_value'])}億")
+    return lines
+
+
 def build_message(data: dict) -> str:
+    """盤後族群(全市場)摘要。"""
     themes = [x for x in data.get("themes", [])
               if x.get("daily", {}).get("avg_change_pct") is not None]
     if not themes:
@@ -82,44 +109,64 @@ def build_message(data: dict) -> str:
                  f"{yi(inst_sell['daily']['inst_net_value'])}億")
     lines.append(f"📉 最弱族群:{weak['name']} {pct(weak['daily']['avg_change_pct'])}")
 
-    # 背離提醒:漲但法人大賣 / 跌但法人大買
-    div_up = [t for t in themes
-              if (t["daily"]["avg_change_pct"] or 0) > 1
-              and (t["daily"]["inst_net_value"] or 0) < -10 * 1e8]
-    div_dn = [t for t in themes
-              if (t["daily"]["avg_change_pct"] or 0) < -1
-              and (t["daily"]["inst_net_value"] or 0) > 10 * 1e8]
-    if div_up or div_dn:
-        lines.append("")
-        lines.append("⚠️ <b>價量籌碼背離</b>")
-        for t in div_up:
-            lines.append(f"・{t['name']} 漲 {pct(t['daily']['avg_change_pct'])} "
-                         f"但法人賣超 {yi(t['daily']['inst_net_value'])}億")
-        for t in div_dn:
-            lines.append(f"・{t['name']} 跌 {pct(t['daily']['avg_change_pct'])} "
-                         f"但法人買超 {yi(t['daily']['inst_net_value'])}億")
-
+    lines += _divergence_lines(themes)
     lines.append("")
-    lines.append("📱 完整熱力圖 → https://pjryan168.github.io/TWSE-Money-Flow/")
+    lines.append(f"📱 完整熱力圖 → {SITE}/")
     return "\n".join(lines)
 
 
-def main() -> None:
-    token = os.environ.get("TELEGRAM_BOT_TOKEN", "").strip()
-    chat_id = os.environ.get("TELEGRAM_CHAT_ID", "").strip()
-    if not token or not chat_id:
-        print("[info] 未設定 TELEGRAM_BOT_TOKEN / TELEGRAM_CHAT_ID,略過通知。")
-        return
-    if not STATS_FILE.exists():
-        print("[info] 找不到統計結果檔,略過通知。")
-        return
+def build_futures_message(data: dict) -> str:
+    """期貨標的(個股/ETF)摘要。"""
+    themes = [x for x in data.get("themes", [])
+              if x.get("daily", {}).get("avg_change_pct") is not None]
 
-    data = json.loads(STATS_FILE.read_text(encoding="utf-8"))
-    msg = build_message(data)
+    lines = [f"⚙️ <b>期貨標的熱力|{data.get('trade_date', '')}</b>",
+             f"<i>母體:期交所股票期貨標的 {data.get('universe_count', '—')} 檔"
+             f"(命中行情 {data.get('matched_count', '—')})</i>", ""]
+
+    # 商品類型:個股 vs ETF 當日表現
+    for pt in data.get("product_types", []):
+        d = pt.get("daily", {})
+        if d.get("avg_change_pct") is None:
+            continue
+        icon = "📈" if pt["name"] == "個股" else "🧺"
+        lines.append(f"{icon} {pt['name']}({pt['stock_count']}檔)  "
+                     f"{pct(d['avg_change_pct'])}|法人 {yi(d.get('inst_net_value'))}億"
+                     f"|齊漲 {d.get('up_ratio')}%")
+
+    # 焦點產業 TOP3(僅計期貨標的成分)
+    if themes:
+        lines.append("")
+        lines.append("🔥 <b>期貨標的族群 TOP3</b>  <i>(漲幅+量能+法人+齊漲綜合)</i>")
+        medals = ["🥇", "🥈", "🥉"]
+        for i, t in enumerate(composite_rank(themes)[:3]):
+            d = t["daily"]
+            lines.append(
+                f"{medals[i]} {t['name']}  {pct(d['avg_change_pct'])}"
+                f"|法人 {yi(d['inst_net_value'])}億|齊漲 {d['up_ratio']}%")
+
+        weak = min(themes, key=lambda x: x["daily"]["avg_change_pct"])
+        inst_buy = max(themes, key=lambda x: x["daily"].get("inst_net_value") or 0)
+        inst_sell = min(themes, key=lambda x: x["daily"].get("inst_net_value") or 0)
+        lines.append("")
+        lines.append(f"💰 法人最捧:{inst_buy['name']} "
+                     f"{yi(inst_buy['daily']['inst_net_value'])}億")
+        lines.append(f"🧊 法人最倒:{inst_sell['name']} "
+                     f"{yi(inst_sell['daily']['inst_net_value'])}億")
+        lines.append(f"📉 最弱族群:{weak['name']} {pct(weak['daily']['avg_change_pct'])}")
+        lines += _divergence_lines(themes)
+
+    if len(lines) <= 3:  # 只有標頭,無任何內容
+        return ""
+    lines.append("")
+    lines.append(f"📱 期貨標的熱力圖 → {SITE}/futures.html")
+    return "\n".join(lines)
+
+
+def send(token: str, chat_id: str, msg: str, label: str) -> None:
     if not msg:
-        print("[info] 無題材資料,略過通知。")
+        print(f"[info] {label}:無資料,略過。")
         return
-
     try:
         r = requests.post(
             f"https://api.telegram.org/bot{token}/sendMessage",
@@ -128,9 +175,33 @@ def main() -> None:
             timeout=30,
         )
         ok = r.json().get("ok", False)
-        print("通知已送出 ✅" if ok else f"[warn] Telegram 回應異常:{r.text[:300]}")
+        print(f"{label} 已送出 ✅" if ok else f"[warn] {label} 回應異常:{r.text[:300]}")
     except Exception as e:  # noqa: BLE001
-        print(f"[warn] 通知送出失敗:{e}")
+        print(f"[warn] {label} 送出失敗:{e}")
+
+
+def _load(path: Path):
+    return json.loads(path.read_text(encoding="utf-8")) if path.exists() else None
+
+
+def main() -> None:
+    token = os.environ.get("TELEGRAM_BOT_TOKEN", "").strip()
+    chat_id = os.environ.get("TELEGRAM_CHAT_ID", "").strip()
+    if not token or not chat_id:
+        print("[info] 未設定 TELEGRAM_BOT_TOKEN / TELEGRAM_CHAT_ID,略過通知。")
+        return
+
+    sector = _load(STATS_FILE)
+    if sector:
+        send(token, chat_id, build_message(sector), "族群通知")
+    else:
+        print("[info] 找不到 sector_stats.json,略過族群通知。")
+
+    futures = _load(FUT_STATS_FILE)
+    if futures:
+        send(token, chat_id, build_futures_message(futures), "期貨標的通知")
+    else:
+        print("[info] 找不到 futures_stats.json,略過期貨標的通知。")
 
 
 if __name__ == "__main__":
