@@ -33,11 +33,14 @@ import requests
 BASE_DIR = Path(__file__).resolve().parent
 OUTPUT_DIR = BASE_DIR / "output"
 THEMES_FILE = BASE_DIR / "themes.json"
+FUTURES_UNIVERSE_FILE = BASE_DIR / "futures_universe.json"  # 期貨標的母體(可自動更新)
+TAIFEX_STOCKLIST_URL = "https://www.taifex.com.tw/cht/2/stockLists"
 
 HEADERS = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"}
 REQ_INTERVAL = 3.0  # 官方網站有流量限制,每次請求間隔秒數
 
-STOCK_ID_RE = re.compile(r"^\d{4}$")  # 只統計 4 碼普通股/ETF
+STOCK_ID_RE = re.compile(r"^\d{4}$")          # 主站沿用:4 碼普通股/ETF
+SEC_ID_RE = re.compile(r"^\d{4,6}[A-Z]?$")    # 放寬:含 5-6 碼與債券 ETF(如 00679B)
 
 
 # ------------------------------------------------------------------ 工具函式
@@ -134,7 +137,7 @@ def fetch_twse_prices(d: date) -> list[dict]:
         if len(r) <= need:
             continue  # 欄位不完整的資料列(官方偶發格式差異),略過
         sid = str(r[i_id]).strip()
-        if not STOCK_ID_RE.match(sid):
+        if not SEC_ID_RE.match(sid):
             continue
         out.append({
             "date": d.isoformat(), "stock_id": sid,
@@ -168,7 +171,7 @@ def fetch_tpex_prices(d: date) -> list[dict]:
         if len(r) <= need:
             continue  # 欄位不完整的資料列,略過
         sid = str(r[i_id]).strip()
-        if not STOCK_ID_RE.match(sid):
+        if not SEC_ID_RE.match(sid):
             continue
         out.append({
             "date": d.isoformat(), "stock_id": sid,
@@ -217,7 +220,7 @@ def fetch_twse_inst(d: date) -> list[dict]:
         if len(r) <= need:
             continue
         sid = str(r[i_id]).strip()
-        if not STOCK_ID_RE.match(sid):
+        if not SEC_ID_RE.match(sid):
             continue
         net = to_num(r[i_net])
         if net is None:
@@ -282,7 +285,7 @@ def fetch_tpex_inst(d: date) -> list[dict]:
         if len(r) <= i_net:
             continue
         sid = str(r[i_id]).strip()
-        if not STOCK_ID_RE.match(sid):
+        if not SEC_ID_RE.match(sid):
             continue
         net = to_num(r[i_net])
         if net is None:
@@ -327,6 +330,117 @@ def fetch_industry_map() -> pd.DataFrame:
     except Exception as e:  # noqa: BLE001
         print(f"[warn] 產業分類抓取失敗({e}),官方類股統計將標為「未分類」。")
         return pd.DataFrame(columns=["stock_id", "sector"])
+
+
+def _mark(cell) -> bool:
+    """期交所標的表用 ● / ◎ 表示「是」。"""
+    s = str(cell)
+    return ("●" in s) or ("◎" in s) or ("是" in s)
+
+
+def fetch_futures_universe() -> pd.DataFrame:
+    """
+    期貨標的母體:即時抓取期交所「股票期貨/股票選擇權交易標的」表。
+
+    只保留「是股票期貨標的」的證券,並依 ◎ 欄位判斷:
+      kind   = 個股 / ETF
+      market = 上市 / 上櫃
+    大型/小型契約(2,000 股 vs 100 股)會對應同一證券,以代號去重。
+
+    成功時將結果寫回 futures_universe.json(自動更新快取);
+    失敗時改讀該檔備援,確保主管線不中斷。
+    回傳欄位:stock_id, fut_name, kind, market。
+    """
+    try:
+        taifex_headers = {
+            **HEADERS,
+            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+            "Accept-Language": "zh-TW,zh;q=0.9",
+            "Referer": "https://www.taifex.com.tw/cht/2/stockLists",
+        }
+        r = requests.get(TAIFEX_STOCKLIST_URL, headers=taifex_headers, timeout=60)
+        r.raise_for_status()
+        r.encoding = "utf-8"
+        tables = pd.read_html(r.text)  # 需要 lxml
+        target = None
+        for t in tables:
+            cols = ["".join(str(c).split()) for c in t.columns]
+            if any("證券代號" in c for c in cols) and any("股票期貨" in c for c in cols):
+                t.columns = cols
+                target = t
+                break
+        if target is None:
+            raise ValueError("找不到標的表格")
+
+        def find(*keys):
+            for c in target.columns:
+                if all(k in c for k in keys):
+                    return c
+            return None
+
+        c_id = find("證券代號")
+        c_name = find("標的證券", "簡稱") or find("簡稱")
+        c_fut = find("是否為", "股票期貨")
+        c_ls = find("上市普通股")
+        c_os = find("上櫃普通股")
+        c_le = find("上市ETF")
+        c_oe = find("上櫃ETF")
+
+        rows, seen = [], set()
+        for _, row in target.iterrows():
+            if c_fut is not None and not _mark(row[c_fut]):
+                continue
+            sid = re.sub(r"\s", "", str(row[c_id]))
+            if not SEC_ID_RE.match(sid) or sid in seen:
+                continue
+            if c_le is not None and _mark(row[c_le]):
+                kind, market = "ETF", "上市"
+            elif c_oe is not None and _mark(row[c_oe]):
+                kind, market = "ETF", "上櫃"
+            elif c_os is not None and _mark(row[c_os]):
+                kind, market = "個股", "上櫃"
+            else:
+                kind, market = "個股", "上市"
+            seen.add(sid)
+            rows.append({"stock_id": sid,
+                         "fut_name": str(row[c_name]).strip() if c_name else "",
+                         "kind": kind, "market": market})
+        if not rows:
+            raise ValueError("解析後無資料")
+
+        df = pd.DataFrame(rows)
+        # 寫回快取(供前端顯示筆數與下次失敗時備援)
+        try:
+            payload = {
+                "source": "TAIFEX stockLists 股票期貨標的",
+                "updated_at": datetime.now().isoformat(timespec="seconds"),
+                "count": len(df),
+                "universe": [
+                    {"stock_id": r.stock_id, "stock_name": r.fut_name,
+                     "kind": r.kind, "market": r.market}
+                    for r in df.itertuples()
+                ],
+            }
+            FUTURES_UNIVERSE_FILE.write_text(
+                json.dumps(payload, ensure_ascii=False, indent=1), encoding="utf-8")
+        except Exception as e:  # noqa: BLE001
+            print(f"[warn] 期貨母體快取寫入失敗({e}),不影響本次統計。")
+
+        print(f"[futures] 期交所即時標的 {len(df)} 檔"
+              f"(個股 {(df.kind == '個股').sum()} / ETF {(df.kind == 'ETF').sum()})")
+        return df
+    except Exception as e:  # noqa: BLE001
+        print(f"[warn] 期交所標的即時抓取失敗({e}),改用 futures_universe.json 備援。")
+        if FUTURES_UNIVERSE_FILE.exists():
+            cache = json.loads(FUTURES_UNIVERSE_FILE.read_text(encoding="utf-8"))
+            uni = cache.get("universe", [])
+            df = pd.DataFrame(uni)
+            if not df.empty:
+                df = df.rename(columns={"stock_name": "fut_name"})
+                print(f"[futures] 備援母體 {len(df)} 檔")
+                return df[["stock_id", "fut_name", "kind", "market"]]
+        print("[warn] 無備援母體,期貨標的統計將略過。")
+        return pd.DataFrame(columns=["stock_id", "fut_name", "kind", "market"])
 
 
 # ------------------------------------------------------------- 日期與統計計算
@@ -556,16 +670,19 @@ def main() -> None:
 
     print("[5/6] 計算個股期間統計與族群聚合...")
     stats = stock_period_stats(px, inst, today_s, bases)
+    # 主站沿用原母體(4 碼普通股);ETF 只用於期貨標的頁
+    stats_main = stats[stats["stock_id"].str.match(r"^\d{4}$")]
 
     industry = fetch_industry_map()
-    official = aggregate(stats, industry, "sector") if not industry.empty else []
+    official = aggregate(stats_main, industry, "sector") if not industry.empty else []
 
+    themes_cfg = {}
     themes_result = []
     if THEMES_FILE.exists():
         themes_cfg = json.loads(THEMES_FILE.read_text(encoding="utf-8"))
         rows = [{"stock_id": sid, "theme": theme}
                 for theme, sids in themes_cfg.items() for sid in sids]
-        themes_result = aggregate(stats, pd.DataFrame(rows), "theme")
+        themes_result = aggregate(stats_main, pd.DataFrame(rows), "theme")
 
     print("[6/6] 輸出 JSON...")
     OUTPUT_DIR.mkdir(exist_ok=True)
@@ -582,6 +699,43 @@ def main() -> None:
     (OUTPUT_DIR / f"sector_stats_{today_s}.json").write_text(
         json.dumps(result, ensure_ascii=False), encoding="utf-8")
     print("完成 → output/sector_stats.json")
+
+    # ---------------------------------------------------- 期貨標的母體(另存)
+    print("[+] 產出期貨標的統計...")
+    universe = fetch_futures_universe()
+    if universe.empty:
+        print("[info] 期貨母體為空,略過 futures_stats.json。")
+    else:
+        fut_ids = set(universe["stock_id"])
+        stats_fut = stats[stats["stock_id"].isin(fut_ids)]
+        # 商品類型(個股/ETF)分組對照
+        kind_map = universe[["stock_id", "kind"]].drop_duplicates("stock_id")
+        fut_official = (aggregate(stats_fut, industry, "sector")
+                        if not industry.empty else [])
+        fut_themes = []
+        if themes_cfg:
+            rows = [{"stock_id": sid, "theme": theme}
+                    for theme, sids in themes_cfg.items() for sid in sids]
+            fut_themes = aggregate(stats_fut, pd.DataFrame(rows), "theme")
+        fut_types = aggregate(stats_fut, kind_map, "kind")
+
+        fut_result = {
+            "generated_at": datetime.now().isoformat(timespec="seconds"),
+            "trade_date": today_s,
+            "base_dates": bases,
+            "universe_count": int(len(fut_ids)),
+            "matched_count": int(stats_fut["stock_id"].nunique()),
+            "note": "母體 = 期交所股票期貨標的(個股/ETF);法人金額為估算值:買賣超股數 × 當日收盤價",
+            "official_sectors": fut_official,
+            "themes": fut_themes,
+            "product_types": fut_types,
+        }
+        (OUTPUT_DIR / "futures_stats.json").write_text(
+            json.dumps(fut_result, ensure_ascii=False, indent=1), encoding="utf-8")
+        (OUTPUT_DIR / f"futures_stats_{today_s}.json").write_text(
+            json.dumps(fut_result, ensure_ascii=False), encoding="utf-8")
+        print(f"完成 → output/futures_stats.json"
+              f"(母體 {len(fut_ids)} 檔,命中行情 {stats_fut['stock_id'].nunique()} 檔)")
 
 
 if __name__ == "__main__":
