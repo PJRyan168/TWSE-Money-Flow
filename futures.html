@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>期貨標的資金熱力</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#10141d;--panel:#171d2a;--panel-2:#1d2536;--line:#2a3348;
+  --text:#e8ecf4;--muted:#8b96ad;
+  --up:#ff5a5a;--up-deep:#c92a2a;--down:#2fbf71;--down-deep:#1a7a4a;
+  --gold:#e8b93c;--flat:#3a4358;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--text);font-family:"Noto Sans TC",sans-serif;min-height:100vh;padding:20px 16px 60px}
+.num{font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums}
+.wrap{max-width:1180px;margin:0 auto}
+header{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px 18px;margin-bottom:6px}
+h1{font-size:26px;font-weight:900;letter-spacing:.06em}
+h1 .fire{color:var(--gold)}
+.meta{color:var(--muted);font-size:13px}
+.meta b{color:var(--text);font-weight:500}
+.basebar{color:var(--muted);font-size:12px;margin-bottom:18px}
+.controls{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:20px}
+.seg{display:flex;background:var(--panel);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.seg button{appearance:none;border:0;background:transparent;color:var(--muted);font:inherit;font-size:14px;font-weight:500;padding:9px 18px;cursor:pointer;transition:background .15s,color .15s}
+.seg button:hover{color:var(--text)}
+.seg button.on{background:var(--panel-2);color:var(--text);font-weight:700}
+.seg button:focus-visible{outline:2px solid var(--gold);outline-offset:-2px}
+
+/* 資金焦點 */
+.focus-note{color:var(--muted);font-size:11.5px;line-height:1.7;margin-bottom:9px;padding-left:3px}
+.strong{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:10px;margin-bottom:22px}
+.strong .card{background:linear-gradient(160deg,var(--panel-2),var(--panel));border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:10px;padding:12px 14px}
+.strong .rank{color:var(--gold);font-size:11px;font-weight:700;letter-spacing:.15em}
+.strong .name{font-size:17px;font-weight:700;margin:2px 0 6px}
+.strong .row{display:flex;justify-content:space-between;font-size:12.5px;color:var(--muted);margin-top:2px}
+.strong .row .num{color:var(--text)}
+
+/* 熱力磚牆 */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(158px,1fr));gap:8px}
+.tile{border-radius:9px;padding:11px 12px;cursor:pointer;border:1px solid transparent;transition:transform .12s,border-color .12s;position:relative;min-height:96px}
+.tile:hover{transform:translateY(-2px);border-color:rgba(255,255,255,.35)}
+.tile:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.tile.hot::after{content:"";position:absolute;inset:-1px;border-radius:9px;border:1.5px solid var(--gold);pointer-events:none}
+.tile .t-name{font-size:14.5px;font-weight:700;line-height:1.25;text-shadow:0 1px 2px rgba(0,0,0,.35)}
+.tile .t-chg{font-size:20px;font-weight:600;margin-top:5px;text-shadow:0 1px 2px rgba(0,0,0,.35)}
+.tile .t-sub{font-size:11px;opacity:.92;margin-top:5px;line-height:1.5;text-shadow:0 1px 2px rgba(0,0,0,.3)}
+.legend{display:flex;flex-wrap:wrap;gap:14px;margin:14px 2px 0;color:var(--muted);font-size:12px;align-items:center}
+.chip{display:inline-block;width:12px;height:12px;border-radius:3px;vertical-align:-1px;margin-right:5px}
+
+/* 產業地圖 */
+.cat{margin-bottom:30px}
+.cat>h2{font-size:15px;font-weight:900;letter-spacing:.2em;color:var(--gold);border-bottom:1px solid var(--line);padding-bottom:8px;margin-bottom:14px}
+.tpanels{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
+.tpanel{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.tpanel .tp-head{display:flex;justify-content:space-between;align-items:baseline;padding:11px 14px;background:var(--panel-2);cursor:pointer}
+.tpanel .tp-head:focus-visible{outline:2px solid var(--gold);outline-offset:-2px}
+.tpanel .tp-name{font-size:15px;font-weight:700}
+.tpanel .tp-chg{font-size:15px;font-weight:600}
+.tpanel .tp-sub{font-size:11px;color:var(--muted);padding:0 14px 8px;background:var(--panel-2)}
+.tier{display:flex;align-items:center;gap:8px;padding:7px 14px 5px;border-top:1px solid var(--line);background:rgba(255,255,255,.02);position:relative}
+.tier-tag{font-size:11px;font-weight:700;padding:1px 8px;border-radius:4px;letter-spacing:.1em}
+.tier-tag.t0{background:#2b3a5e;color:#9db8ff}
+.tier-tag.t1{background:#4a3a1e;color:var(--gold)}
+.tier-tag.t2{background:#1e3a4a;color:#7fd8e8}
+.tier-sub{font-size:10.5px;color:var(--muted)}
+.tier-avg{font-size:12px;font-weight:600;margin-left:auto}
+.tier-arrow{position:absolute;left:24px;bottom:-9px;color:var(--muted);font-size:9px;opacity:.55;z-index:1}
+.srow{display:flex;align-items:center;gap:10px;padding:8px 14px;border-top:1px solid var(--line);cursor:pointer}
+.srow:hover,.srow:focus-visible{background:var(--panel-2);outline:none}
+.sdot{width:8px;height:8px;border-radius:50%;flex:none}
+.sname{font-size:13.5px;font-weight:500;white-space:nowrap}
+.scode{font-size:11px;color:var(--muted)}
+.sx{font-size:10px;color:var(--gold);border:1px solid var(--gold);border-radius:4px;padding:0 4px;flex:none}
+.srole{font-size:11px;color:var(--muted);flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
+.schg{font-size:13px;font-weight:600;margin-left:auto;flex:none}
+.c-up{color:var(--up)}.c-down{color:var(--down)}.c-flat{color:var(--muted)}
+
+/* 個股詳情浮層 */
+.pop{position:fixed;inset:0;background:rgba(6,9,15,.7);display:none;align-items:flex-end;justify-content:center;z-index:50}
+.pop.open{display:flex}
+.pop .box{background:var(--panel);border:1px solid var(--line);border-radius:16px 16px 0 0;width:min(560px,100%);padding:20px 22px 30px;max-height:80vh;overflow-y:auto}
+.pop .p-title{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:4px}
+.pop h3{font-size:19px;font-weight:900}
+.pop .p-close{appearance:none;border:1px solid var(--line);background:transparent;color:var(--muted);border-radius:7px;padding:4px 12px;font:inherit;font-size:13px;cursor:pointer}
+.pop .p-role{color:var(--gold);font-size:13px;margin-bottom:2px}
+.pop .p-themes{color:var(--muted);font-size:12px;margin-bottom:14px}
+.pop .p-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px}
+.pop .p-cell{background:var(--panel-2);border-radius:10px;padding:10px;text-align:center}
+.pop .p-cell .k{font-size:11px;color:var(--muted)}
+.pop .p-cell .v{font-size:17px;font-weight:600;margin-top:3px}
+.pop .p-row{display:flex;justify-content:space-between;font-size:13.5px;padding:7px 2px;border-top:1px solid var(--line)}
+.pop .p-row span:first-child{color:var(--muted)}
+
+/* 明細抽屜(熱力磚牆用) */
+.drawer{margin-top:26px;background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:none}
+.drawer.open{display:block}
+.drawer .d-head{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;border-bottom:1px solid var(--line)}
+.drawer .d-head h2{font-size:17px;font-weight:700}
+.drawer .d-head button{appearance:none;border:1px solid var(--line);background:transparent;color:var(--muted);border-radius:7px;padding:5px 12px;font:inherit;font-size:13px;cursor:pointer}
+.tblwrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:900px}
+th.sortable{cursor:pointer;user-select:none}
+th.sortable:hover{color:var(--text)}
+th,td{padding:9px 14px;text-align:right;white-space:nowrap}
+th{color:var(--muted);font-weight:500;font-size:12px;border-bottom:1px solid var(--line)}
+th:first-child,td:first-child{text-align:left}
+tbody tr:hover{background:var(--panel-2)}
+td.up{color:var(--up)}td.down{color:var(--down)}
+.state{padding:60px 20px;text-align:center;color:var(--muted);font-size:15px;line-height:1.9}
+.foot{margin-top:40px;color:var(--muted);font-size:11.5px;line-height:1.8;border-top:1px solid var(--line);padding-top:14px}
+
+@media (max-width:520px){
+  body{padding:14px 10px 50px}
+  h1{font-size:21px}
+  .grid{grid-template-columns:repeat(auto-fill,minmax(120px,1fr))}
+  .tile .t-chg{font-size:17px}
+  .tpanels{grid-template-columns:1fr}
+  .srole{display:none}
+}
+@media (prefers-reduced-motion:reduce){.tile,.seg button{transition:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>期貨標的資金<span class="fire">熱力</span></h1>
+    <span class="meta" id="meta"></span>
+    <a class="meta" href="./" style="margin-left:auto;color:var(--gold);text-decoration:none">← 全市場族群熱力</a>
+  </header>
+  <div class="basebar" id="basebar"></div>
+
+  <div class="controls">
+    <div class="seg" id="segClass" role="group" aria-label="分類切換">
+      <button data-v="themes" class="on">焦點產業</button>
+      <button data-v="official_sectors">官方類股</button>
+      <button data-v="product_types">商品類型</button>
+    </div>
+    <div class="seg" id="segPeriod" role="group" aria-label="期間切換">
+      <button data-v="daily" class="on">當日</button>
+      <button data-v="wtd">當周</button>
+      <button data-v="mtd">當月</button>
+      <button data-v="qtd">當季</button>
+      <button data-v="ytd">今年</button>
+    </div>
+  </div>
+
+  <!-- 熱力磚牆檢視 -->
+  <div id="viewHeat">
+    <div class="focus-note" id="focusNote"></div>
+    <div class="strong" id="strong"></div>
+    <div class="grid" id="grid"></div>
+    <div class="legend" id="legend"></div>
+    <section class="drawer" id="drawer" aria-live="polite">
+      <div class="d-head"><h2 id="dTitle"></h2><button id="dClose">收合</button></div>
+      <div class="tblwrap"><table>
+        <thead id="dHead"></thead>
+        <tbody id="dBody"></tbody>
+      </table></div>
+    </section>
+  </div>
+
+  <div class="state" id="state">資料載入中…</div>
+
+  <div class="foot">本頁母體為期交所「股票期貨標的」證券(個股/ETF),行情與法人資料為證券交易所、櫃買中心公開資訊之統計整理,僅供參考,不構成任何投資建議。法人買賣超金額為估算值(買賣超股數 × 收盤價)。投資人應獨立判斷,審慎評估並自負投資風險。</div>
+</div>
+
+<!-- 個股詳情浮層 -->
+<div class="pop" id="pop" role="dialog" aria-modal="true">
+  <div class="box">
+    <div class="p-title"><h3 id="pName"></h3><button class="p-close" id="pClose">關閉</button></div>
+    <div class="p-role" id="pRole"></div>
+    <div class="p-themes" id="pThemes"></div>
+    <div class="p-grid" id="pGrid"></div>
+    <div id="pRows"></div>
+  </div>
+</div>
+
+<script>
+"use strict";
+const $=id=>document.getElementById(id);
+let DATA=null, MAP=null, view="heat", mode="themes", period="daily", openName=null;
+let dSort={key:"chg_daily",dir:-1};   // 明細表排序狀態
+const DCOLS=[["stock","個股"],["close","收盤"],["chg_daily","當日%"],["chg_wtd","當周%"],
+  ["chg_mtd","當月%"],["chg_qtd","當季%"],["chg_ytd","當年%"],
+  ["value_d","成交金額(億)"],["fore_net_d","外資(億)"],["trust_net_d","投信(億)"],
+  ["inst_net_d","三大法人(億)"]];
+let stockLookup={};   // stock_id → 統計資料
+let stockThemes={};   // stock_id → [題材名]
+
+/* ---------- 載入 ---------- */
+(async function load(){
+  try{
+    const r1=await fetch("output/futures_stats.json?t="+Date.now());
+    if(!r1.ok) throw new Error("stats HTTP "+r1.status);
+    DATA=await r1.json();
+
+    (DATA.themes||[]).forEach(t=>t.stocks.forEach(s=>{
+      stockLookup[s.stock_id]=s;
+      (stockThemes[s.stock_id]=stockThemes[s.stock_id]||[]).push(t.name);
+    }));
+    (DATA.official_sectors||[]).forEach(t=>t.stocks.forEach(s=>{
+      if(!stockLookup[s.stock_id]) stockLookup[s.stock_id]=s;
+    }));
+    (DATA.product_types||[]).forEach(t=>t.stocks.forEach(s=>{
+      if(!stockLookup[s.stock_id]) stockLookup[s.stock_id]=s;
+    }));
+
+    $("state").style.display="none";
+    $("meta").innerHTML=`交易日 <b class="num">${DATA.trade_date}</b>・期貨標的母體 <b class="num">${DATA.universe_count??"—"}</b> 檔(命中行情 ${DATA.matched_count??"—"})・更新於 <b class="num">${(DATA.generated_at||"").replace("T"," ")}</b>`;
+    const b=DATA.base_dates||{};
+    $("basebar").textContent=`比較基準 — 日:${b.daily}・周:${b.wtd}・月:${b.mtd}`+(b.qtd?`・季:${b.qtd}`:"")+(b.ytd?`・年:${b.ytd}`:"")+`(各期間自基準日收盤起算;季/年檢視僅提供漲跌幅)`;
+    render();
+  }catch(e){
+    $("state").innerHTML=`讀取資料失敗(${e.message})。請確認管線已成功執行,且 output/futures_stats.json 已產生。`;
+  }
+})();
+
+/* ---------- 控制列 ---------- */
+$("segClass").addEventListener("click",e=>{
+  const b=e.target.closest("button"); if(!b)return;
+  mode=b.dataset.v; openName=null;
+  [...$("segClass").children].forEach(x=>x.classList.toggle("on",x===b));
+  render();
+});
+$("segPeriod").addEventListener("click",e=>{
+  const b=e.target.closest("button"); if(!b)return;
+  period=b.dataset.v;
+  [...$("segPeriod").children].forEach(x=>x.classList.toggle("on",x===b));
+  render();
+});
+$("dClose").addEventListener("click",()=>{openName=null;render();});
+$("pClose").addEventListener("click",()=>$("pop").classList.remove("open"));
+$("pop").addEventListener("click",e=>{if(e.target===$("pop"))$("pop").classList.remove("open");});
+
+/* ---------- 工具 ---------- */
+const yi=v=>v==null?"—":(v/1e8).toFixed(Math.abs(v)>=1e10?0:1);
+const pct=v=>v==null?"—":(v>0?"+":"")+v.toFixed(2)+"%";
+const chgOf=s=>({daily:s.chg_daily,wtd:s.chg_wtd,mtd:s.chg_mtd,qtd:s.chg_qtd,ytd:s.chg_ytd})[period];
+const cls=v=>v==null?"c-flat":v>0.001?"c-up":v<-0.001?"c-down":"c-flat";
+function tileColor(chg){
+  if(chg==null) return "var(--flat)";
+  const a=Math.min(Math.abs(chg)/({daily:4,wtd:8,mtd:15,qtd:25,ytd:40}[period]||15),1);
+  const mix=(c1,c2)=>`color-mix(in srgb, ${c1} ${Math.round(a*100)}%, ${c2})`;
+  if(chg>0.03) return mix("var(--up-deep)","#5a2530");
+  if(chg<-0.03) return mix("var(--down-deep)","#1d3a2e");
+  return "var(--flat)";
+}
+function scores(items){
+  const rank=(arr,key)=>{
+    const sorted=[...arr].map((x,i)=>[key(x)??-Infinity,i]).sort((a,b)=>a[0]-b[0]);
+    const s=new Array(arr.length).fill(0);
+    sorted.forEach(([_,idx],r)=>s[idx]=arr.length>1?r/(arr.length-1):1);
+    return s;
+  };
+  const p=x=>x[period]||{};
+  // 只納入「該期間確實有資料」的指標,權重按比例重新分配
+  // (季/年檢視無成交金額與法人資料,計分自動退回漲幅+齊漲率)
+  const defs=[
+    [.42, x=>p(x).avg_change_pct],
+    [.28, x=>p(x).trading_value],
+    [.18, x=>p(x).inst_net_value],
+    [.12, x=>p(x).up_ratio],
+  ].filter(([_,key])=>items.some(x=>key(x)!=null));
+  const total=defs.reduce((a,[w])=>a+w,0)||1;
+  const ranks=defs.map(([_,key])=>rank(items,key));
+  return items.map((_,i)=>defs.reduce((sum,[w],j)=>sum+(w/total)*ranks[j][i],0));
+}
+
+/* ---------- 個股詳情浮層 ---------- */
+function openStock(sid,name,role){
+  const s=stockLookup[sid];
+  $("pName").textContent=`${sid} ${name||(s&&s.stock_name)||""}`;
+  $("pRole").textContent=role||"";
+  const ths=stockThemes[sid]||[];
+  $("pThemes").textContent=ths.length?`所屬題材(${ths.length}):${ths.join("、")}`:"";
+  if(s){
+    $("pGrid").innerHTML=[["當日",s.chg_daily],["當周",s.chg_wtd],["當月",s.chg_mtd]]
+      .map(([k,v])=>`<div class="p-cell"><div class="k">${k}</div><div class="v ${cls(v)}">${pct(v)}</div></div>`).join("");
+    $("pRows").innerHTML=
+      `<div class="p-row"><span>收盤價</span><span class="num">${s.close==null?"—":s.close}</span></div>
+       <div class="p-row"><span>當日成交金額</span><span class="num">${yi(s.value_d)} 億</span></div>
+       <div class="p-row"><span>當日外資買賣超</span><span class="num ${cls(s.fore_net_d)}">${yi(s.fore_net_d)} 億</span></div>
+       <div class="p-row"><span>當日投信買賣超</span><span class="num ${cls(s.trust_net_d)}">${yi(s.trust_net_d)} 億</span></div>
+       <div class="p-row"><span>當日三大法人合計</span><span class="num ${cls(s.inst_net_d)}">${yi(s.inst_net_d)} 億</span></div>`;
+  }else{
+    $("pGrid").innerHTML="";
+    $("pRows").innerHTML=`<div class="p-row"><span>今日無成交資料</span><span></span></div>`;
+  }
+  $("pop").classList.add("open");
+}
+
+/* ---------- 主渲染 ---------- */
+function render(){
+  if(!DATA) return;
+  renderHeat();
+}
+
+/* ===== 熱力磚牆 ===== */
+function renderHeat(){
+  $("focusNote").textContent=(period==="qtd"||period==="ytd")
+    ? "資金焦點 — 本期間無逐日累計的成交金額與法人資料,計分改以漲跌幅(78%)、齊漲率(22%)排名計算。"
+    : "資金焦點 — 綜合漲跌幅(42%)、成交金額(28%)、法人買賣超(18%)、齊漲率(12%)排名計分,衡量資金關注度而非單純漲勢;弱勢盤中抗跌且法人買超的族群同樣會入榜。";
+  const items=(DATA[mode]||[]).filter(x=>x[period]&&x[period].avg_change_pct!=null);
+  const sc=scores(items);
+  const order=items.map((x,i)=>({x,s:sc[i]})).sort((a,b)=>(b.x[period].avg_change_pct??-99)-(a.x[period].avg_change_pct??-99));
+  const top=[...items.map((x,i)=>({x,s:sc[i]}))].sort((a,b)=>b.s-a.s).slice(0,3);
+  $("strong").innerHTML=top.map((t,i)=>{
+    const p=t.x[period];
+    return `<div class="card"><div class="rank">資金焦點 NO.${i+1}</div><div class="name">${t.x.name}</div>
+      <div class="row"><span>平均漲跌</span><span class="num">${pct(p.avg_change_pct)}</span></div>
+      <div class="row"><span>成交金額</span><span class="num">${yi(p.trading_value)} 億</span></div>
+      <div class="row"><span>三大法人</span><span class="num">${yi(p.inst_net_value)} 億</span></div>
+      <div class="row"><span>├ 外資</span><span class="num ${cls(p.foreign_net_value)}">${yi(p.foreign_net_value)} 億</span></div>
+      <div class="row"><span>└ 投信</span><span class="num ${cls(p.trust_net_value)}">${yi(p.trust_net_value)} 億</span></div>
+      <div class="row"><span>齊漲率</span><span class="num">${p.up_ratio==null?"—":p.up_ratio+"%"}</span></div></div>`;
+  }).join("");
+
+  const netVals=items.map(x=>x[period].inst_net_value??0).sort((a,b)=>b-a);
+  const hotBar=netVals.length?netVals[Math.max(0,Math.floor(netVals.length*.2)-1)]:Infinity;
+  $("grid").innerHTML=order.map(({x})=>{
+    const p=x[period];
+    const hot=(p.inst_net_value??0)>0&&(p.inst_net_value>=hotBar);
+    return `<div class="tile num ${hot?"hot":""}" tabindex="0" role="button" data-name="${x.name}" style="background:${tileColor(p.avg_change_pct)}">
+      <div class="t-name" style="font-family:'Noto Sans TC'">${x.name}</div>
+      <div class="t-chg">${pct(p.avg_change_pct)}</div>
+      <div class="t-sub">額 ${yi(p.trading_value)}億・外資 ${yi(p.foreign_net_value)}億<br>投信 ${yi(p.trust_net_value)}億・齊漲 ${p.up_ratio==null?"—":p.up_ratio+"%"}(${x.stock_count}檔)</div></div>`;
+  }).join("");
+  $("legend").innerHTML=`<span><span class="chip" style="background:var(--up-deep)"></span>上漲(越深越強)</span>
+    <span><span class="chip" style="background:var(--down-deep)"></span>下跌(越深越弱)</span>
+    <span><span class="chip" style="border:1.5px solid var(--gold);background:transparent"></span>法人資金熱區(買超前20%)</span>
+    <span>點磚塊看成分股明細</span>`;
+
+  $("grid").querySelectorAll(".tile").forEach(t=>{
+    const open=()=>{openName=t.dataset.name;renderHeat();
+      $("drawer").scrollIntoView({behavior:"smooth",block:"nearest"});};
+    t.addEventListener("click",open);
+    t.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();open();}});
+  });
+
+  const items2=(DATA[mode]||[]);
+  const cur=items2.find(x=>x.name===openName);
+  $("drawer").classList.toggle("open",!!cur);
+  if(cur){
+    $("dTitle").textContent=cur.name+" 成分股明細";
+    $("dHead").innerHTML="<tr>"+DCOLS.map(([k,label])=>
+      `<th class="sortable" data-key="${k}">${label}${dSort.key===k?(dSort.dir<0?" ▼":" ▲"):""}</th>`).join("")+"</tr>";
+    $("dHead").querySelectorAll("th").forEach(h=>h.addEventListener("click",()=>{
+      const k=h.dataset.key;
+      dSort=dSort.key===k?{key:k,dir:-dSort.dir}:{key:k,dir:-1};
+      renderHeat();
+    }));
+    const val=(s,k)=>k==="stock"?s.stock_id:s[k];
+    const sorted=[...cur.stocks].sort((a,b)=>{
+      const x=val(a,dSort.key),y=val(b,dSort.key);
+      if(x==null&&y==null)return 0;
+      if(x==null)return 1;            // 空值永遠排最後
+      if(y==null)return -1;
+      return (x<y?-1:x>y?1:0)*dSort.dir*(dSort.key==="stock"?-1:1);
+    });
+    $("dBody").innerHTML=sorted.map(s=>{
+      const c=v=>v==null?"":v>0?"up":v<0?"down":"";
+      return `<tr><td>${s.stock_id} ${s.stock_name||""}</td>
+        <td class="num">${s.close==null?"—":s.close}</td>
+        <td class="num ${c(s.chg_daily)}">${pct(s.chg_daily)}</td>
+        <td class="num ${c(s.chg_wtd)}">${pct(s.chg_wtd)}</td>
+        <td class="num ${c(s.chg_mtd)}">${pct(s.chg_mtd)}</td>
+        <td class="num ${c(s.chg_qtd)}">${pct(s.chg_qtd)}</td>
+        <td class="num ${c(s.chg_ytd)}">${pct(s.chg_ytd)}</td>
+        <td class="num">${yi(s.value_d)}</td>
+        <td class="num ${c(s.fore_net_d)}">${yi(s.fore_net_d)}</td>
+        <td class="num ${c(s.trust_net_d)}">${yi(s.trust_net_d)}</td>
+        <td class="num ${c(s.inst_net_d)}">${yi(s.inst_net_d)}</td></tr>`;
+    }).join("");
+  }
+}
+
+</script>
+</body>
+</html>
