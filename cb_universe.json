@@ -1,0 +1,1918 @@
+{
+ "source": "TPEx 最近上櫃轉(交)換公司債",
+ "updated_at": "2026-07-16T21:55:24",
+ "cb_count": 382,
+ "stock_count": 305,
+ "bonds": [
+  {
+   "cb_id": "11011",
+   "cb_name": "台泥",
+   "stock_id": "1101"
+  },
+  {
+   "cb_id": "12561",
+   "cb_name": "鮮活果汁-KY",
+   "stock_id": "1256"
+  },
+  {
+   "cb_id": "13166",
+   "cb_name": "上曜",
+   "stock_id": "1316"
+  },
+  {
+   "cb_id": "13382",
+   "cb_name": "廣華-KY",
+   "stock_id": "1338"
+  },
+  {
+   "cb_id": "140201",
+   "cb_name": "遠東新",
+   "stock_id": "1402"
+  },
+  {
+   "cb_id": "140202",
+   "cb_name": "遠東新",
+   "stock_id": "1402"
+  },
+  {
+   "cb_id": "14363",
+   "cb_name": "華友聯",
+   "stock_id": "1436"
+  },
+  {
+   "cb_id": "14364",
+   "cb_name": "華友聯",
+   "stock_id": "1436"
+  },
+  {
+   "cb_id": "14381",
+   "cb_name": "三地開發",
+   "stock_id": "1438"
+  },
+  {
+   "cb_id": "14664",
+   "cb_name": "聚隆",
+   "stock_id": "1466"
+  },
+  {
+   "cb_id": "14722",
+   "cb_name": "三洋實業",
+   "stock_id": "1472"
+  },
+  {
+   "cb_id": "14723",
+   "cb_name": "三洋實業",
+   "stock_id": "1472"
+  },
+  {
+   "cb_id": "14743",
+   "cb_name": "弘裕",
+   "stock_id": "1474"
+  },
+  {
+   "cb_id": "15142",
+   "cb_name": "亞力",
+   "stock_id": "1514"
+  },
+  {
+   "cb_id": "15261",
+   "cb_name": "日馳",
+   "stock_id": "1526"
+  },
+  {
+   "cb_id": "15364",
+   "cb_name": "和大",
+   "stock_id": "1536"
+  },
+  {
+   "cb_id": "15601",
+   "cb_name": "中砂",
+   "stock_id": "1560"
+  },
+  {
+   "cb_id": "15864",
+   "cb_name": "和勤",
+   "stock_id": "1586"
+  },
+  {
+   "cb_id": "15865",
+   "cb_name": "和勤",
+   "stock_id": "1586"
+  },
+  {
+   "cb_id": "15952",
+   "cb_name": "川寶",
+   "stock_id": "1595"
+  },
+  {
+   "cb_id": "15984",
+   "cb_name": "岱宇",
+   "stock_id": "1598"
+  },
+  {
+   "cb_id": "16095",
+   "cb_name": "大亞",
+   "stock_id": "1609"
+  },
+  {
+   "cb_id": "16231",
+   "cb_name": "大東電",
+   "stock_id": "1623"
+  },
+  {
+   "cb_id": "17172",
+   "cb_name": "長興",
+   "stock_id": "1717"
+  },
+  {
+   "cb_id": "17813",
+   "cb_name": "合世",
+   "stock_id": "1781"
+  },
+  {
+   "cb_id": "17863",
+   "cb_name": "科妍",
+   "stock_id": "1786"
+  },
+  {
+   "cb_id": "19094",
+   "cb_name": "榮成",
+   "stock_id": "1909"
+  },
+  {
+   "cb_id": "20344",
+   "cb_name": "允強",
+   "stock_id": "2034"
+  },
+  {
+   "cb_id": "20662",
+   "cb_name": "世德",
+   "stock_id": "2066"
+  },
+  {
+   "cb_id": "21043",
+   "cb_name": "國際中橡",
+   "stock_id": "2104"
+  },
+  {
+   "cb_id": "22013",
+   "cb_name": "裕隆",
+   "stock_id": "2201"
+  },
+  {
+   "cb_id": "22283",
+   "cb_name": "劍麟",
+   "stock_id": "2228"
+  },
+  {
+   "cb_id": "22331",
+   "cb_name": "宇隆",
+   "stock_id": "2233"
+  },
+  {
+   "cb_id": "22363",
+   "cb_name": "百達-KY",
+   "stock_id": "2236"
+  },
+  {
+   "cb_id": "22471",
+   "cb_name": "汎德永業",
+   "stock_id": "2247"
+  },
+  {
+   "cb_id": "22472",
+   "cb_name": "汎德永業",
+   "stock_id": "2247"
+  },
+  {
+   "cb_id": "23291",
+   "cb_name": "華泰",
+   "stock_id": "2329"
+  },
+  {
+   "cb_id": "23372",
+   "cb_name": "旺宏",
+   "stock_id": "2337"
+  },
+  {
+   "cb_id": "23383",
+   "cb_name": "光罩",
+   "stock_id": "2338"
+  },
+  {
+   "cb_id": "23511",
+   "cb_name": "順德",
+   "stock_id": "2351"
+  },
+  {
+   "cb_id": "23683",
+   "cb_name": "金像電",
+   "stock_id": "2368"
+  },
+  {
+   "cb_id": "23742",
+   "cb_name": "佳能",
+   "stock_id": "2374"
+  },
+  {
+   "cb_id": "24023",
+   "cb_name": "毅嘉",
+   "stock_id": "2402"
+  },
+  {
+   "cb_id": "24271",
+   "cb_name": "三商電",
+   "stock_id": "2427"
+  },
+  {
+   "cb_id": "24361",
+   "cb_name": "偉詮電",
+   "stock_id": "2436"
+  },
+  {
+   "cb_id": "24394",
+   "cb_name": "美律",
+   "stock_id": "2439"
+  },
+  {
+   "cb_id": "24395",
+   "cb_name": "美律",
+   "stock_id": "2439"
+  },
+  {
+   "cb_id": "24423",
+   "cb_name": "新美齊",
+   "stock_id": "2442"
+  },
+  {
+   "cb_id": "24424",
+   "cb_name": "新美齊",
+   "stock_id": "2442"
+  },
+  {
+   "cb_id": "24552",
+   "cb_name": "全新",
+   "stock_id": "2455"
+  },
+  {
+   "cb_id": "24553",
+   "cb_name": "全新",
+   "stock_id": "2455"
+  },
+  {
+   "cb_id": "24624",
+   "cb_name": "良得電",
+   "stock_id": "2462"
+  },
+  {
+   "cb_id": "24642",
+   "cb_name": "盟立",
+   "stock_id": "2464"
+  },
+  {
+   "cb_id": "24672",
+   "cb_name": "志聖",
+   "stock_id": "2467"
+  },
+  {
+   "cb_id": "24673",
+   "cb_name": "志聖",
+   "stock_id": "2467"
+  },
+  {
+   "cb_id": "24762",
+   "cb_name": "鉅祥",
+   "stock_id": "2476"
+  },
+  {
+   "cb_id": "24866",
+   "cb_name": "一詮",
+   "stock_id": "2486"
+  },
+  {
+   "cb_id": "24867",
+   "cb_name": "一詮",
+   "stock_id": "2486"
+  },
+  {
+   "cb_id": "25283",
+   "cb_name": "皇普",
+   "stock_id": "2528"
+  },
+  {
+   "cb_id": "25284",
+   "cb_name": "皇普",
+   "stock_id": "2528"
+  },
+  {
+   "cb_id": "25303",
+   "cb_name": "華建",
+   "stock_id": "2530"
+  },
+  {
+   "cb_id": "25304",
+   "cb_name": "華建",
+   "stock_id": "2530"
+  },
+  {
+   "cb_id": "25483",
+   "cb_name": "華固",
+   "stock_id": "2548"
+  },
+  {
+   "cb_id": "25484",
+   "cb_name": "華固",
+   "stock_id": "2548"
+  },
+  {
+   "cb_id": "26417",
+   "cb_name": "正德",
+   "stock_id": "2641"
+  },
+  {
+   "cb_id": "26418",
+   "cb_name": "正德",
+   "stock_id": "2641"
+  },
+  {
+   "cb_id": "27271",
+   "cb_name": "王品",
+   "stock_id": "2727"
+  },
+  {
+   "cb_id": "27323",
+   "cb_name": "六角",
+   "stock_id": "2732"
+  },
+  {
+   "cb_id": "27324",
+   "cb_name": "六角",
+   "stock_id": "2732"
+  },
+  {
+   "cb_id": "27431",
+   "cb_name": "山富",
+   "stock_id": "2743"
+  },
+  {
+   "cb_id": "27451",
+   "cb_name": "五福",
+   "stock_id": "2745"
+  },
+  {
+   "cb_id": "27531",
+   "cb_name": "八方雲集",
+   "stock_id": "2753"
+  },
+  {
+   "cb_id": "27532",
+   "cb_name": "八方雲集",
+   "stock_id": "2753"
+  },
+  {
+   "cb_id": "27551",
+   "cb_name": "揚秦",
+   "stock_id": "2755"
+  },
+  {
+   "cb_id": "27561",
+   "cb_name": "聯發國際",
+   "stock_id": "2756"
+  },
+  {
+   "cb_id": "29061",
+   "cb_name": "高林",
+   "stock_id": "2906"
+  },
+  {
+   "cb_id": "30112",
+   "cb_name": "今皓",
+   "stock_id": "3011"
+  },
+  {
+   "cb_id": "30134",
+   "cb_name": "晟銘電",
+   "stock_id": "3013"
+  },
+  {
+   "cb_id": "30165",
+   "cb_name": "嘉晶",
+   "stock_id": "3016"
+  },
+  {
+   "cb_id": "30285",
+   "cb_name": "增你強",
+   "stock_id": "3028"
+  },
+  {
+   "cb_id": "30321",
+   "cb_name": "偉訓",
+   "stock_id": "3032"
+  },
+  {
+   "cb_id": "30322",
+   "cb_name": "偉訓",
+   "stock_id": "3032"
+  },
+  {
+   "cb_id": "30336",
+   "cb_name": "威健",
+   "stock_id": "3033"
+  },
+  {
+   "cb_id": "30337",
+   "cb_name": "威健",
+   "stock_id": "3033"
+  },
+  {
+   "cb_id": "30371",
+   "cb_name": "欣興",
+   "stock_id": "3037"
+  },
+  {
+   "cb_id": "30401",
+   "cb_name": "遠見",
+   "stock_id": "3040"
+  },
+  {
+   "cb_id": "30454",
+   "cb_name": "台灣大",
+   "stock_id": "3045"
+  },
+  {
+   "cb_id": "30455",
+   "cb_name": "台灣大",
+   "stock_id": "3045"
+  },
+  {
+   "cb_id": "30882",
+   "cb_name": "艾訊",
+   "stock_id": "3088"
+  },
+  {
+   "cb_id": "30954",
+   "cb_name": "及成",
+   "stock_id": "3095"
+  },
+  {
+   "cb_id": "31222",
+   "cb_name": "笙泉",
+   "stock_id": "3122"
+  },
+  {
+   "cb_id": "31311",
+   "cb_name": "弘塑",
+   "stock_id": "3131"
+  },
+  {
+   "cb_id": "31312",
+   "cb_name": "弘塑",
+   "stock_id": "3131"
+  },
+  {
+   "cb_id": "31352",
+   "cb_name": "凌航",
+   "stock_id": "3135"
+  },
+  {
+   "cb_id": "31413",
+   "cb_name": "晶宏",
+   "stock_id": "3141"
+  },
+  {
+   "cb_id": "31672",
+   "cb_name": "大量",
+   "stock_id": "3167"
+  },
+  {
+   "cb_id": "31882",
+   "cb_name": "鑫龍騰",
+   "stock_id": "3188"
+  },
+  {
+   "cb_id": "32071",
+   "cb_name": "耀勝",
+   "stock_id": "3207"
+  },
+  {
+   "cb_id": "32571",
+   "cb_name": "虹冠電",
+   "stock_id": "3257"
+  },
+  {
+   "cb_id": "32723",
+   "cb_name": "東碩",
+   "stock_id": "3272"
+  },
+  {
+   "cb_id": "32843",
+   "cb_name": "太普高",
+   "stock_id": "3284"
+  },
+  {
+   "cb_id": "32943",
+   "cb_name": "英濟",
+   "stock_id": "3294"
+  },
+  {
+   "cb_id": "33035",
+   "cb_name": "岱稜",
+   "stock_id": "3303"
+  },
+  {
+   "cb_id": "33055",
+   "cb_name": "昇貿",
+   "stock_id": "3305"
+  },
+  {
+   "cb_id": "33121",
+   "cb_name": "弘憶股",
+   "stock_id": "3312"
+  },
+  {
+   "cb_id": "33133",
+   "cb_name": "斐成",
+   "stock_id": "3313"
+  },
+  {
+   "cb_id": "33225",
+   "cb_name": "建舜電",
+   "stock_id": "3322"
+  },
+  {
+   "cb_id": "33245",
+   "cb_name": "雙鴻",
+   "stock_id": "3324"
+  },
+  {
+   "cb_id": "33246",
+   "cb_name": "雙鴻",
+   "stock_id": "3324"
+  },
+  {
+   "cb_id": "33247",
+   "cb_name": "雙鴻",
+   "stock_id": "3324"
+  },
+  {
+   "cb_id": "33466",
+   "cb_name": "麗清",
+   "stock_id": "3346"
+  },
+  {
+   "cb_id": "33571",
+   "cb_name": "臺慶科",
+   "stock_id": "3357"
+  },
+  {
+   "cb_id": "33621",
+   "cb_name": "先進光",
+   "stock_id": "3362"
+  },
+  {
+   "cb_id": "33763",
+   "cb_name": "新日興",
+   "stock_id": "3376"
+  },
+  {
+   "cb_id": "33881",
+   "cb_name": "崇越電",
+   "stock_id": "3388"
+  },
+  {
+   "cb_id": "33902",
+   "cb_name": "旭軟",
+   "stock_id": "3390"
+  },
+  {
+   "cb_id": "34163",
+   "cb_name": "融程電",
+   "stock_id": "3416"
+  },
+  {
+   "cb_id": "34793",
+   "cb_name": "安勤",
+   "stock_id": "3479"
+  },
+  {
+   "cb_id": "34834",
+   "cb_name": "力致",
+   "stock_id": "3483"
+  },
+  {
+   "cb_id": "34843",
+   "cb_name": "崧騰",
+   "stock_id": "3484"
+  },
+  {
+   "cb_id": "34913",
+   "cb_name": "昇達科",
+   "stock_id": "3491"
+  },
+  {
+   "cb_id": "35161",
+   "cb_name": "亞帝歐",
+   "stock_id": "3516"
+  },
+  {
+   "cb_id": "35181",
+   "cb_name": "柏騰",
+   "stock_id": "3518"
+  },
+  {
+   "cb_id": "35221",
+   "cb_name": "御頂",
+   "stock_id": "3522"
+  },
+  {
+   "cb_id": "35265",
+   "cb_name": "凡甲",
+   "stock_id": "3526"
+  },
+  {
+   "cb_id": "35266",
+   "cb_name": "凡甲",
+   "stock_id": "3526"
+  },
+  {
+   "cb_id": "35267",
+   "cb_name": "凡甲",
+   "stock_id": "3526"
+  },
+  {
+   "cb_id": "35431",
+   "cb_name": "州巧",
+   "stock_id": "3543"
+  },
+  {
+   "cb_id": "35482",
+   "cb_name": "兆利",
+   "stock_id": "3548"
+  },
+  {
+   "cb_id": "35483",
+   "cb_name": "兆利",
+   "stock_id": "3548"
+  },
+  {
+   "cb_id": "35513",
+   "cb_name": "世禾",
+   "stock_id": "3551"
+  },
+  {
+   "cb_id": "35642",
+   "cb_name": "其陽",
+   "stock_id": "3564"
+  },
+  {
+   "cb_id": "35872",
+   "cb_name": "閎康",
+   "stock_id": "3587"
+  },
+  {
+   "cb_id": "35914",
+   "cb_name": "艾笛森",
+   "stock_id": "3591"
+  },
+  {
+   "cb_id": "36053",
+   "cb_name": "宏致",
+   "stock_id": "3605"
+  },
+  {
+   "cb_id": "36054",
+   "cb_name": "宏致",
+   "stock_id": "3605"
+  },
+  {
+   "cb_id": "36173",
+   "cb_name": "碩天",
+   "stock_id": "3617"
+  },
+  {
+   "cb_id": "36804",
+   "cb_name": "家登",
+   "stock_id": "3680"
+  },
+  {
+   "cb_id": "36805",
+   "cb_name": "家登",
+   "stock_id": "3680"
+  },
+  {
+   "cb_id": "36806",
+   "cb_name": "家登",
+   "stock_id": "3680"
+  },
+  {
+   "cb_id": "36841",
+   "cb_name": "榮昌",
+   "stock_id": "3684"
+  },
+  {
+   "cb_id": "36872",
+   "cb_name": "歐買尬",
+   "stock_id": "3687"
+  },
+  {
+   "cb_id": "36873",
+   "cb_name": "歐買尬",
+   "stock_id": "3687"
+  },
+  {
+   "cb_id": "36894",
+   "cb_name": "湧德",
+   "stock_id": "3689"
+  },
+  {
+   "cb_id": "36913",
+   "cb_name": "碩禾",
+   "stock_id": "3691"
+  },
+  {
+   "cb_id": "37022",
+   "cb_name": "大聯大",
+   "stock_id": "3702"
+  },
+  {
+   "cb_id": "37023",
+   "cb_name": "大聯大",
+   "stock_id": "3702"
+  },
+  {
+   "cb_id": "370201",
+   "cb_name": "大聯大",
+   "stock_id": "3702"
+  },
+  {
+   "cb_id": "37075",
+   "cb_name": "漢磊",
+   "stock_id": "3707"
+  },
+  {
+   "cb_id": "37083",
+   "cb_name": "上緯投控",
+   "stock_id": "3708"
+  },
+  {
+   "cb_id": "37084",
+   "cb_name": "上緯投控",
+   "stock_id": "3708"
+  },
+  {
+   "cb_id": "37151",
+   "cb_name": "定穎投控",
+   "stock_id": "3715"
+  },
+  {
+   "cb_id": "37152",
+   "cb_name": "定穎投控",
+   "stock_id": "3715"
+  },
+  {
+   "cb_id": "37171",
+   "cb_name": "聯嘉投控",
+   "stock_id": "3717"
+  },
+  {
+   "cb_id": "41135",
+   "cb_name": "聯上",
+   "stock_id": "4113"
+  },
+  {
+   "cb_id": "41136",
+   "cb_name": "聯上",
+   "stock_id": "4113"
+  },
+  {
+   "cb_id": "41236",
+   "cb_name": "晟德",
+   "stock_id": "4123"
+  },
+  {
+   "cb_id": "41237",
+   "cb_name": "晟德",
+   "stock_id": "4123"
+  },
+  {
+   "cb_id": "41238",
+   "cb_name": "晟德",
+   "stock_id": "4123"
+  },
+  {
+   "cb_id": "41239",
+   "cb_name": "晟德",
+   "stock_id": "4123"
+  },
+  {
+   "cb_id": "41295",
+   "cb_name": "聯合",
+   "stock_id": "4129"
+  },
+  {
+   "cb_id": "41372",
+   "cb_name": "麗豐-KY",
+   "stock_id": "4137"
+  },
+  {
+   "cb_id": "41645",
+   "cb_name": "承業醫",
+   "stock_id": "4164"
+  },
+  {
+   "cb_id": "41684",
+   "cb_name": "醣聯",
+   "stock_id": "4168"
+  },
+  {
+   "cb_id": "41903",
+   "cb_name": "佐登-KY",
+   "stock_id": "4190"
+  },
+  {
+   "cb_id": "41904",
+   "cb_name": "佐登-KY",
+   "stock_id": "4190"
+  },
+  {
+   "cb_id": "44163",
+   "cb_name": "三圓",
+   "stock_id": "4416"
+  },
+  {
+   "cb_id": "44383",
+   "cb_name": "廣越",
+   "stock_id": "4438"
+  },
+  {
+   "cb_id": "44391",
+   "cb_name": "冠星-KY",
+   "stock_id": "4439"
+  },
+  {
+   "cb_id": "44421",
+   "cb_name": "竣邦-KY",
+   "stock_id": "4442"
+  },
+  {
+   "cb_id": "45031",
+   "cb_name": "金雨",
+   "stock_id": "4503"
+  },
+  {
+   "cb_id": "45102",
+   "cb_name": "高鋒",
+   "stock_id": "4510"
+  },
+  {
+   "cb_id": "45421",
+   "cb_name": "科嶠",
+   "stock_id": "4542"
+  },
+  {
+   "cb_id": "45491",
+   "cb_name": "桓達",
+   "stock_id": "4549"
+  },
+  {
+   "cb_id": "45554",
+   "cb_name": "氣立",
+   "stock_id": "4555"
+  },
+  {
+   "cb_id": "45581",
+   "cb_name": "寶緯",
+   "stock_id": "4558"
+  },
+  {
+   "cb_id": "45641",
+   "cb_name": "元翎",
+   "stock_id": "4564"
+  },
+  {
+   "cb_id": "45663",
+   "cb_name": "時碩工業",
+   "stock_id": "4566"
+  },
+  {
+   "cb_id": "45691",
+   "cb_name": "六方科-KY",
+   "stock_id": "4569"
+  },
+  {
+   "cb_id": "45721",
+   "cb_name": "駐龍",
+   "stock_id": "4572"
+  },
+  {
+   "cb_id": "45811",
+   "cb_name": "光隆精密-KY",
+   "stock_id": "4581"
+  },
+  {
+   "cb_id": "47148",
+   "cb_name": "永捷",
+   "stock_id": "4714"
+  },
+  {
+   "cb_id": "47223",
+   "cb_name": "國精化",
+   "stock_id": "4722"
+  },
+  {
+   "cb_id": "47224",
+   "cb_name": "國精化",
+   "stock_id": "4722"
+  },
+  {
+   "cb_id": "47393",
+   "cb_name": "康普",
+   "stock_id": "4739"
+  },
+  {
+   "cb_id": "47394",
+   "cb_name": "康普",
+   "stock_id": "4739"
+  },
+  {
+   "cb_id": "47491",
+   "cb_name": "新應材",
+   "stock_id": "4749"
+  },
+  {
+   "cb_id": "47602",
+   "cb_name": "勤凱科技",
+   "stock_id": "4760"
+  },
+  {
+   "cb_id": "47721",
+   "cb_name": "台特化",
+   "stock_id": "4772"
+  },
+  {
+   "cb_id": "49231",
+   "cb_name": "力士",
+   "stock_id": "4923"
+  },
+  {
+   "cb_id": "49311",
+   "cb_name": "新盛力",
+   "stock_id": "4931"
+  },
+  {
+   "cb_id": "49674",
+   "cb_name": "十銓",
+   "stock_id": "4967"
+  },
+  {
+   "cb_id": "49793",
+   "cb_name": "華星光",
+   "stock_id": "4979"
+  },
+  {
+   "cb_id": "49794",
+   "cb_name": "華星光",
+   "stock_id": "4979"
+  },
+  {
+   "cb_id": "50097",
+   "cb_name": "榮剛",
+   "stock_id": "5009"
+  },
+  {
+   "cb_id": "52011",
+   "cb_name": "凱衛",
+   "stock_id": "5201"
+  },
+  {
+   "cb_id": "52091",
+   "cb_name": "新鼎",
+   "stock_id": "5209"
+  },
+  {
+   "cb_id": "52121",
+   "cb_name": "凌網",
+   "stock_id": "5212"
+  },
+  {
+   "cb_id": "52303",
+   "cb_name": "雷笛克光學",
+   "stock_id": "5230"
+  },
+  {
+   "cb_id": "52441",
+   "cb_name": "弘凱",
+   "stock_id": "5244"
+  },
+  {
+   "cb_id": "52452",
+   "cb_name": "智晶",
+   "stock_id": "5245"
+  },
+  {
+   "cb_id": "52635",
+   "cb_name": "智崴",
+   "stock_id": "5263"
+  },
+  {
+   "cb_id": "52844",
+   "cb_name": "jpp-KY",
+   "stock_id": "5284"
+  },
+  {
+   "cb_id": "52845",
+   "cb_name": "jpp-KY",
+   "stock_id": "5284"
+  },
+  {
+   "cb_id": "52892",
+   "cb_name": "宜鼎",
+   "stock_id": "5289"
+  },
+  {
+   "cb_id": "53064",
+   "cb_name": "桂盟",
+   "stock_id": "5306"
+  },
+  {
+   "cb_id": "53095",
+   "cb_name": "系統電",
+   "stock_id": "5309"
+  },
+  {
+   "cb_id": "53096",
+   "cb_name": "系統電",
+   "stock_id": "5309"
+  },
+  {
+   "cb_id": "53097",
+   "cb_name": "系統電",
+   "stock_id": "5309"
+  },
+  {
+   "cb_id": "53211",
+   "cb_name": "美而快",
+   "stock_id": "5321"
+  },
+  {
+   "cb_id": "53887",
+   "cb_name": "中磊",
+   "stock_id": "5388"
+  },
+  {
+   "cb_id": "54391",
+   "cb_name": "高技",
+   "stock_id": "5439"
+  },
+  {
+   "cb_id": "54501",
+   "cb_name": "南良",
+   "stock_id": "5450"
+  },
+  {
+   "cb_id": "54573",
+   "cb_name": "宣德",
+   "stock_id": "5457"
+  },
+  {
+   "cb_id": "54642",
+   "cb_name": "霖宏",
+   "stock_id": "5464"
+  },
+  {
+   "cb_id": "55344",
+   "cb_name": "長虹",
+   "stock_id": "5534"
+  },
+  {
+   "cb_id": "56087",
+   "cb_name": "四維航",
+   "stock_id": "5608"
+  },
+  {
+   "cb_id": "60152",
+   "cb_name": "宏遠證",
+   "stock_id": "6015"
+  },
+  {
+   "cb_id": "61011",
+   "cb_name": "寬魚國際",
+   "stock_id": "6101"
+  },
+  {
+   "cb_id": "61012",
+   "cb_name": "寬魚國際",
+   "stock_id": "6101"
+  },
+  {
+   "cb_id": "61041",
+   "cb_name": "創惟",
+   "stock_id": "6104"
+  },
+  {
+   "cb_id": "61112",
+   "cb_name": "大宇資",
+   "stock_id": "6111"
+  },
+  {
+   "cb_id": "61171",
+   "cb_name": "迎廣",
+   "stock_id": "6117"
+  },
+  {
+   "cb_id": "61172",
+   "cb_name": "迎廣",
+   "stock_id": "6117"
+  },
+  {
+   "cb_id": "61255",
+   "cb_name": "廣運",
+   "stock_id": "6125"
+  },
+  {
+   "cb_id": "61263",
+   "cb_name": "信音",
+   "stock_id": "6126"
+  },
+  {
+   "cb_id": "61343",
+   "cb_name": "萬旭",
+   "stock_id": "6134"
+  },
+  {
+   "cb_id": "61506",
+   "cb_name": "撼訊",
+   "stock_id": "6150"
+  },
+  {
+   "cb_id": "61565",
+   "cb_name": "松上",
+   "stock_id": "6156"
+  },
+  {
+   "cb_id": "61635",
+   "cb_name": "華電網",
+   "stock_id": "6163"
+  },
+  {
+   "cb_id": "61777",
+   "cb_name": "達麗",
+   "stock_id": "6177"
+  },
+  {
+   "cb_id": "61793",
+   "cb_name": "亞通",
+   "stock_id": "6179"
+  },
+  {
+   "cb_id": "61794",
+   "cb_name": "亞通",
+   "stock_id": "6179"
+  },
+  {
+   "cb_id": "61827",
+   "cb_name": "合晶",
+   "stock_id": "6182"
+  },
+  {
+   "cb_id": "61828",
+   "cb_name": "合晶",
+   "stock_id": "6182"
+  },
+  {
+   "cb_id": "61843",
+   "cb_name": "大豐電",
+   "stock_id": "6184"
+  },
+  {
+   "cb_id": "61876",
+   "cb_name": "萬潤",
+   "stock_id": "6187"
+  },
+  {
+   "cb_id": "61894",
+   "cb_name": "豐藝",
+   "stock_id": "6189"
+  },
+  {
+   "cb_id": "61907",
+   "cb_name": "萬泰科",
+   "stock_id": "6190"
+  },
+  {
+   "cb_id": "61973",
+   "cb_name": "佳必琪",
+   "stock_id": "6197"
+  },
+  {
+   "cb_id": "61993",
+   "cb_name": "天品",
+   "stock_id": "6199"
+  },
+  {
+   "cb_id": "61994",
+   "cb_name": "天品",
+   "stock_id": "6199"
+  },
+  {
+   "cb_id": "62075",
+   "cb_name": "雷科",
+   "stock_id": "6207"
+  },
+  {
+   "cb_id": "62076",
+   "cb_name": "雷科",
+   "stock_id": "6207"
+  },
+  {
+   "cb_id": "62093",
+   "cb_name": "今國光",
+   "stock_id": "6209"
+  },
+  {
+   "cb_id": "62194",
+   "cb_name": "富旺",
+   "stock_id": "6219"
+  },
+  {
+   "cb_id": "622010",
+   "cb_name": "岳豐",
+   "stock_id": "6220"
+  },
+  {
+   "cb_id": "62236",
+   "cb_name": "旺矽",
+   "stock_id": "6223"
+  },
+  {
+   "cb_id": "62433",
+   "cb_name": "迅杰",
+   "stock_id": "6243"
+  },
+  {
+   "cb_id": "62695",
+   "cb_name": "台郡",
+   "stock_id": "6269"
+  },
+  {
+   "cb_id": "62696",
+   "cb_name": "台郡",
+   "stock_id": "6269"
+  },
+  {
+   "cb_id": "62822",
+   "cb_name": "康舒",
+   "stock_id": "6282"
+  },
+  {
+   "cb_id": "62843",
+   "cb_name": "佳邦",
+   "stock_id": "6284"
+  },
+  {
+   "cb_id": "629010",
+   "cb_name": "良維",
+   "stock_id": "6290"
+  },
+  {
+   "cb_id": "64145",
+   "cb_name": "樺漢",
+   "stock_id": "6414"
+  },
+  {
+   "cb_id": "64251",
+   "cb_name": "易發",
+   "stock_id": "6425"
+  },
+  {
+   "cb_id": "64324",
+   "cb_name": "今展科",
+   "stock_id": "6432"
+  },
+  {
+   "cb_id": "64512",
+   "cb_name": "訊芯-KY",
+   "stock_id": "6451"
+  },
+  {
+   "cb_id": "64693",
+   "cb_name": "大樹",
+   "stock_id": "6469"
+  },
+  {
+   "cb_id": "64724",
+   "cb_name": "保瑞",
+   "stock_id": "6472"
+  },
+  {
+   "cb_id": "64725",
+   "cb_name": "保瑞",
+   "stock_id": "6472"
+  },
+  {
+   "cb_id": "64773",
+   "cb_name": "安集",
+   "stock_id": "6477"
+  },
+  {
+   "cb_id": "64774",
+   "cb_name": "安集",
+   "stock_id": "6477"
+  },
+  {
+   "cb_id": "64775",
+   "cb_name": "安集",
+   "stock_id": "6477"
+  },
+  {
+   "cb_id": "65096",
+   "cb_name": "聚和",
+   "stock_id": "6509"
+  },
+  {
+   "cb_id": "65101",
+   "cb_name": "精測",
+   "stock_id": "6510"
+  },
+  {
+   "cb_id": "65152",
+   "cb_name": "穎崴",
+   "stock_id": "6515"
+  },
+  {
+   "cb_id": "65331",
+   "cb_name": "晶心科",
+   "stock_id": "6533"
+  },
+  {
+   "cb_id": "65381",
+   "cb_name": "倉和",
+   "stock_id": "6538"
+  },
+  {
+   "cb_id": "65461",
+   "cb_name": "正基",
+   "stock_id": "6546"
+  },
+  {
+   "cb_id": "65462",
+   "cb_name": "正基",
+   "stock_id": "6546"
+  },
+  {
+   "cb_id": "65463",
+   "cb_name": "正基",
+   "stock_id": "6546"
+  },
+  {
+   "cb_id": "65472",
+   "cb_name": "高端疫苗",
+   "stock_id": "6547"
+  },
+  {
+   "cb_id": "65521",
+   "cb_name": "易華電",
+   "stock_id": "6552"
+  },
+  {
+   "cb_id": "65761",
+   "cb_name": "逸達",
+   "stock_id": "6576"
+  },
+  {
+   "cb_id": "65841",
+   "cb_name": "南俊國際",
+   "stock_id": "6584"
+  },
+  {
+   "cb_id": "65842",
+   "cb_name": "南俊國際",
+   "stock_id": "6584"
+  },
+  {
+   "cb_id": "65843",
+   "cb_name": "南俊國際",
+   "stock_id": "6584"
+  },
+  {
+   "cb_id": "65851",
+   "cb_name": "鼎基",
+   "stock_id": "6585"
+  },
+  {
+   "cb_id": "65852",
+   "cb_name": "鼎基",
+   "stock_id": "6585"
+  },
+  {
+   "cb_id": "65914",
+   "cb_name": "動力-KY",
+   "stock_id": "6591"
+  },
+  {
+   "cb_id": "66034",
+   "cb_name": "富強鑫",
+   "stock_id": "6603"
+  },
+  {
+   "cb_id": "66163",
+   "cb_name": "特昇-KY",
+   "stock_id": "6616"
+  },
+  {
+   "cb_id": "66241",
+   "cb_name": "萬年清",
+   "stock_id": "6624"
+  },
+  {
+   "cb_id": "66292",
+   "cb_name": "泰金-KY",
+   "stock_id": "6629"
+  },
+  {
+   "cb_id": "66451",
+   "cb_name": "金萬林-創",
+   "stock_id": "6645"
+  },
+  {
+   "cb_id": "66642",
+   "cb_name": "群翊",
+   "stock_id": "6664"
+  },
+  {
+   "cb_id": "66702",
+   "cb_name": "復盛應用",
+   "stock_id": "6670"
+  },
+  {
+   "cb_id": "66721",
+   "cb_name": "騰輝電子-KY",
+   "stock_id": "6672"
+  },
+  {
+   "cb_id": "66722",
+   "cb_name": "騰輝電子-KY",
+   "stock_id": "6672"
+  },
+  {
+   "cb_id": "66801",
+   "cb_name": "鑫創電子",
+   "stock_id": "6680"
+  },
+  {
+   "cb_id": "67062",
+   "cb_name": "惠特",
+   "stock_id": "6706"
+  },
+  {
+   "cb_id": "67531",
+   "cb_name": "龍德造船",
+   "stock_id": "6753"
+  },
+  {
+   "cb_id": "67681",
+   "cb_name": "志強-KY",
+   "stock_id": "6768"
+  },
+  {
+   "cb_id": "67711",
+   "cb_name": "平和環保-創",
+   "stock_id": "6771"
+  },
+  {
+   "cb_id": "67961",
+   "cb_name": "晉弘",
+   "stock_id": "6796"
+  },
+  {
+   "cb_id": "67962",
+   "cb_name": "晉弘",
+   "stock_id": "6796"
+  },
+  {
+   "cb_id": "68032",
+   "cb_name": "崑鼎",
+   "stock_id": "6803"
+  },
+  {
+   "cb_id": "68061",
+   "cb_name": "森崴能源",
+   "stock_id": "6806"
+  },
+  {
+   "cb_id": "68211",
+   "cb_name": "聯寶",
+   "stock_id": "6821"
+  },
+  {
+   "cb_id": "68301",
+   "cb_name": "汎銓",
+   "stock_id": "6830"
+  },
+  {
+   "cb_id": "68351",
+   "cb_name": "圓裕",
+   "stock_id": "6835"
+  },
+  {
+   "cb_id": "68401",
+   "cb_name": "東研信超",
+   "stock_id": "6840"
+  },
+  {
+   "cb_id": "68431",
+   "cb_name": "進典",
+   "stock_id": "6843"
+  },
+  {
+   "cb_id": "68461",
+   "cb_name": "綠茵",
+   "stock_id": "6846"
+  },
+  {
+   "cb_id": "68462",
+   "cb_name": "綠茵",
+   "stock_id": "6846"
+  },
+  {
+   "cb_id": "68541",
+   "cb_name": "錼創科技-KY創",
+   "stock_id": "6854"
+  },
+  {
+   "cb_id": "68621",
+   "cb_name": "三集瑞-KY",
+   "stock_id": "6862"
+  },
+  {
+   "cb_id": "68631",
+   "cb_name": "永道-KY",
+   "stock_id": "6863"
+  },
+  {
+   "cb_id": "68701",
+   "cb_name": "騰雲",
+   "stock_id": "6870"
+  },
+  {
+   "cb_id": "68702",
+   "cb_name": "騰雲",
+   "stock_id": "6870"
+  },
+  {
+   "cb_id": "68731",
+   "cb_name": "泓德能源-創",
+   "stock_id": "6873"
+  },
+  {
+   "cb_id": "68732",
+   "cb_name": "泓德能源",
+   "stock_id": "6873"
+  },
+  {
+   "cb_id": "68741",
+   "cb_name": "倍力",
+   "stock_id": "6874"
+  },
+  {
+   "cb_id": "68901",
+   "cb_name": "來億-KY",
+   "stock_id": "6890"
+  },
+  {
+   "cb_id": "68902",
+   "cb_name": "來億-KY",
+   "stock_id": "6890"
+  },
+  {
+   "cb_id": "68941",
+   "cb_name": "衛司特",
+   "stock_id": "6894"
+  },
+  {
+   "cb_id": "69041",
+   "cb_name": "伯鑫",
+   "stock_id": "6904"
+  },
+  {
+   "cb_id": "69131",
+   "cb_name": "鴻呈",
+   "stock_id": "6913"
+  },
+  {
+   "cb_id": "69571",
+   "cb_name": "裕慶-KY",
+   "stock_id": "6957"
+  },
+  {
+   "cb_id": "69821",
+   "cb_name": "大井泵浦",
+   "stock_id": "6982"
+  },
+  {
+   "cb_id": "69822",
+   "cb_name": "大井泵浦",
+   "stock_id": "6982"
+  },
+  {
+   "cb_id": "74022",
+   "cb_name": "邑錡",
+   "stock_id": "7402"
+  },
+  {
+   "cb_id": "75561",
+   "cb_name": "意德士科技",
+   "stock_id": "7556"
+  },
+  {
+   "cb_id": "75562",
+   "cb_name": "意德士科技",
+   "stock_id": "7556"
+  },
+  {
+   "cb_id": "76101",
+   "cb_name": "聯友金屬-創",
+   "stock_id": "7610"
+  },
+  {
+   "cb_id": "77131",
+   "cb_name": "威力德生醫",
+   "stock_id": "7713"
+  },
+  {
+   "cb_id": "80212",
+   "cb_name": "尖點",
+   "stock_id": "8021"
+  },
+  {
+   "cb_id": "80273",
+   "cb_name": "鈦昇",
+   "stock_id": "8027"
+  },
+  {
+   "cb_id": "80282",
+   "cb_name": "昇陽半導體",
+   "stock_id": "8028"
+  },
+  {
+   "cb_id": "80426",
+   "cb_name": "金山電",
+   "stock_id": "8042"
+  },
+  {
+   "cb_id": "80506",
+   "cb_name": "廣積",
+   "stock_id": "8050"
+  },
+  {
+   "cb_id": "80541",
+   "cb_name": "安國",
+   "stock_id": "8054"
+  },
+  {
+   "cb_id": "80746",
+   "cb_name": "鉅橡",
+   "stock_id": "8074"
+  },
+  {
+   "cb_id": "80872",
+   "cb_name": "麗升能源",
+   "stock_id": "8087"
+  },
+  {
+   "cb_id": "80914",
+   "cb_name": "翔名",
+   "stock_id": "8091"
+  },
+  {
+   "cb_id": "80924",
+   "cb_name": "建暐",
+   "stock_id": "8092"
+  },
+  {
+   "cb_id": "80962",
+   "cb_name": "擎亞",
+   "stock_id": "8096"
+  },
+  {
+   "cb_id": "80963",
+   "cb_name": "擎亞",
+   "stock_id": "8096"
+  },
+  {
+   "cb_id": "81042",
+   "cb_name": "錸寶",
+   "stock_id": "8104"
+  },
+  {
+   "cb_id": "81114",
+   "cb_name": "立碁",
+   "stock_id": "8111"
+  },
+  {
+   "cb_id": "811210",
+   "cb_name": "至上",
+   "stock_id": "8112"
+  },
+  {
+   "cb_id": "811211",
+   "cb_name": "至上",
+   "stock_id": "8112"
+  },
+  {
+   "cb_id": "81473",
+   "cb_name": "正淩",
+   "stock_id": "8147"
+  },
+  {
+   "cb_id": "81551",
+   "cb_name": "博智",
+   "stock_id": "8155"
+  },
+  {
+   "cb_id": "81714",
+   "cb_name": "天宇",
+   "stock_id": "8171"
+  },
+  {
+   "cb_id": "81715",
+   "cb_name": "天宇",
+   "stock_id": "8171"
+  },
+  {
+   "cb_id": "82102",
+   "cb_name": "勤誠",
+   "stock_id": "8210"
+  },
+  {
+   "cb_id": "82103",
+   "cb_name": "勤誠",
+   "stock_id": "8210"
+  },
+  {
+   "cb_id": "82551",
+   "cb_name": "朋程",
+   "stock_id": "8255"
+  },
+  {
+   "cb_id": "82711",
+   "cb_name": "宇瞻",
+   "stock_id": "8271"
+  },
+  {
+   "cb_id": "82993",
+   "cb_name": "群聯",
+   "stock_id": "8299"
+  },
+  {
+   "cb_id": "83742",
+   "cb_name": "羅昇",
+   "stock_id": "8374"
+  },
+  {
+   "cb_id": "84041",
+   "cb_name": "百和興業-KY",
+   "stock_id": "8404"
+  },
+  {
+   "cb_id": "84113",
+   "cb_name": "福貞-KY",
+   "stock_id": "8411"
+  },
+  {
+   "cb_id": "84221",
+   "cb_name": "可寧衛",
+   "stock_id": "8422"
+  },
+  {
+   "cb_id": "84222",
+   "cb_name": "可寧衛",
+   "stock_id": "8422"
+  },
+  {
+   "cb_id": "84312",
+   "cb_name": "匯鑽科",
+   "stock_id": "8431"
+  },
+  {
+   "cb_id": "84332",
+   "cb_name": "弘帆",
+   "stock_id": "8433"
+  },
+  {
+   "cb_id": "84333",
+   "cb_name": "弘帆",
+   "stock_id": "8433"
+  },
+  {
+   "cb_id": "84422",
+   "cb_name": "威宏-KY",
+   "stock_id": "8442"
+  },
+  {
+   "cb_id": "84423",
+   "cb_name": "威宏-KY",
+   "stock_id": "8442"
+  },
+  {
+   "cb_id": "84624",
+   "cb_name": "柏文",
+   "stock_id": "8462"
+  },
+  {
+   "cb_id": "84662",
+   "cb_name": "美吉吉-KY",
+   "stock_id": "8466"
+  },
+  {
+   "cb_id": "84672",
+   "cb_name": "波力-KY",
+   "stock_id": "8467"
+  },
+  {
+   "cb_id": "84673",
+   "cb_name": "波力-KY",
+   "stock_id": "8467"
+  },
+  {
+   "cb_id": "84732",
+   "cb_name": "山林水",
+   "stock_id": "8473"
+  },
+  {
+   "cb_id": "84762",
+   "cb_name": "台境*",
+   "stock_id": "8476"
+  },
+  {
+   "cb_id": "84781",
+   "cb_name": "東哥遊艇",
+   "stock_id": "8478"
+  },
+  {
+   "cb_id": "84881",
+   "cb_name": "吉源-KY",
+   "stock_id": "8488"
+  },
+  {
+   "cb_id": "84891",
+   "cb_name": "三貝德",
+   "stock_id": "8489"
+  },
+  {
+   "cb_id": "89277",
+   "cb_name": "北基",
+   "stock_id": "8927"
+  },
+  {
+   "cb_id": "89278",
+   "cb_name": "北基",
+   "stock_id": "8927"
+  },
+  {
+   "cb_id": "89964",
+   "cb_name": "高力",
+   "stock_id": "8996"
+  },
+  {
+   "cb_id": "98026",
+   "cb_name": "鈺齊-KY",
+   "stock_id": "9802"
+  },
+  {
+   "cb_id": "99063",
+   "cb_name": "欣巴巴",
+   "stock_id": "9906"
+  },
+  {
+   "cb_id": "99332",
+   "cb_name": "中鼎",
+   "stock_id": "9933"
+  },
+  {
+   "cb_id": "99353",
+   "cb_name": "慶豐富",
+   "stock_id": "9935"
+  },
+  {
+   "cb_id": "99392",
+   "cb_name": "宏全",
+   "stock_id": "9939"
+  },
+  {
+   "cb_id": "99412",
+   "cb_name": "裕融",
+   "stock_id": "9941"
+  },
+  {
+   "cb_id": "99587",
+   "cb_name": "世紀鋼",
+   "stock_id": "9958"
+  },
+  {
+   "cb_id": "99588",
+   "cb_name": "世紀鋼",
+   "stock_id": "9958"
+  }
+ ]
+}
