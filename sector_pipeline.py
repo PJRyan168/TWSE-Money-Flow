@@ -464,33 +464,104 @@ def fetch_futures_universe() -> pd.DataFrame:
 
 def _discover_cb_api_paths() -> list[str]:
     """
-    抓取 CB 清單頁的 HTML 原始碼,從前端 JS 中自動探測可能的
+    抓取 CB 清單頁 HTML + 其引用的 JS bundle,自動探測可能的
     /www/zh-tw/... JSON API 路徑(只保留與債券相關者)。
-    沙箱環境連不到 TPEx,此函式的實際結果以 GitHub Actions log 為準。
+    新版官網的 API 路徑通常寫在外部 JS 檔內,故需一併掃描。
     """
+    found: list[str] = []
+    page_headers = {
+        **HEADERS,
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+        "Accept-Language": "zh-TW,zh;q=0.9",
+        "Referer": "https://www.tpex.org.tw/zh-tw/index.html",
+    }
+
+    def scan(text: str):
+        for p in re.findall(r"/www/zh-tw/[A-Za-z0-9_/\-]+", text):
+            low = p.lower()
+            if "bond" in low or "cb" in low:
+                u = "https://www.tpex.org.tw" + p
+                if u not in found:
+                    found.append(u)
+
     try:
-        page_headers = {
-            **HEADERS,
-            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-            "Accept-Language": "zh-TW,zh;q=0.9",
-            "Referer": "https://www.tpex.org.tw/zh-tw/index.html",
-        }
         r = requests.get(CB_LIST_PAGE, headers=page_headers, timeout=60)
         r.raise_for_status()
-        paths = re.findall(r"/www/zh-tw/[A-Za-z0-9_/\-]+", r.text)
-        keep = []
-        for p in dict.fromkeys(paths):        # 去重、保持順序
-            low = p.lower()
-            if "bond" in low or "/cb" in low or "cbond" in low:
-                keep.append("https://www.tpex.org.tw" + p)
-        if keep:
-            print(f"[cb] 從清單頁原始碼探測到候選 API:{keep}")
-        else:
-            print("[cb] 清單頁原始碼中未探測到債券相關 API 路徑。")
-        return keep
+        scan(r.text)
+        # 掃描頁面引用的同站 JS 檔
+        srcs = re.findall(r'<script[^>]+src=["\']([^"\']+\.js[^"\']*)["\']', r.text)
+        print(f"[cb] 清單頁引用 JS 檔 {len(srcs)} 個,逐一掃描...")
+        for s in srcs[:12]:
+            if s.startswith("//"):
+                s = "https:" + s
+            elif s.startswith("/"):
+                s = "https://www.tpex.org.tw" + s
+            elif not s.startswith("http"):
+                s = "https://www.tpex.org.tw/" + s.lstrip("./")
+            if "tpex.org.tw" not in s:
+                continue
+            try:
+                js = requests.get(s, headers=page_headers, timeout=60)
+                if js.status_code == 200:
+                    scan(js.text)
+                time.sleep(1)
+            except Exception as e:  # noqa: BLE001
+                print(f"[cb] JS 檔掃描失敗 {s}({e})")
     except Exception as e:  # noqa: BLE001
         print(f"[cb] 清單頁原始碼探測失敗({e})。")
-        return []
+
+    if found:
+        print(f"[cb] 探測到債券相關 API 候選:{found}")
+    else:
+        print("[cb] 頁面與 JS 檔中均未探測到債券相關 API 路徑。")
+    return found
+
+
+def _discover_cb_openapi() -> list[str]:
+    """
+    從 TPEx OpenAPI(https://www.tpex.org.tw/openapi/)規格檔中,
+    尋找路徑名稱含 bond / cb 的端點,轉為完整 URL 候選。
+    """
+    base = "https://www.tpex.org.tw/openapi"
+    spec_candidates = [f"{base}/swagger.json", f"{base}/openapi.json",
+                       f"{base}/v1/swagger.json", f"{base}/apis/swagger.json"]
+    try:  # 先從 Swagger UI 首頁找規格檔實際路徑
+        r = requests.get(base + "/", headers=HEADERS, timeout=60)
+        if r.status_code == 200:
+            for m in re.findall(r'["\']([^"\']+\.(?:json|ya?ml))["\']', r.text):
+                u = m if m.startswith("http") else (
+                    "https://www.tpex.org.tw" + m if m.startswith("/")
+                    else f"{base}/{m.lstrip('./')}")
+                if u not in spec_candidates:
+                    spec_candidates.insert(0, u)
+        time.sleep(1)
+    except Exception:  # noqa: BLE001
+        pass
+
+    for spec_url in spec_candidates:
+        try:
+            r = requests.get(spec_url, headers=HEADERS, timeout=60)
+            time.sleep(1)
+            if r.status_code != 200:
+                continue
+            spec = r.json()
+            paths = spec.get("paths", {})
+            if not paths:
+                continue
+            server = "https://www.tpex.org.tw/openapi/v1"
+            servers = spec.get("servers") or []
+            if servers and isinstance(servers[0], dict) and servers[0].get("url"):
+                server = servers[0]["url"].rstrip("/")
+                if server.startswith("/"):
+                    server = "https://www.tpex.org.tw" + server
+            hits = [server + p for p in paths
+                    if "bond" in p.lower() or "cb" in p.lower()]
+            print(f"[cb] OpenAPI 規格 {spec_url} 內債券相關端點:{hits}")
+            return hits
+        except Exception:  # noqa: BLE001
+            continue
+    print("[cb] 未能取得 TPEx OpenAPI 規格檔。")
+    return []
 
 
 def _parse_cb_payload(payload) -> list[dict]:
@@ -518,14 +589,28 @@ def _parse_cb_payload(payload) -> list[dict]:
                 print(f"[cb] 回應為 list[dict],鍵名:{list(row.keys())}")
                 keys_logged = True
             code = name = None
+            # 第一輪:精確優先(債券代號),避免誤抓「股票代號」等欄位
             for k, v in row.items():
                 kk = str(k)
-                if code is None and ("債券代號" in kk or "代號" in kk
-                                     or "BondCode" in kk
+                if code is None and ("債券代號" in kk or "BondCode" in kk
                                      or kk.lower() in ("code", "bond_code", "cb_id")):
                     code = v
-                if name is None and ("簡稱" in kk or "名稱" in kk or "Name" in kk):
+                if name is None and ("債券簡稱" in kk or "債券名稱" in kk):
                     name = v
+            # 第二輪:寬鬆備援
+            if code is None:
+                for k, v in row.items():
+                    kk = str(k)
+                    if "代號" in kk and "股票" not in kk and "標的" not in kk:
+                        code = v
+                        break
+            if name is None:
+                for k, v in row.items():
+                    kk = str(k)
+                    if ("簡稱" in kk or "名稱" in kk or "Name" in kk) \
+                            and "股票" not in kk and "標的" not in kk:
+                        name = v
+                        break
             if code is not None:
                 add(code, name or "")
         return recs
@@ -566,18 +651,42 @@ def fetch_cb_universe() -> pd.DataFrame:
                   .agg(cb_ids=("cb_id", list), cb_names=("cb_name", list))
                   .reset_index())
 
-    recs = []
-    for url in dict.fromkeys(CB_API_CANDIDATES + _discover_cb_api_paths()):
+    def try_url(url: str, params: dict | None) -> list[dict]:
+        """單一端點嘗試:非 200 / 非 JSON 時印出回應片段供除錯。"""
         try:
-            payload = http_get_json(url, {"response": "json"}, retries=1)
+            r = requests.get(url, params=params, headers=HEADERS, timeout=60)
+            time.sleep(REQ_INTERVAL)
         except Exception as e:  # noqa: BLE001
             print(f"[cb] {url} 請求失敗({e}),換下一個候選。")
-            continue
-        recs = _parse_cb_payload(payload)
+            return []
+        if r.status_code != 200:
+            print(f"[cb] {url} HTTP {r.status_code},換下一個候選。")
+            return []
+        try:
+            payload = r.json()
+        except ValueError:
+            print(f"[cb] {url} 非 JSON 回應,前 150 字:{r.text[:150]!r}")
+            return []
+        got = _parse_cb_payload(payload)
+        if not got:
+            print(f"[cb] {url} 回應中無可辨識的債券清單。"
+                  f"回應片段:{str(payload)[:200]!r}")
+        return got
+
+    recs = []
+    # 第一輪:網站 JSON 候選(含頁面/JS 探測結果),帶 response=json 參數
+    for url in dict.fromkeys(CB_API_CANDIDATES + _discover_cb_api_paths()):
+        recs = try_url(url, {"response": "json"})
         if recs:
-            print(f"[cb] {url} 解析成功:可轉債 {len(recs)} 檔。")
+            print(f"[cb] ✔ {url} 解析成功:可轉債 {len(recs)} 檔。")
             break
-        print(f"[cb] {url} 回應中無可辨識的債券清單,換下一個候選。")
+    # 第二輪:TPEx OpenAPI 端點(直接回傳 JSON list,不需參數)
+    if not recs:
+        for url in _discover_cb_openapi():
+            recs = try_url(url, None)
+            if recs:
+                print(f"[cb] ✔ {url} 解析成功:可轉債 {len(recs)} 檔。")
+                break
 
     if recs:
         uni = group(recs)
