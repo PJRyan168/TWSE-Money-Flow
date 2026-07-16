@@ -25,7 +25,7 @@ jobs:
           python-version: "3.12"
 
       - name: 安裝套件
-        run: pip install pandas requests
+        run: pip install pandas requests lxml
 
       - name: 執行統計腳本
         env:
@@ -45,6 +45,8 @@ jobs:
             git config user.name "sector-bot"
             git config user.email "actions@github.com"
             git add output/
+            [ -f futures_universe.json ] && git add futures_universe.json
+            [ -f cb_universe.json ] && git add cb_universe.json
             git diff --cached --quiet || git commit -m "盤後統計 $(TZ=Asia/Taipei date +%F)"
             git pull --rebase
             git push
