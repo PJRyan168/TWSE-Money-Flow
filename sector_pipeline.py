@@ -12,7 +12,10 @@
   2. 成交量 / 成交金額(期間累計)
   3. 三大法人買賣超(資金流向,金額為估算值 = 買賣超股數 × 收盤價)
 
-輸出:output/sector_stats.json (供 React 儀表板讀取)
+輸出:
+  output/sector_stats.json  (全市場,供 index.html 讀取)
+  output/futures_stats.json (期貨標的母體,供 futures.html 讀取)
+  output/cb_stats.json      (可轉債標的母體,供 cb.html 讀取)
 
 用法:
   python sector_pipeline.py [--date 2026-07-08]
@@ -35,6 +38,19 @@ OUTPUT_DIR = BASE_DIR / "output"
 THEMES_FILE = BASE_DIR / "themes.json"
 FUTURES_UNIVERSE_FILE = BASE_DIR / "futures_universe.json"  # 期貨標的母體(可自動更新)
 TAIFEX_STOCKLIST_URL = "https://www.taifex.com.tw/cht/2/stockLists"
+
+# 可轉債標的母體(可自動更新)
+CB_UNIVERSE_FILE = BASE_DIR / "cb_universe.json"
+# 櫃買中心「最近上櫃轉(交)換公司債」清單頁(供自動探測 API 路徑用)
+CB_LIST_PAGE = "https://www.tpex.org.tw/zh-tw/bond/issue/cbond/listed.html"
+# 候選 JSON API 端點(依序嘗試;正確路徑以 Actions 執行 log 為準)
+CB_API_CANDIDATES = [
+    "https://www.tpex.org.tw/www/zh-tw/bond/issue/cbond/listed",
+    "https://www.tpex.org.tw/www/zh-tw/bond/cbond/listed",
+    "https://www.tpex.org.tw/www/zh-tw/bond/cbList",
+    "https://www.tpex.org.tw/www/zh-tw/bond/cbListed",
+]
+CB_ID_RE = re.compile(r"^\d{5,6}$")   # 可轉債代號 = 股票代號4碼 + 期別(如 15132)
 
 HEADERS = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"}
 REQ_INTERVAL = 3.0  # 官方網站有流量限制,每次請求間隔秒數
@@ -443,6 +459,156 @@ def fetch_futures_universe() -> pd.DataFrame:
         return pd.DataFrame(columns=["stock_id", "fut_name", "kind", "market"])
 
 
+# --------------------------------------------------------------- 可轉債標的母體
+
+
+def _discover_cb_api_paths() -> list[str]:
+    """
+    抓取 CB 清單頁的 HTML 原始碼,從前端 JS 中自動探測可能的
+    /www/zh-tw/... JSON API 路徑(只保留與債券相關者)。
+    沙箱環境連不到 TPEx,此函式的實際結果以 GitHub Actions log 為準。
+    """
+    try:
+        page_headers = {
+            **HEADERS,
+            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+            "Accept-Language": "zh-TW,zh;q=0.9",
+            "Referer": "https://www.tpex.org.tw/zh-tw/index.html",
+        }
+        r = requests.get(CB_LIST_PAGE, headers=page_headers, timeout=60)
+        r.raise_for_status()
+        paths = re.findall(r"/www/zh-tw/[A-Za-z0-9_/\-]+", r.text)
+        keep = []
+        for p in dict.fromkeys(paths):        # 去重、保持順序
+            low = p.lower()
+            if "bond" in low or "/cb" in low or "cbond" in low:
+                keep.append("https://www.tpex.org.tw" + p)
+        if keep:
+            print(f"[cb] 從清單頁原始碼探測到候選 API:{keep}")
+        else:
+            print("[cb] 清單頁原始碼中未探測到債券相關 API 路徑。")
+        return keep
+    except Exception as e:  # noqa: BLE001
+        print(f"[cb] 清單頁原始碼探測失敗({e})。")
+        return []
+
+
+def _parse_cb_payload(payload) -> list[dict]:
+    """
+    解析 CB 清單回應,盡量涵蓋 TPEx 兩種常見格式:
+      A. OpenAPI 風格:list[dict],鍵名含「債券代號 / 代號 / Code」
+      B. 網站 JSON:tables/fields+data(沿用 find_table)
+    回傳 [{cb_id, cb_name, stock_id}],stock_id = 債券代號前 4 碼。
+    """
+    recs = []
+
+    def add(code, name):
+        code = re.sub(r"\s", "", str(code))
+        if not CB_ID_RE.match(code):
+            return
+        recs.append({"cb_id": code, "cb_name": str(name).strip(),
+                     "stock_id": code[:4]})
+
+    if isinstance(payload, list):                       # 格式 A
+        keys_logged = False
+        for row in payload:
+            if not isinstance(row, dict):
+                continue
+            if not keys_logged:
+                print(f"[cb] 回應為 list[dict],鍵名:{list(row.keys())}")
+                keys_logged = True
+            code = name = None
+            for k, v in row.items():
+                kk = str(k)
+                if code is None and ("債券代號" in kk or "代號" in kk
+                                     or "BondCode" in kk
+                                     or kk.lower() in ("code", "bond_code", "cb_id")):
+                    code = v
+                if name is None and ("簡稱" in kk or "名稱" in kk or "Name" in kk):
+                    name = v
+            if code is not None:
+                add(code, name or "")
+        return recs
+
+    if isinstance(payload, dict):                       # 格式 B
+        fields, rows = find_table(payload, "債券代號")
+        if not fields:
+            fields, rows = find_table(payload, "代號")
+        if fields:
+            print(f"[cb] 解析欄位:{fields}")
+            i_id = col_idx(fields, "債券代號", "代號")
+            i_name = col_idx(fields, "債券簡稱", "簡稱", "名稱")
+            for r in rows:
+                if i_id is None or len(r) <= i_id:
+                    continue
+                name = r[i_name] if (i_name is not None and len(r) > i_name) else ""
+                add(r[i_id], name)
+    return recs
+
+
+def fetch_cb_universe() -> pd.DataFrame:
+    """
+    可轉債標的母體:即時抓取櫃買中心「最近上櫃轉(交)換公司債」清單,
+    以債券代號前 4 碼對回發行公司股票代號(例:15132 → 1513 中興電)。
+
+    正確 API 端點尚待線上環境確認,策略:
+      1. 依序嘗試 CB_API_CANDIDATES 候選端點
+      2. 再嘗試從清單頁 HTML 自動探測到的 API 路徑
+      3. 全部失敗 → 改讀 cb_universe.json 快取備援
+    成功時將結果寫回 cb_universe.json(自動更新快取)。
+    回傳每檔股票一列:stock_id, cb_ids(list), cb_names(list)。
+    """
+    empty = pd.DataFrame(columns=["stock_id", "cb_ids", "cb_names"])
+
+    def group(recs: list[dict]) -> pd.DataFrame:
+        df = pd.DataFrame(recs).drop_duplicates("cb_id")
+        return (df.groupby("stock_id")
+                  .agg(cb_ids=("cb_id", list), cb_names=("cb_name", list))
+                  .reset_index())
+
+    recs = []
+    for url in dict.fromkeys(CB_API_CANDIDATES + _discover_cb_api_paths()):
+        try:
+            payload = http_get_json(url, {"response": "json"}, retries=1)
+        except Exception as e:  # noqa: BLE001
+            print(f"[cb] {url} 請求失敗({e}),換下一個候選。")
+            continue
+        recs = _parse_cb_payload(payload)
+        if recs:
+            print(f"[cb] {url} 解析成功:可轉債 {len(recs)} 檔。")
+            break
+        print(f"[cb] {url} 回應中無可辨識的債券清單,換下一個候選。")
+
+    if recs:
+        uni = group(recs)
+        try:   # 寫回快取(供前端顯示與下次失敗時備援)
+            CB_UNIVERSE_FILE.write_text(json.dumps({
+                "source": "TPEx 最近上櫃轉(交)換公司債",
+                "updated_at": datetime.now().isoformat(timespec="seconds"),
+                "cb_count": len(recs),
+                "stock_count": int(len(uni)),
+                "bonds": recs,
+            }, ensure_ascii=False, indent=1), encoding="utf-8")
+        except Exception as e:  # noqa: BLE001
+            print(f"[warn] 可轉債母體快取寫入失敗({e}),不影響本次統計。")
+        print(f"[cb] 母體 = 發債公司 {len(uni)} 檔(可轉債 {len(recs)} 檔)。")
+        return uni
+
+    print("[warn] 可轉債清單線上抓取全數失敗,改用 cb_universe.json 備援。")
+    if CB_UNIVERSE_FILE.exists():
+        try:
+            bonds = json.loads(CB_UNIVERSE_FILE.read_text(encoding="utf-8")) \
+                        .get("bonds", [])
+            if bonds:
+                uni = group(bonds)
+                print(f"[cb] 備援母體:發債公司 {len(uni)} 檔(可轉債 {len(bonds)} 檔)。")
+                return uni
+        except Exception as e:  # noqa: BLE001
+            print(f"[warn] cb_universe.json 讀取失敗({e})。")
+    print("[warn] 無可轉債備援母體,可轉債標的統計將略過。")
+    return empty
+
+
 # ------------------------------------------------------------- 日期與統計計算
 
 
@@ -736,6 +902,60 @@ def main() -> None:
             json.dumps(fut_result, ensure_ascii=False), encoding="utf-8")
         print(f"完成 → output/futures_stats.json"
               f"(母體 {len(fut_ids)} 檔,命中行情 {stats_fut['stock_id'].nunique()} 檔)")
+
+    # ---------------------------------------------------- 可轉債標的母體(另存)
+    print("[+] 產出可轉債標的統計...")
+    cb_uni = fetch_cb_universe()
+    if cb_uni.empty:
+        print("[info] 可轉債母體為空,略過 cb_stats.json。")
+    else:
+        cb_stock_ids = set(cb_uni["stock_id"])
+        stats_cb = stats[stats["stock_id"].isin(cb_stock_ids)]
+
+        # 市場別(上市/上櫃):以當日證交所行情是否出現該代號判斷
+        twse_ids = {r["stock_id"] for r in today_rows}
+        market_map = pd.DataFrame(
+            [{"stock_id": sid, "market": ("上市" if sid in twse_ids else "上櫃")}
+             for sid in cb_stock_ids])
+
+        cb_official = (aggregate(stats_cb, industry, "sector")
+                       if not industry.empty else [])
+        cb_themes = []
+        if themes_cfg:
+            rows = [{"stock_id": sid, "theme": theme}
+                    for theme, sids in themes_cfg.items() for sid in sids]
+            cb_themes = aggregate(stats_cb, pd.DataFrame(rows), "theme")
+        cb_markets = aggregate(stats_cb, market_map, "market")
+
+        # 個股 → 發行中可轉債對照(供前端浮層顯示)
+        cb_of_stock = {
+            r.stock_id: [{"cb_id": i, "cb_name": n}
+                         for i, n in zip(r.cb_ids, r.cb_names)]
+            for r in cb_uni.itertuples()
+        }
+        cb_count = int(cb_uni["cb_ids"].apply(len).sum())
+
+        cb_result = {
+            "generated_at": datetime.now().isoformat(timespec="seconds"),
+            "trade_date": today_s,
+            "base_dates": bases,
+            "universe_count": int(len(cb_stock_ids)),
+            "cb_count": cb_count,
+            "matched_count": int(stats_cb["stock_id"].nunique()),
+            "note": "母體 = 發行台灣可轉換公司債之上市櫃公司(依 TPEx 上櫃轉(交)換公司債"
+                    "清單,債券代號前4碼對回股票代號);法人金額為估算值:買賣超股數 × 當日收盤價",
+            "official_sectors": cb_official,
+            "themes": cb_themes,
+            "markets": cb_markets,
+            "cb_of_stock": cb_of_stock,
+        }
+        (OUTPUT_DIR / "cb_stats.json").write_text(
+            json.dumps(cb_result, ensure_ascii=False, indent=1), encoding="utf-8")
+        (OUTPUT_DIR / f"cb_stats_{today_s}.json").write_text(
+            json.dumps(cb_result, ensure_ascii=False), encoding="utf-8")
+        print(f"完成 → output/cb_stats.json"
+              f"(發債公司 {len(cb_stock_ids)} 檔 / 可轉債 {cb_count} 檔,"
+              f"命中行情 {stats_cb['stock_id'].nunique()} 檔)")
 
 
 if __name__ == "__main__":

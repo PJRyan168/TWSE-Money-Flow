@@ -2,9 +2,10 @@
 """
 Telegram 收盤通知
 =================
-推播兩則獨立訊息:
+推播三則獨立訊息:
   1. 盤後族群熱力    ← output/sector_stats.json
   2. 期貨標的熱力    ← output/futures_stats.json(母體 = 期交所股票期貨標的)
+  3. 可轉債標的熱力  ← output/cb_stats.json(母體 = 發行可轉債之上市櫃公司)
 
 需要環境變數(GitHub Secrets 提供):
   TELEGRAM_BOT_TOKEN : BotFather 給的機器人 token
@@ -23,6 +24,7 @@ import requests
 BASE = Path(__file__).resolve().parent
 STATS_FILE = BASE / "output" / "sector_stats.json"
 FUT_STATS_FILE = BASE / "output" / "futures_stats.json"
+CB_STATS_FILE = BASE / "output" / "cb_stats.json"
 SITE = "https://pjryan168.github.io/TWSE-Money-Flow"
 
 W = {"chg": 0.42, "value": 0.28, "inst": 0.18, "breadth": 0.12}  # 複合強度權重
@@ -163,6 +165,55 @@ def build_futures_message(data: dict) -> str:
     return "\n".join(lines)
 
 
+def build_cb_message(data: dict) -> str:
+    """可轉債標的(發債公司股票)摘要。"""
+    themes = [x for x in data.get("themes", [])
+              if x.get("daily", {}).get("avg_change_pct") is not None]
+
+    lines = [f"🧾 <b>可轉債標的熱力|{data.get('trade_date', '')}</b>",
+             f"<i>母體:發行可轉債之上市櫃公司 {data.get('universe_count', '—')} 檔"
+             f"(可轉債 {data.get('cb_count', '—')} 檔,"
+             f"命中行情 {data.get('matched_count', '—')})</i>", ""]
+
+    # 市場別:上市 vs 上櫃發債公司當日表現
+    for mk in data.get("markets", []):
+        d = mk.get("daily", {})
+        if d.get("avg_change_pct") is None:
+            continue
+        icon = "🏛️" if mk["name"] == "上市" else "🏪"
+        lines.append(f"{icon} {mk['name']}({mk['stock_count']}檔)  "
+                     f"{pct(d['avg_change_pct'])}|法人 {yi(d.get('inst_net_value'))}億"
+                     f"|齊漲 {d.get('up_ratio')}%")
+
+    # 焦點產業 TOP3(僅計可轉債標的成分)
+    if themes:
+        lines.append("")
+        lines.append("🔥 <b>可轉債標的族群 TOP3</b>  <i>(漲幅+量能+法人+齊漲綜合)</i>")
+        medals = ["🥇", "🥈", "🥉"]
+        for i, t in enumerate(composite_rank(themes)[:3]):
+            d = t["daily"]
+            lines.append(
+                f"{medals[i]} {t['name']}  {pct(d['avg_change_pct'])}"
+                f"|法人 {yi(d['inst_net_value'])}億|齊漲 {d['up_ratio']}%")
+
+        weak = min(themes, key=lambda x: x["daily"]["avg_change_pct"])
+        inst_buy = max(themes, key=lambda x: x["daily"].get("inst_net_value") or 0)
+        inst_sell = min(themes, key=lambda x: x["daily"].get("inst_net_value") or 0)
+        lines.append("")
+        lines.append(f"💰 法人最捧:{inst_buy['name']} "
+                     f"{yi(inst_buy['daily']['inst_net_value'])}億")
+        lines.append(f"🧊 法人最倒:{inst_sell['name']} "
+                     f"{yi(inst_sell['daily']['inst_net_value'])}億")
+        lines.append(f"📉 最弱族群:{weak['name']} {pct(weak['daily']['avg_change_pct'])}")
+        lines += _divergence_lines(themes)
+
+    if len(lines) <= 3:  # 只有標頭,無任何內容
+        return ""
+    lines.append("")
+    lines.append(f"📱 可轉債標的熱力圖 → {SITE}/cb.html")
+    return "\n".join(lines)
+
+
 def send(token: str, chat_id: str, msg: str, label: str) -> None:
     if not msg:
         print(f"[info] {label}:無資料,略過。")
@@ -202,6 +253,12 @@ def main() -> None:
         send(token, chat_id, build_futures_message(futures), "期貨標的通知")
     else:
         print("[info] 找不到 futures_stats.json,略過期貨標的通知。")
+
+    cb = _load(CB_STATS_FILE)
+    if cb:
+        send(token, chat_id, build_cb_message(cb), "可轉債標的通知")
+    else:
+        print("[info] 找不到 cb_stats.json,略過可轉債標的通知。")
 
 
 if __name__ == "__main__":
