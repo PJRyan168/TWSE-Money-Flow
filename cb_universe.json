@@ -1,8 +1,8 @@
 {
  "source": "TPEx 最近上櫃轉(交)換公司債",
- "updated_at": "2026-07-16T21:55:24",
- "cb_count": 382,
- "stock_count": 305,
+ "updated_at": "2026-07-17T19:15:17",
+ "cb_count": 385,
+ "stock_count": 308,
  "bonds": [
   {
    "cb_id": "11011",
@@ -1460,6 +1460,11 @@
    "stock_id": "6680"
   },
   {
+   "cb_id": "66931",
+   "cb_name": "廣閎科",
+   "stock_id": "6693"
+  },
+  {
    "cb_id": "67062",
    "cb_name": "惠特",
    "stock_id": "6706"
@@ -1550,6 +1555,11 @@
    "stock_id": "6863"
   },
   {
+   "cb_id": "68692",
+   "cb_name": "雲豹能源",
+   "stock_id": "6869"
+  },
+  {
    "cb_id": "68701",
    "cb_name": "騰雲",
    "stock_id": "6870"
@@ -1588,6 +1598,11 @@
    "cb_id": "68941",
    "cb_name": "衛司特",
    "stock_id": "6894"
+  },
+  {
+   "cb_id": "69031",
+   "cb_name": "巨漢",
+   "stock_id": "6903"
   },
   {
    "cb_id": "69041",
