@@ -1,8 +1,7 @@
 {
  "source": "TAIFEX stockLists 股票期貨標的",
- "effective_date": "2026-07-06",
- "note": "初始值/備援;管線每次執行會即時向期交所重抓覆蓋",
- "count": 266,
+ "updated_at": "2026-07-17T21:56:25",
+ "count": 268,
  "universe": [
   {
    "stock_id": "1303",
@@ -846,7 +845,7 @@
   },
   {
    "stock_id": "2327",
-   "stock_name": "國巨",
+   "stock_name": "國巨*",
    "kind": "個股",
    "market": "上市"
   },
@@ -883,318 +882,6 @@
   {
    "stock_id": "9938",
    "stock_name": "百和",
-   "kind": "個股",
-   "market": "上市"
-  },
-  {
-   "stock_id": "2231",
-   "stock_name": "為升",
-   "kind": "個股",
-   "market": "上市"
-  },
-  {
-   "stock_id": "6116",
-   "stock_name": "彩晶",
-   "kind": "個股",
-   "market": "上市"
-  },
-  {
-   "stock_id": "3711",
-   "stock_name": "日月光投控",
-   "kind": "個股",
-   "market": "上市"
-  },
-  {
-   "stock_id": "4736",
-   "stock_name": "泰博",
-   "kind": "個股",
-   "market": "上市"
-  },
-  {
-   "stock_id": "2633",
-   "stock_name": "台灣高鐵",
-   "kind": "個股",
-   "market": "上市"
-  },
-  {
-   "stock_id": "5269",
-   "stock_name": "祥碩",
-   "kind": "個股",
-   "market": "上市"
-  },
-  {
-   "stock_id": "2383",
-   "stock_name": "台光電",
-   "kind": "個股",
-   "market": "上市"
-  },
-  {
-   "stock_id": "3706",
-   "stock_name": "神達",
-   "kind": "個股",
-   "market": "上市"
-  },
-  {
-   "stock_id": "6669",
-   "stock_name": "緯穎",
-   "kind": "個股",
-   "market": "上市"
-  },
-  {
-   "stock_id": "3714",
-   "stock_name": "富采",
-   "kind": "個股",
-   "market": "上市"
-  },
-  {
-   "stock_id": "2606",
-   "stock_name": "裕民",
-   "kind": "個股",
-   "market": "上市"
-  },
-  {
-   "stock_id": "3532",
-   "stock_name": "台勝科",
-   "kind": "個股",
-   "market": "上市"
-  },
-  {
-   "stock_id": "1907",
-   "stock_name": "永豐餘",
-   "kind": "個股",
-   "market": "上市"
-  },
-  {
-   "stock_id": "2441",
-   "stock_name": "超豐",
-   "kind": "個股",
-   "market": "上市"
-  },
-  {
-   "stock_id": "8150",
-   "stock_name": "南茂",
-   "kind": "個股",
-   "market": "上市"
-  },
-  {
-   "stock_id": "2338",
-   "stock_name": "光罩",
-   "kind": "個股",
-   "market": "上市"
-  },
-  {
-   "stock_id": "2388",
-   "stock_name": "威盛",
-   "kind": "個股",
-   "market": "上市"
-  },
-  {
-   "stock_id": "2615",
-   "stock_name": "萬海",
-   "kind": "個股",
-   "market": "上市"
-  },
-  {
-   "stock_id": "6770",
-   "stock_name": "力積電",
-   "kind": "個股",
-   "market": "上市"
-  },
-  {
-   "stock_id": "3017",
-   "stock_name": "奇鋐",
-   "kind": "個股",
-   "market": "上市"
-  },
-  {
-   "stock_id": "5388",
-   "stock_name": "中磊",
-   "kind": "個股",
-   "market": "上市"
-  },
-  {
-   "stock_id": "2634",
-   "stock_name": "漢翔",
-   "kind": "個股",
-   "market": "上市"
-  },
-  {
-   "stock_id": "4919",
-   "stock_name": "新唐",
-   "kind": "個股",
-   "market": "上市"
-  },
-  {
-   "stock_id": "1609",
-   "stock_name": "大亞",
-   "kind": "個股",
-   "market": "上市"
-  },
-  {
-   "stock_id": "2368",
-   "stock_name": "金像電",
-   "kind": "個股",
-   "market": "上市"
-  },
-  {
-   "stock_id": "6443",
-   "stock_name": "元晶",
-   "kind": "個股",
-   "market": "上市"
-  },
-  {
-   "stock_id": "9958",
-   "stock_name": "世紀鋼",
-   "kind": "個股",
-   "market": "上市"
-  },
-  {
-   "stock_id": "1795",
-   "stock_name": "美時",
-   "kind": "個股",
-   "market": "上市"
-  },
-  {
-   "stock_id": "1905",
-   "stock_name": "華紙",
-   "kind": "個股",
-   "market": "上市"
-  },
-  {
-   "stock_id": "1513",
-   "stock_name": "中興電",
-   "kind": "個股",
-   "market": "上市"
-  },
-  {
-   "stock_id": "2345",
-   "stock_name": "智邦",
-   "kind": "個股",
-   "market": "上市"
-  },
-  {
-   "stock_id": "3005",
-   "stock_name": "神基",
-   "kind": "個股",
-   "market": "上市"
-  },
-  {
-   "stock_id": "8112",
-   "stock_name": "至上",
-   "kind": "個股",
-   "market": "上市"
-  },
-  {
-   "stock_id": "3665",
-   "stock_name": "貿聯-KY",
-   "kind": "個股",
-   "market": "上市"
-  },
-  {
-   "stock_id": "2395",
-   "stock_name": "研華",
-   "kind": "個股",
-   "market": "上市"
-  },
-  {
-   "stock_id": "1503",
-   "stock_name": "士電",
-   "kind": "個股",
-   "market": "上市"
-  },
-  {
-   "stock_id": "6139",
-   "stock_name": "亞翔",
-   "kind": "個股",
-   "market": "上市"
-  },
-  {
-   "stock_id": "5876",
-   "stock_name": "上海商銀",
-   "kind": "個股",
-   "market": "上市"
-  },
-  {
-   "stock_id": "6505",
-   "stock_name": "台塑化",
-   "kind": "個股",
-   "market": "上市"
-  },
-  {
-   "stock_id": "6526",
-   "stock_name": "達發",
-   "kind": "個股",
-   "market": "上市"
-  },
-  {
-   "stock_id": "3661",
-   "stock_name": "世芯-KY",
-   "kind": "個股",
-   "market": "上市"
-  },
-  {
-   "stock_id": "6472",
-   "stock_name": "保瑞",
-   "kind": "個股",
-   "market": "上市"
-  },
-  {
-   "stock_id": "2486",
-   "stock_name": "一詮",
-   "kind": "個股",
-   "market": "上市"
-  },
-  {
-   "stock_id": "6757",
-   "stock_name": "台灣虎航",
-   "kind": "個股",
-   "market": "上市"
-  },
-  {
-   "stock_id": "2329",
-   "stock_name": "華泰",
-   "kind": "個股",
-   "market": "上市"
-  },
-  {
-   "stock_id": "1608",
-   "stock_name": "華榮",
-   "kind": "個股",
-   "market": "上市"
-  },
-  {
-   "stock_id": "2367",
-   "stock_name": "燿華",
-   "kind": "個股",
-   "market": "上市"
-  },
-  {
-   "stock_id": "2421",
-   "stock_name": "建準",
-   "kind": "個股",
-   "market": "上市"
-  },
-  {
-   "stock_id": "1717",
-   "stock_name": "長興",
-   "kind": "個股",
-   "market": "上市"
-  },
-  {
-   "stock_id": "1904",
-   "stock_name": "正隆",
-   "kind": "個股",
-   "market": "上市"
-  },
-  {
-   "stock_id": "1536",
-   "stock_name": "和大",
-   "kind": "個股",
-   "market": "上市"
-  },
-  {
-   "stock_id": "1909",
-   "stock_name": "榮成",
    "kind": "個股",
    "market": "上市"
   },
@@ -1301,10 +988,82 @@
    "market": "上櫃"
   },
   {
+   "stock_id": "0050",
+   "stock_name": "元大台灣50ETF",
+   "kind": "ETF",
+   "market": "上市"
+  },
+  {
+   "stock_id": "006205",
+   "stock_name": "富邦上証ETF",
+   "kind": "ETF",
+   "market": "上市"
+  },
+  {
+   "stock_id": "006206",
+   "stock_name": "元大上證50ETF",
+   "kind": "ETF",
+   "market": "上市"
+  },
+  {
+   "stock_id": "2231",
+   "stock_name": "為升",
+   "kind": "個股",
+   "market": "上市"
+  },
+  {
+   "stock_id": "6116",
+   "stock_name": "彩晶",
+   "kind": "個股",
+   "market": "上市"
+  },
+  {
    "stock_id": "6279",
    "stock_name": "胡連",
    "kind": "個股",
    "market": "上櫃"
+  },
+  {
+   "stock_id": "00636",
+   "stock_name": "國泰中國A50ETF",
+   "kind": "ETF",
+   "market": "上市"
+  },
+  {
+   "stock_id": "00639",
+   "stock_name": "富邦深100ETF",
+   "kind": "ETF",
+   "market": "上市"
+  },
+  {
+   "stock_id": "00643",
+   "stock_name": "群益深証中小ETF",
+   "kind": "ETF",
+   "market": "上市"
+  },
+  {
+   "stock_id": "2345",
+   "stock_name": "智邦",
+   "kind": "個股",
+   "market": "上市"
+  },
+  {
+   "stock_id": "6414",
+   "stock_name": "樺漢",
+   "kind": "個股",
+   "market": "上市"
+  },
+  {
+   "stock_id": "1536",
+   "stock_name": "和大",
+   "kind": "個股",
+   "market": "上市"
+  },
+  {
+   "stock_id": "1909",
+   "stock_name": "榮成",
+   "kind": "個股",
+   "market": "上市"
   },
   {
    "stock_id": "3081",
@@ -1337,6 +1096,12 @@
    "market": "上櫃"
   },
   {
+   "stock_id": "3711",
+   "stock_name": "日月光投控",
+   "kind": "個股",
+   "market": "上市"
+  },
+  {
    "stock_id": "3227",
    "stock_name": "原相",
    "kind": "個股",
@@ -1349,16 +1114,46 @@
    "market": "上櫃"
   },
   {
+   "stock_id": "4736",
+   "stock_name": "泰博",
+   "kind": "個股",
+   "market": "上市"
+  },
+  {
    "stock_id": "5425",
    "stock_name": "台半",
    "kind": "個股",
    "market": "上櫃"
   },
   {
+   "stock_id": "0056",
+   "stock_name": "元大高股息ETF",
+   "kind": "ETF",
+   "market": "上市"
+  },
+  {
+   "stock_id": "2633",
+   "stock_name": "台灣高鐵",
+   "kind": "個股",
+   "market": "上市"
+  },
+  {
+   "stock_id": "5269",
+   "stock_name": "祥碩",
+   "kind": "個股",
+   "market": "上市"
+  },
+  {
    "stock_id": "3529",
    "stock_name": "力旺",
    "kind": "個股",
    "market": "上櫃"
+  },
+  {
+   "stock_id": "2383",
+   "stock_name": "台光電",
+   "kind": "個股",
+   "market": "上市"
   },
   {
    "stock_id": "6173",
@@ -1397,10 +1192,22 @@
    "market": "上櫃"
   },
   {
+   "stock_id": "3706",
+   "stock_name": "神達",
+   "kind": "個股",
+   "market": "上市"
+  },
+  {
    "stock_id": "3324",
    "stock_name": "雙鴻",
    "kind": "個股",
    "market": "上櫃"
+  },
+  {
+   "stock_id": "6669",
+   "stock_name": "緯穎",
+   "kind": "個股",
+   "market": "上市"
   },
   {
    "stock_id": "3293",
@@ -1415,10 +1222,46 @@
    "market": "上櫃"
   },
   {
+   "stock_id": "3714",
+   "stock_name": "富采",
+   "kind": "個股",
+   "market": "上市"
+  },
+  {
+   "stock_id": "2606",
+   "stock_name": "裕民",
+   "kind": "個股",
+   "market": "上市"
+  },
+  {
+   "stock_id": "3532",
+   "stock_name": "台勝科",
+   "kind": "個股",
+   "market": "上市"
+  },
+  {
+   "stock_id": "1907",
+   "stock_name": "永豐餘",
+   "kind": "個股",
+   "market": "上市"
+  },
+  {
    "stock_id": "3374",
    "stock_name": "精材",
    "kind": "個股",
    "market": "上櫃"
+  },
+  {
+   "stock_id": "1717",
+   "stock_name": "長興",
+   "kind": "個股",
+   "market": "上市"
+  },
+  {
+   "stock_id": "1904",
+   "stock_name": "正隆",
+   "kind": "個股",
+   "market": "上市"
   },
   {
    "stock_id": "3078",
@@ -1427,16 +1270,100 @@
    "market": "上櫃"
   },
   {
+   "stock_id": "2441",
+   "stock_name": "超豐",
+   "kind": "個股",
+   "market": "上市"
+  },
+  {
+   "stock_id": "8150",
+   "stock_name": "南茂",
+   "kind": "個股",
+   "market": "上市"
+  },
+  {
+   "stock_id": "2338",
+   "stock_name": "光罩",
+   "kind": "個股",
+   "market": "上市"
+  },
+  {
+   "stock_id": "2388",
+   "stock_name": "威盛",
+   "kind": "個股",
+   "market": "上市"
+  },
+  {
+   "stock_id": "2615",
+   "stock_name": "萬海",
+   "kind": "個股",
+   "market": "上市"
+  },
+  {
    "stock_id": "6547",
    "stock_name": "高端疫苗",
    "kind": "個股",
    "market": "上櫃"
   },
   {
+   "stock_id": "6770",
+   "stock_name": "力積電",
+   "kind": "個股",
+   "market": "上市"
+  },
+  {
+   "stock_id": "3017",
+   "stock_name": "奇鋐",
+   "kind": "個股",
+   "market": "上市"
+  },
+  {
+   "stock_id": "5388",
+   "stock_name": "中磊",
+   "kind": "個股",
+   "market": "上市"
+  },
+  {
+   "stock_id": "2634",
+   "stock_name": "漢翔",
+   "kind": "個股",
+   "market": "上市"
+  },
+  {
    "stock_id": "4128",
    "stock_name": "中天",
    "kind": "個股",
    "market": "上櫃"
+  },
+  {
+   "stock_id": "4919",
+   "stock_name": "新唐",
+   "kind": "個股",
+   "market": "上市"
+  },
+  {
+   "stock_id": "00878",
+   "stock_name": "國泰永續高股息ETF",
+   "kind": "ETF",
+   "market": "上市"
+  },
+  {
+   "stock_id": "1609",
+   "stock_name": "大亞",
+   "kind": "個股",
+   "market": "上市"
+  },
+  {
+   "stock_id": "2368",
+   "stock_name": "金像電",
+   "kind": "個股",
+   "market": "上市"
+  },
+  {
+   "stock_id": "6443",
+   "stock_name": "元晶",
+   "kind": "個股",
+   "market": "上市"
   },
   {
    "stock_id": "4743",
@@ -1457,69 +1384,9 @@
    "market": "上櫃"
   },
   {
-   "stock_id": "3680",
-   "stock_name": "家登",
+   "stock_id": "9958",
+   "stock_name": "世紀鋼",
    "kind": "個股",
-   "market": "上櫃"
-  },
-  {
-   "stock_id": "6223",
-   "stock_name": "旺矽",
-   "kind": "個股",
-   "market": "上櫃"
-  },
-  {
-   "stock_id": "6290",
-   "stock_name": "良維",
-   "kind": "個股",
-   "market": "上櫃"
-  },
-  {
-   "stock_id": "0050",
-   "stock_name": "元大台灣50ETF",
-   "kind": "ETF",
-   "market": "上市"
-  },
-  {
-   "stock_id": "006205",
-   "stock_name": "富邦上証ETF",
-   "kind": "ETF",
-   "market": "上市"
-  },
-  {
-   "stock_id": "006206",
-   "stock_name": "元大上證50ETF",
-   "kind": "ETF",
-   "market": "上市"
-  },
-  {
-   "stock_id": "00636",
-   "stock_name": "國泰中國A50ETF",
-   "kind": "ETF",
-   "market": "上市"
-  },
-  {
-   "stock_id": "00639",
-   "stock_name": "富邦深100ETF",
-   "kind": "ETF",
-   "market": "上市"
-  },
-  {
-   "stock_id": "00643",
-   "stock_name": "群益深証中小ETF",
-   "kind": "ETF",
-   "market": "上市"
-  },
-  {
-   "stock_id": "0056",
-   "stock_name": "元大高股息ETF",
-   "kind": "ETF",
-   "market": "上市"
-  },
-  {
-   "stock_id": "00878",
-   "stock_name": "國泰永續高股息ETF",
-   "kind": "ETF",
    "market": "上市"
   },
   {
@@ -1535,9 +1402,51 @@
    "market": "上市"
   },
   {
+   "stock_id": "00679B",
+   "stock_name": "元大美債20年ETF",
+   "kind": "ETF",
+   "market": "上櫃"
+  },
+  {
+   "stock_id": "1795",
+   "stock_name": "美時",
+   "kind": "個股",
+   "market": "上市"
+  },
+  {
+   "stock_id": "1905",
+   "stock_name": "華紙",
+   "kind": "個股",
+   "market": "上市"
+  },
+  {
+   "stock_id": "1513",
+   "stock_name": "中興電",
+   "kind": "個股",
+   "market": "上市"
+  },
+  {
    "stock_id": "00893",
    "stock_name": "國泰智能電動車ETF",
    "kind": "ETF",
+   "market": "上市"
+  },
+  {
+   "stock_id": "00719B",
+   "stock_name": "元大美債1-3ETF",
+   "kind": "ETF",
+   "market": "上櫃"
+  },
+  {
+   "stock_id": "3005",
+   "stock_name": "神基",
+   "kind": "個股",
+   "market": "上市"
+  },
+  {
+   "stock_id": "8112",
+   "stock_name": "至上",
+   "kind": "個股",
    "market": "上市"
   },
   {
@@ -1553,40 +1462,58 @@
    "market": "上市"
   },
   {
+   "stock_id": "00772B",
+   "stock_name": "中信高評級公司債ETF",
+   "kind": "ETF",
+   "market": "上櫃"
+  },
+  {
    "stock_id": "00940",
    "stock_name": "元大台灣價值高息ETF",
    "kind": "ETF",
    "market": "上市"
   },
   {
-   "stock_id": "0052",
-   "stock_name": "富邦科技ETF",
-   "kind": "ETF",
+   "stock_id": "3680",
+   "stock_name": "家登",
+   "kind": "個股",
+   "market": "上櫃"
+  },
+  {
+   "stock_id": "1503",
+   "stock_name": "士電",
+   "kind": "個股",
    "market": "上市"
   },
   {
-   "stock_id": "00757",
-   "stock_name": "統一FANG+ETF",
-   "kind": "ETF",
+   "stock_id": "6139",
+   "stock_name": "亞翔",
+   "kind": "個股",
    "market": "上市"
   },
   {
-   "stock_id": "00679B",
-   "stock_name": "元大美債20年ETF",
-   "kind": "ETF",
+   "stock_id": "6188",
+   "stock_name": "廣明",
+   "kind": "個股",
    "market": "上櫃"
   },
   {
-   "stock_id": "00719B",
-   "stock_name": "元大美債1-3ETF",
-   "kind": "ETF",
-   "market": "上櫃"
+   "stock_id": "5876",
+   "stock_name": "上海商銀",
+   "kind": "個股",
+   "market": "上市"
   },
   {
-   "stock_id": "00772B",
-   "stock_name": "中信高評級公司債ETF",
-   "kind": "ETF",
-   "market": "上櫃"
+   "stock_id": "6505",
+   "stock_name": "台塑化",
+   "kind": "個股",
+   "market": "上市"
+  },
+  {
+   "stock_id": "6526",
+   "stock_name": "達發",
+   "kind": "個股",
+   "market": "上市"
   },
   {
    "stock_id": "00937B",
@@ -1599,6 +1526,90 @@
    "stock_name": "國泰20年美債ETF",
    "kind": "ETF",
    "market": "上櫃"
+  },
+  {
+   "stock_id": "3661",
+   "stock_name": "世芯-KY",
+   "kind": "個股",
+   "market": "上市"
+  },
+  {
+   "stock_id": "6472",
+   "stock_name": "保瑞",
+   "kind": "個股",
+   "market": "上市"
+  },
+  {
+   "stock_id": "00757",
+   "stock_name": "統一FANG+ETF",
+   "kind": "ETF",
+   "market": "上市"
+  },
+  {
+   "stock_id": "2486",
+   "stock_name": "一詮",
+   "kind": "個股",
+   "market": "上市"
+  },
+  {
+   "stock_id": "6757",
+   "stock_name": "台灣虎航",
+   "kind": "個股",
+   "market": "上市"
+  },
+  {
+   "stock_id": "6223",
+   "stock_name": "旺矽",
+   "kind": "個股",
+   "market": "上櫃"
+  },
+  {
+   "stock_id": "2329",
+   "stock_name": "華泰",
+   "kind": "個股",
+   "market": "上市"
+  },
+  {
+   "stock_id": "6290",
+   "stock_name": "良維",
+   "kind": "個股",
+   "market": "上櫃"
+  },
+  {
+   "stock_id": "1608",
+   "stock_name": "華榮",
+   "kind": "個股",
+   "market": "上市"
+  },
+  {
+   "stock_id": "2367",
+   "stock_name": "燿華",
+   "kind": "個股",
+   "market": "上市"
+  },
+  {
+   "stock_id": "2421",
+   "stock_name": "建準",
+   "kind": "個股",
+   "market": "上市"
+  },
+  {
+   "stock_id": "3665",
+   "stock_name": "貿聯-KY",
+   "kind": "個股",
+   "market": "上市"
+  },
+  {
+   "stock_id": "0052",
+   "stock_name": "富邦科技ETF",
+   "kind": "ETF",
+   "market": "上市"
+  },
+  {
+   "stock_id": "2395",
+   "stock_name": "研華",
+   "kind": "個股",
+   "market": "上市"
   }
  ]
 }
