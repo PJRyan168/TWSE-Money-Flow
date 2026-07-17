@@ -192,7 +192,7 @@ let DATA=null, MAP=null, view="heat", mode="themes", period="daily", openName=nu
 let dSort={key:"chg_daily",dir:-1};   // 明細表排序狀態
 const DCOLS=[["stock","個股"],["close","收盤"],["chg_daily","當日%"],["chg_wtd","當周%"],
   ["chg_mtd","當月%"],["chg_qtd","當季%"],["chg_ytd","當年%"],
-  ["value_d","成交金額(億)"],["fore_net_d","外資(億)"],["trust_net_d","投信(億)"],
+  ["value_d","成交金額(億)"],["foreign_ratio","外資比例"],["trust_net_d","投信(億)"],
   ["inst_net_d","三大法人(億)"]];
 let stockLookup={};   // stock_id → 統計資料
 let stockThemes={};   // stock_id → [題材名]
@@ -219,7 +219,7 @@ let stockThemes={};   // stock_id → [題材名]
     $("state").style.display="none";
     $("meta").innerHTML=`交易日 <b class="num">${DATA.trade_date}</b>・更新於 <b class="num">${(DATA.generated_at||"").replace("T"," ")}</b>`;
     const b=DATA.base_dates||{};
-    $("basebar").textContent=`比較基準 — 日:${b.daily}・周:${b.wtd}・月:${b.mtd}`+(b.qtd?`・季:${b.qtd}`:"")+(b.ytd?`・年:${b.ytd}`:"")+`(各期間自基準日收盤起算;季/年檢視僅提供漲跌幅)`;
+    $("basebar").textContent=`比較基準 — 日:${b.daily}・周:${b.wtd}・月:${b.mtd}`+(b.qtd?`・季:${b.qtd}`:"")+(b.ytd?`・年:${b.ytd}`:"")+(DATA.foreign_ratio_date?`・外資比例基準:${DATA.foreign_ratio_date}`:"")+`(各期間自基準日收盤起算;季/年檢視僅提供漲跌幅)`;
     render();
   }catch(e){
     $("state").innerHTML=`讀取資料失敗(${e.message})。請確認管線已成功執行,且 industry_map.json 已上傳。`;
@@ -298,6 +298,7 @@ function openStock(sid,name,role){
       `<div class="p-row"><span>收盤價</span><span class="num">${s.close==null?"—":s.close}</span></div>
        <div class="p-row"><span>當日成交金額</span><span class="num">${yi(s.value_d)} 億</span></div>
        <div class="p-row"><span>當日外資買賣超</span><span class="num ${cls(s.fore_net_d)}">${yi(s.fore_net_d)} 億</span></div>
+       <div class="p-row"><span>外資持股比例</span><span class="num">${s.foreign_ratio==null?"—":s.foreign_ratio.toFixed(2)+"%"}</span></div>
        <div class="p-row"><span>當日投信買賣超</span><span class="num ${cls(s.trust_net_d)}">${yi(s.trust_net_d)} 億</span></div>
        <div class="p-row"><span>當日三大法人合計</span><span class="num ${cls(s.inst_net_d)}">${yi(s.inst_net_d)} 億</span></div>`;
   }else{
@@ -387,7 +388,7 @@ function renderHeat(){
         <td class="num ${c(s.chg_qtd)}">${pct(s.chg_qtd)}</td>
         <td class="num ${c(s.chg_ytd)}">${pct(s.chg_ytd)}</td>
         <td class="num">${yi(s.value_d)}</td>
-        <td class="num ${c(s.fore_net_d)}">${yi(s.fore_net_d)}</td>
+        <td class="num">${s.foreign_ratio==null?"—":s.foreign_ratio.toFixed(2)+"%"}</td>
         <td class="num ${c(s.trust_net_d)}">${yi(s.trust_net_d)}</td>
         <td class="num ${c(s.inst_net_d)}">${yi(s.inst_net_d)}</td></tr>`;
     }).join("");

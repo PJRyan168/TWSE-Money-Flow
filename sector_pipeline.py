@@ -519,9 +519,13 @@ def _discover_cb_api_paths() -> list[str]:
 
 
 def _discover_cb_openapi() -> list[str]:
+    return _discover_openapi(("bond", "cb"), label="cb")
+
+
+def _discover_openapi(keywords: tuple, label: str = "openapi") -> list[str]:
     """
     從 TPEx OpenAPI(https://www.tpex.org.tw/openapi/)規格檔中,
-    尋找路徑名稱含 bond / cb 的端點,轉為完整 URL 候選。
+    尋找路徑名稱含任一 keyword 的端點,轉為完整 URL 候選。
     """
     base = "https://www.tpex.org.tw/openapi"
     spec_candidates = [f"{base}/swagger.json", f"{base}/openapi.json",
@@ -556,12 +560,12 @@ def _discover_cb_openapi() -> list[str]:
                 if server.startswith("/"):
                     server = "https://www.tpex.org.tw" + server
             hits = [server + p for p in paths
-                    if "bond" in p.lower() or "cb" in p.lower()]
-            print(f"[cb] OpenAPI 規格 {spec_url} 內債券相關端點:{hits}")
+                    if any(k in p.lower() for k in keywords)]
+            print(f"[{label}] OpenAPI 規格 {spec_url} 內符合 {keywords} 的端點:{hits}")
             return hits
         except Exception:  # noqa: BLE001
             continue
-    print("[cb] 未能取得 TPEx OpenAPI 規格檔。")
+    print(f"[{label}] 未能取得 TPEx OpenAPI 規格檔。")
     return []
 
 
@@ -722,6 +726,155 @@ def fetch_cb_universe() -> pd.DataFrame:
 # ------------------------------------------------------------- 日期與統計計算
 
 
+# --------------------------------------------------------------- 外資持股比例
+
+
+TPEX_FOREIGN_CANDIDATES = [
+    "https://www.tpex.org.tw/www/zh-tw/insti/qfiiStat",
+    "https://www.tpex.org.tw/www/zh-tw/insti/qfiiPct",
+    "https://www.tpex.org.tw/www/zh-tw/insti/qfii",
+]
+
+
+def _parse_foreign_payload(payload) -> dict:
+    """
+    解析外資及陸資持股統計回應 → {stock_id: 全體外資持股比率(%)}。
+    支援 OpenAPI list[dict] 與網站 fields/data 兩種格式。
+    """
+    out = {}
+    if isinstance(payload, list):
+        keys_logged = False
+        for row in payload:
+            if not isinstance(row, dict):
+                continue
+            if not keys_logged:
+                print(f"[fore] 回應為 list[dict],鍵名:{list(row.keys())}")
+                keys_logged = True
+            code = ratio = None
+            for k, v in row.items():
+                kk = str(k)
+                if ratio is None and ("持股比率" in kk or "持股比例" in kk
+                                      or "SharesRatio" in kk) \
+                        and "上限" not in kk and "尚可" not in kk:
+                    ratio = v
+                if code is None and ("代號" in kk or "Code" in kk):
+                    code = v
+            if code is None or ratio is None:
+                continue
+            sid = re.sub(r"\s", "", str(code))
+            val = to_num(ratio)
+            if SEC_ID_RE.match(sid) and val is not None:
+                out[sid] = val
+        return out
+    if isinstance(payload, dict):
+        fields, rows = find_table(payload, "證券代號")
+        if not fields:
+            fields, rows = find_table(payload, "代號")
+        if not fields:
+            return out
+        i_id = col_idx(fields, "證券代號", "代號")
+        i_ratio = col_idx(fields, "全體外資及陸資持股比率", "全體外資持股比率")
+        if i_ratio is None:  # 備援:任何含「持股比率」且非上限/尚可的欄位
+            for i, f in enumerate(fields):
+                if ("持股比率" in f or "持股比例" in f) \
+                        and "上限" not in f and "尚可" not in f:
+                    i_ratio = i
+                    break
+        if i_id is None or i_ratio is None:
+            print(f"[fore] 找不到持股比率欄位,欄位清單:{fields}")
+            return out
+        for r in rows:
+            if len(r) <= max(i_id, i_ratio):
+                continue
+            sid = str(r[i_id]).strip()
+            if not SEC_ID_RE.match(sid):
+                continue
+            val = to_num(r[i_ratio])
+            if val is not None:
+                out[sid] = val
+    return out
+
+
+def fetch_twse_foreign(d: date) -> dict:
+    """證交所「外資及陸資投資持股統計」(MI_QFIIS)→ {stock_id: 持股比率%}。"""
+    try:
+        payload = http_get_json(
+            "https://www.twse.com.tw/fund/MI_QFIIS",
+            {"response": "json", "date": d.strftime("%Y%m%d"),
+             "selectType": "ALLBUT0999"}, retries=2)
+    except Exception as e:  # noqa: BLE001
+        print(f"[fore] TWSE MI_QFIIS {d} 抓取失敗({str(e)[:200]})")
+        return {}
+    if not payload or payload.get("stat") not in (None, "OK"):
+        return {}
+    return _parse_foreign_payload(payload)
+
+
+def fetch_tpex_foreign(d: date) -> dict:
+    """
+    櫃買中心「外資及陸資投資持股統計」→ {stock_id: 持股比率%}。
+    正確端點待線上驗證:依序嘗試候選網站 API,再以 OpenAPI 規格檔探測備援。
+    """
+    for url in TPEX_FOREIGN_CANDIDATES:
+        try:
+            r = requests.get(url, params={"response": "json",
+                                          "date": d.strftime("%Y/%m/%d")},
+                             headers=HEADERS, timeout=60)
+            time.sleep(REQ_INTERVAL)
+        except Exception as e:  # noqa: BLE001
+            print(f"[fore] {url} 請求失敗({str(e)[:200]})")
+            continue
+        if r.status_code != 200:
+            print(f"[fore] {url} HTTP {r.status_code}")
+            continue
+        try:
+            payload = r.json()
+        except ValueError:
+            print(f"[fore] {url} 非 JSON,前 100 字:{r.text[:100]!r}")
+            continue
+        got = _parse_foreign_payload(payload)
+        if got:
+            print(f"[fore] ✔ {url}:上櫃 {len(got)} 檔")
+            return got
+        print(f"[fore] {url} 無可辨識持股比率,片段:{str(payload)[:150]!r}")
+    # OpenAPI 備援(回傳最新一日資料,不需日期參數)
+    for url in _discover_openapi(("qfii",), label="fore"):
+        try:
+            r = requests.get(url, headers=HEADERS, timeout=60)
+            time.sleep(REQ_INTERVAL)
+            if r.status_code != 200:
+                continue
+            got = _parse_foreign_payload(r.json())
+            if got:
+                print(f"[fore] ✔ {url}(OpenAPI):上櫃 {len(got)} 檔")
+                return got
+        except Exception as e:  # noqa: BLE001
+            print(f"[fore] {url} 失敗({str(e)[:200]})")
+    print("[warn] 上櫃外資持股統計抓取失敗,上櫃標的外資比例將留空。")
+    return {}
+
+
+def fetch_foreign_ratios(t: date):
+    """
+    合併上市+上櫃外資持股比率,自動往回找最近一個已公布日。
+    回傳 (dict{stock_id: 比率%}, 基準日字串或 None)。
+    """
+    for back in range(6):
+        d = t - timedelta(days=back)
+        if d.weekday() >= 5:
+            continue
+        tw = fetch_twse_foreign(d)
+        if not tw:
+            print(f"[fore] {d} 上市外資持股統計尚未公布或無資料,往前一天...")
+            continue
+        merged = dict(tw)
+        merged.update(fetch_tpex_foreign(d))
+        print(f"[fore] 外資持股統計基準日 {d}:上市+上櫃共 {len(merged)} 檔")
+        return merged, d.isoformat()
+    print("[warn] 近日外資持股統計皆無法取得,外資比例欄將留空。")
+    return {}, None
+
+
 def safe_fetch(fn, d, label):
     """單日資料抓取失敗時記錄警告並跳過,不中斷整體統計。"""
     try:
@@ -834,6 +987,7 @@ def aggregate(stats: pd.DataFrame, mapping: pd.DataFrame, group_col: str) -> lis
                 "value_d": int(r["value_d"]) if not pd.isna(r["value_d"]) else 0,
                 "inst_net_d": int(r["inst_net_daily"]) if not pd.isna(r["inst_net_daily"]) else 0,
                 "fore_net_d": int(r["fore_net_daily"]) if not pd.isna(r["fore_net_daily"]) else 0,
+                "foreign_ratio": num(r.get("foreign_ratio")),
                 "trust_net_d": int(r["trust_net_daily"]) if not pd.isna(r["trust_net_daily"]) else 0,
             })
         results.append(item)
@@ -946,6 +1100,10 @@ def main() -> None:
 
     print("[5/6] 計算個股期間統計與族群聚合...")
     stats = stock_period_stats(px, inst, today_s, bases)
+
+    # 外資持股比例(上市 MI_QFIIS + 上櫃對應報表,自動回溯最近公布日)
+    fore_ratios, fore_date = fetch_foreign_ratios(t)
+    stats["foreign_ratio"] = stats["stock_id"].map(fore_ratios)
     # 主站沿用原母體(4 碼普通股);ETF 只用於期貨標的頁
     stats_main = stats[stats["stock_id"].str.match(r"^\d{4}$")]
 
@@ -966,7 +1124,9 @@ def main() -> None:
         "generated_at": datetime.now().isoformat(timespec="seconds"),
         "trade_date": today_s,
         "base_dates": bases,
-        "note": "法人金額為估算值:買賣超股數 × 當日收盤價;foreign=外資、trust=投信、inst=三大法人合計",
+        "note": "法人金額為估算值:買賣超股數 × 當日收盤價;foreign=外資、trust=投信、inst=三大法人合計;"
+                "外資比例=全體外資及陸資持股比率(官方統計)",
+        "foreign_ratio_date": fore_date,
         "official_sectors": official,
         "themes": themes_result,
     }
@@ -1000,6 +1160,7 @@ def main() -> None:
             "trade_date": today_s,
             "base_dates": bases,
             "universe_count": int(len(fut_ids)),
+            "foreign_ratio_date": fore_date,
             "matched_count": int(stats_fut["stock_id"].nunique()),
             "note": "母體 = 期交所股票期貨標的(個股/ETF);法人金額為估算值:買賣超股數 × 當日收盤價",
             "official_sectors": fut_official,
@@ -1050,6 +1211,7 @@ def main() -> None:
             "trade_date": today_s,
             "base_dates": bases,
             "universe_count": int(len(cb_stock_ids)),
+            "foreign_ratio_date": fore_date,
             "cb_count": cb_count,
             "matched_count": int(stats_cb["stock_id"].nunique()),
             "note": "母體 = 發行台灣可轉換公司債之上市櫃公司(依 TPEx 上櫃轉(交)換公司債"
