@@ -28,6 +28,7 @@ import re
 import sys
 import time
 from datetime import date, datetime, timedelta
+from io import StringIO
 from pathlib import Path
 
 import pandas as pd
@@ -73,7 +74,7 @@ def http_get_json(url: str, params: dict, retries: int = 3):
             if attempt == retries - 1:
                 raise
             wait = 15 * (attempt + 1)
-            print(f"[warn] {url} 失敗 ({e}),{wait}s 後重試...")
+            print(f"[warn] {url} 失敗 ({str(e)[:300]}),{wait}s 後重試...")
             time.sleep(wait)
     return None
 
@@ -275,7 +276,7 @@ def fetch_tpex_inst(d: date) -> list[dict]:
             retries=1,
         )
     except Exception as e:  # noqa: BLE001
-        print(f"[warn] 上櫃法人資料抓取失敗({e}),當日以 0 計。")
+        print(f"[warn] 上櫃法人資料抓取失敗({str(e)[:300]}),當日以 0 計。")
         return []
     if not payload:
         return []
@@ -344,7 +345,7 @@ def fetch_industry_map() -> pd.DataFrame:
         df = df[["stock_id", "industry_category"]].drop_duplicates("stock_id")
         return df.rename(columns={"industry_category": "sector"})
     except Exception as e:  # noqa: BLE001
-        print(f"[warn] 產業分類抓取失敗({e}),官方類股統計將標為「未分類」。")
+        print(f"[warn] 產業分類抓取失敗({str(e)[:300]}),官方類股統計將標為「未分類」。")
         return pd.DataFrame(columns=["stock_id", "sector"])
 
 
@@ -377,7 +378,7 @@ def fetch_futures_universe() -> pd.DataFrame:
         r = requests.get(TAIFEX_STOCKLIST_URL, headers=taifex_headers, timeout=60)
         r.raise_for_status()
         r.encoding = "utf-8"
-        tables = pd.read_html(r.text)  # 需要 lxml
+        tables = pd.read_html(StringIO(r.text))  # 需要 lxml;StringIO 相容 pandas 3.x
         target = None
         for t in tables:
             cols = ["".join(str(c).split()) for c in t.columns]
@@ -440,13 +441,13 @@ def fetch_futures_universe() -> pd.DataFrame:
             FUTURES_UNIVERSE_FILE.write_text(
                 json.dumps(payload, ensure_ascii=False, indent=1), encoding="utf-8")
         except Exception as e:  # noqa: BLE001
-            print(f"[warn] 期貨母體快取寫入失敗({e}),不影響本次統計。")
+            print(f"[warn] 期貨母體快取寫入失敗({str(e)[:300]}),不影響本次統計。")
 
         print(f"[futures] 期交所即時標的 {len(df)} 檔"
               f"(個股 {(df.kind == '個股').sum()} / ETF {(df.kind == 'ETF').sum()})")
         return df
     except Exception as e:  # noqa: BLE001
-        print(f"[warn] 期交所標的即時抓取失敗({e}),改用 futures_universe.json 備援。")
+        print(f"[warn] 期交所標的即時抓取失敗({str(e)[:300]}),改用 futures_universe.json 備援。")
         if FUTURES_UNIVERSE_FILE.exists():
             cache = json.loads(FUTURES_UNIVERSE_FILE.read_text(encoding="utf-8"))
             uni = cache.get("universe", [])
@@ -506,9 +507,9 @@ def _discover_cb_api_paths() -> list[str]:
                     scan(js.text)
                 time.sleep(1)
             except Exception as e:  # noqa: BLE001
-                print(f"[cb] JS 檔掃描失敗 {s}({e})")
+                print(f"[cb] JS 檔掃描失敗 {s}({str(e)[:300]})")
     except Exception as e:  # noqa: BLE001
-        print(f"[cb] 清單頁原始碼探測失敗({e})。")
+        print(f"[cb] 清單頁原始碼探測失敗({str(e)[:300]})。")
 
     if found:
         print(f"[cb] 探測到債券相關 API 候選:{found}")
@@ -657,7 +658,7 @@ def fetch_cb_universe() -> pd.DataFrame:
             r = requests.get(url, params=params, headers=HEADERS, timeout=60)
             time.sleep(REQ_INTERVAL)
         except Exception as e:  # noqa: BLE001
-            print(f"[cb] {url} 請求失敗({e}),換下一個候選。")
+            print(f"[cb] {url} 請求失敗({str(e)[:300]}),換下一個候選。")
             return []
         if r.status_code != 200:
             print(f"[cb] {url} HTTP {r.status_code},換下一個候選。")
@@ -699,7 +700,7 @@ def fetch_cb_universe() -> pd.DataFrame:
                 "bonds": recs,
             }, ensure_ascii=False, indent=1), encoding="utf-8")
         except Exception as e:  # noqa: BLE001
-            print(f"[warn] 可轉債母體快取寫入失敗({e}),不影響本次統計。")
+            print(f"[warn] 可轉債母體快取寫入失敗({str(e)[:300]}),不影響本次統計。")
         print(f"[cb] 母體 = 發債公司 {len(uni)} 檔(可轉債 {len(recs)} 檔)。")
         return uni
 
@@ -713,7 +714,7 @@ def fetch_cb_universe() -> pd.DataFrame:
                 print(f"[cb] 備援母體:發債公司 {len(uni)} 檔(可轉債 {len(bonds)} 檔)。")
                 return uni
         except Exception as e:  # noqa: BLE001
-            print(f"[warn] cb_universe.json 讀取失敗({e})。")
+            print(f"[warn] cb_universe.json 讀取失敗({str(e)[:300]})。")
     print("[warn] 無可轉債備援母體,可轉債標的統計將略過。")
     return empty
 
@@ -726,7 +727,7 @@ def safe_fetch(fn, d, label):
     try:
         return fn(d)
     except Exception as e:  # noqa: BLE001
-        print(f"[warn] {label} {d} 抓取失敗({e}),略過該日該來源。")
+        print(f"[warn] {label} {d} 抓取失敗({str(e)[:300]}),略過該日該來源。")
         return []
 
 
