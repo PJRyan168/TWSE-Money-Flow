@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-18T12:35:44",
+ "generated_at": "2026-07-18T14:20:34",
  "trade_date": "2026-07-17",
  "base_dates": {
   "daily": "2026-07-16",
@@ -7,6 +7,11 @@
   "mtd": "2026-06-30",
   "qtd": "2026-06-30",
   "ytd": "2025-12-31"
+ },
+ "period_days": {
+  "daily": 1,
+  "wtd": 5,
+  "mtd": 12
  },
  "universe_count": 268,
  "foreign_ratio_date": "2026-07-17",
@@ -31,7 +36,15 @@
      "inst_net_d": 496378927,
      "fore_net_d": 0,
      "foreign_ratio": null,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 9199374781.0,
+     "value_m": 23224305902.0,
+     "inst_net_w": 176395252.0,
+     "inst_net_m": -1226629195.0,
+     "fore_net_w": 0.0,
+     "fore_net_m": -757215723.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": -757215723.0
     },
     {
      "stock_id": "3017",
@@ -46,7 +59,15 @@
      "inst_net_d": 267986400,
      "fore_net_d": -291460400,
      "foreign_ratio": 52.75,
-     "trust_net_d": 555761800
+     "trust_net_d": 555761800,
+     "value_w": 41912197735.0,
+     "value_m": 120917158843.0,
+     "inst_net_w": -3466012000.0,
+     "inst_net_m": 2357944600.0,
+     "fore_net_w": -2931493400.0,
+     "fore_net_m": -1680956200.0,
+     "trust_net_w": -416589800.0,
+     "trust_net_m": 4372566000.0
     },
     {
      "stock_id": "2421",
@@ -61,7 +82,15 @@
      "inst_net_d": -146697827,
      "fore_net_d": -134129272,
      "foreign_ratio": 28.59,
-     "trust_net_d": 889000
+     "trust_net_d": 889000,
+     "value_w": 1440470121.0,
+     "value_m": 3118017553.0,
+     "inst_net_w": -370961920.0,
+     "inst_net_m": -198064501.0,
+     "fore_net_w": -324242049.0,
+     "fore_net_m": -185997723.0,
+     "trust_net_w": 381000.0,
+     "trust_net_m": 45720000.0
     }
    ],
    "daily": {
@@ -132,7 +161,15 @@
      "inst_net_d": 267986400,
      "fore_net_d": -291460400,
      "foreign_ratio": 52.75,
-     "trust_net_d": 555761800
+     "trust_net_d": 555761800,
+     "value_w": 41912197735.0,
+     "value_m": 120917158843.0,
+     "inst_net_w": -3466012000.0,
+     "inst_net_m": 2357944600.0,
+     "fore_net_w": -2931493400.0,
+     "fore_net_m": -1680956200.0,
+     "trust_net_w": -416589800.0,
+     "trust_net_m": 4372566000.0
     },
     {
      "stock_id": "3706",
@@ -147,7 +184,15 @@
      "inst_net_d": -116122977,
      "fore_net_d": -181160518,
      "foreign_ratio": 7.56,
-     "trust_net_d": 140132100
+     "trust_net_d": 140132100,
+     "value_w": 6151465415.0,
+     "value_m": 23705325196.0,
+     "inst_net_w": -166553579.0,
+     "inst_net_m": 152428581.0,
+     "fore_net_w": -323172790.0,
+     "fore_net_m": -2392415829.0,
+     "trust_net_w": 162118800.0,
+     "trust_net_m": 2684761500.0
     },
     {
      "stock_id": "2317",
@@ -162,7 +207,15 @@
      "inst_net_d": -662303538,
      "fore_net_d": -998766990,
      "foreign_ratio": 39.89,
-     "trust_net_d": -162809946
+     "trust_net_d": -162809946,
+     "value_w": 54540472591.0,
+     "value_m": 141115504498.0,
+     "inst_net_w": 1091621232.0,
+     "inst_net_m": -14167160982.0,
+     "fore_net_w": 255796866.0,
+     "fore_net_m": -15750752472.0,
+     "trust_net_w": -309925980.0,
+     "trust_net_m": 1211148198.0
     },
     {
      "stock_id": "2376",
@@ -177,7 +230,15 @@
      "inst_net_d": -331047925,
      "fore_net_d": -468547950,
      "foreign_ratio": 20.97,
-     "trust_net_d": 62557625
+     "trust_net_d": 62557625,
+     "value_w": 9367928136.0,
+     "value_m": 20637910641.0,
+     "inst_net_w": -486907525.0,
+     "inst_net_m": -1020756100.0,
+     "fore_net_w": -584976925.0,
+     "fore_net_m": -2917331300.0,
+     "trust_net_w": -186319250.0,
+     "trust_net_m": 1553590025.0
     },
     {
      "stock_id": "2356",
@@ -192,7 +253,15 @@
      "inst_net_d": 79480089,
      "fore_net_d": 475721766,
      "foreign_ratio": 15.52,
-     "trust_net_d": -429658398
+     "trust_net_d": -429658398,
+     "value_w": 13912062929.0,
+     "value_m": 34919824265.0,
+     "inst_net_w": -1224504392.0,
+     "inst_net_m": -993974494.0,
+     "fore_net_w": -757462563.0,
+     "fore_net_m": -2587414869.0,
+     "trust_net_w": -257934339.0,
+     "trust_net_m": 1641270384.0
     },
     {
      "stock_id": "3231",
@@ -207,7 +276,15 @@
      "inst_net_d": -713840477,
      "fore_net_d": -38824368,
      "foreign_ratio": 25.85,
-     "trust_net_d": -729013995
+     "trust_net_d": -729013995,
+     "value_w": 21561026334.0,
+     "value_m": 56806036596.0,
+     "inst_net_w": 314441491.0,
+     "inst_net_m": -5027082896.0,
+     "fore_net_w": 1682773337.0,
+     "fore_net_m": -5946643373.0,
+     "trust_net_w": -1631581861.0,
+     "trust_net_m": 1712778711.0
     },
     {
      "stock_id": "2330",
@@ -222,7 +299,15 @@
      "inst_net_d": -91453659840,
      "fore_net_d": -101181277560,
      "foreign_ratio": 69.34,
-     "trust_net_d": 3408710800
+     "trust_net_d": 3408710800,
+     "value_w": 576083955010.0,
+     "value_m": 1114574765486.0,
+     "inst_net_w": -126010057540.0,
+     "inst_net_m": -183825973790.0,
+     "fore_net_w": -151797211680.0,
+     "fore_net_m": -230692493200.0,
+     "trust_net_w": 8682782320.0,
+     "trust_net_m": 27646959320.0
     },
     {
      "stock_id": "2382",
@@ -237,7 +322,15 @@
      "inst_net_d": 824439746,
      "fore_net_d": 1450240512,
      "foreign_ratio": 19.46,
-     "trust_net_d": -1083185554
+     "trust_net_d": -1083185554,
+     "value_w": 48767670419.0,
+     "value_m": 88749532550.0,
+     "inst_net_w": -1839489036.0,
+     "inst_net_m": -2086814678.0,
+     "fore_net_w": -1196983284.0,
+     "fore_net_m": -6413215504.0,
+     "trust_net_w": 1022891562.0,
+     "trust_net_m": 5560437729.0
     },
     {
      "stock_id": "2308",
@@ -252,7 +345,15 @@
      "inst_net_d": -8622733560,
      "fore_net_d": -9329013480,
      "foreign_ratio": 62.99,
-     "trust_net_d": 408833880
+     "trust_net_d": 408833880,
+     "value_w": 96133116898.0,
+     "value_m": 235167065630.0,
+     "inst_net_w": -10230403080.0,
+     "inst_net_m": -20583714540.0,
+     "fore_net_w": -13099080180.0,
+     "fore_net_m": -23109736920.0,
+     "trust_net_w": 2175572460.0,
+     "trust_net_m": 1541098860.0
     },
     {
      "stock_id": "2059",
@@ -267,7 +368,15 @@
      "inst_net_d": 40870200,
      "fore_net_d": -363113580,
      "foreign_ratio": 23.88,
-     "trust_net_d": 135400290
+     "trust_net_d": 135400290,
+     "value_w": 26933618790.0,
+     "value_m": 60221137335.0,
+     "inst_net_w": -232336830.0,
+     "inst_net_m": -1314118950.0,
+     "fore_net_w": -2603329170.0,
+     "fore_net_m": -6012811200.0,
+     "trust_net_w": 2154522300.0,
+     "trust_net_m": 4433564580.0
     },
     {
      "stock_id": "2454",
@@ -282,7 +391,15 @@
      "inst_net_d": -2582080520,
      "fore_net_d": -992343680,
      "foreign_ratio": 55.53,
-     "trust_net_d": -422554190
+     "trust_net_d": -422554190,
+     "value_w": 160499118619.0,
+     "value_m": 416534983165.0,
+     "inst_net_w": -9754427930.0,
+     "inst_net_m": -27289791570.0,
+     "fore_net_w": -9367380060.0,
+     "fore_net_m": -24605064220.0,
+     "trust_net_w": -1367754940.0,
+     "trust_net_m": -3178294180.0
     },
     {
      "stock_id": "6669",
@@ -297,7 +414,15 @@
      "inst_net_d": -608523300,
      "fore_net_d": -18309060,
      "foreign_ratio": 28.02,
-     "trust_net_d": -344661240
+     "trust_net_d": -344661240,
+     "value_w": 26598361805.0,
+     "value_m": 97615977190.0,
+     "inst_net_w": 761546940.0,
+     "inst_net_m": 5825736840.0,
+     "fore_net_w": 450168180.0,
+     "fore_net_m": -8244279120.0,
+     "trust_net_w": 370209840.0,
+     "trust_net_m": 14038295040.0
     }
    ],
    "daily": {
@@ -368,7 +493,15 @@
      "inst_net_d": -662303538,
      "fore_net_d": -998766990,
      "foreign_ratio": 39.89,
-     "trust_net_d": -162809946
+     "trust_net_d": -162809946,
+     "value_w": 54540472591.0,
+     "value_m": 141115504498.0,
+     "inst_net_w": 1091621232.0,
+     "inst_net_m": -14167160982.0,
+     "fore_net_w": 255796866.0,
+     "fore_net_m": -15750752472.0,
+     "trust_net_w": -309925980.0,
+     "trust_net_m": 1211148198.0
     },
     {
      "stock_id": "1504",
@@ -383,7 +516,15 @@
      "inst_net_d": -228550322,
      "fore_net_d": -276707043,
      "foreign_ratio": 6.82,
-     "trust_net_d": 75907646
+     "trust_net_d": 75907646,
+     "value_w": 5213631899.0,
+     "value_m": 12613509993.0,
+     "inst_net_w": 15798868.0,
+     "inst_net_m": -534838943.0,
+     "fore_net_w": -74988411.0,
+     "fore_net_m": -595563616.0,
+     "trust_net_w": 87701386.0,
+     "trust_net_m": 93927480.0
     },
     {
      "stock_id": "6188",
@@ -398,7 +539,15 @@
      "inst_net_d": -29907206,
      "fore_net_d": 0,
      "foreign_ratio": null,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 443180128.0,
+     "value_m": 1598230091.0,
+     "inst_net_w": -71958984.0,
+     "inst_net_m": -42138260.0,
+     "fore_net_w": 0.0,
+     "fore_net_m": 6044261.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": 6044261.0
     },
     {
      "stock_id": "1590",
@@ -413,7 +562,15 @@
      "inst_net_d": 114016980,
      "fore_net_d": 23469545,
      "foreign_ratio": 80.89,
-     "trust_net_d": 117645000
+     "trust_net_d": 117645000,
+     "value_w": 5024069475.0,
+     "value_m": 11529014605.0,
+     "inst_net_w": 702696115.0,
+     "inst_net_m": 1537372210.0,
+     "fore_net_w": 567996385.0,
+     "fore_net_m": 1381099170.0,
+     "trust_net_w": 160265380.0,
+     "trust_net_m": 187467940.0
     },
     {
      "stock_id": "2049",
@@ -428,7 +585,15 @@
      "inst_net_d": -222570018,
      "fore_net_d": -196010442,
      "foreign_ratio": 36.37,
-     "trust_net_d": 16777062
+     "trust_net_d": 16777062,
+     "value_w": 4351064852.0,
+     "value_m": 14437131124.0,
+     "inst_net_w": 130112424.0,
+     "inst_net_m": 178980012.0,
+     "fore_net_w": 140504184.0,
+     "fore_net_m": 366570252.0,
+     "trust_net_w": 7784028.0,
+     "trust_net_m": -196486272.0
     },
     {
      "stock_id": "2308",
@@ -443,7 +608,15 @@
      "inst_net_d": -8622733560,
      "fore_net_d": -9329013480,
      "foreign_ratio": 62.99,
-     "trust_net_d": 408833880
+     "trust_net_d": 408833880,
+     "value_w": 96133116898.0,
+     "value_m": 235167065630.0,
+     "inst_net_w": -10230403080.0,
+     "inst_net_m": -20583714540.0,
+     "fore_net_w": -13099080180.0,
+     "fore_net_m": -23109736920.0,
+     "trust_net_w": 2175572460.0,
+     "trust_net_m": 1541098860.0
     }
    ],
    "daily": {
@@ -514,7 +687,15 @@
      "inst_net_d": 317284362,
      "fore_net_d": 369737046,
      "foreign_ratio": 5.01,
-     "trust_net_d": 17136000
+     "trust_net_d": 17136000,
+     "value_w": 23101345969.0,
+     "value_m": 40640710187.0,
+     "inst_net_w": 460403989.0,
+     "inst_net_m": 471898757.0,
+     "fore_net_w": 478589569.0,
+     "fore_net_m": 310981558.0,
+     "trust_net_w": 19155600.0,
+     "trust_net_m": 56793600.0
     },
     {
      "stock_id": "3019",
@@ -529,7 +710,15 @@
      "inst_net_d": -293589864,
      "fore_net_d": -227625338,
      "foreign_ratio": 6.36,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 3202541080.0,
+     "value_m": 8628253035.0,
+     "inst_net_w": -343679679.0,
+     "inst_net_m": -491217774.0,
+     "fore_net_w": -346104751.0,
+     "fore_net_m": -449288997.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": 0.0
     },
     {
      "stock_id": "5371",
@@ -544,7 +733,15 @@
      "inst_net_d": -14762258,
      "fore_net_d": 0,
      "foreign_ratio": null,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 17525837422.0,
+     "value_m": 51289809468.0,
+     "inst_net_w": -265924312.0,
+     "inst_net_m": -796046360.0,
+     "fore_net_w": 0.0,
+     "fore_net_m": -36740363.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": -36740363.0
     }
    ],
    "daily": {
@@ -615,7 +812,15 @@
      "inst_net_d": -25190080,
      "fore_net_d": 0,
      "foreign_ratio": null,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 341329513.0,
+     "value_m": 1675063490.0,
+     "inst_net_w": -108938930.0,
+     "inst_net_m": -213969324.0,
+     "fore_net_w": 0.0,
+     "fore_net_m": -48007500.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": -48007500.0
     },
     {
      "stock_id": "6282",
@@ -630,7 +835,15 @@
      "inst_net_d": -139480453,
      "fore_net_d": -92089016,
      "foreign_ratio": 13.11,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 6968184679.0,
+     "value_m": 16988331398.0,
+     "inst_net_w": -1033764316.0,
+     "inst_net_m": -1044167451.0,
+     "fore_net_w": -1073374154.0,
+     "fore_net_m": -1171762420.0,
+     "trust_net_w": 24400000.0,
+     "trust_net_m": 172459200.0
     },
     {
      "stock_id": "2457",
@@ -645,7 +858,15 @@
      "inst_net_d": -38833337,
      "fore_net_d": -35547909,
      "foreign_ratio": 6.61,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 344834012.0,
+     "value_m": 1010784489.0,
+     "inst_net_w": -81035769.0,
+     "inst_net_m": -60137238.0,
+     "fore_net_w": -75196576.0,
+     "fore_net_m": -51410720.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": 0.0
     },
     {
      "stock_id": "2308",
@@ -660,7 +881,15 @@
      "inst_net_d": -8622733560,
      "fore_net_d": -9329013480,
      "foreign_ratio": 62.99,
-     "trust_net_d": 408833880
+     "trust_net_d": 408833880,
+     "value_w": 96133116898.0,
+     "value_m": 235167065630.0,
+     "inst_net_w": -10230403080.0,
+     "inst_net_m": -20583714540.0,
+     "fore_net_w": -13099080180.0,
+     "fore_net_m": -23109736920.0,
+     "trust_net_w": 2175572460.0,
+     "trust_net_m": 1541098860.0
     },
     {
      "stock_id": "2301",
@@ -675,7 +904,15 @@
      "inst_net_d": -2029727100,
      "fore_net_d": -1649747386,
      "foreign_ratio": 40.9,
-     "trust_net_d": -474102034
+     "trust_net_d": -474102034,
+     "value_w": 25468507016.0,
+     "value_m": 51551460906.0,
+     "inst_net_w": -1810045012.0,
+     "inst_net_m": 207157964.0,
+     "fore_net_w": -1016418062.0,
+     "fore_net_m": 1562965716.0,
+     "trust_net_w": -1083358341.0,
+     "trust_net_m": -1920070668.0
     }
    ],
    "daily": {
@@ -746,7 +983,15 @@
      "inst_net_d": -18305294,
      "fore_net_d": 0,
      "foreign_ratio": null,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 2433005347.0,
+     "value_m": 9305610839.0,
+     "inst_net_w": 625677058.0,
+     "inst_net_m": 536300602.0,
+     "fore_net_w": 0.0,
+     "fore_net_m": -276538977.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": -276538977.0
     },
     {
      "stock_id": "2308",
@@ -761,7 +1006,15 @@
      "inst_net_d": -8622733560,
      "fore_net_d": -9329013480,
      "foreign_ratio": 62.99,
-     "trust_net_d": 408833880
+     "trust_net_d": 408833880,
+     "value_w": 96133116898.0,
+     "value_m": 235167065630.0,
+     "inst_net_w": -10230403080.0,
+     "inst_net_m": -20583714540.0,
+     "fore_net_w": -13099080180.0,
+     "fore_net_m": -23109736920.0,
+     "trust_net_w": 2175572460.0,
+     "trust_net_m": 1541098860.0
     },
     {
      "stock_id": "3211",
@@ -776,7 +1029,15 @@
      "inst_net_d": -462903774,
      "fore_net_d": 0,
      "foreign_ratio": null,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 18683313019.0,
+     "value_m": 47440812815.0,
+     "inst_net_w": -2428272596.0,
+     "inst_net_m": -527994678.0,
+     "fore_net_w": 0.0,
+     "fore_net_m": -1152946076.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": -1152946076.0
     },
     {
      "stock_id": "2301",
@@ -791,7 +1052,15 @@
      "inst_net_d": -2029727100,
      "fore_net_d": -1649747386,
      "foreign_ratio": 40.9,
-     "trust_net_d": -474102034
+     "trust_net_d": -474102034,
+     "value_w": 25468507016.0,
+     "value_m": 51551460906.0,
+     "inst_net_w": -1810045012.0,
+     "inst_net_m": 207157964.0,
+     "fore_net_w": -1016418062.0,
+     "fore_net_m": 1562965716.0,
+     "trust_net_w": -1083358341.0,
+     "trust_net_m": -1920070668.0
     }
    ],
    "daily": {
@@ -862,7 +1131,15 @@
      "inst_net_d": 790945507,
      "fore_net_d": 400065237,
      "foreign_ratio": 18.41,
-     "trust_net_d": 524117000
+     "trust_net_d": 524117000,
+     "value_w": 37540589606.0,
+     "value_m": 120634428456.0,
+     "inst_net_w": 958770131.0,
+     "inst_net_m": -1343524644.0,
+     "fore_net_w": 864981579.0,
+     "fore_net_m": -3177504132.0,
+     "trust_net_w": 566863000.0,
+     "trust_net_m": 2083133800.0
     },
     {
      "stock_id": "8358",
@@ -877,7 +1154,15 @@
      "inst_net_d": 1075553094,
      "fore_net_d": 0,
      "foreign_ratio": null,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 18584400444.0,
+     "value_m": 56339855221.0,
+     "inst_net_w": 828869639.0,
+     "inst_net_m": -1580719589.0,
+     "fore_net_w": 0.0,
+     "fore_net_m": -44604504.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": -44604504.0
     },
     {
      "stock_id": "6274",
@@ -892,7 +1177,15 @@
      "inst_net_d": 1787244030,
      "fore_net_d": 0,
      "foreign_ratio": null,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 41865568975.0,
+     "value_m": 115450907405.0,
+     "inst_net_w": 3293913870.0,
+     "inst_net_m": 972824580.0,
+     "fore_net_w": 0.0,
+     "fore_net_m": 1778136750.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": 1778136750.0
     },
     {
      "stock_id": "2383",
@@ -907,7 +1200,15 @@
      "inst_net_d": 1638184770,
      "fore_net_d": 1122365540,
      "foreign_ratio": 43.89,
-     "trust_net_d": 176424255
+     "trust_net_d": 176424255,
+     "value_w": 50253444034.0,
+     "value_m": 146061644940.0,
+     "inst_net_w": 2413163225.0,
+     "inst_net_m": -1329567060.0,
+     "fore_net_w": 929503070.0,
+     "fore_net_m": -5913927660.0,
+     "trust_net_w": 921857075.0,
+     "trust_net_m": 3324070480.0
     },
     {
      "stock_id": "1303",
@@ -922,7 +1223,15 @@
      "inst_net_d": -948908416,
      "fore_net_d": -9975901442,
      "foreign_ratio": 32.45,
-     "trust_net_d": 9707549544
+     "trust_net_d": 9707549544,
+     "value_w": 137660198850.0,
+     "value_m": 215742880680.0,
+     "inst_net_w": -2508787428.0,
+     "inst_net_m": -285252968.0,
+     "fore_net_w": -31097418167.0,
+     "fore_net_m": -34505249586.0,
+     "trust_net_w": 27970658925.0,
+     "trust_net_m": 33658469960.0
     }
    ],
    "daily": {
@@ -993,7 +1302,15 @@
      "inst_net_d": -126426862,
      "fore_net_d": -49478812,
      "foreign_ratio": 50.36,
-     "trust_net_d": -144121575
+     "trust_net_d": -144121575,
+     "value_w": 7489855921.0,
+     "value_m": 21313620129.0,
+     "inst_net_w": -150656078.0,
+     "inst_net_m": -2587986952.0,
+     "fore_net_w": 145828440.0,
+     "fore_net_m": 831711112.0,
+     "trust_net_w": -416676195.0,
+     "trust_net_m": -3367788142.0
     },
     {
      "stock_id": "2355",
@@ -1008,7 +1325,15 @@
      "inst_net_d": 20437060,
      "fore_net_d": 41197103,
      "foreign_ratio": 15.64,
-     "trust_net_d": -8159200
+     "trust_net_d": -8159200,
+     "value_w": 1395602112.0,
+     "value_m": 2842148210.0,
+     "inst_net_w": 105077476.0,
+     "inst_net_m": 41409893.0,
+     "fore_net_w": 145705041.0,
+     "fore_net_m": 96117069.0,
+     "trust_net_w": -8853600.0,
+     "trust_net_m": -9417800.0
     },
     {
      "stock_id": "2367",
@@ -1023,7 +1348,15 @@
      "inst_net_d": 141791686,
      "fore_net_d": 154828531,
      "foreign_ratio": 7.11,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 3578830655.0,
+     "value_m": 7215401192.0,
+     "inst_net_w": 192653619.0,
+     "inst_net_m": 150758496.0,
+     "fore_net_w": 183457030.0,
+     "fore_net_m": 158609069.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": 0.0
     },
     {
      "stock_id": "2368",
@@ -1038,7 +1371,15 @@
      "inst_net_d": 920283885,
      "fore_net_d": 984480489,
      "foreign_ratio": 28.29,
-     "trust_net_d": 12479274
+     "trust_net_d": 12479274,
+     "value_w": 24164070368.0,
+     "value_m": 69625475968.0,
+     "inst_net_w": 1795850217.0,
+     "inst_net_m": 901672506.0,
+     "fore_net_w": 4517171811.0,
+     "fore_net_m": 5659311825.0,
+     "trust_net_w": -2138673357.0,
+     "trust_net_m": -4019834457.0
     },
     {
      "stock_id": "4958",
@@ -1053,7 +1394,15 @@
      "inst_net_d": -1720326370,
      "fore_net_d": -1790901030,
      "foreign_ratio": 58.89,
-     "trust_net_d": 257986175
+     "trust_net_d": 257986175,
+     "value_w": 149369487663.0,
+     "value_m": 285899455642.0,
+     "inst_net_w": 3596317120.0,
+     "inst_net_m": -2317126139.0,
+     "fore_net_w": -94868890.0,
+     "fore_net_m": -3638170092.0,
+     "trust_net_w": 3792310026.0,
+     "trust_net_m": 1872960093.0
     },
     {
      "stock_id": "3037",
@@ -1068,7 +1417,15 @@
      "inst_net_d": -3453907146,
      "fore_net_d": -3675001210,
      "foreign_ratio": 36.54,
-     "trust_net_d": 532368266
+     "trust_net_d": 532368266,
+     "value_w": 139771854816.0,
+     "value_m": 343550560369.0,
+     "inst_net_w": -9618713706.0,
+     "inst_net_m": -39935699694.0,
+     "fore_net_w": -15384432840.0,
+     "fore_net_m": -49099423610.0,
+     "trust_net_w": 5827152502.0,
+     "trust_net_m": 9242483158.0
     },
     {
      "stock_id": "2313",
@@ -1083,7 +1440,15 @@
      "inst_net_d": -3525540072,
      "fore_net_d": -3214142176,
      "foreign_ratio": 17.23,
-     "trust_net_d": 16960000
+     "trust_net_d": 16960000,
+     "value_w": 62252418903.0,
+     "value_m": 109224972948.0,
+     "inst_net_w": 1559535176.0,
+     "inst_net_m": -2893787280.0,
+     "fore_net_w": -1253690196.0,
+     "fore_net_m": -5224789820.0,
+     "trust_net_w": 2825112000.0,
+     "trust_net_m": 2829140000.0
     }
    ],
    "daily": {
@@ -1154,7 +1519,15 @@
      "inst_net_d": -80149100,
      "fore_net_d": 0,
      "foreign_ratio": null,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 9027574020.0,
+     "value_m": 23341897700.0,
+     "inst_net_w": 5099500.0,
+     "inst_net_m": -1033753250.0,
+     "fore_net_w": 0.0,
+     "fore_net_m": 107171750.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": 107171750.0
     },
     {
      "stock_id": "3661",
@@ -1169,7 +1542,15 @@
      "inst_net_d": -1258528080,
      "fore_net_d": -1031075280,
      "foreign_ratio": 51.8,
-     "trust_net_d": 24460920
+     "trust_net_d": 24460920,
+     "value_w": 42920180655.0,
+     "value_m": 115856518558.0,
+     "inst_net_w": -4666335480.0,
+     "inst_net_m": -9099232560.0,
+     "fore_net_w": -3242931960.0,
+     "fore_net_m": -8349410880.0,
+     "trust_net_w": -843712080.0,
+     "trust_net_m": -289563840.0
     },
     {
      "stock_id": "3443",
@@ -1184,7 +1565,15 @@
      "inst_net_d": 652789865,
      "fore_net_d": 522921425,
      "foreign_ratio": 26.36,
-     "trust_net_d": 171159885
+     "trust_net_d": 171159885,
+     "value_w": 37791411015.0,
+     "value_m": 113758800315.0,
+     "inst_net_w": -153342475.0,
+     "inst_net_m": -1047898410.0,
+     "fore_net_w": 2410677165.0,
+     "fore_net_m": 255434010.0,
+     "trust_net_w": -2454890880.0,
+     "trust_net_m": -644709520.0
     },
     {
      "stock_id": "2454",
@@ -1199,7 +1588,15 @@
      "inst_net_d": -2582080520,
      "fore_net_d": -992343680,
      "foreign_ratio": 55.53,
-     "trust_net_d": -422554190
+     "trust_net_d": -422554190,
+     "value_w": 160499118619.0,
+     "value_m": 416534983165.0,
+     "inst_net_w": -9754427930.0,
+     "inst_net_m": -27289791570.0,
+     "fore_net_w": -9367380060.0,
+     "fore_net_m": -24605064220.0,
+     "trust_net_w": -1367754940.0,
+     "trust_net_m": -3178294180.0
     },
     {
      "stock_id": "3035",
@@ -1214,7 +1611,15 @@
      "inst_net_d": -307095816,
      "fore_net_d": -256046120,
      "foreign_ratio": 12.18,
-     "trust_net_d": 23000000
+     "trust_net_d": 23000000,
+     "value_w": 5862232334.0,
+     "value_m": 17979262078.0,
+     "inst_net_w": -480813344.0,
+     "inst_net_m": 265611360.0,
+     "fore_net_w": -382460744.0,
+     "fore_net_m": 222002440.0,
+     "trust_net_w": 23184000.0,
+     "trust_net_m": 23404800.0
     }
    ],
    "daily": {
@@ -1285,7 +1690,15 @@
      "inst_net_d": -91453659840,
      "fore_net_d": -101181277560,
      "foreign_ratio": 69.34,
-     "trust_net_d": 3408710800
+     "trust_net_d": 3408710800,
+     "value_w": 576083955010.0,
+     "value_m": 1114574765486.0,
+     "inst_net_w": -126010057540.0,
+     "inst_net_m": -183825973790.0,
+     "fore_net_w": -151797211680.0,
+     "fore_net_m": -230692493200.0,
+     "trust_net_w": 8682782320.0,
+     "trust_net_m": 27646959320.0
     },
     {
      "stock_id": "3481",
@@ -1300,7 +1713,15 @@
      "inst_net_d": 1511001276,
      "fore_net_d": 3154810819,
      "foreign_ratio": 21.88,
-     "trust_net_d": -1423321757
+     "trust_net_d": -1423321757,
+     "value_w": 102560758558.0,
+     "value_m": 330328174335.0,
+     "inst_net_w": 416861312.0,
+     "inst_net_m": -3036945423.0,
+     "fore_net_w": 2636485580.0,
+     "fore_net_m": -216363052.0,
+     "trust_net_w": -1687035382.0,
+     "trust_net_m": -1772506910.0
     },
     {
      "stock_id": "1802",
@@ -1315,7 +1736,15 @@
      "inst_net_d": -483909058,
      "fore_net_d": -386136690,
      "foreign_ratio": 4.87,
-     "trust_net_d": 56600
+     "trust_net_d": 56600,
+     "value_w": 12485620171.0,
+     "value_m": 38399563160.0,
+     "inst_net_w": -1761376944.0,
+     "inst_net_m": -5192963232.0,
+     "fore_net_w": -2041649560.0,
+     "fore_net_m": -5201846772.0,
+     "trust_net_w": -55015200.0,
+     "trust_net_m": -101483800.0
     },
     {
      "stock_id": "3037",
@@ -1330,7 +1759,15 @@
      "inst_net_d": -3453907146,
      "fore_net_d": -3675001210,
      "foreign_ratio": 36.54,
-     "trust_net_d": 532368266
+     "trust_net_d": 532368266,
+     "value_w": 139771854816.0,
+     "value_m": 343550560369.0,
+     "inst_net_w": -9618713706.0,
+     "inst_net_m": -39935699694.0,
+     "fore_net_w": -15384432840.0,
+     "fore_net_m": -49099423610.0,
+     "trust_net_w": 5827152502.0,
+     "trust_net_m": 9242483158.0
     }
    ],
    "daily": {
@@ -1401,7 +1838,15 @@
      "inst_net_d": -539979850,
      "fore_net_d": -1346148800,
      "foreign_ratio": 59.69,
-     "trust_net_d": 617929600
+     "trust_net_d": 617929600,
+     "value_w": 31268353780.0,
+     "value_m": 69621869435.0,
+     "inst_net_w": -1059507950.0,
+     "inst_net_m": -632209750.0,
+     "fore_net_w": -2447414950.0,
+     "fore_net_m": 980829300.0,
+     "trust_net_w": 1387797850.0,
+     "trust_net_m": -1877032200.0
     },
     {
      "stock_id": "2330",
@@ -1416,7 +1861,15 @@
      "inst_net_d": -91453659840,
      "fore_net_d": -101181277560,
      "foreign_ratio": 69.34,
-     "trust_net_d": 3408710800
+     "trust_net_d": 3408710800,
+     "value_w": 576083955010.0,
+     "value_m": 1114574765486.0,
+     "inst_net_w": -126010057540.0,
+     "inst_net_m": -183825973790.0,
+     "fore_net_w": -151797211680.0,
+     "fore_net_m": -230692493200.0,
+     "trust_net_w": 8682782320.0,
+     "trust_net_m": 27646959320.0
     },
     {
      "stock_id": "3081",
@@ -1431,7 +1884,15 @@
      "inst_net_d": 870074240,
      "fore_net_d": 0,
      "foreign_ratio": null,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 15458719310.0,
+     "value_m": 45575640795.0,
+     "inst_net_w": -433391360.0,
+     "inst_net_m": -1471652800.0,
+     "fore_net_w": 0.0,
+     "fore_net_m": -83628880.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": -83628880.0
     },
     {
      "stock_id": "6223",
@@ -1446,7 +1907,15 @@
      "inst_net_d": 734753600,
      "fore_net_d": 0,
      "foreign_ratio": null,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 25209436330.0,
+     "value_m": 66382496760.0,
+     "inst_net_w": -1694504000.0,
+     "inst_net_m": 1362172000.0,
+     "fore_net_w": 0.0,
+     "fore_net_m": -142811200.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": -142811200.0
     },
     {
      "stock_id": "3711",
@@ -1461,7 +1930,15 @@
      "inst_net_d": -7602682466,
      "fore_net_d": -7209941050,
      "foreign_ratio": 77.22,
-     "trust_net_d": -37384618
+     "trust_net_d": -37384618,
+     "value_w": 83938724074.0,
+     "value_m": 215020538557.0,
+     "inst_net_w": -6892888642.0,
+     "inst_net_m": -16846394750.0,
+     "fore_net_w": -9085615880.0,
+     "fore_net_m": -26203336616.0,
+     "trust_net_w": 1891913288.0,
+     "trust_net_m": 8604083310.0
     }
    ],
    "daily": {
@@ -1532,7 +2009,15 @@
      "inst_net_d": 870074240,
      "fore_net_d": 0,
      "foreign_ratio": null,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 15458719310.0,
+     "value_m": 45575640795.0,
+     "inst_net_w": -433391360.0,
+     "inst_net_m": -1471652800.0,
+     "fore_net_w": 0.0,
+     "fore_net_m": -83628880.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": -83628880.0
     }
    ],
    "daily": {
@@ -1603,7 +2088,15 @@
      "inst_net_d": -91453659840,
      "fore_net_d": -101181277560,
      "foreign_ratio": 69.34,
-     "trust_net_d": 3408710800
+     "trust_net_d": 3408710800,
+     "value_w": 576083955010.0,
+     "value_m": 1114574765486.0,
+     "inst_net_w": -126010057540.0,
+     "inst_net_m": -183825973790.0,
+     "fore_net_w": -151797211680.0,
+     "fore_net_m": -230692493200.0,
+     "trust_net_w": 8682782320.0,
+     "trust_net_m": 27646959320.0
     },
     {
      "stock_id": "6239",
@@ -1618,7 +2111,15 @@
      "inst_net_d": -1360563264,
      "fore_net_d": -1077670368,
      "foreign_ratio": 37.15,
-     "trust_net_d": -275669280
+     "trust_net_d": -275669280,
+     "value_w": 34554041317.0,
+     "value_m": 93864686018.0,
+     "inst_net_w": -1562839200.0,
+     "inst_net_m": -913182624.0,
+     "fore_net_w": -655067232.0,
+     "fore_net_m": 3364365312.0,
+     "trust_net_w": -503822880.0,
+     "trust_net_m": -3729033216.0
     },
     {
      "stock_id": "3374",
@@ -1633,7 +2134,15 @@
      "inst_net_d": 484899213,
      "fore_net_d": 0,
      "foreign_ratio": null,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 40914001869.0,
+     "value_m": 77780778814.0,
+     "inst_net_w": -1256699882.0,
+     "inst_net_m": 1459191795.0,
+     "fore_net_w": 0.0,
+     "fore_net_m": 340841724.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": 340841724.0
     },
     {
      "stock_id": "3711",
@@ -1648,7 +2157,15 @@
      "inst_net_d": -7602682466,
      "fore_net_d": -7209941050,
      "foreign_ratio": 77.22,
-     "trust_net_d": -37384618
+     "trust_net_d": -37384618,
+     "value_w": 83938724074.0,
+     "value_m": 215020538557.0,
+     "inst_net_w": -6892888642.0,
+     "inst_net_m": -16846394750.0,
+     "fore_net_w": -9085615880.0,
+     "fore_net_m": -26203336616.0,
+     "trust_net_w": 1891913288.0,
+     "trust_net_m": 8604083310.0
     }
    ],
    "daily": {
@@ -1719,7 +2236,15 @@
      "inst_net_d": -483909058,
      "fore_net_d": -386136690,
      "foreign_ratio": 4.87,
-     "trust_net_d": 56600
+     "trust_net_d": 56600,
+     "value_w": 12485620171.0,
+     "value_m": 38399563160.0,
+     "inst_net_w": -1761376944.0,
+     "inst_net_m": -5192963232.0,
+     "fore_net_w": -2041649560.0,
+     "fore_net_m": -5201846772.0,
+     "trust_net_w": -55015200.0,
+     "trust_net_m": -101483800.0
     },
     {
      "stock_id": "1303",
@@ -1734,7 +2259,15 @@
      "inst_net_d": -948908416,
      "fore_net_d": -9975901442,
      "foreign_ratio": 32.45,
-     "trust_net_d": 9707549544
+     "trust_net_d": 9707549544,
+     "value_w": 137660198850.0,
+     "value_m": 215742880680.0,
+     "inst_net_w": -2508787428.0,
+     "inst_net_m": -285252968.0,
+     "fore_net_w": -31097418167.0,
+     "fore_net_m": -34505249586.0,
+     "trust_net_w": 27970658925.0,
+     "trust_net_m": 33658469960.0
     }
    ],
    "daily": {
@@ -1805,7 +2338,15 @@
      "inst_net_d": 1511001276,
      "fore_net_d": 3154810819,
      "foreign_ratio": 21.88,
-     "trust_net_d": -1423321757
+     "trust_net_d": -1423321757,
+     "value_w": 102560758558.0,
+     "value_m": 330328174335.0,
+     "inst_net_w": 416861312.0,
+     "inst_net_m": -3036945423.0,
+     "fore_net_w": 2636485580.0,
+     "fore_net_m": -216363052.0,
+     "trust_net_w": -1687035382.0,
+     "trust_net_m": -1772506910.0
     },
     {
      "stock_id": "1802",
@@ -1820,7 +2361,15 @@
      "inst_net_d": -483909058,
      "fore_net_d": -386136690,
      "foreign_ratio": 4.87,
-     "trust_net_d": 56600
+     "trust_net_d": 56600,
+     "value_w": 12485620171.0,
+     "value_m": 38399563160.0,
+     "inst_net_w": -1761376944.0,
+     "inst_net_m": -5192963232.0,
+     "fore_net_w": -2041649560.0,
+     "fore_net_m": -5201846772.0,
+     "trust_net_w": -55015200.0,
+     "trust_net_m": -101483800.0
     },
     {
      "stock_id": "3673",
@@ -1835,7 +2384,15 @@
      "inst_net_d": 27778812,
      "fore_net_d": 46724884,
      "foreign_ratio": 36.84,
-     "trust_net_d": 7663500
+     "trust_net_d": 7663500,
+     "value_w": 2709026740.0,
+     "value_m": 10227761904.0,
+     "inst_net_w": -151886640.0,
+     "inst_net_m": -280631999.0,
+     "fore_net_w": -135859576.0,
+     "fore_net_m": -218164846.0,
+     "trust_net_w": 7663500.0,
+     "trust_net_m": 7663500.0
     },
     {
      "stock_id": "8046",
@@ -1850,7 +2407,15 @@
      "inst_net_d": 1285778200,
      "fore_net_d": 1131387250,
      "foreign_ratio": 13.81,
-     "trust_net_d": 94390850
+     "trust_net_d": 94390850,
+     "value_w": 133991407195.0,
+     "value_m": 275556310290.0,
+     "inst_net_w": -3063758700.0,
+     "inst_net_m": -56534000.0,
+     "fore_net_w": -12235415800.0,
+     "fore_net_m": -16617878350.0,
+     "trust_net_w": 9404970250.0,
+     "trust_net_m": 17126901700.0
     },
     {
      "stock_id": "3711",
@@ -1865,7 +2430,15 @@
      "inst_net_d": -7602682466,
      "fore_net_d": -7209941050,
      "foreign_ratio": 77.22,
-     "trust_net_d": -37384618
+     "trust_net_d": -37384618,
+     "value_w": 83938724074.0,
+     "value_m": 215020538557.0,
+     "inst_net_w": -6892888642.0,
+     "inst_net_m": -16846394750.0,
+     "fore_net_w": -9085615880.0,
+     "fore_net_m": -26203336616.0,
+     "trust_net_w": 1891913288.0,
+     "trust_net_m": 8604083310.0
     },
     {
      "stock_id": "3037",
@@ -1880,7 +2453,15 @@
      "inst_net_d": -3453907146,
      "fore_net_d": -3675001210,
      "foreign_ratio": 36.54,
-     "trust_net_d": 532368266
+     "trust_net_d": 532368266,
+     "value_w": 139771854816.0,
+     "value_m": 343550560369.0,
+     "inst_net_w": -9618713706.0,
+     "inst_net_m": -39935699694.0,
+     "fore_net_w": -15384432840.0,
+     "fore_net_m": -49099423610.0,
+     "trust_net_w": 5827152502.0,
+     "trust_net_m": 9242483158.0
     },
     {
      "stock_id": "3189",
@@ -1895,7 +2476,15 @@
      "inst_net_d": 511261443,
      "fore_net_d": 808005429,
      "foreign_ratio": 21.28,
-     "trust_net_d": -100911888
+     "trust_net_d": -100911888,
+     "value_w": 13874632586.0,
+     "value_m": 88013941436.0,
+     "inst_net_w": 1364483043.0,
+     "inst_net_m": -2137688091.0,
+     "fore_net_w": 957812625.0,
+     "fore_net_m": -2282026824.0,
+     "trust_net_w": 211891680.0,
+     "trust_net_m": 301141071.0
     }
    ],
    "daily": {
@@ -1966,7 +2555,15 @@
      "inst_net_d": 548934192,
      "fore_net_d": 682542194,
      "foreign_ratio": 25.05,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 17608987406.0,
+     "value_m": 30705036384.0,
+     "inst_net_w": -1626958.0,
+     "inst_net_m": 454663468.0,
+     "fore_net_w": 897717492.0,
+     "fore_net_m": 1261978032.0,
+     "trust_net_w": -377538000.0,
+     "trust_net_m": -743077200.0
     },
     {
      "stock_id": "5425",
@@ -1981,7 +2578,15 @@
      "inst_net_d": 240281052,
      "fore_net_d": 0,
      "foreign_ratio": null,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 8569306557.0,
+     "value_m": 17996736216.0,
+     "inst_net_w": -50488072.0,
+     "inst_net_m": 605800722.0,
+     "fore_net_w": 0.0,
+     "fore_net_m": 81420072.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": 81420072.0
     }
    ],
    "daily": {
@@ -2052,7 +2657,15 @@
      "inst_net_d": -118555186,
      "fore_net_d": -116766840,
      "foreign_ratio": 9.37,
-     "trust_net_d": 14267400
+     "trust_net_d": 14267400,
+     "value_w": 1510909645.0,
+     "value_m": 3527425860.0,
+     "inst_net_w": -366953464.0,
+     "inst_net_m": -627470545.0,
+     "fore_net_w": -340506310.0,
+     "fore_net_m": -583671162.0,
+     "trust_net_w": 14267400.0,
+     "trust_net_m": 14267400.0
     },
     {
      "stock_id": "2441",
@@ -2067,7 +2680,15 @@
      "inst_net_d": -444489502,
      "fore_net_d": -491367618,
      "foreign_ratio": 11.38,
-     "trust_net_d": 107019000
+     "trust_net_d": 107019000,
+     "value_w": 6146375670.0,
+     "value_m": 19148699260.0,
+     "inst_net_w": -769569202.0,
+     "inst_net_m": 203857912.0,
+     "fore_net_w": -880043802.0,
+     "fore_net_m": -185071650.0,
+     "trust_net_w": 209737000.0,
+     "trust_net_m": 428708500.0
     },
     {
      "stock_id": "6239",
@@ -2082,7 +2703,15 @@
      "inst_net_d": -1360563264,
      "fore_net_d": -1077670368,
      "foreign_ratio": 37.15,
-     "trust_net_d": -275669280
+     "trust_net_d": -275669280,
+     "value_w": 34554041317.0,
+     "value_m": 93864686018.0,
+     "inst_net_w": -1562839200.0,
+     "inst_net_m": -913182624.0,
+     "fore_net_w": -655067232.0,
+     "fore_net_m": 3364365312.0,
+     "trust_net_w": -503822880.0,
+     "trust_net_m": -3729033216.0
     },
     {
      "stock_id": "3374",
@@ -2097,7 +2726,15 @@
      "inst_net_d": 484899213,
      "fore_net_d": 0,
      "foreign_ratio": null,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 40914001869.0,
+     "value_m": 77780778814.0,
+     "inst_net_w": -1256699882.0,
+     "inst_net_m": 1459191795.0,
+     "fore_net_w": 0.0,
+     "fore_net_m": 340841724.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": 340841724.0
     },
     {
      "stock_id": "6271",
@@ -2112,7 +2749,15 @@
      "inst_net_d": 167159538,
      "fore_net_d": 294509558,
      "foreign_ratio": 31.88,
-     "trust_net_d": -74704000
+     "trust_net_d": -74704000,
+     "value_w": 9852643957.0,
+     "value_m": 54353539447.0,
+     "inst_net_w": 671034364.0,
+     "inst_net_m": -1300958386.0,
+     "fore_net_w": 1079706250.0,
+     "fore_net_m": -1028004383.0,
+     "trust_net_w": -262479000.0,
+     "trust_net_m": -78358000.0
     },
     {
      "stock_id": "8150",
@@ -2127,7 +2772,15 @@
      "inst_net_d": -1415961034,
      "fore_net_d": -1242680016,
      "foreign_ratio": 43.52,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 56336495610.0,
+     "value_m": 110310489769.0,
+     "inst_net_w": 118804296.0,
+     "inst_net_m": 3104429984.0,
+     "fore_net_w": -249616296.0,
+     "fore_net_m": 1252902924.0,
+     "trust_net_w": 354926000.0,
+     "trust_net_m": 1787006000.0
     },
     {
      "stock_id": "6147",
@@ -2142,7 +2795,15 @@
      "inst_net_d": 788844514,
      "fore_net_d": 0,
      "foreign_ratio": null,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 27447828397.0,
+     "value_m": 80075457186.0,
+     "inst_net_w": 2085413358.0,
+     "inst_net_m": -74166214.0,
+     "fore_net_w": 0.0,
+     "fore_net_m": 713834352.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": 713834352.0
     },
     {
      "stock_id": "3264",
@@ -2157,7 +2818,15 @@
      "inst_net_d": -713996876,
      "fore_net_d": 0,
      "foreign_ratio": null,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 8062219093.0,
+     "value_m": 26059618458.0,
+     "inst_net_w": -494727126.0,
+     "inst_net_m": 370547420.0,
+     "fore_net_w": 0.0,
+     "fore_net_m": -312150672.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": -312150672.0
     },
     {
      "stock_id": "2449",
@@ -2172,7 +2841,15 @@
      "inst_net_d": -6454034492,
      "fore_net_d": -4854144288,
      "foreign_ratio": 32.88,
-     "trust_net_d": -1004301684
+     "trust_net_d": -1004301684,
+     "value_w": 42717299441.0,
+     "value_m": 123030054849.0,
+     "inst_net_w": -7516689636.0,
+     "inst_net_m": -10487457128.0,
+     "fore_net_w": -7230537447.0,
+     "fore_net_m": -10755548930.0,
+     "trust_net_w": -68492409.0,
+     "trust_net_m": 510460488.0
     },
     {
      "stock_id": "3711",
@@ -2187,7 +2864,15 @@
      "inst_net_d": -7602682466,
      "fore_net_d": -7209941050,
      "foreign_ratio": 77.22,
-     "trust_net_d": -37384618
+     "trust_net_d": -37384618,
+     "value_w": 83938724074.0,
+     "value_m": 215020538557.0,
+     "inst_net_w": -6892888642.0,
+     "inst_net_m": -16846394750.0,
+     "fore_net_w": -9085615880.0,
+     "fore_net_m": -26203336616.0,
+     "trust_net_w": 1891913288.0,
+     "trust_net_m": 8604083310.0
     }
    ],
    "daily": {
@@ -2258,7 +2943,15 @@
      "inst_net_d": 527895625,
      "fore_net_d": 565577625,
      "foreign_ratio": 25.48,
-     "trust_net_d": 25125000
+     "trust_net_d": 25125000,
+     "value_w": 51638964588.0,
+     "value_m": 123535606943.0,
+     "inst_net_w": -2729729375.0,
+     "inst_net_m": -11122749250.0,
+     "fore_net_w": -3329073000.0,
+     "fore_net_m": -10931345500.0,
+     "trust_net_w": 365250000.0,
+     "trust_net_m": -365500000.0
     },
     {
      "stock_id": "3260",
@@ -2273,7 +2966,15 @@
      "inst_net_d": -216524902,
      "fore_net_d": 0,
      "foreign_ratio": null,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 15984104585.0,
+     "value_m": 39819072983.0,
+     "inst_net_w": -15062784.0,
+     "inst_net_m": -473263649.0,
+     "fore_net_w": 0.0,
+     "fore_net_m": -165161392.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": -165161392.0
     },
     {
      "stock_id": "6239",
@@ -2288,7 +2989,15 @@
      "inst_net_d": -1360563264,
      "fore_net_d": -1077670368,
      "foreign_ratio": 37.15,
-     "trust_net_d": -275669280
+     "trust_net_d": -275669280,
+     "value_w": 34554041317.0,
+     "value_m": 93864686018.0,
+     "inst_net_w": -1562839200.0,
+     "inst_net_m": -913182624.0,
+     "fore_net_w": -655067232.0,
+     "fore_net_m": 3364365312.0,
+     "trust_net_w": -503822880.0,
+     "trust_net_m": -3729033216.0
     },
     {
      "stock_id": "8150",
@@ -2303,7 +3012,15 @@
      "inst_net_d": -1415961034,
      "fore_net_d": -1242680016,
      "foreign_ratio": 43.52,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 56336495610.0,
+     "value_m": 110310489769.0,
+     "inst_net_w": 118804296.0,
+     "inst_net_m": 3104429984.0,
+     "fore_net_w": -249616296.0,
+     "fore_net_m": 1252902924.0,
+     "trust_net_w": 354926000.0,
+     "trust_net_m": 1787006000.0
     },
     {
      "stock_id": "8299",
@@ -2318,7 +3035,15 @@
      "inst_net_d": 645452430,
      "fore_net_d": 0,
      "foreign_ratio": null,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 54175532595.0,
+     "value_m": 124045859475.0,
+     "inst_net_w": -2607485160.0,
+     "inst_net_m": -6327698265.0,
+     "fore_net_w": 0.0,
+     "fore_net_m": -2795070810.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": -2795070810.0
     },
     {
      "stock_id": "2344",
@@ -2333,7 +3058,15 @@
      "inst_net_d": -5035260870,
      "fore_net_d": -4398298290,
      "foreign_ratio": 17.87,
-     "trust_net_d": -222952310
+     "trust_net_d": -222952310,
+     "value_w": 108771450135.0,
+     "value_m": 320668341252.0,
+     "inst_net_w": -7039281135.0,
+     "inst_net_m": -21534719625.0,
+     "fore_net_w": -5974526150.0,
+     "fore_net_m": -7373108200.0,
+     "trust_net_w": -915558650.0,
+     "trust_net_m": -13719671550.0
     },
     {
      "stock_id": "2408",
@@ -2348,7 +3081,15 @@
      "inst_net_d": -3426512730,
      "fore_net_d": -3425536240,
      "foreign_ratio": 12.66,
-     "trust_net_d": 98688324
+     "trust_net_d": 98688324,
+     "value_w": 257870688041.0,
+     "value_m": 475859365619.0,
+     "inst_net_w": -17174654735.0,
+     "inst_net_m": -17496433535.0,
+     "fore_net_w": -21670042600.0,
+     "fore_net_m": -17382831302.0,
+     "trust_net_w": 3090835268.0,
+     "trust_net_m": -2150522944.0
     },
     {
      "stock_id": "6770",
@@ -2363,7 +3104,15 @@
      "inst_net_d": -8385140680,
      "fore_net_d": -7943096814,
      "foreign_ratio": 15.0,
-     "trust_net_d": 50917100
+     "trust_net_d": 50917100,
+     "value_w": 88857976804.0,
+     "value_m": 172079677756.0,
+     "inst_net_w": -2088778050.0,
+     "inst_net_m": -7646501537.0,
+     "fore_net_w": -2820892294.0,
+     "fore_net_m": -7989618163.0,
+     "trust_net_w": 814466900.0,
+     "trust_net_m": 616599880.0
     },
     {
      "stock_id": "3006",
@@ -2378,7 +3127,15 @@
      "inst_net_d": -402173838,
      "fore_net_d": -347667012,
      "foreign_ratio": 34.6,
-     "trust_net_d": -22968000
+     "trust_net_d": -22968000,
+     "value_w": 16165676170.0,
+     "value_m": 36280877947.0,
+     "inst_net_w": -270199314.0,
+     "inst_net_m": 431808102.0,
+     "fore_net_w": -62075574.0,
+     "fore_net_m": 903555378.0,
+     "trust_net_w": -25542000.0,
+     "trust_net_m": -329076000.0
     }
    ],
    "daily": {
@@ -2449,7 +3206,15 @@
      "inst_net_d": 1407655328,
      "fore_net_d": 0,
      "foreign_ratio": null,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 62010918759.0,
+     "value_m": 127521240917.0,
+     "inst_net_w": 5105613153.0,
+     "inst_net_m": 9752935534.0,
+     "fore_net_w": 0.0,
+     "fore_net_m": 1800143396.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": 1800143396.0
     },
     {
      "stock_id": "6488",
@@ -2464,7 +3229,15 @@
      "inst_net_d": 3700908960,
      "fore_net_d": 0,
      "foreign_ratio": null,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 80390960135.0,
+     "value_m": 157387237530.0,
+     "inst_net_w": 8618855600.0,
+     "inst_net_m": 11835894240.0,
+     "fore_net_w": 0.0,
+     "fore_net_m": 1094100360.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": 1094100360.0
     },
     {
      "stock_id": "6182",
@@ -2479,7 +3252,15 @@
      "inst_net_d": 72182936,
      "fore_net_d": 0,
      "foreign_ratio": null,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 94888981705.0,
+     "value_m": 239859996620.0,
+     "inst_net_w": -1503264510.0,
+     "inst_net_m": 2430601648.0,
+     "fore_net_w": 0.0,
+     "fore_net_m": 59953836.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": 59953836.0
     },
     {
      "stock_id": "3532",
@@ -2494,7 +3275,15 @@
      "inst_net_d": 570825688,
      "fore_net_d": 424277296,
      "foreign_ratio": 43.49,
-     "trust_net_d": 150096000
+     "trust_net_d": 150096000,
+     "value_w": 25851298893.0,
+     "value_m": 45073231074.0,
+     "inst_net_w": 2443270744.0,
+     "inst_net_m": 2876883248.0,
+     "fore_net_w": 406064376.0,
+     "fore_net_m": -399470328.0,
+     "trust_net_w": 2208616000.0,
+     "trust_net_m": 3601625600.0
     }
    ],
    "daily": {
@@ -2565,7 +3354,15 @@
      "inst_net_d": 93381198,
      "fore_net_d": 110239158,
      "foreign_ratio": 1.98,
-     "trust_net_d": 282000
+     "trust_net_d": 282000,
+     "value_w": 7032689993.0,
+     "value_m": 24587761997.0,
+     "inst_net_w": 208072572.0,
+     "inst_net_m": -1026951222.0,
+     "fore_net_w": -26519985.0,
+     "fore_net_m": -648743256.0,
+     "trust_net_w": 4230000.0,
+     "trust_net_m": -391416000.0
     }
    ],
    "daily": {
@@ -2636,7 +3433,15 @@
      "inst_net_d": 1285778200,
      "fore_net_d": 1131387250,
      "foreign_ratio": 13.81,
-     "trust_net_d": 94390850
+     "trust_net_d": 94390850,
+     "value_w": 133991407195.0,
+     "value_m": 275556310290.0,
+     "inst_net_w": -3063758700.0,
+     "inst_net_m": -56534000.0,
+     "fore_net_w": -12235415800.0,
+     "fore_net_m": -16617878350.0,
+     "trust_net_w": 9404970250.0,
+     "trust_net_m": 17126901700.0
     },
     {
      "stock_id": "3037",
@@ -2651,7 +3456,15 @@
      "inst_net_d": -3453907146,
      "fore_net_d": -3675001210,
      "foreign_ratio": 36.54,
-     "trust_net_d": 532368266
+     "trust_net_d": 532368266,
+     "value_w": 139771854816.0,
+     "value_m": 343550560369.0,
+     "inst_net_w": -9618713706.0,
+     "inst_net_m": -39935699694.0,
+     "fore_net_w": -15384432840.0,
+     "fore_net_m": -49099423610.0,
+     "trust_net_w": 5827152502.0,
+     "trust_net_m": 9242483158.0
     },
     {
      "stock_id": "3189",
@@ -2666,7 +3479,15 @@
      "inst_net_d": 511261443,
      "fore_net_d": 808005429,
      "foreign_ratio": 21.28,
-     "trust_net_d": -100911888
+     "trust_net_d": -100911888,
+     "value_w": 13874632586.0,
+     "value_m": 88013941436.0,
+     "inst_net_w": 1364483043.0,
+     "inst_net_m": -2137688091.0,
+     "fore_net_w": 957812625.0,
+     "fore_net_m": -2282026824.0,
+     "trust_net_w": 211891680.0,
+     "trust_net_m": 301141071.0
     }
    ],
    "daily": {
@@ -2737,7 +3558,15 @@
      "inst_net_d": -4005983679,
      "fore_net_d": -1688542146,
      "foreign_ratio": 48.22,
-     "trust_net_d": -1809376179
+     "trust_net_d": -1809376179,
+     "value_w": 233803548921.0,
+     "value_m": 631231425956.0,
+     "inst_net_w": -13785430554.0,
+     "inst_net_m": -12205668186.0,
+     "fore_net_w": -3812406813.0,
+     "fore_net_m": 8123315961.0,
+     "trust_net_w": -8636503587.0,
+     "trust_net_m": -15943026165.0
     },
     {
      "stock_id": "2492",
@@ -2752,7 +3581,15 @@
      "inst_net_d": 36433522,
      "fore_net_d": 61822568,
      "foreign_ratio": 24.34,
-     "trust_net_d": 3382500
+     "trust_net_d": 3382500,
+     "value_w": 30422925555.0,
+     "value_m": 55080429852.0,
+     "inst_net_w": -352696658.0,
+     "inst_net_m": -41277878.0,
+     "fore_net_w": 735361035.0,
+     "fore_net_m": 614896065.0,
+     "trust_net_w": -1781040000.0,
+     "trust_net_m": -776652750.0
     },
     {
      "stock_id": "6173",
@@ -2767,7 +3604,15 @@
      "inst_net_d": -27328392,
      "fore_net_d": 0,
      "foreign_ratio": null,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 10725473219.0,
+     "value_m": 40852588995.0,
+     "inst_net_w": 971540360.0,
+     "inst_net_m": -164431102.0,
+     "fore_net_w": 0.0,
+     "fore_net_m": 31236134.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": 31236134.0
     }
    ],
    "daily": {
@@ -2838,7 +3683,15 @@
      "inst_net_d": -4005983679,
      "fore_net_d": -1688542146,
      "foreign_ratio": 48.22,
-     "trust_net_d": -1809376179
+     "trust_net_d": -1809376179,
+     "value_w": 233803548921.0,
+     "value_m": 631231425956.0,
+     "inst_net_w": -13785430554.0,
+     "inst_net_m": -12205668186.0,
+     "fore_net_w": -3812406813.0,
+     "fore_net_m": 8123315961.0,
+     "trust_net_w": -8636503587.0,
+     "trust_net_m": -15943026165.0
     },
     {
      "stock_id": "2492",
@@ -2853,7 +3706,15 @@
      "inst_net_d": 36433522,
      "fore_net_d": 61822568,
      "foreign_ratio": 24.34,
-     "trust_net_d": 3382500
+     "trust_net_d": 3382500,
+     "value_w": 30422925555.0,
+     "value_m": 55080429852.0,
+     "inst_net_w": -352696658.0,
+     "inst_net_m": -41277878.0,
+     "fore_net_w": 735361035.0,
+     "fore_net_m": 614896065.0,
+     "trust_net_w": -1781040000.0,
+     "trust_net_m": -776652750.0
     },
     {
      "stock_id": "6173",
@@ -2868,7 +3729,15 @@
      "inst_net_d": -27328392,
      "fore_net_d": 0,
      "foreign_ratio": null,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 10725473219.0,
+     "value_m": 40852588995.0,
+     "inst_net_w": 971540360.0,
+     "inst_net_m": -164431102.0,
+     "fore_net_w": 0.0,
+     "fore_net_m": 31236134.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": 31236134.0
     }
    ],
    "daily": {
@@ -2941,7 +3810,15 @@
      "inst_net_d": 67592005,
      "fore_net_d": 32705488,
      "foreign_ratio": 1.22,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 299382102.0,
+     "value_m": 645408281.0,
+     "inst_net_w": 27266270.0,
+     "inst_net_m": 182892754.0,
+     "fore_net_w": -25735847.0,
+     "fore_net_m": -18174436.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": 0.0
     },
     {
      "stock_id": "00687B",
@@ -2956,7 +3833,15 @@
      "inst_net_d": 809038467,
      "fore_net_d": 0,
      "foreign_ratio": null,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 3496188576.0,
+     "value_m": 6946872896.0,
+     "inst_net_w": 1426662363.0,
+     "inst_net_m": 1377049908.0,
+     "fore_net_w": 0.0,
+     "fore_net_m": -105504920.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": -105504920.0
     },
     {
      "stock_id": "00679B",
@@ -2971,7 +3856,15 @@
      "inst_net_d": 877168492,
      "fore_net_d": 0,
      "foreign_ratio": null,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 3350399933.0,
+     "value_m": 7416770173.0,
+     "inst_net_w": 1155041857.0,
+     "inst_net_m": 1611944719.0,
+     "fore_net_w": 0.0,
+     "fore_net_m": 48617800.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": 48617800.0
     },
     {
      "stock_id": "00719B",
@@ -2986,7 +3879,15 @@
      "inst_net_d": 104443384,
      "fore_net_d": 0,
      "foreign_ratio": null,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 472221709.0,
+     "value_m": 1060766130.0,
+     "inst_net_w": 89244809.0,
+     "inst_net_m": 28985774.0,
+     "fore_net_w": 0.0,
+     "fore_net_m": 10498752.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": 10498752.0
     },
     {
      "stock_id": "00772B",
@@ -3001,7 +3902,15 @@
      "inst_net_d": 137246687,
      "fore_net_d": 0,
      "foreign_ratio": null,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 438558119.0,
+     "value_m": 986369521.0,
+     "inst_net_w": 135489553.0,
+     "inst_net_m": 228701488.0,
+     "fore_net_w": 0.0,
+     "fore_net_m": 62282760.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": 62282760.0
     },
     {
      "stock_id": "00937B",
@@ -3016,7 +3925,15 @@
      "inst_net_d": 1201297985,
      "fore_net_d": 0,
      "foreign_ratio": null,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 5694472007.0,
+     "value_m": 11398999172.0,
+     "inst_net_w": -665478538.0,
+     "inst_net_m": -1184801851.0,
+     "fore_net_w": 0.0,
+     "fore_net_m": 147743168.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": 147743168.0
     },
     {
      "stock_id": "00919",
@@ -3031,7 +3948,15 @@
      "inst_net_d": -1648661885,
      "fore_net_d": -862060219,
      "foreign_ratio": 0.16,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 12954573034.0,
+     "value_m": 27542954539.0,
+     "inst_net_w": -4319674126.0,
+     "inst_net_m": -3383412073.0,
+     "fore_net_w": -1953435703.0,
+     "fore_net_m": -430185571.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": 0.0
     },
     {
      "stock_id": "006205",
@@ -3046,7 +3971,15 @@
      "inst_net_d": -1378244,
      "fore_net_d": 17357640,
      "foreign_ratio": 1.64,
-     "trust_net_d": 2621520
+     "trust_net_d": 2621520,
+     "value_w": 295454031.0,
+     "value_m": 422867049.0,
+     "inst_net_w": -1038122.0,
+     "inst_net_m": 24057093.0,
+     "fore_net_w": -116935680.0,
+     "fore_net_m": -94968574.0,
+     "trust_net_w": 2621520.0,
+     "trust_net_m": -13266480.0
     },
     {
      "stock_id": "00636",
@@ -3061,7 +3994,15 @@
      "inst_net_d": -7238975,
      "fore_net_d": 4136240,
      "foreign_ratio": 0.91,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 137067015.0,
+     "value_m": 222288702.0,
+     "inst_net_w": 129778.0,
+     "inst_net_m": 2591618.0,
+     "fore_net_w": 12075600.0,
+     "fore_net_m": 17851068.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": 0.0
     },
     {
      "stock_id": "00940",
@@ -3076,7 +4017,15 @@
      "inst_net_d": 30514766,
      "fore_net_d": -342322,
      "foreign_ratio": 0.39,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 1049558841.0,
+     "value_m": 2355283070.0,
+     "inst_net_w": 298614385.0,
+     "inst_net_m": 741914756.0,
+     "fore_net_w": -11407651.0,
+     "fore_net_m": -83513965.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": 0.0
     },
     {
      "stock_id": "006206",
@@ -3091,7 +4040,15 @@
      "inst_net_d": 673136,
      "fore_net_d": 958620,
      "foreign_ratio": 0.57,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 26118966.0,
+     "value_m": 45971033.0,
+     "inst_net_w": 9082076.0,
+     "inst_net_m": 21148669.0,
+     "fore_net_w": -921750.0,
+     "fore_net_m": -3428910.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": 0.0
     },
     {
      "stock_id": "00878",
@@ -3106,7 +4063,15 @@
      "inst_net_d": -1173260859,
      "fore_net_d": -885594185,
      "foreign_ratio": 0.32,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 7218755317.0,
+     "value_m": 13891573891.0,
+     "inst_net_w": -1945257430.0,
+     "inst_net_m": -1940605791.0,
+     "fore_net_w": -1543911328.0,
+     "fore_net_m": -1608963987.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": 0.0
     },
     {
      "stock_id": "0056",
@@ -3121,7 +4086,15 @@
      "inst_net_d": -8140121969,
      "fore_net_d": -608179271,
      "foreign_ratio": 0.67,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 22708690924.0,
+     "value_m": 41908844238.0,
+     "inst_net_w": -15446318010.0,
+     "inst_net_m": -23721597074.0,
+     "fore_net_w": -1754374416.0,
+     "fore_net_m": -2410246557.0,
+     "trust_net_w": 24360000.0,
+     "trust_net_m": -122815000.0
     },
     {
      "stock_id": "00757",
@@ -3136,7 +4109,15 @@
      "inst_net_d": 431132364,
      "fore_net_d": 128836115,
      "foreign_ratio": 1.09,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 1941191441.0,
+     "value_m": 3962057849.0,
+     "inst_net_w": 576216868.0,
+     "inst_net_m": 1584881722.0,
+     "fore_net_w": 341335422.0,
+     "fore_net_m": 868830328.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": 0.0
     },
     {
      "stock_id": "00929",
@@ -3151,7 +4132,15 @@
      "inst_net_d": -2026910725,
      "fore_net_d": -189632674,
      "foreign_ratio": 0.28,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 7150350443.0,
+     "value_m": 13226960095.0,
+     "inst_net_w": -4118165535.0,
+     "inst_net_m": -5603149116.0,
+     "fore_net_w": -807886040.0,
+     "fore_net_m": -1765938550.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": 0.0
     },
     {
      "stock_id": "00893",
@@ -3166,7 +4155,15 @@
      "inst_net_d": -2101533,
      "fore_net_d": -22142686,
      "foreign_ratio": 0.21,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 215685607.0,
+     "value_m": 535203659.0,
+     "inst_net_w": 34258825.0,
+     "inst_net_m": 84140106.0,
+     "fore_net_w": 41791012.0,
+     "fore_net_m": 34757872.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": 0.0
     },
     {
      "stock_id": "00639",
@@ -3181,7 +4178,15 @@
      "inst_net_d": -1514378,
      "fore_net_d": -2248520,
      "foreign_ratio": 0.61,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 114268122.0,
+     "value_m": 241142464.0,
+     "inst_net_w": 4579228.0,
+     "inst_net_m": 16959479.0,
+     "fore_net_w": -6359620.0,
+     "fore_net_m": -16560954.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": 0.0
     },
     {
      "stock_id": "00643",
@@ -3196,7 +4201,15 @@
      "inst_net_d": -7340482,
      "fore_net_d": -1596300,
      "foreign_ratio": 16.2,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 321794825.0,
+     "value_m": 745697858.0,
+     "inst_net_w": -13499759.0,
+     "inst_net_m": -3268471.0,
+     "fore_net_w": -4995480.0,
+     "fore_net_m": -10272660.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": 0.0
     },
     {
      "stock_id": "0050",
@@ -3211,7 +4224,15 @@
      "inst_net_d": -41763812391,
      "fore_net_d": -22253146325,
      "foreign_ratio": 5.05,
-     "trust_net_d": 278016400
+     "trust_net_d": 278016400,
+     "value_w": 106822377478.0,
+     "value_m": 169744184860.0,
+     "inst_net_w": -58080463109.0,
+     "inst_net_m": -75491235653.0,
+     "fore_net_w": -32252775303.0,
+     "fore_net_m": -44173004066.0,
+     "trust_net_w": 1780466700.0,
+     "trust_net_m": 4026630900.0
     },
     {
      "stock_id": "00923",
@@ -3226,7 +4247,15 @@
      "inst_net_d": -140158311,
      "fore_net_d": -36468133,
      "foreign_ratio": 0.14,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 800796035.0,
+     "value_m": 1803480777.0,
+     "inst_net_w": -147132932.0,
+     "inst_net_m": -163492244.0,
+     "fore_net_w": -48539005.0,
+     "fore_net_m": -73365255.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": 0.0
     },
     {
      "stock_id": "0052",
@@ -3241,7 +4270,15 @@
      "inst_net_d": -2480229355,
      "fore_net_d": -421859574,
      "foreign_ratio": 1.18,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 10103075652.0,
+     "value_m": 20494960138.0,
+     "inst_net_w": -3561233588.0,
+     "inst_net_m": -5062377648.0,
+     "fore_net_w": -687031904.0,
+     "fore_net_m": -1517259252.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": 5790000.0
     }
    ],
    "daily": {
@@ -3312,7 +4349,15 @@
      "inst_net_d": 1243009645,
      "fore_net_d": 745758054,
      "foreign_ratio": 19.46,
-     "trust_net_d": 80228229
+     "trust_net_d": 80228229,
+     "value_w": 7926319343.0,
+     "value_m": 21133445675.0,
+     "inst_net_w": 2231770601.0,
+     "inst_net_m": 4922739354.0,
+     "fore_net_w": 991582732.0,
+     "fore_net_m": -2914983635.0,
+     "trust_net_w": 392183873.0,
+     "trust_net_m": 6630536581.0
     },
     {
      "stock_id": "4904",
@@ -3327,7 +4372,15 @@
      "inst_net_d": 291721956,
      "fore_net_d": 281867843,
      "foreign_ratio": 17.8,
-     "trust_net_d": -178702940
+     "trust_net_d": -178702940,
+     "value_w": 7938636797.0,
+     "value_m": 20764541940.0,
+     "inst_net_w": 2047574595.0,
+     "inst_net_m": 866869836.0,
+     "fore_net_w": 1491850558.0,
+     "fore_net_m": -1846059318.0,
+     "trust_net_w": 196782427.0,
+     "trust_net_m": 2551669985.0
     },
     {
      "stock_id": "2880",
@@ -3342,7 +4395,15 @@
      "inst_net_d": 775169787,
      "fore_net_d": -49201858,
      "foreign_ratio": 14.56,
-     "trust_net_d": 459894120
+     "trust_net_d": 459894120,
+     "value_w": 5070350220.0,
+     "value_m": 9325490569.0,
+     "inst_net_w": 1488163685.0,
+     "inst_net_m": 2100412761.0,
+     "fore_net_w": 264119990.0,
+     "fore_net_m": 662194070.0,
+     "trust_net_w": 466936229.0,
+     "trust_net_m": 316061804.0
     },
     {
      "stock_id": "6505",
@@ -3357,7 +4418,15 @@
      "inst_net_d": 1142097522,
      "fore_net_d": 472653973,
      "foreign_ratio": 6.88,
-     "trust_net_d": 643733156
+     "trust_net_d": 643733156,
+     "value_w": 30816003528.0,
+     "value_m": 38266366766.0,
+     "inst_net_w": 4958930817.0,
+     "inst_net_m": 5854299017.0,
+     "fore_net_w": 3432394538.0,
+     "fore_net_m": 4384474122.0,
+     "trust_net_w": 1076921019.0,
+     "trust_net_m": 1037097434.0
     },
     {
      "stock_id": "2412",
@@ -3372,7 +4441,15 @@
      "inst_net_d": 2592569292,
      "fore_net_d": 2351364888,
      "foreign_ratio": 16.14,
-     "trust_net_d": 140816304
+     "trust_net_d": 140816304,
+     "value_w": 15975634502.0,
+     "value_m": 39795145076.0,
+     "inst_net_w": 4120049754.0,
+     "inst_net_m": -1878575784.0,
+     "fore_net_w": 3833342748.0,
+     "fore_net_m": -3224748672.0,
+     "trust_net_w": 226609938.0,
+     "trust_net_m": 2764455192.0
     },
     {
      "stock_id": "1216",
@@ -3387,7 +4464,15 @@
      "inst_net_d": 1106037760,
      "fore_net_d": 339845040,
      "foreign_ratio": 31.41,
-     "trust_net_d": 505261840
+     "trust_net_d": 505261840,
+     "value_w": 9197279739.0,
+     "value_m": 18401429977.0,
+     "inst_net_w": 1550801760.0,
+     "inst_net_m": 4211468080.0,
+     "fore_net_w": 306221680.0,
+     "fore_net_m": 2477819760.0,
+     "trust_net_w": 691978960.0,
+     "trust_net_m": 874817520.0
     },
     {
      "stock_id": "3324",
@@ -3402,7 +4487,15 @@
      "inst_net_d": 496378927,
      "fore_net_d": 0,
      "foreign_ratio": null,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 9199374781.0,
+     "value_m": 23224305902.0,
+     "inst_net_w": 176395252.0,
+     "inst_net_m": -1226629195.0,
+     "fore_net_w": 0.0,
+     "fore_net_m": -757215723.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": -757215723.0
     },
     {
      "stock_id": "2379",
@@ -3417,7 +4510,15 @@
      "inst_net_d": 517164630,
      "fore_net_d": 910906496,
      "foreign_ratio": 46.08,
-     "trust_net_d": -571908540
+     "trust_net_d": -571908540,
+     "value_w": 19921452338.0,
+     "value_m": 55043129790.0,
+     "inst_net_w": -1219056300.0,
+     "inst_net_m": -1062306130.0,
+     "fore_net_w": -895688486.0,
+     "fore_net_m": -5675969500.0,
+     "trust_net_w": -833073860.0,
+     "trust_net_m": 3809062518.0
     },
     {
      "stock_id": "1102",
@@ -3432,7 +4533,15 @@
      "inst_net_d": 407892048,
      "fore_net_d": 451843494,
      "foreign_ratio": 11.84,
-     "trust_net_d": -54981236
+     "trust_net_d": -54981236,
+     "value_w": 4684684651.0,
+     "value_m": 10991572991.0,
+     "inst_net_w": -1133909920.0,
+     "inst_net_m": -2125842540.0,
+     "fore_net_w": -851686747.0,
+     "fore_net_m": -283443682.0,
+     "trust_net_w": -61596057.0,
+     "trust_net_m": -1747354732.0
     },
     {
      "stock_id": "2884",
@@ -3447,7 +4556,15 @@
      "inst_net_d": 2122821956,
      "fore_net_d": 1867270334,
      "foreign_ratio": 31.39,
-     "trust_net_d": 22037465
+     "trust_net_d": 22037465,
+     "value_w": 9262491861.0,
+     "value_m": 21247283363.0,
+     "inst_net_w": 2953893326.0,
+     "inst_net_m": 5876011463.0,
+     "fore_net_w": 2448564347.0,
+     "fore_net_m": 5087137735.0,
+     "trust_net_w": 95622579.0,
+     "trust_net_m": 181960401.0
     },
     {
      "stock_id": "5876",
@@ -3462,7 +4579,15 @@
      "inst_net_d": 538517049,
      "fore_net_d": 543296045,
      "foreign_ratio": 53.07,
-     "trust_net_d": -130085600
+     "trust_net_d": -130085600,
+     "value_w": 4203700176.0,
+     "value_m": 6617891854.0,
+     "inst_net_w": 1830505758.0,
+     "inst_net_m": 1986709545.0,
+     "fore_net_w": 1475107740.0,
+     "fore_net_m": 1165262238.0,
+     "trust_net_w": 106807600.0,
+     "trust_net_m": 409557200.0
     },
     {
      "stock_id": "3045",
@@ -3477,7 +4602,15 @@
      "inst_net_d": 1253723799,
      "fore_net_d": 1635202272,
      "foreign_ratio": 14.86,
-     "trust_net_d": -549186819
+     "trust_net_d": -549186819,
+     "value_w": 10620279344.0,
+     "value_m": 28454983562.0,
+     "inst_net_w": 4614767280.0,
+     "inst_net_m": 4370117175.0,
+     "fore_net_w": 5191227465.0,
+     "fore_net_m": 2426605188.0,
+     "trust_net_w": -859357893.0,
+     "trust_net_m": 1745168085.0
     },
     {
      "stock_id": "2892",
@@ -3492,7 +4625,15 @@
      "inst_net_d": 634556636,
      "fore_net_d": 259430720,
      "foreign_ratio": 25.31,
-     "trust_net_d": 317457735
+     "trust_net_d": 317457735,
+     "value_w": 6097125422.0,
+     "value_m": 16975469370.0,
+     "inst_net_w": 1568378896.0,
+     "inst_net_m": 3706726811.0,
+     "fore_net_w": 1125901524.0,
+     "fore_net_m": -1436342980.0,
+     "trust_net_w": 335806740.0,
+     "trust_net_m": 5030533379.0
     },
     {
      "stock_id": "2890",
@@ -3507,7 +4648,15 @@
      "inst_net_d": 348358840,
      "fore_net_d": -390346520,
      "foreign_ratio": 29.19,
-     "trust_net_d": 358151120
+     "trust_net_d": 358151120,
+     "value_w": 7128395879.0,
+     "value_m": 20604578649.0,
+     "inst_net_w": 998541320.0,
+     "inst_net_m": 3537343360.0,
+     "fore_net_w": 183944160.0,
+     "fore_net_m": -1326914480.0,
+     "trust_net_w": 89122560.0,
+     "trust_net_m": 3925667720.0
     },
     {
      "stock_id": "2105",
@@ -3522,7 +4671,15 @@
      "inst_net_d": 352353053,
      "fore_net_d": 518719992,
      "foreign_ratio": 9.25,
-     "trust_net_d": -156344362
+     "trust_net_d": -156344362,
+     "value_w": 2521767985.0,
+     "value_m": 5783088288.0,
+     "inst_net_w": 1032606019.0,
+     "inst_net_m": 2703728496.0,
+     "fore_net_w": 1232199158.0,
+     "fore_net_m": 2793804619.0,
+     "trust_net_w": -220416773.0,
+     "trust_net_m": -164532782.0
     },
     {
      "stock_id": "2324",
@@ -3537,7 +4694,15 @@
      "inst_net_d": 793968696,
      "fore_net_d": 800580744,
      "foreign_ratio": 35.31,
-     "trust_net_d": -63437508
+     "trust_net_d": -63437508,
+     "value_w": 9870214588.0,
+     "value_m": 20669277670.0,
+     "inst_net_w": 750475152.0,
+     "inst_net_m": 1100901312.0,
+     "fore_net_w": 766408068.0,
+     "fore_net_m": 2453640588.0,
+     "trust_net_w": -130889664.0,
+     "trust_net_m": -1551654288.0
     },
     {
      "stock_id": "6443",
@@ -3552,7 +4717,15 @@
      "inst_net_d": 66755585,
      "fore_net_d": 65531735,
      "foreign_ratio": 12.99,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 1034657743.0,
+     "value_m": 2560638027.0,
+     "inst_net_w": 139638927.0,
+     "inst_net_m": 101812082.0,
+     "fore_net_w": 137018306.0,
+     "fore_net_m": 93357368.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": 0.0
     },
     {
      "stock_id": "9939",
@@ -3567,7 +4740,15 @@
      "inst_net_d": 121761857,
      "fore_net_d": 102118220,
      "foreign_ratio": 14.26,
-     "trust_net_d": 21335000
+     "trust_net_d": 21335000,
+     "value_w": 1010226505.0,
+     "value_m": 2985308532.0,
+     "inst_net_w": 359640330.0,
+     "inst_net_m": 589531104.0,
+     "fore_net_w": 326057660.0,
+     "fore_net_m": 482275667.0,
+     "trust_net_w": 22715500.0,
+     "trust_net_m": 55712713.0
     },
     {
      "stock_id": "9904",
@@ -3582,7 +4763,15 @@
      "inst_net_d": 244567419,
      "fore_net_d": 326264905,
      "foreign_ratio": 28.81,
-     "trust_net_d": -101861860
+     "trust_net_d": -101861860,
+     "value_w": 3434528041.0,
+     "value_m": 8329223456.0,
+     "inst_net_w": 504964643.0,
+     "inst_net_m": -517348701.0,
+     "fore_net_w": 603380313.0,
+     "fore_net_m": 471759120.0,
+     "trust_net_w": -135624277.0,
+     "trust_net_m": -1008393729.0
     },
     {
      "stock_id": "2542",
@@ -3597,7 +4786,15 @@
      "inst_net_d": 137508070,
      "fore_net_d": -154161726,
      "foreign_ratio": 8.52,
-     "trust_net_d": 294613200
+     "trust_net_d": 294613200,
+     "value_w": 1698422495.0,
+     "value_m": 4120707235.0,
+     "inst_net_w": 144120932.0,
+     "inst_net_m": 604120907.0,
+     "fore_net_w": -252878711.0,
+     "fore_net_m": -93938181.0,
+     "trust_net_w": 395632100.0,
+     "trust_net_m": 706569400.0
     },
     {
      "stock_id": "2801",
@@ -3612,7 +4809,15 @@
      "inst_net_d": 265725888,
      "fore_net_d": 34482753,
      "foreign_ratio": 17.68,
-     "trust_net_d": 233250736
+     "trust_net_d": 233250736,
+     "value_w": 2215148874.0,
+     "value_m": 8318699015.0,
+     "inst_net_w": 296617929.0,
+     "inst_net_m": 466656224.0,
+     "fore_net_w": 62710947.0,
+     "fore_net_m": -1891301333.0,
+     "trust_net_w": 227100883.0,
+     "trust_net_m": 2368130329.0
     },
     {
      "stock_id": "9914",
@@ -3627,7 +4832,15 @@
      "inst_net_d": 425862024,
      "fore_net_d": 437171700,
      "foreign_ratio": 24.94,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 3741117717.0,
+     "value_m": 4541005525.0,
+     "inst_net_w": 522100320.0,
+     "inst_net_m": 379449000.0,
+     "fore_net_w": 510422556.0,
+     "fore_net_m": 336617232.0,
+     "trust_net_w": 1512000.0,
+     "trust_net_m": 27888000.0
     },
     {
      "stock_id": "2201",
@@ -3642,7 +4855,15 @@
      "inst_net_d": 49900522,
      "fore_net_d": 67402138,
      "foreign_ratio": 4.98,
-     "trust_net_d": -15235200
+     "trust_net_d": -15235200,
+     "value_w": 387049257.0,
+     "value_m": 1129839041.0,
+     "inst_net_w": 104355936.0,
+     "inst_net_m": 293084928.0,
+     "fore_net_w": 113143104.0,
+     "fore_net_m": 302132650.0,
+     "trust_net_w": -15782400.0,
+     "trust_net_m": -15811200.0
     },
     {
      "stock_id": "1402",
@@ -3657,7 +4878,15 @@
      "inst_net_d": 377258571,
      "fore_net_d": 378714206,
      "foreign_ratio": 14.35,
-     "trust_net_d": -620175
+     "trust_net_d": -620175,
+     "value_w": 4549630860.0,
+     "value_m": 8533336264.0,
+     "inst_net_w": 1641110710.0,
+     "inst_net_m": 1138581659.0,
+     "fore_net_w": 1312634747.0,
+     "fore_net_m": 362716930.0,
+     "trust_net_w": 247133805.0,
+     "trust_net_m": 774338985.0
     },
     {
      "stock_id": "2881",
@@ -3672,7 +4901,15 @@
      "inst_net_d": 1294444428,
      "fore_net_d": 789102165,
      "foreign_ratio": 18.33,
-     "trust_net_d": 299259530
+     "trust_net_d": 299259530,
+     "value_w": 17422582528.0,
+     "value_m": 50590981341.0,
+     "inst_net_w": 1987904572.0,
+     "inst_net_m": 4729298210.0,
+     "fore_net_w": 1472349574.0,
+     "fore_net_m": 11138672376.0,
+     "trust_net_w": 90210210.0,
+     "trust_net_m": -6804246334.0
     },
     {
      "stock_id": "8436",
@@ -3687,7 +4924,15 @@
      "inst_net_d": -7784810,
      "fore_net_d": 0,
      "foreign_ratio": null,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 392324167.0,
+     "value_m": 1088575617.0,
+     "inst_net_w": -2276080.0,
+     "inst_net_m": -148076070.0,
+     "fore_net_w": 0.0,
+     "fore_net_m": -30947650.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": -30947650.0
     },
     {
      "stock_id": "2834",
@@ -3702,7 +4947,15 @@
      "inst_net_d": 263033174,
      "fore_net_d": 266027344,
      "foreign_ratio": 18.44,
-     "trust_net_d": -2506820
+     "trust_net_d": -2506820,
+     "value_w": 3440475000.0,
+     "value_m": 7125592474.0,
+     "inst_net_w": -20561585.0,
+     "inst_net_m": 509196583.0,
+     "fore_net_w": -19366982.0,
+     "fore_net_m": 516130454.0,
+     "trust_net_w": -5672393.0,
+     "trust_net_m": -5695389.0
     },
     {
      "stock_id": "2520",
@@ -3717,7 +4970,15 @@
      "inst_net_d": -1763759,
      "fore_net_d": -1509539,
      "foreign_ratio": 12.42,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 368370070.0,
+     "value_m": 693165872.0,
+     "inst_net_w": 70118834.0,
+     "inst_net_m": 156867442.0,
+     "fore_net_w": 68164616.0,
+     "fore_net_m": 158903199.0,
+     "trust_net_w": -214200.0,
+     "trust_net_m": -249900.0
     },
     {
      "stock_id": "5880",
@@ -3732,7 +4993,15 @@
      "inst_net_d": 260724395,
      "fore_net_d": 205159350,
      "foreign_ratio": 16.39,
-     "trust_net_d": 10312405
+     "trust_net_d": 10312405,
+     "value_w": 2658971185.0,
+     "value_m": 5341828298.0,
+     "inst_net_w": 1056053495.0,
+     "inst_net_m": 1989253590.0,
+     "fore_net_w": 966503784.0,
+     "fore_net_m": 1876073774.0,
+     "trust_net_w": 424308.0,
+     "trust_net_m": 4856578.0
     },
     {
      "stock_id": "5534",
@@ -3747,7 +5016,15 @@
      "inst_net_d": 45030191,
      "fore_net_d": 47414466,
      "foreign_ratio": 9.72,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 269488688.0,
+     "value_m": 575494986.0,
+     "inst_net_w": 113588488.0,
+     "inst_net_m": 147245076.0,
+     "fore_net_w": 114243609.0,
+     "fore_net_m": 170890840.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": 0.0
     },
     {
      "stock_id": "2610",
@@ -3762,7 +5039,15 @@
      "inst_net_d": 247210396,
      "fore_net_d": 122604280,
      "foreign_ratio": 15.37,
-     "trust_net_d": 132935912
+     "trust_net_d": 132935912,
+     "value_w": 4513460195.0,
+     "value_m": 13173482122.0,
+     "inst_net_w": 661282040.0,
+     "inst_net_m": -230684743.0,
+     "fore_net_w": 1379916106.0,
+     "fore_net_m": -360505644.0,
+     "trust_net_w": -726073646.0,
+     "trust_net_m": 201979462.0
     },
     {
      "stock_id": "2633",
@@ -3777,7 +5062,15 @@
      "inst_net_d": 46613544,
      "fore_net_d": 47703444,
      "foreign_ratio": 6.12,
-     "trust_net_d": -467100
+     "trust_net_d": -467100,
+     "value_w": 1320312186.0,
+     "value_m": 2564164431.0,
+     "inst_net_w": 318797696.0,
+     "inst_net_m": 135363712.0,
+     "fore_net_w": 237546066.0,
+     "fore_net_m": -159720485.0,
+     "trust_net_w": 79588650.0,
+     "trust_net_m": 295959750.0
     },
     {
      "stock_id": "4736",
@@ -3792,7 +5085,15 @@
      "inst_net_d": 9704799,
      "fore_net_d": 6737799,
      "foreign_ratio": 6.13,
-     "trust_net_d": 3612000
+     "trust_net_d": 3612000,
+     "value_w": 151194588.0,
+     "value_m": 255514769.0,
+     "inst_net_w": 53860080.0,
+     "inst_net_m": 86972187.0,
+     "fore_net_w": 50764080.0,
+     "fore_net_m": 83876187.0,
+     "trust_net_w": 3612000.0,
+     "trust_net_m": 3612000.0
     },
     {
      "stock_id": "2002",
@@ -3807,7 +5108,15 @@
      "inst_net_d": 421860053,
      "fore_net_d": 425857345,
      "foreign_ratio": 13.47,
-     "trust_net_d": 261100
+     "trust_net_d": 261100,
+     "value_w": 3618703953.0,
+     "value_m": 7947254403.0,
+     "inst_net_w": 644133458.0,
+     "inst_net_m": -246331289.0,
+     "fore_net_w": 652442163.0,
+     "fore_net_m": -218217663.0,
+     "trust_net_w": -1585250.0,
+     "trust_net_m": -8094100.0
     },
     {
      "stock_id": "2605",
@@ -3822,7 +5131,15 @@
      "inst_net_d": 21499120,
      "fore_net_d": 20737109,
      "foreign_ratio": 48.24,
-     "trust_net_d": 5208000
+     "trust_net_d": 5208000,
+     "value_w": 720227430.0,
+     "value_m": 1662544537.0,
+     "inst_net_w": 191127555.0,
+     "inst_net_m": 258848326.0,
+     "fore_net_w": 189813992.0,
+     "fore_net_m": 246290195.0,
+     "trust_net_w": 5022000.0,
+     "trust_net_m": 5084000.0
     },
     {
      "stock_id": "5871",
@@ -3837,7 +5154,15 @@
      "inst_net_d": 488820008,
      "fore_net_d": 76637023,
      "foreign_ratio": 43.92,
-     "trust_net_d": 390942458
+     "trust_net_d": 390942458,
+     "value_w": 5431146083.0,
+     "value_m": 10432152413.0,
+     "inst_net_w": 1600922022.0,
+     "inst_net_m": 732230753.0,
+     "fore_net_w": 867654008.0,
+     "fore_net_m": 519430411.0,
+     "trust_net_w": 602696458.0,
+     "trust_net_m": 51260840.0
     },
     {
      "stock_id": "2027",
@@ -3852,7 +5177,15 @@
      "inst_net_d": 233784979,
      "fore_net_d": 160384168,
      "foreign_ratio": 20.68,
-     "trust_net_d": 48238257
+     "trust_net_d": 48238257,
+     "value_w": 3478361919.0,
+     "value_m": 7986903481.0,
+     "inst_net_w": 901639520.0,
+     "inst_net_m": 796479190.0,
+     "fore_net_w": 693993995.0,
+     "fore_net_m": -673845335.0,
+     "trust_net_w": 142245285.0,
+     "trust_net_m": 1386867798.0
     },
     {
      "stock_id": "1907",
@@ -3867,7 +5200,15 @@
      "inst_net_d": 11066975,
      "fore_net_d": 12539220,
      "foreign_ratio": 12.53,
-     "trust_net_d": 329355
+     "trust_net_d": 329355,
+     "value_w": 340853921.0,
+     "value_m": 818174632.0,
+     "inst_net_w": 128943946.0,
+     "inst_net_m": 197344111.0,
+     "fore_net_w": 123909009.0,
+     "fore_net_m": 158085108.0,
+     "trust_net_w": 2525055.0,
+     "trust_net_m": 38278989.0
     },
     {
      "stock_id": "2603",
@@ -3882,7 +5223,15 @@
      "inst_net_d": 1870648956,
      "fore_net_d": 1903508640,
      "foreign_ratio": 20.42,
-     "trust_net_d": -214477164
+     "trust_net_d": -214477164,
+     "value_w": 11383702010.0,
+     "value_m": 29746636273.0,
+     "inst_net_w": 5503194774.0,
+     "inst_net_m": 7394775696.0,
+     "fore_net_w": 5821757172.0,
+     "fore_net_m": 8405807652.0,
+     "trust_net_w": -688852098.0,
+     "trust_net_m": -943082712.0
     },
     {
      "stock_id": "3017",
@@ -3897,7 +5246,15 @@
      "inst_net_d": 267986400,
      "fore_net_d": -291460400,
      "foreign_ratio": 52.75,
-     "trust_net_d": 555761800
+     "trust_net_d": 555761800,
+     "value_w": 41912197735.0,
+     "value_m": 120917158843.0,
+     "inst_net_w": -3466012000.0,
+     "inst_net_m": 2357944600.0,
+     "fore_net_w": -2931493400.0,
+     "fore_net_m": -1680956200.0,
+     "trust_net_w": -416589800.0,
+     "trust_net_m": 4372566000.0
     },
     {
      "stock_id": "4938",
@@ -3912,7 +5269,15 @@
      "inst_net_d": 220845014,
      "fore_net_d": 456990078,
      "foreign_ratio": 29.37,
-     "trust_net_d": -330115200
+     "trust_net_d": -330115200,
+     "value_w": 3959936026.0,
+     "value_m": 9506633736.0,
+     "inst_net_w": 556928509.0,
+     "inst_net_m": 1092829354.0,
+     "fore_net_w": 877306708.0,
+     "fore_net_m": 2491579243.0,
+     "trust_net_w": -517449000.0,
+     "trust_net_m": -1689614588.0
     },
     {
      "stock_id": "6414",
@@ -3927,7 +5292,15 @@
      "inst_net_d": 205477815,
      "fore_net_d": 273520910,
      "foreign_ratio": 45.02,
-     "trust_net_d": 790000
+     "trust_net_d": 790000,
+     "value_w": 3806341516.0,
+     "value_m": 8409152481.0,
+     "inst_net_w": 878674735.0,
+     "inst_net_m": 1864106515.0,
+     "fore_net_w": 1111701035.0,
+     "fore_net_m": 2385953655.0,
+     "trust_net_w": 64780000.0,
+     "trust_net_m": -2370000.0
     },
     {
      "stock_id": "5904",
@@ -3942,7 +5315,15 @@
      "inst_net_d": 310242900,
      "fore_net_d": 0,
      "foreign_ratio": null,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 3075394687.0,
+     "value_m": 6573111719.0,
+     "inst_net_w": -343861875.0,
+     "inst_net_m": -778871670.0,
+     "fore_net_w": 0.0,
+     "fore_net_m": -27055080.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": -27055080.0
     },
     {
      "stock_id": "2474",
@@ -3957,7 +5338,15 @@
      "inst_net_d": -28730698,
      "fore_net_d": -174308495,
      "foreign_ratio": 15.78,
-     "trust_net_d": 147521500
+     "trust_net_d": 147521500,
+     "value_w": 3735489855.0,
+     "value_m": 13696279562.0,
+     "inst_net_w": -91671837.0,
+     "inst_net_m": -1172221878.0,
+     "fore_net_w": -183417714.0,
+     "fore_net_m": -2515726102.0,
+     "trust_net_w": 56509500.0,
+     "trust_net_m": 1240625416.0
     },
     {
      "stock_id": "8069",
@@ -3972,7 +5361,15 @@
      "inst_net_d": 277112022,
      "fore_net_d": 0,
      "foreign_ratio": null,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 6164841181.0,
+     "value_m": 19930866704.0,
+     "inst_net_w": -616023886.0,
+     "inst_net_m": -1259805838.0,
+     "fore_net_w": 0.0,
+     "fore_net_m": -287644104.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": -287644104.0
     },
     {
      "stock_id": "1210",
@@ -3987,7 +5384,15 @@
      "inst_net_d": 92008253,
      "fore_net_d": 96247170,
      "foreign_ratio": 8.6,
-     "trust_net_d": -15227700
+     "trust_net_d": -15227700,
+     "value_w": 684525531.0,
+     "value_m": 2312539923.0,
+     "inst_net_w": 153988408.0,
+     "inst_net_m": 387602228.0,
+     "fore_net_w": 58047008.0,
+     "fore_net_m": 167451258.0,
+     "trust_net_w": 32192400.0,
+     "trust_net_m": 128595900.0
     },
     {
      "stock_id": "2891",
@@ -4002,7 +5407,15 @@
      "inst_net_d": 1452924202,
      "fore_net_d": 1362485861,
      "foreign_ratio": 34.61,
-     "trust_net_d": -440336631
+     "trust_net_d": -440336631,
+     "value_w": 26024675550.0,
+     "value_m": 50410075482.0,
+     "inst_net_w": 4814805572.0,
+     "inst_net_m": 3316516016.0,
+     "fore_net_w": 6021237797.0,
+     "fore_net_m": 2105958115.0,
+     "trust_net_w": -1011993585.0,
+     "trust_net_m": 659592480.0
     },
     {
      "stock_id": "1722",
@@ -4017,7 +5430,15 @@
      "inst_net_d": 895983,
      "fore_net_d": 780117,
      "foreign_ratio": 8.72,
-     "trust_net_d": 612300
+     "trust_net_d": 612300,
+     "value_w": 418598920.0,
+     "value_m": 1116297965.0,
+     "inst_net_w": 23736940.0,
+     "inst_net_m": 198252661.0,
+     "fore_net_w": 23149933.0,
+     "fore_net_m": 198130719.0,
+     "trust_net_w": 141300.0,
+     "trust_net_m": -94200.0
     },
     {
      "stock_id": "2615",
@@ -4032,7 +5453,15 @@
      "inst_net_d": 109932600,
      "fore_net_d": 184500976,
      "foreign_ratio": 43.3,
-     "trust_net_d": -62940706
+     "trust_net_d": -62940706,
+     "value_w": 3010066109.0,
+     "value_m": 8878230454.0,
+     "inst_net_w": 546117141.0,
+     "inst_net_m": 1649338323.0,
+     "fore_net_w": 631348296.0,
+     "fore_net_m": 1643280980.0,
+     "trust_net_w": -66139468.0,
+     "trust_net_m": -805971.0
     },
     {
      "stock_id": "1477",
@@ -4047,7 +5476,15 @@
      "inst_net_d": 69171192,
      "fore_net_d": 66236616,
      "foreign_ratio": 19.57,
-     "trust_net_d": 216000
+     "trust_net_d": 216000,
+     "value_w": 2162286259.0,
+     "value_m": 7025602266.0,
+     "inst_net_w": 21080736.0,
+     "inst_net_m": 921461400.0,
+     "fore_net_w": -39101616.0,
+     "fore_net_m": 154194840.0,
+     "trust_net_w": 70848000.0,
+     "trust_net_m": 767714544.0
     },
     {
      "stock_id": "9938",
@@ -4062,7 +5499,15 @@
      "inst_net_d": -11726413,
      "fore_net_d": -20082300,
      "foreign_ratio": 9.15,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 375360915.0,
+     "value_m": 976128738.0,
+     "inst_net_w": 43865658.0,
+     "inst_net_m": 103826821.0,
+     "fore_net_w": 36246397.0,
+     "fore_net_m": 16547219.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": 77269538.0
     },
     {
      "stock_id": "1476",
@@ -4077,7 +5522,15 @@
      "inst_net_d": 144030646,
      "fore_net_d": 266183358,
      "foreign_ratio": 29.52,
-     "trust_net_d": -117157883
+     "trust_net_d": -117157883,
+     "value_w": 2755714917.0,
+     "value_m": 6205132876.0,
+     "inst_net_w": 541401232.0,
+     "inst_net_m": 1368670660.0,
+     "fore_net_w": 678024843.0,
+     "fore_net_m": 1409984306.0,
+     "trust_net_w": -122509558.0,
+     "trust_net_m": -12245786.0
     },
     {
      "stock_id": "2887",
@@ -4092,7 +5545,15 @@
      "inst_net_d": 740000872,
      "fore_net_d": -341084297,
      "foreign_ratio": 23.35,
-     "trust_net_d": 689626984
+     "trust_net_d": 689626984,
+     "value_w": 14789348749.0,
+     "value_m": 34281554055.0,
+     "inst_net_w": 871647606.0,
+     "inst_net_m": 4590311807.0,
+     "fore_net_w": -1828851300.0,
+     "fore_net_m": 475039399.0,
+     "trust_net_w": 2036775997.0,
+     "trust_net_m": 3294856547.0
     },
     {
      "stock_id": "2618",
@@ -4107,7 +5568,15 @@
      "inst_net_d": 349576232,
      "fore_net_d": 684267275,
      "foreign_ratio": 26.82,
-     "trust_net_d": -427452966
+     "trust_net_d": -427452966,
+     "value_w": 11907039949.0,
+     "value_m": 29404353845.0,
+     "inst_net_w": 5421984190.0,
+     "inst_net_m": 9048214508.0,
+     "fore_net_w": 6262770388.0,
+     "fore_net_m": 9227577349.0,
+     "trust_net_w": -983328681.0,
+     "trust_net_m": -98562060.0
     },
     {
      "stock_id": "3706",
@@ -4122,7 +5591,15 @@
      "inst_net_d": -116122977,
      "fore_net_d": -181160518,
      "foreign_ratio": 7.56,
-     "trust_net_d": 140132100
+     "trust_net_d": 140132100,
+     "value_w": 6151465415.0,
+     "value_m": 23705325196.0,
+     "inst_net_w": -166553579.0,
+     "inst_net_m": 152428581.0,
+     "fore_net_w": -323172790.0,
+     "fore_net_m": -2392415829.0,
+     "trust_net_w": 162118800.0,
+     "trust_net_m": 2684761500.0
     },
     {
      "stock_id": "2883",
@@ -4137,7 +5614,15 @@
      "inst_net_d": 435917880,
      "fore_net_d": 174021330,
      "foreign_ratio": 25.86,
-     "trust_net_d": -8880300
+     "trust_net_d": -8880300,
+     "value_w": 7095379038.0,
+     "value_m": 21800956487.0,
+     "inst_net_w": 1765974300.0,
+     "inst_net_m": 4436178810.0,
+     "fore_net_w": 1498066140.0,
+     "fore_net_m": 4702780980.0,
+     "trust_net_w": -215400930.0,
+     "trust_net_m": -815049990.0
     },
     {
      "stock_id": "6213",
@@ -4152,7 +5637,15 @@
      "inst_net_d": 790945507,
      "fore_net_d": 400065237,
      "foreign_ratio": 18.41,
-     "trust_net_d": 524117000
+     "trust_net_d": 524117000,
+     "value_w": 37540589606.0,
+     "value_m": 120634428456.0,
+     "inst_net_w": 958770131.0,
+     "inst_net_m": -1343524644.0,
+     "fore_net_w": 864981579.0,
+     "fore_net_m": -3177504132.0,
+     "trust_net_w": 566863000.0,
+     "trust_net_m": 2083133800.0
     },
     {
      "stock_id": "1101",
@@ -4167,7 +5660,15 @@
      "inst_net_d": 199692895,
      "fore_net_d": 291629430,
      "foreign_ratio": 13.67,
-     "trust_net_d": -87631500
+     "trust_net_d": -87631500,
+     "value_w": 3489402943.0,
+     "value_m": 8381380692.0,
+     "inst_net_w": 370550820.0,
+     "inst_net_m": -1381244178.0,
+     "fore_net_w": 479173695.0,
+     "fore_net_m": -1256568453.0,
+     "trust_net_w": -90381000.0,
+     "trust_net_m": -94211500.0
     },
     {
      "stock_id": "2548",
@@ -4182,7 +5683,15 @@
      "inst_net_d": 35313741,
      "fore_net_d": 50671599,
      "foreign_ratio": 16.39,
-     "trust_net_d": -9494000
+     "trust_net_d": -9494000,
+     "value_w": 935467492.0,
+     "value_m": 1872435933.0,
+     "inst_net_w": -35938830.0,
+     "inst_net_m": -187897774.0,
+     "fore_net_w": 3362997.0,
+     "fore_net_m": -114142019.0,
+     "trust_net_w": -9898000.0,
+     "trust_net_m": -28078000.0
     },
     {
      "stock_id": "2609",
@@ -4197,7 +5706,15 @@
      "inst_net_d": 223996776,
      "fore_net_d": 232698928,
      "foreign_ratio": 18.9,
-     "trust_net_d": -2893895
+     "trust_net_d": -2893895,
+     "value_w": 5731238906.0,
+     "value_m": 12974547263.0,
+     "inst_net_w": -244420877.0,
+     "inst_net_m": -443524421.0,
+     "fore_net_w": -160454878.0,
+     "fore_net_m": -433583020.0,
+     "trust_net_w": 5893274.0,
+     "trust_net_m": 20639400.0
     },
     {
      "stock_id": "8044",
@@ -4212,7 +5729,15 @@
      "inst_net_d": 810820,
      "fore_net_d": 0,
      "foreign_ratio": null,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 60702365.0,
+     "value_m": 172411878.0,
+     "inst_net_w": 3498874.0,
+     "inst_net_m": -4032690.0,
+     "fore_net_w": 0.0,
+     "fore_net_m": -4293000.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": -4293000.0
     },
     {
      "stock_id": "2357",
@@ -4227,7 +5752,15 @@
      "inst_net_d": 1087281300,
      "fore_net_d": 884368800,
      "foreign_ratio": 35.46,
-     "trust_net_d": -145850600
+     "trust_net_d": -145850600,
+     "value_w": 16227616258.0,
+     "value_m": 42708581905.0,
+     "inst_net_w": 5231162300.0,
+     "inst_net_m": 11335575300.0,
+     "fore_net_w": 4904928000.0,
+     "fore_net_m": 12992868000.0,
+     "trust_net_w": -400036000.0,
+     "trust_net_m": -1278356800.0
     },
     {
      "stock_id": "1904",
@@ -4242,7 +5775,15 @@
      "inst_net_d": -1614709,
      "fore_net_d": -1877509,
      "foreign_ratio": 10.4,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 229194871.0,
+     "value_m": 837373223.0,
+     "inst_net_w": -15233333.0,
+     "inst_net_m": 63399887.0,
+     "fore_net_w": -15325094.0,
+     "fore_net_m": 61643989.0,
+     "trust_net_w": -219000.0,
+     "trust_net_m": -175200.0
     },
     {
      "stock_id": "9945",
@@ -4257,7 +5798,15 @@
      "inst_net_d": 54294555,
      "fore_net_d": 56747959,
      "foreign_ratio": 6.9,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 839410155.0,
+     "value_m": 3048079523.0,
+     "inst_net_w": 208907081.0,
+     "inst_net_m": -169113341.0,
+     "fore_net_w": 206830312.0,
+     "fore_net_m": -157684144.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": -11786250.0
     },
     {
      "stock_id": "2347",
@@ -4272,7 +5821,15 @@
      "inst_net_d": 21469925,
      "fore_net_d": 394066466,
      "foreign_ratio": 28.44,
-     "trust_net_d": -449445700
+     "trust_net_d": -449445700,
+     "value_w": 4867999817.0,
+     "value_m": 11786635313.0,
+     "inst_net_w": 1514342501.0,
+     "inst_net_m": -169572391.0,
+     "fore_net_w": 2165157617.0,
+     "fore_net_m": -1161489412.0,
+     "trust_net_w": -569548100.0,
+     "trust_net_m": 1255663171.0
     },
     {
      "stock_id": "3034",
@@ -4287,7 +5844,15 @@
      "inst_net_d": 487736733,
      "fore_net_d": 819975050,
      "foreign_ratio": 38.82,
-     "trust_net_d": -453534016
+     "trust_net_d": -453534016,
+     "value_w": 18208258669.0,
+     "value_m": 36911579107.0,
+     "inst_net_w": 4245536924.0,
+     "inst_net_m": 4466428642.0,
+     "fore_net_w": 5372525020.0,
+     "fore_net_m": 4576416304.0,
+     "trust_net_w": -582114826.0,
+     "trust_net_m": 435331833.0
     },
     {
      "stock_id": "2377",
@@ -4302,7 +5867,15 @@
      "inst_net_d": -18660312,
      "fore_net_d": 18313779,
      "foreign_ratio": 14.63,
-     "trust_net_d": -35941000
+     "trust_net_d": -35941000,
+     "value_w": 11867121666.0,
+     "value_m": 29319663220.0,
+     "inst_net_w": 693503669.0,
+     "inst_net_m": 4022892261.0,
+     "fore_net_w": 562933836.0,
+     "fore_net_m": 906750820.0,
+     "trust_net_w": -193430500.0,
+     "trust_net_m": 2913722578.0
     },
     {
      "stock_id": "1565",
@@ -4317,7 +5890,15 @@
      "inst_net_d": -6470752,
      "fore_net_d": 0,
      "foreign_ratio": null,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 50325114.0,
+     "value_m": 155240739.0,
+     "inst_net_w": 155324.0,
+     "inst_net_m": 3754026.0,
+     "fore_net_w": 0.0,
+     "fore_net_m": -221451.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": -221451.0
     },
     {
      "stock_id": "4128",
@@ -4332,7 +5913,15 @@
      "inst_net_d": -5732939,
      "fore_net_d": 0,
      "foreign_ratio": null,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 194525016.0,
+     "value_m": 1131318683.0,
+     "inst_net_w": -17726388.0,
+     "inst_net_m": -78170897.0,
+     "fore_net_w": 0.0,
+     "fore_net_m": -9177408.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": -9177408.0
     },
     {
      "stock_id": "2885",
@@ -4347,7 +5936,15 @@
      "inst_net_d": -579623655,
      "fore_net_d": -966039360,
      "foreign_ratio": 26.56,
-     "trust_net_d": 75748465
+     "trust_net_d": 75748465,
+     "value_w": 10857398662.0,
+     "value_m": 22433302480.0,
+     "inst_net_w": -1594955375.0,
+     "inst_net_m": -980572060.0,
+     "fore_net_w": -2043245685.0,
+     "fore_net_m": -2201350320.0,
+     "trust_net_w": -149436300.0,
+     "trust_net_m": 366149615.0
     },
     {
      "stock_id": "3293",
@@ -4362,7 +5959,15 @@
      "inst_net_d": -147290374,
      "fore_net_d": 0,
      "foreign_ratio": null,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 5888283140.0,
+     "value_m": 18220556631.0,
+     "inst_net_w": -1292928210.0,
+     "inst_net_m": 509582752.0,
+     "fore_net_w": 0.0,
+     "fore_net_m": -113053486.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": -113053486.0
     },
     {
      "stock_id": "2392",
@@ -4377,7 +5982,15 @@
      "inst_net_d": -45571367,
      "fore_net_d": -45468450,
      "foreign_ratio": 6.31,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 362219120.0,
+     "value_m": 930515653.0,
+     "inst_net_w": -86536663.0,
+     "inst_net_m": -135864066.0,
+     "fore_net_w": -84142548.0,
+     "fore_net_m": -130305823.0,
+     "trust_net_w": -177750.0,
+     "trust_net_m": -177750.0
     },
     {
      "stock_id": "2913",
@@ -4392,7 +6005,15 @@
      "inst_net_d": -1993611,
      "fore_net_d": -1489600,
      "foreign_ratio": 5.38,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 247862462.0,
+     "value_m": 729163513.0,
+     "inst_net_w": -25015861.0,
+     "inst_net_m": -24665726.0,
+     "fore_net_w": -25826595.0,
+     "fore_net_m": -26603371.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": 0.0
     },
     {
      "stock_id": "4123",
@@ -4407,7 +6028,15 @@
      "inst_net_d": 6456944,
      "fore_net_d": 0,
      "foreign_ratio": null,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 326874580.0,
+     "value_m": 1234008920.0,
+     "inst_net_w": -40590110.0,
+     "inst_net_m": 47545037.0,
+     "fore_net_w": 0.0,
+     "fore_net_m": 6405144.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": 6405144.0
     },
     {
      "stock_id": "1319",
@@ -4422,7 +6051,15 @@
      "inst_net_d": -34681718,
      "fore_net_d": -15320870,
      "foreign_ratio": 8.96,
-     "trust_net_d": -13984000
+     "trust_net_d": -13984000,
+     "value_w": 855324171.0,
+     "value_m": 2601115301.0,
+     "inst_net_w": -120854438.0,
+     "inst_net_m": -342556774.0,
+     "fore_net_w": -116505194.0,
+     "fore_net_m": -304455158.0,
+     "trust_net_w": -39302400.0,
+     "trust_net_m": -86650090.0
     },
     {
      "stock_id": "2385",
@@ -4437,7 +6074,15 @@
      "inst_net_d": -31659072,
      "fore_net_d": 146609748,
      "foreign_ratio": 20.75,
-     "trust_net_d": -208553060
+     "trust_net_d": -208553060,
+     "value_w": 2303836795.0,
+     "value_m": 6603531504.0,
+     "inst_net_w": 139086452.0,
+     "inst_net_m": 165611095.0,
+     "fore_net_w": 394110348.0,
+     "fore_net_m": 1163420818.0,
+     "trust_net_w": -306985860.0,
+     "trust_net_m": -1086375668.0
     },
     {
      "stock_id": "1909",
@@ -4452,7 +6097,15 @@
      "inst_net_d": 3126839,
      "fore_net_d": 2722839,
      "foreign_ratio": 9.18,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 183631487.0,
+     "value_m": 840291084.0,
+     "inst_net_w": 6619924.0,
+     "inst_net_m": 160391252.0,
+     "fore_net_w": 7599624.0,
+     "fore_net_m": 160423512.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": 0.0
     },
     {
      "stock_id": "3552",
@@ -4467,7 +6120,15 @@
      "inst_net_d": -1726660,
      "fore_net_d": 0,
      "foreign_ratio": null,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 39669276.0,
+     "value_m": 101077252.0,
+     "inst_net_w": -5337059.0,
+     "inst_net_m": -8192561.0,
+     "fore_net_w": 0.0,
+     "fore_net_m": -6161700.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": -6161700.0
     },
     {
      "stock_id": "6757",
@@ -4482,7 +6143,15 @@
      "inst_net_d": -10931069,
      "fore_net_d": -16241800,
      "foreign_ratio": 4.83,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 367077070.0,
+     "value_m": 1270775121.0,
+     "inst_net_w": -23589725.0,
+     "inst_net_m": -72546332.0,
+     "fore_net_w": -37440271.0,
+     "fore_net_m": -78284858.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": 0.0
     },
     {
      "stock_id": "3078",
@@ -4497,7 +6166,15 @@
      "inst_net_d": -25190080,
      "fore_net_d": 0,
      "foreign_ratio": null,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 341329513.0,
+     "value_m": 1675063490.0,
+     "inst_net_w": -108938930.0,
+     "inst_net_m": -213969324.0,
+     "fore_net_w": 0.0,
+     "fore_net_m": -48007500.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": -48007500.0
     },
     {
      "stock_id": "1608",
@@ -4512,7 +6189,15 @@
      "inst_net_d": -57162996,
      "fore_net_d": -56868682,
      "foreign_ratio": 2.25,
-     "trust_net_d": 282962
+     "trust_net_d": 282962,
+     "value_w": 427202162.0,
+     "value_m": 1239872286.0,
+     "inst_net_w": -164220773.0,
+     "inst_net_m": -137053341.0,
+     "fore_net_w": -165635548.0,
+     "fore_net_m": -169555891.0,
+     "trust_net_w": 2701712.0,
+     "trust_net_m": 31854776.0
     },
     {
      "stock_id": "2352",
@@ -4527,7 +6212,15 @@
      "inst_net_d": -46578606,
      "fore_net_d": -127002110,
      "foreign_ratio": 7.74,
-     "trust_net_d": 86275200
+     "trust_net_d": 86275200,
+     "value_w": 1977059461.0,
+     "value_m": 11057772752.0,
+     "inst_net_w": -248626978.0,
+     "inst_net_m": -376115549.0,
+     "fore_net_w": -327127955.0,
+     "fore_net_m": -1403131578.0,
+     "trust_net_w": 83235200.0,
+     "trust_net_m": 1028097600.0
     },
     {
      "stock_id": "2006",
@@ -4542,7 +6235,15 @@
      "inst_net_d": 51901528,
      "fore_net_d": 51691770,
      "foreign_ratio": 24.71,
-     "trust_net_d": 660371
+     "trust_net_d": 660371,
+     "value_w": 1087577574.0,
+     "value_m": 2225250078.0,
+     "inst_net_w": 520300849.0,
+     "inst_net_m": 574577032.0,
+     "fore_net_w": 438691313.0,
+     "fore_net_m": 416101585.0,
+     "trust_net_w": 79845971.0,
+     "trust_net_m": 156222308.0
     },
     {
      "stock_id": "1905",
@@ -4557,7 +6258,15 @@
      "inst_net_d": 6316167,
      "fore_net_d": 9846970,
      "foreign_ratio": 2.33,
-     "trust_net_d": -3501400
+     "trust_net_d": -3501400,
+     "value_w": 250628943.0,
+     "value_m": 1022862005.0,
+     "inst_net_w": 3783076.0,
+     "inst_net_m": 41717488.0,
+     "fore_net_w": 10225666.0,
+     "fore_net_m": 48537497.0,
+     "trust_net_w": -3788400.0,
+     "trust_net_m": -4046700.0
     },
     {
      "stock_id": "2882",
@@ -4572,7 +6281,15 @@
      "inst_net_d": 687212853,
      "fore_net_d": 761710325,
      "foreign_ratio": 22.84,
-     "trust_net_d": -248796499
+     "trust_net_d": -248796499,
+     "value_w": 10382215820.0,
+     "value_m": 41486797444.0,
+     "inst_net_w": 1123596570.0,
+     "inst_net_m": 3837797165.0,
+     "fore_net_w": 1322261304.0,
+     "fore_net_m": 9805154256.0,
+     "trust_net_w": -566824192.0,
+     "trust_net_m": -6292002004.0
     },
     {
      "stock_id": "3005",
@@ -4587,7 +6304,15 @@
      "inst_net_d": 161445460,
      "fore_net_d": 219153770,
      "foreign_ratio": 13.84,
-     "trust_net_d": -79640000
+     "trust_net_d": -79640000,
+     "value_w": 3657981750.0,
+     "value_m": 10448789843.0,
+     "inst_net_w": 327743790.0,
+     "inst_net_m": 1448613430.0,
+     "fore_net_w": 420713590.0,
+     "fore_net_m": 2031488800.0,
+     "trust_net_w": -150810000.0,
+     "trust_net_m": -720594160.0
     },
     {
      "stock_id": "2395",
@@ -4602,7 +6327,15 @@
      "inst_net_d": 65398779,
      "fore_net_d": -174930948,
      "foreign_ratio": 35.64,
-     "trust_net_d": 251970723
+     "trust_net_d": 251970723,
+     "value_w": 7380641387.0,
+     "value_m": 20541445718.0,
+     "inst_net_w": 74598408.0,
+     "inst_net_m": 1649055942.0,
+     "fore_net_w": -425736648.0,
+     "fore_net_m": 973947429.0,
+     "trust_net_w": 445559481.0,
+     "trust_net_m": 516460185.0
     },
     {
      "stock_id": "6547",
@@ -4617,7 +6350,15 @@
      "inst_net_d": -11626108,
      "fore_net_d": 0,
      "foreign_ratio": null,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 500570613.0,
+     "value_m": 1400044716.0,
+     "inst_net_w": -27902475.0,
+     "inst_net_m": 41263315.0,
+     "fore_net_w": 0.0,
+     "fore_net_m": 16746774.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": 16746774.0
     },
     {
      "stock_id": "6279",
@@ -4632,7 +6373,15 @@
      "inst_net_d": -16822228,
      "fore_net_d": 0,
      "foreign_ratio": null,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 265525937.0,
+     "value_m": 1185274670.0,
+     "inst_net_w": -18019848.0,
+     "inst_net_m": 120811730.0,
+     "fore_net_w": 0.0,
+     "fore_net_m": 18515458.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": 18515458.0
     },
     {
      "stock_id": "1440",
@@ -4647,7 +6396,15 @@
      "inst_net_d": -7599824,
      "fore_net_d": -7225802,
      "foreign_ratio": 7.17,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 161852900.0,
+     "value_m": 840090087.0,
+     "inst_net_w": 2490466.0,
+     "inst_net_m": 8435345.0,
+     "fore_net_w": 3153092.0,
+     "fore_net_m": 6999889.0,
+     "trust_net_w": -168350.0,
+     "trust_net_m": -142450.0
     },
     {
      "stock_id": "4743",
@@ -4662,7 +6419,15 @@
      "inst_net_d": -52397993,
      "fore_net_d": 0,
      "foreign_ratio": null,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 743218603.0,
+     "value_m": 3517355134.0,
+     "inst_net_w": -127446842.0,
+     "inst_net_m": 76428652.0,
+     "fore_net_w": 0.0,
+     "fore_net_m": -7744653.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": -7744653.0
     },
     {
      "stock_id": "2317",
@@ -4677,7 +6442,15 @@
      "inst_net_d": -662303538,
      "fore_net_d": -998766990,
      "foreign_ratio": 39.89,
-     "trust_net_d": -162809946
+     "trust_net_d": -162809946,
+     "value_w": 54540472591.0,
+     "value_m": 141115504498.0,
+     "inst_net_w": 1091621232.0,
+     "inst_net_m": -14167160982.0,
+     "fore_net_w": 255796866.0,
+     "fore_net_m": -15750752472.0,
+     "trust_net_w": -309925980.0,
+     "trust_net_m": 1211148198.0
     },
     {
      "stock_id": "8039",
@@ -4692,7 +6465,15 @@
      "inst_net_d": 384244052,
      "fore_net_d": -71371878,
      "foreign_ratio": 22.95,
-     "trust_net_d": 378455000
+     "trust_net_d": 378455000,
+     "value_w": 33345351110.0,
+     "value_m": 43667248036.0,
+     "inst_net_w": 2938386798.0,
+     "inst_net_m": 3384721148.0,
+     "fore_net_w": 2164911402.0,
+     "fore_net_m": 2675273948.0,
+     "trust_net_w": 581157500.0,
+     "trust_net_m": 532455000.0
     },
     {
      "stock_id": "3702",
@@ -4707,7 +6488,15 @@
      "inst_net_d": 1847594,
      "fore_net_d": -139874096,
      "foreign_ratio": 35.48,
-     "trust_net_d": 12264000
+     "trust_net_d": 12264000,
+     "value_w": 9887522905.0,
+     "value_m": 21638481063.0,
+     "inst_net_w": -894685408.0,
+     "inst_net_m": -1643261901.0,
+     "fore_net_w": -1128197991.0,
+     "fore_net_m": -6073378408.0,
+     "trust_net_w": 3050780.0,
+     "trust_net_m": 4332639388.0
     },
     {
      "stock_id": "6510",
@@ -4722,7 +6511,15 @@
      "inst_net_d": 91227235,
      "fore_net_d": 0,
      "foreign_ratio": null,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 5154361780.0,
+     "value_m": 15169905715.0,
+     "inst_net_w": 803668745.0,
+     "inst_net_m": -388075710.0,
+     "fore_net_w": 0.0,
+     "fore_net_m": -109544545.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": -109544545.0
     },
     {
      "stock_id": "2376",
@@ -4737,7 +6534,15 @@
      "inst_net_d": -331047925,
      "fore_net_d": -468547950,
      "foreign_ratio": 20.97,
-     "trust_net_d": 62557625
+     "trust_net_d": 62557625,
+     "value_w": 9367928136.0,
+     "value_m": 20637910641.0,
+     "inst_net_w": -486907525.0,
+     "inst_net_m": -1020756100.0,
+     "fore_net_w": -584976925.0,
+     "fore_net_m": -2917331300.0,
+     "trust_net_w": -186319250.0,
+     "trust_net_m": 1553590025.0
     },
     {
      "stock_id": "2915",
@@ -4752,7 +6557,15 @@
      "inst_net_d": 47536121,
      "fore_net_d": 57970621,
      "foreign_ratio": 4.87,
-     "trust_net_d": 50900
+     "trust_net_d": 50900,
+     "value_w": 1435317918.0,
+     "value_m": 2117537184.0,
+     "inst_net_w": -141310870.0,
+     "inst_net_m": -68595690.0,
+     "fore_net_w": -143171062.0,
+     "fore_net_m": -45390991.0,
+     "trust_net_w": 50900.0,
+     "trust_net_m": -24381100.0
     },
     {
      "stock_id": "2356",
@@ -4767,7 +6580,15 @@
      "inst_net_d": 79480089,
      "fore_net_d": 475721766,
      "foreign_ratio": 15.52,
-     "trust_net_d": -429658398
+     "trust_net_d": -429658398,
+     "value_w": 13912062929.0,
+     "value_m": 34919824265.0,
+     "inst_net_w": -1224504392.0,
+     "inst_net_m": -993974494.0,
+     "fore_net_w": -757462563.0,
+     "fore_net_m": -2587414869.0,
+     "trust_net_w": -257934339.0,
+     "trust_net_m": 1641270384.0
     },
     {
      "stock_id": "2353",
@@ -4782,7 +6603,15 @@
      "inst_net_d": -45062478,
      "fore_net_d": 50936746,
      "foreign_ratio": 12.5,
-     "trust_net_d": -124227204
+     "trust_net_d": -124227204,
+     "value_w": 5678482750.0,
+     "value_m": 13724878203.0,
+     "inst_net_w": 324927103.0,
+     "inst_net_m": 722541150.0,
+     "fore_net_w": 393967416.0,
+     "fore_net_m": 2074206769.0,
+     "trust_net_w": -155209317.0,
+     "trust_net_m": -1462431897.0
     },
     {
      "stock_id": "5388",
@@ -4797,7 +6626,15 @@
      "inst_net_d": 12688089,
      "fore_net_d": 21283067,
      "foreign_ratio": 21.89,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 2719161421.0,
+     "value_m": 5439013728.0,
+     "inst_net_w": 558334660.0,
+     "inst_net_m": 893119359.0,
+     "fore_net_w": 513154406.0,
+     "fore_net_m": 886402547.0,
+     "trust_net_w": 30987600.0,
+     "trust_net_m": -68826792.0
     },
     {
      "stock_id": "3036",
@@ -4812,7 +6649,15 @@
      "inst_net_d": 50310650,
      "fore_net_d": 582998455,
      "foreign_ratio": 28.02,
-     "trust_net_d": -594293752
+     "trust_net_d": -594293752,
+     "value_w": 8663191459.0,
+     "value_m": 22234193175.0,
+     "inst_net_w": -171180243.0,
+     "inst_net_m": -2212977748.0,
+     "fore_net_w": 1068919410.0,
+     "fore_net_m": 2672320202.0,
+     "trust_net_w": -1114820856.0,
+     "trust_net_m": -4912157880.0
     },
     {
      "stock_id": "3376",
@@ -4827,7 +6672,15 @@
      "inst_net_d": -295560232,
      "fore_net_d": -237663723,
      "foreign_ratio": 12.98,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 2792315813.0,
+     "value_m": 8880293348.0,
+     "inst_net_w": -511217795.0,
+     "inst_net_m": -1392645661.0,
+     "fore_net_w": -428073294.0,
+     "fore_net_m": -1216480254.0,
+     "trust_net_w": -110330000.0,
+     "trust_net_m": -127160000.0
     },
     {
      "stock_id": "2371",
@@ -4842,7 +6695,15 @@
      "inst_net_d": -178712665,
      "fore_net_d": -146850232,
      "foreign_ratio": 6.24,
-     "trust_net_d": -27769300
+     "trust_net_d": -27769300,
+     "value_w": 1401880181.0,
+     "value_m": 3327861528.0,
+     "inst_net_w": -86967274.0,
+     "inst_net_m": 181629092.0,
+     "fore_net_w": -61660376.0,
+     "fore_net_m": 177016236.0,
+     "trust_net_w": -26210208.0,
+     "trust_net_m": 5049792.0
     },
     {
      "stock_id": "1326",
@@ -4857,7 +6718,15 @@
      "inst_net_d": -213191801,
      "fore_net_d": -187617116,
      "foreign_ratio": 37.56,
-     "trust_net_d": 396600
+     "trust_net_d": 396600,
+     "value_w": 34545061696.0,
+     "value_m": 67643890338.0,
+     "inst_net_w": 1207283186.0,
+     "inst_net_m": -2445106554.0,
+     "fore_net_w": 1134216576.0,
+     "fore_net_m": -2386466666.0,
+     "trust_net_w": 3371100.0,
+     "trust_net_m": 59952700.0
     },
     {
      "stock_id": "4162",
@@ -4872,7 +6741,15 @@
      "inst_net_d": 1033532,
      "fore_net_d": 0,
      "foreign_ratio": null,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 448730632.0,
+     "value_m": 1019894763.0,
+     "inst_net_w": 21309306.0,
+     "inst_net_m": 56954680.0,
+     "fore_net_w": 0.0,
+     "fore_net_m": 12377228.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": 12377228.0
     },
     {
      "stock_id": "6121",
@@ -4887,7 +6764,15 @@
      "inst_net_d": -18305294,
      "fore_net_d": 0,
      "foreign_ratio": null,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 2433005347.0,
+     "value_m": 9305610839.0,
+     "inst_net_w": 625677058.0,
+     "inst_net_m": 536300602.0,
+     "fore_net_w": 0.0,
+     "fore_net_m": -276538977.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": -276538977.0
     },
     {
      "stock_id": "5009",
@@ -4902,7 +6787,15 @@
      "inst_net_d": -24906580,
      "fore_net_d": 0,
      "foreign_ratio": null,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 788560022.0,
+     "value_m": 1664804803.0,
+     "inst_net_w": 181807482.0,
+     "inst_net_m": 302330230.0,
+     "fore_net_w": 0.0,
+     "fore_net_m": 1181009.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": 1181009.0
     },
     {
      "stock_id": "2354",
@@ -4917,7 +6810,15 @@
      "inst_net_d": -101170836,
      "fore_net_d": -80682426,
      "foreign_ratio": 10.22,
-     "trust_net_d": 702000
+     "trust_net_d": 702000,
+     "value_w": 1145886075.0,
+     "value_m": 3834023254.0,
+     "inst_net_w": -33680772.0,
+     "inst_net_m": 115262082.0,
+     "fore_net_w": -7805052.0,
+     "fore_net_m": 129115566.0,
+     "trust_net_w": 918000.0,
+     "trust_net_m": 1512000.0
     },
     {
      "stock_id": "1301",
@@ -4932,7 +6833,15 @@
      "inst_net_d": -602577492,
      "fore_net_d": -493335071,
      "foreign_ratio": 33.89,
-     "trust_net_d": 314000
+     "trust_net_d": 314000,
+     "value_w": 34219972215.0,
+     "value_m": 68147788625.0,
+     "inst_net_w": 3274796118.0,
+     "inst_net_m": 1742582878.0,
+     "fore_net_w": 3121990028.0,
+     "fore_net_m": 1617057924.0,
+     "trust_net_w": -1632800.0,
+     "trust_net_m": -2964160.0
     },
     {
      "stock_id": "2439",
@@ -4947,7 +6856,15 @@
      "inst_net_d": -76279028,
      "fore_net_d": -65132065,
      "foreign_ratio": 11.2,
-     "trust_net_d": -410500
+     "trust_net_d": -410500,
+     "value_w": 720046534.0,
+     "value_m": 1874634758.0,
+     "inst_net_w": -272522330.0,
+     "inst_net_m": -392451300.0,
+     "fore_net_w": -239854822.0,
+     "fore_net_m": -203663582.0,
+     "trust_net_w": -574700.0,
+     "trust_net_m": -156105925.0
     },
     {
      "stock_id": "2393",
@@ -4962,7 +6879,15 @@
      "inst_net_d": -133312284,
      "fore_net_d": -157472000,
      "foreign_ratio": 27.89,
-     "trust_net_d": 5918500
+     "trust_net_d": 5918500,
+     "value_w": 1018958614.0,
+     "value_m": 2696875905.0,
+     "inst_net_w": -352553607.0,
+     "inst_net_m": -391498600.0,
+     "fore_net_w": -465473334.0,
+     "fore_net_m": -470438423.0,
+     "trust_net_w": 11770500.0,
+     "trust_net_m": -24899861.0
     },
     {
      "stock_id": "2606",
@@ -4977,7 +6902,15 @@
      "inst_net_d": -59987834,
      "fore_net_d": 16728877,
      "foreign_ratio": 17.9,
-     "trust_net_d": -73203200
+     "trust_net_d": -73203200,
+     "value_w": 1085399583.0,
+     "value_m": 2534629712.0,
+     "inst_net_w": 132063011.0,
+     "inst_net_m": 428083984.0,
+     "fore_net_w": 222769558.0,
+     "fore_net_m": 572140525.0,
+     "trust_net_w": -80864000.0,
+     "trust_net_m": -138137600.0
     },
     {
      "stock_id": "1504",
@@ -4992,7 +6925,15 @@
      "inst_net_d": -228550322,
      "fore_net_d": -276707043,
      "foreign_ratio": 6.82,
-     "trust_net_d": 75907646
+     "trust_net_d": 75907646,
+     "value_w": 5213631899.0,
+     "value_m": 12613509993.0,
+     "inst_net_w": 15798868.0,
+     "inst_net_m": -534838943.0,
+     "fore_net_w": -74988411.0,
+     "fore_net_m": -595563616.0,
+     "trust_net_w": 87701386.0,
+     "trust_net_m": 93927480.0
     },
     {
      "stock_id": "1312",
@@ -5007,7 +6948,15 @@
      "inst_net_d": -84386682,
      "fore_net_d": -78449250,
      "foreign_ratio": 3.14,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 1010449819.0,
+     "value_m": 4908233855.0,
+     "inst_net_w": -76880830.0,
+     "inst_net_m": -24967164.0,
+     "fore_net_w": -72161539.0,
+     "fore_net_m": -26985822.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": 0.0
     },
     {
      "stock_id": "8112",
@@ -5022,7 +6971,15 @@
      "inst_net_d": -143173813,
      "fore_net_d": -53526236,
      "foreign_ratio": 12.45,
-     "trust_net_d": -57002400
+     "trust_net_d": -57002400,
+     "value_w": 5780212682.0,
+     "value_m": 18176703841.0,
+     "inst_net_w": -277798903.0,
+     "inst_net_m": -1841635423.0,
+     "fore_net_w": -69226466.0,
+     "fore_net_m": -2678677338.0,
+     "trust_net_w": -141932700.0,
+     "trust_net_m": 922960011.0
     },
     {
      "stock_id": "6176",
@@ -5037,7 +6994,15 @@
      "inst_net_d": -246463685,
      "fore_net_d": -228907458,
      "foreign_ratio": 35.03,
-     "trust_net_d": -8112000
+     "trust_net_d": -8112000,
+     "value_w": 2137822085.0,
+     "value_m": 5776144055.0,
+     "inst_net_w": -463025270.0,
+     "inst_net_m": 231542168.0,
+     "fore_net_w": -420455100.0,
+     "fore_net_m": 849275531.0,
+     "trust_net_w": -20871500.0,
+     "trust_net_m": -597920732.0
     },
     {
      "stock_id": "1314",
@@ -5052,7 +7017,15 @@
      "inst_net_d": -117760090,
      "fore_net_d": -114293151,
      "foreign_ratio": 10.07,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 3211122008.0,
+     "value_m": 17842023168.0,
+     "inst_net_w": -128216978.0,
+     "inst_net_m": -107247102.0,
+     "fore_net_w": -134466385.0,
+     "fore_net_m": -112778404.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": 0.0
     },
     {
      "stock_id": "1609",
@@ -5067,7 +7040,15 @@
      "inst_net_d": -34203208,
      "fore_net_d": -22001690,
      "foreign_ratio": 12.68,
-     "trust_net_d": -478400
+     "trust_net_d": -478400,
+     "value_w": 1263338920.0,
+     "value_m": 7160165138.0,
+     "inst_net_w": -73734688.0,
+     "inst_net_m": 320632218.0,
+     "fore_net_w": -62512638.0,
+     "fore_net_m": 327992218.0,
+     "trust_net_w": -920000.0,
+     "trust_net_m": -920000.0
     },
     {
      "stock_id": "6472",
@@ -5082,7 +7063,15 @@
      "inst_net_d": 28058976,
      "fore_net_d": 61758576,
      "foreign_ratio": 10.95,
-     "trust_net_d": -792000
+     "trust_net_d": -792000,
+     "value_w": 2383180130.0,
+     "value_m": 6357693242.0,
+     "inst_net_w": -12403512.0,
+     "inst_net_m": -117460332.0,
+     "fore_net_w": 35659800.0,
+     "fore_net_m": -123847812.0,
+     "trust_net_w": -1584000.0,
+     "trust_net_m": -1584000.0
     },
     {
      "stock_id": "6005",
@@ -5097,7 +7086,15 @@
      "inst_net_d": -177156474,
      "fore_net_d": -15075819,
      "foreign_ratio": 18.7,
-     "trust_net_d": -162080655
+     "trust_net_d": -162080655,
+     "value_w": 1650327207.0,
+     "value_m": 4709777309.0,
+     "inst_net_w": -533784900.0,
+     "inst_net_m": -1203226596.0,
+     "fore_net_w": -313494621.0,
+     "fore_net_m": -369346824.0,
+     "trust_net_w": -220290279.0,
+     "trust_net_m": -833879772.0
     },
     {
      "stock_id": "2331",
@@ -5112,7 +7109,15 @@
      "inst_net_d": -21493163,
      "fore_net_d": -20874400,
      "foreign_ratio": 5.48,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 219306013.0,
+     "value_m": 579249250.0,
+     "inst_net_w": -13136729.0,
+     "inst_net_m": -25611414.0,
+     "fore_net_w": -10471189.0,
+     "fore_net_m": -2925345.0,
+     "trust_net_w": -2657800.0,
+     "trust_net_m": -20117800.0
     },
     {
      "stock_id": "1503",
@@ -5127,7 +7132,15 @@
      "inst_net_d": -197463482,
      "fore_net_d": -197137174,
      "foreign_ratio": 30.04,
-     "trust_net_d": 47530000
+     "trust_net_d": 47530000,
+     "value_w": 2792034444.0,
+     "value_m": 7149257493.0,
+     "inst_net_w": -525405544.0,
+     "inst_net_m": -421884040.0,
+     "fore_net_w": -496470250.0,
+     "fore_net_m": -350133722.0,
+     "trust_net_w": 46948000.0,
+     "trust_net_m": 48306000.0
     },
     {
      "stock_id": "1795",
@@ -5142,7 +7155,15 @@
      "inst_net_d": -84604700,
      "fore_net_d": -68876432,
      "foreign_ratio": 51.79,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 2264075887.0,
+     "value_m": 7071655051.0,
+     "inst_net_w": -234874604.0,
+     "inst_net_m": -236503248.0,
+     "fore_net_w": -196604572.0,
+     "fore_net_m": -228905416.0,
+     "trust_net_w": 1880000.0,
+     "trust_net_m": 10163092.0
     },
     {
      "stock_id": "1513",
@@ -5157,7 +7178,15 @@
      "inst_net_d": -88403850,
      "fore_net_d": 96898182,
      "foreign_ratio": 10.04,
-     "trust_net_d": -155937848
+     "trust_net_d": -155937848,
+     "value_w": 3380240792.0,
+     "value_m": 9126877578.0,
+     "inst_net_w": 72035556.0,
+     "inst_net_m": 238501607.0,
+     "fore_net_w": 209456640.0,
+     "fore_net_m": 247279971.0,
+     "trust_net_w": -266627749.0,
+     "trust_net_m": -194352700.0
     },
     {
      "stock_id": "2634",
@@ -5172,7 +7201,15 @@
      "inst_net_d": 317284362,
      "fore_net_d": 369737046,
      "foreign_ratio": 5.01,
-     "trust_net_d": 17136000
+     "trust_net_d": 17136000,
+     "value_w": 23101345969.0,
+     "value_m": 40640710187.0,
+     "inst_net_w": 460403989.0,
+     "inst_net_m": 471898757.0,
+     "fore_net_w": 478589569.0,
+     "fore_net_m": 310981558.0,
+     "trust_net_w": 19155600.0,
+     "trust_net_m": 56793600.0
     },
     {
      "stock_id": "3231",
@@ -5187,7 +7224,15 @@
      "inst_net_d": -713840477,
      "fore_net_d": -38824368,
      "foreign_ratio": 25.85,
-     "trust_net_d": -729013995
+     "trust_net_d": -729013995,
+     "value_w": 21561026334.0,
+     "value_m": 56806036596.0,
+     "inst_net_w": 314441491.0,
+     "inst_net_m": -5027082896.0,
+     "fore_net_w": 1682773337.0,
+     "fore_net_m": -5946643373.0,
+     "trust_net_w": -1631581861.0,
+     "trust_net_m": 1712778711.0
     },
     {
      "stock_id": "5269",
@@ -5202,7 +7247,15 @@
      "inst_net_d": -43354220,
      "fore_net_d": -129121300,
      "foreign_ratio": 7.43,
-     "trust_net_d": 156415000
+     "trust_net_d": 156415000,
+     "value_w": 6091853375.0,
+     "value_m": 19659269840.0,
+     "inst_net_w": 1307587785.0,
+     "inst_net_m": 2516892420.0,
+     "fore_net_w": 853149115.0,
+     "fore_net_m": 187944820.0,
+     "trust_net_w": 559650000.0,
+     "trust_net_m": 2506683830.0
     },
     {
      "stock_id": "6188",
@@ -5217,7 +7270,15 @@
      "inst_net_d": -29907206,
      "fore_net_d": 0,
      "foreign_ratio": null,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 443180128.0,
+     "value_m": 1598230091.0,
+     "inst_net_w": -71958984.0,
+     "inst_net_m": -42138260.0,
+     "fore_net_w": 0.0,
+     "fore_net_m": 6044261.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": 6044261.0
     },
     {
      "stock_id": "2498",
@@ -5232,7 +7293,15 @@
      "inst_net_d": -59915472,
      "fore_net_d": -42231665,
      "foreign_ratio": 8.03,
-     "trust_net_d": 41050
+     "trust_net_d": 41050,
+     "value_w": 1291882548.0,
+     "value_m": 3191014647.0,
+     "inst_net_w": -78081657.0,
+     "inst_net_m": -171582760.0,
+     "fore_net_w": -49446778.0,
+     "fore_net_m": -116228067.0,
+     "trust_net_w": -656800.0,
+     "trust_net_m": -574700.0
     },
     {
      "stock_id": "3653",
@@ -5247,7 +7316,15 @@
      "inst_net_d": -572375100,
      "fore_net_d": -1024172970,
      "foreign_ratio": 26.84,
-     "trust_net_d": 478395930
+     "trust_net_d": 478395930,
+     "value_w": 16168105655.0,
+     "value_m": 34850230915.0,
+     "inst_net_w": 1003150680.0,
+     "inst_net_m": 650025000.0,
+     "fore_net_w": 51199500.0,
+     "fore_net_m": 1319361360.0,
+     "trust_net_w": 937092090.0,
+     "trust_net_m": -766567260.0
     },
     {
      "stock_id": "5457",
@@ -5262,7 +7339,15 @@
      "inst_net_d": -11630717,
      "fore_net_d": 0,
      "foreign_ratio": null,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 108130123.0,
+     "value_m": 254240275.0,
+     "inst_net_w": -27601600.0,
+     "inst_net_m": -43563885.0,
+     "fore_net_w": 0.0,
+     "fore_net_m": -2372000.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": -2372000.0
     },
     {
      "stock_id": "2515",
@@ -5277,7 +7362,15 @@
      "inst_net_d": -75435316,
      "fore_net_d": -62776374,
      "foreign_ratio": 7.94,
-     "trust_net_d": -9738750
+     "trust_net_d": -9738750,
+     "value_w": 874789426.0,
+     "value_m": 2120768585.0,
+     "inst_net_w": -196181949.0,
+     "inst_net_m": -52146510.0,
+     "fore_net_w": -179806823.0,
+     "fore_net_m": -39551844.0,
+     "trust_net_w": -10097160.0,
+     "trust_net_m": -10219660.0
     },
     {
      "stock_id": "3044",
@@ -5292,7 +7385,15 @@
      "inst_net_d": -126426862,
      "fore_net_d": -49478812,
      "foreign_ratio": 50.36,
-     "trust_net_d": -144121575
+     "trust_net_d": -144121575,
+     "value_w": 7489855921.0,
+     "value_m": 21313620129.0,
+     "inst_net_w": -150656078.0,
+     "inst_net_m": -2587986952.0,
+     "fore_net_w": 145828440.0,
+     "fore_net_m": 831711112.0,
+     "trust_net_w": -416676195.0,
+     "trust_net_m": -3367788142.0
     },
     {
      "stock_id": "6245",
@@ -5307,7 +7408,15 @@
      "inst_net_d": -30991260,
      "fore_net_d": 0,
      "foreign_ratio": null,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 292427325.0,
+     "value_m": 574694983.0,
+     "inst_net_w": -32401331.0,
+     "inst_net_m": -2765644.0,
+     "fore_net_w": 0.0,
+     "fore_net_m": -379500.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": -379500.0
     },
     {
      "stock_id": "3008",
@@ -5322,7 +7431,15 @@
      "inst_net_d": 328154340,
      "fore_net_d": 409308720,
      "foreign_ratio": 30.5,
-     "trust_net_d": 220991100
+     "trust_net_d": 220991100,
+     "value_w": 60890732365.0,
+     "value_m": 119243692330.0,
+     "inst_net_w": -3288083710.0,
+     "inst_net_m": -10956430770.0,
+     "fore_net_w": -6120318640.0,
+     "fore_net_m": -10764403900.0,
+     "trust_net_w": 2645950380.0,
+     "trust_net_m": -414204930.0
     },
     {
      "stock_id": "2421",
@@ -5337,7 +7454,15 @@
      "inst_net_d": -146697827,
      "fore_net_d": -134129272,
      "foreign_ratio": 28.59,
-     "trust_net_d": 889000
+     "trust_net_d": 889000,
+     "value_w": 1440470121.0,
+     "value_m": 3118017553.0,
+     "inst_net_w": -370961920.0,
+     "inst_net_m": -198064501.0,
+     "fore_net_w": -324242049.0,
+     "fore_net_m": -185997723.0,
+     "trust_net_w": 381000.0,
+     "trust_net_m": 45720000.0
     },
     {
      "stock_id": "1605",
@@ -5352,7 +7477,15 @@
      "inst_net_d": -266985687,
      "fore_net_d": -245062383,
      "foreign_ratio": 15.11,
-     "trust_net_d": 422203
+     "trust_net_d": 422203,
+     "value_w": 3508521945.0,
+     "value_m": 8622701311.0,
+     "inst_net_w": -325864775.0,
+     "inst_net_m": -1355788588.0,
+     "fore_net_w": -317217038.0,
+     "fore_net_m": -1254860292.0,
+     "trust_net_w": -267516.0,
+     "trust_net_m": -3489732.0
     },
     {
      "stock_id": "2458",
@@ -5367,7 +7500,15 @@
      "inst_net_d": 79997502,
      "fore_net_d": 91862393,
      "foreign_ratio": 22.62,
-     "trust_net_d": 13489000
+     "trust_net_d": 13489000,
+     "value_w": 3987762197.0,
+     "value_m": 17748014009.0,
+     "inst_net_w": 231181720.0,
+     "inst_net_m": 922790715.0,
+     "fore_net_w": -55925723.0,
+     "fore_net_m": -720855614.0,
+     "trust_net_w": 327684000.0,
+     "trust_net_m": 1707053677.0
     },
     {
      "stock_id": "1590",
@@ -5382,7 +7523,15 @@
      "inst_net_d": 114016980,
      "fore_net_d": 23469545,
      "foreign_ratio": 80.89,
-     "trust_net_d": 117645000
+     "trust_net_d": 117645000,
+     "value_w": 5024069475.0,
+     "value_m": 11529014605.0,
+     "inst_net_w": 702696115.0,
+     "inst_net_m": 1537372210.0,
+     "fore_net_w": 567996385.0,
+     "fore_net_m": 1381099170.0,
+     "trust_net_w": 160265380.0,
+     "trust_net_m": 187467940.0
     },
     {
      "stock_id": "3227",
@@ -5397,7 +7546,15 @@
      "inst_net_d": -245614190,
      "fore_net_d": 0,
      "foreign_ratio": null,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 2983738492.0,
+     "value_m": 12355768579.0,
+     "inst_net_w": -708399772.0,
+     "inst_net_m": -135560706.0,
+     "fore_net_w": 0.0,
+     "fore_net_m": -26472160.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": -26472160.0
     },
     {
      "stock_id": "9958",
@@ -5412,7 +7569,15 @@
      "inst_net_d": -91871814,
      "fore_net_d": -85362108,
      "foreign_ratio": 9.41,
-     "trust_net_d": 555000
+     "trust_net_d": 555000,
+     "value_w": 1195316782.0,
+     "value_m": 2988508452.0,
+     "inst_net_w": -78621966.0,
+     "inst_net_m": -54080643.0,
+     "fore_net_w": -85733070.0,
+     "fore_net_m": -85695108.0,
+     "trust_net_w": 1554000.0,
+     "trust_net_m": 24975000.0
     },
     {
      "stock_id": "1536",
@@ -5427,7 +7592,15 @@
      "inst_net_d": -43250355,
      "fore_net_d": -38059291,
      "foreign_ratio": 4.89,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 1520955545.0,
+     "value_m": 3781068468.0,
+     "inst_net_w": -68176122.0,
+     "inst_net_m": 236810413.0,
+     "fore_net_w": -63269198.0,
+     "fore_net_m": 231058685.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": 0.0
     },
     {
      "stock_id": "2328",
@@ -5442,7 +7615,15 @@
      "inst_net_d": -26875880,
      "fore_net_d": -10352219,
      "foreign_ratio": 8.36,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 836162848.0,
+     "value_m": 2788479375.0,
+     "inst_net_w": 53450536.0,
+     "inst_net_m": -240405673.0,
+     "fore_net_w": 58040644.0,
+     "fore_net_m": -222090191.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": 0.0
     },
     {
      "stock_id": "2323",
@@ -5457,7 +7638,15 @@
      "inst_net_d": -79270650,
      "fore_net_d": -72481809,
      "foreign_ratio": 10.9,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 444575490.0,
+     "value_m": 1191900578.0,
+     "inst_net_w": -115833784.0,
+     "inst_net_m": -71783682.0,
+     "fore_net_w": -98398996.0,
+     "fore_net_m": -58013934.0,
+     "trust_net_w": -1025000.0,
+     "trust_net_m": -1025000.0
     },
     {
      "stock_id": "2409",
@@ -5472,7 +7661,15 @@
      "inst_net_d": -360295426,
      "fore_net_d": -403420823,
      "foreign_ratio": 10.71,
-     "trust_net_d": 95365830
+     "trust_net_d": 95365830,
+     "value_w": 40603123933.0,
+     "value_m": 136893376956.0,
+     "inst_net_w": -5116339460.0,
+     "inst_net_m": -5902497116.0,
+     "fore_net_w": -4705189086.0,
+     "fore_net_m": -5532386570.0,
+     "trust_net_w": 97238962.0,
+     "trust_net_m": 92434692.0
     },
     {
      "stock_id": "8086",
@@ -5487,7 +7684,15 @@
      "inst_net_d": -26920356,
      "fore_net_d": 0,
      "foreign_ratio": null,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 1598962679.0,
+     "value_m": 4541165353.0,
+     "inst_net_w": -118408044.0,
+     "inst_net_m": -538209462.0,
+     "fore_net_w": 0.0,
+     "fore_net_m": -147092154.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": -147092154.0
     },
     {
      "stock_id": "3406",
@@ -5502,7 +7707,15 @@
      "inst_net_d": 166859538,
      "fore_net_d": 188646639,
      "foreign_ratio": 42.51,
-     "trust_net_d": 1557000
+     "trust_net_d": 1557000,
+     "value_w": 6790405939.0,
+     "value_m": 15707482136.0,
+     "inst_net_w": -100510578.0,
+     "inst_net_m": -576101418.0,
+     "fore_net_w": 107930721.0,
+     "fore_net_m": -451316691.0,
+     "trust_net_w": -124560000.0,
+     "trust_net_m": 41675700.0
     },
     {
      "stock_id": "1718",
@@ -5517,7 +7730,15 @@
      "inst_net_d": 19178250,
      "fore_net_d": 20570550,
      "foreign_ratio": 7.94,
-     "trust_net_d": 13650
+     "trust_net_d": 13650,
+     "value_w": 811614257.0,
+     "value_m": 13627002358.0,
+     "inst_net_w": 164954490.0,
+     "inst_net_m": 278710232.0,
+     "fore_net_w": 139265190.0,
+     "fore_net_m": 166397950.0,
+     "trust_net_w": 13650.0,
+     "trust_net_m": 13650.0
     },
     {
      "stock_id": "6116",
@@ -5532,7 +7753,15 @@
      "inst_net_d": 46700325,
      "fore_net_d": 47608950,
      "foreign_ratio": 4.74,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 3133813661.0,
+     "value_m": 11670490367.0,
+     "inst_net_w": 68838600.0,
+     "inst_net_m": -316117620.0,
+     "fore_net_w": 92811630.0,
+     "fore_net_m": -156974880.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": -36105000.0
     },
     {
      "stock_id": "2312",
@@ -5547,7 +7776,15 @@
      "inst_net_d": -59222949,
      "fore_net_d": -34931019,
      "foreign_ratio": 7.3,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 3558128189.0,
+     "value_m": 9820593054.0,
+     "inst_net_w": 74500010.0,
+     "inst_net_m": -61924609.0,
+     "fore_net_w": 78610701.0,
+     "fore_net_m": -49167292.0,
+     "trust_net_w": -3130000.0,
+     "trust_net_m": -3223900.0
     },
     {
      "stock_id": "2355",
@@ -5562,7 +7799,15 @@
      "inst_net_d": 20437060,
      "fore_net_d": 41197103,
      "foreign_ratio": 15.64,
-     "trust_net_d": -8159200
+     "trust_net_d": -8159200,
+     "value_w": 1395602112.0,
+     "value_m": 2842148210.0,
+     "inst_net_w": 105077476.0,
+     "inst_net_m": 41409893.0,
+     "fore_net_w": 145705041.0,
+     "fore_net_m": 96117069.0,
+     "trust_net_w": -8853600.0,
+     "trust_net_m": -9417800.0
     },
     {
      "stock_id": "5274",
@@ -5577,7 +7822,15 @@
      "inst_net_d": 694301300,
      "fore_net_d": 0,
      "foreign_ratio": null,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 23811530660.0,
+     "value_m": 55177474413.0,
+     "inst_net_w": 1508403050.0,
+     "inst_net_m": -769968150.0,
+     "fore_net_w": 0.0,
+     "fore_net_m": -998445000.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": -998445000.0
     },
     {
      "stock_id": "6153",
@@ -5592,7 +7845,15 @@
      "inst_net_d": -37564065,
      "fore_net_d": -37152942,
      "foreign_ratio": 9.89,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 468387661.0,
+     "value_m": 1297521718.0,
+     "inst_net_w": -64516141.0,
+     "inst_net_m": -196489671.0,
+     "fore_net_w": -64417373.0,
+     "fore_net_m": -193537168.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": 0.0
     },
     {
      "stock_id": "2340",
@@ -5607,7 +7868,15 @@
      "inst_net_d": -54535924,
      "fore_net_d": -46916535,
      "foreign_ratio": 9.34,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 1018914177.0,
+     "value_m": 3509729023.0,
+     "inst_net_w": -177567017.0,
+     "inst_net_m": -403364533.0,
+     "fore_net_w": -167520529.0,
+     "fore_net_m": -382436619.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": 0.0
     },
     {
      "stock_id": "2360",
@@ -5622,7 +7891,15 @@
      "inst_net_d": -539979850,
      "fore_net_d": -1346148800,
      "foreign_ratio": 59.69,
-     "trust_net_d": 617929600
+     "trust_net_d": 617929600,
+     "value_w": 31268353780.0,
+     "value_m": 69621869435.0,
+     "inst_net_w": -1059507950.0,
+     "inst_net_m": -632209750.0,
+     "fore_net_w": -2447414950.0,
+     "fore_net_m": 980829300.0,
+     "trust_net_w": 1387797850.0,
+     "trust_net_m": -1877032200.0
     },
     {
      "stock_id": "3529",
@@ -5637,7 +7914,15 @@
      "inst_net_d": -80149100,
      "fore_net_d": 0,
      "foreign_ratio": null,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 9027574020.0,
+     "value_m": 23341897700.0,
+     "inst_net_w": 5099500.0,
+     "inst_net_m": -1033753250.0,
+     "fore_net_w": 0.0,
+     "fore_net_m": 107171750.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": 107171750.0
     },
     {
      "stock_id": "2404",
@@ -5652,7 +7937,15 @@
      "inst_net_d": 91584320,
      "fore_net_d": 293600640,
      "foreign_ratio": 37.75,
-     "trust_net_d": -102080000
+     "trust_net_d": -102080000,
+     "value_w": 17136386180.0,
+     "value_m": 41626347730.0,
+     "inst_net_w": 642177160.0,
+     "inst_net_m": 1009369360.0,
+     "fore_net_w": 1656355880.0,
+     "fore_net_m": 4062407000.0,
+     "trust_net_w": -230840000.0,
+     "trust_net_m": -2240772000.0
     },
     {
      "stock_id": "2231",
@@ -5667,7 +7960,15 @@
      "inst_net_d": 2716695,
      "fore_net_d": 6186750,
      "foreign_ratio": 4.63,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 1316281648.0,
+     "value_m": 4383242794.0,
+     "inst_net_w": 55506426.0,
+     "inst_net_m": 62452449.0,
+     "fore_net_w": 35056206.0,
+     "fore_net_m": 48164780.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": -10293000.0
     },
     {
      "stock_id": "8163",
@@ -5682,7 +7983,15 @@
      "inst_net_d": -10644387,
      "fore_net_d": -9683610,
      "foreign_ratio": 9.52,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 263800399.0,
+     "value_m": 974699534.0,
+     "inst_net_w": -18296890.0,
+     "inst_net_m": -77299924.0,
+     "fore_net_w": -15492621.0,
+     "fore_net_m": -70936330.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": 0.0
     },
     {
      "stock_id": "2330",
@@ -5697,7 +8006,15 @@
      "inst_net_d": -91453659840,
      "fore_net_d": -101181277560,
      "foreign_ratio": 69.34,
-     "trust_net_d": 3408710800
+     "trust_net_d": 3408710800,
+     "value_w": 576083955010.0,
+     "value_m": 1114574765486.0,
+     "inst_net_w": -126010057540.0,
+     "inst_net_m": -183825973790.0,
+     "fore_net_w": -151797211680.0,
+     "fore_net_m": -230692493200.0,
+     "trust_net_w": 8682782320.0,
+     "trust_net_m": 27646959320.0
     },
     {
      "stock_id": "6278",
@@ -5712,7 +8029,15 @@
      "inst_net_d": -57319696,
      "fore_net_d": 45081060,
      "foreign_ratio": 15.58,
-     "trust_net_d": -87020500
+     "trust_net_d": -87020500,
+     "value_w": 5920866612.0,
+     "value_m": 19507973463.0,
+     "inst_net_w": -796503900.0,
+     "inst_net_m": -2242690188.0,
+     "fore_net_w": -83701548.0,
+     "fore_net_m": -2456386709.0,
+     "trust_net_w": -597628500.0,
+     "trust_net_m": 384709570.0
     },
     {
      "stock_id": "3019",
@@ -5727,7 +8052,15 @@
      "inst_net_d": -293589864,
      "fore_net_d": -227625338,
      "foreign_ratio": 6.36,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 3202541080.0,
+     "value_m": 8628253035.0,
+     "inst_net_w": -343679679.0,
+     "inst_net_m": -491217774.0,
+     "fore_net_w": -346104751.0,
+     "fore_net_m": -449288997.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": 0.0
     },
     {
      "stock_id": "2367",
@@ -5742,7 +8075,15 @@
      "inst_net_d": 141791686,
      "fore_net_d": 154828531,
      "foreign_ratio": 7.11,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 3578830655.0,
+     "value_m": 7215401192.0,
+     "inst_net_w": 192653619.0,
+     "inst_net_m": 150758496.0,
+     "fore_net_w": 183457030.0,
+     "fore_net_m": 158609069.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": 0.0
     },
     {
      "stock_id": "3380",
@@ -5757,7 +8098,15 @@
      "inst_net_d": -68794432,
      "fore_net_d": -66109125,
      "foreign_ratio": 4.85,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 347009703.0,
+     "value_m": 1054467711.0,
+     "inst_net_w": -109960629.0,
+     "inst_net_m": -125119591.0,
+     "fore_net_w": -107525224.0,
+     "fore_net_m": -121715954.0,
+     "trust_net_w": -119200.0,
+     "trust_net_m": -119200.0
     },
     {
      "stock_id": "2382",
@@ -5772,7 +8121,15 @@
      "inst_net_d": 824439746,
      "fore_net_d": 1450240512,
      "foreign_ratio": 19.46,
-     "trust_net_d": -1083185554
+     "trust_net_d": -1083185554,
+     "value_w": 48767670419.0,
+     "value_m": 88749532550.0,
+     "inst_net_w": -1839489036.0,
+     "inst_net_m": -2086814678.0,
+     "fore_net_w": -1196983284.0,
+     "fore_net_m": -6413215504.0,
+     "trust_net_w": 1022891562.0,
+     "trust_net_m": 5560437729.0
     },
     {
      "stock_id": "3533",
@@ -5787,7 +8144,15 @@
      "inst_net_d": -200287945,
      "fore_net_d": -69911390,
      "foreign_ratio": 49.93,
-     "trust_net_d": -83490455
+     "trust_net_d": -83490455,
+     "value_w": 10733165941.0,
+     "value_m": 22488908787.0,
+     "inst_net_w": -133748475.0,
+     "inst_net_m": -1039006420.0,
+     "fore_net_w": 377172005.0,
+     "fore_net_m": 841351855.0,
+     "trust_net_w": -344704220.0,
+     "trust_net_m": -1767331815.0
     },
     {
      "stock_id": "3661",
@@ -5802,7 +8167,15 @@
      "inst_net_d": -1258528080,
      "fore_net_d": -1031075280,
      "foreign_ratio": 51.8,
-     "trust_net_d": 24460920
+     "trust_net_d": 24460920,
+     "value_w": 42920180655.0,
+     "value_m": 115856518558.0,
+     "inst_net_w": -4666335480.0,
+     "inst_net_m": -9099232560.0,
+     "fore_net_w": -3242931960.0,
+     "fore_net_m": -8349410880.0,
+     "trust_net_w": -843712080.0,
+     "trust_net_m": -289563840.0
     },
     {
      "stock_id": "2368",
@@ -5817,7 +8190,15 @@
      "inst_net_d": 920283885,
      "fore_net_d": 984480489,
      "foreign_ratio": 28.29,
-     "trust_net_d": 12479274
+     "trust_net_d": 12479274,
+     "value_w": 24164070368.0,
+     "value_m": 69625475968.0,
+     "inst_net_w": 1795850217.0,
+     "inst_net_m": 901672506.0,
+     "fore_net_w": 4517171811.0,
+     "fore_net_m": 5659311825.0,
+     "trust_net_w": -2138673357.0,
+     "trust_net_m": -4019834457.0
     },
     {
      "stock_id": "2329",
@@ -5832,7 +8213,15 @@
      "inst_net_d": -118555186,
      "fore_net_d": -116766840,
      "foreign_ratio": 9.37,
-     "trust_net_d": 14267400
+     "trust_net_d": 14267400,
+     "value_w": 1510909645.0,
+     "value_m": 3527425860.0,
+     "inst_net_w": -366953464.0,
+     "inst_net_m": -627470545.0,
+     "fore_net_w": -340506310.0,
+     "fore_net_m": -583671162.0,
+     "trust_net_w": 14267400.0,
+     "trust_net_m": 14267400.0
     },
     {
      "stock_id": "2049",
@@ -5847,7 +8236,15 @@
      "inst_net_d": -222570018,
      "fore_net_d": -196010442,
      "foreign_ratio": 36.37,
-     "trust_net_d": 16777062
+     "trust_net_d": 16777062,
+     "value_w": 4351064852.0,
+     "value_m": 14437131124.0,
+     "inst_net_w": 130112424.0,
+     "inst_net_m": 178980012.0,
+     "fore_net_w": 140504184.0,
+     "fore_net_m": 366570252.0,
+     "trust_net_w": 7784028.0,
+     "trust_net_m": -196486272.0
     },
     {
      "stock_id": "6282",
@@ -5862,7 +8259,15 @@
      "inst_net_d": -139480453,
      "fore_net_d": -92089016,
      "foreign_ratio": 13.11,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 6968184679.0,
+     "value_m": 16988331398.0,
+     "inst_net_w": -1033764316.0,
+     "inst_net_m": -1044167451.0,
+     "fore_net_w": -1073374154.0,
+     "fore_net_m": -1171762420.0,
+     "trust_net_w": 24400000.0,
+     "trust_net_m": 172459200.0
     },
     {
      "stock_id": "6139",
@@ -5877,7 +8282,15 @@
      "inst_net_d": -706628409,
      "fore_net_d": -685108942,
      "foreign_ratio": 27.39,
-     "trust_net_d": 180574000
+     "trust_net_d": 180574000,
+     "value_w": 17144593790.0,
+     "value_m": 46072950939.0,
+     "inst_net_w": -2163445908.0,
+     "inst_net_m": -4950906821.0,
+     "fore_net_w": -1984629708.0,
+     "fore_net_m": -7030453734.0,
+     "trust_net_w": 57528000.0,
+     "trust_net_m": 2513813800.0
     },
     {
      "stock_id": "6269",
@@ -5892,7 +8305,15 @@
      "inst_net_d": -123112226,
      "fore_net_d": -108753800,
      "foreign_ratio": 14.48,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 1245196634.0,
+     "value_m": 3642660717.0,
+     "inst_net_w": -301760280.0,
+     "inst_net_m": -977988522.0,
+     "fore_net_w": -277200206.0,
+     "fore_net_m": -915468383.0,
+     "trust_net_w": -112400.0,
+     "trust_net_m": -112400.0
     },
     {
      "stock_id": "3481",
@@ -5907,7 +8328,15 @@
      "inst_net_d": 1511001276,
      "fore_net_d": 3154810819,
      "foreign_ratio": 21.88,
-     "trust_net_d": -1423321757
+     "trust_net_d": -1423321757,
+     "value_w": 102560758558.0,
+     "value_m": 330328174335.0,
+     "inst_net_w": 416861312.0,
+     "inst_net_m": -3036945423.0,
+     "fore_net_w": 2636485580.0,
+     "fore_net_m": -216363052.0,
+     "trust_net_w": -1687035382.0,
+     "trust_net_m": -1772506910.0
     },
     {
      "stock_id": "2457",
@@ -5922,7 +8351,15 @@
      "inst_net_d": -38833337,
      "fore_net_d": -35547909,
      "foreign_ratio": 6.61,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 344834012.0,
+     "value_m": 1010784489.0,
+     "inst_net_w": -81035769.0,
+     "inst_net_m": -60137238.0,
+     "fore_net_w": -75196576.0,
+     "fore_net_m": -51410720.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": 0.0
     },
     {
      "stock_id": "2485",
@@ -5937,7 +8374,15 @@
      "inst_net_d": 82112496,
      "fore_net_d": 90915231,
      "foreign_ratio": 3.58,
-     "trust_net_d": -6249600
+     "trust_net_d": -6249600,
+     "value_w": 1550990050.0,
+     "value_m": 3626321196.0,
+     "inst_net_w": 203653155.0,
+     "inst_net_m": 263690545.0,
+     "fore_net_w": 184698595.0,
+     "fore_net_m": 257210708.0,
+     "trust_net_w": -6727000.0,
+     "trust_net_m": -7204400.0
     },
     {
      "stock_id": "1802",
@@ -5952,7 +8397,15 @@
      "inst_net_d": -483909058,
      "fore_net_d": -386136690,
      "foreign_ratio": 4.87,
-     "trust_net_d": 56600
+     "trust_net_d": 56600,
+     "value_w": 12485620171.0,
+     "value_m": 38399563160.0,
+     "inst_net_w": -1761376944.0,
+     "inst_net_m": -5192963232.0,
+     "fore_net_w": -2041649560.0,
+     "fore_net_m": -5201846772.0,
+     "trust_net_w": -55015200.0,
+     "trust_net_m": -101483800.0
     },
     {
      "stock_id": "3443",
@@ -5967,7 +8420,15 @@
      "inst_net_d": 652789865,
      "fore_net_d": 522921425,
      "foreign_ratio": 26.36,
-     "trust_net_d": 171159885
+     "trust_net_d": 171159885,
+     "value_w": 37791411015.0,
+     "value_m": 113758800315.0,
+     "inst_net_w": -153342475.0,
+     "inst_net_m": -1047898410.0,
+     "fore_net_w": 2410677165.0,
+     "fore_net_m": 255434010.0,
+     "trust_net_w": -2454890880.0,
+     "trust_net_m": -644709520.0
     },
     {
      "stock_id": "2337",
@@ -5982,7 +8443,15 @@
      "inst_net_d": 527895625,
      "fore_net_d": 565577625,
      "foreign_ratio": 25.48,
-     "trust_net_d": 25125000
+     "trust_net_d": 25125000,
+     "value_w": 51638964588.0,
+     "value_m": 123535606943.0,
+     "inst_net_w": -2729729375.0,
+     "inst_net_m": -11122749250.0,
+     "fore_net_w": -3329073000.0,
+     "fore_net_m": -10931345500.0,
+     "trust_net_w": 365250000.0,
+     "trust_net_m": -365500000.0
     },
     {
      "stock_id": "3260",
@@ -5997,7 +8466,15 @@
      "inst_net_d": -216524902,
      "fore_net_d": 0,
      "foreign_ratio": null,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 15984104585.0,
+     "value_m": 39819072983.0,
+     "inst_net_w": -15062784.0,
+     "inst_net_m": -473263649.0,
+     "fore_net_w": 0.0,
+     "fore_net_m": -165161392.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": -165161392.0
     },
     {
      "stock_id": "3152",
@@ -6012,7 +8489,15 @@
      "inst_net_d": 12934368,
      "fore_net_d": 0,
      "foreign_ratio": null,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 330952552.0,
+     "value_m": 1357733968.0,
+     "inst_net_w": 17723872.0,
+     "inst_net_m": -216085804.0,
+     "fore_net_w": 0.0,
+     "fore_net_m": -13920095.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": -13920095.0
     },
     {
      "stock_id": "3673",
@@ -6027,7 +8512,15 @@
      "inst_net_d": 27778812,
      "fore_net_d": 46724884,
      "foreign_ratio": 36.84,
-     "trust_net_d": 7663500
+     "trust_net_d": 7663500,
+     "value_w": 2709026740.0,
+     "value_m": 10227761904.0,
+     "inst_net_w": -151886640.0,
+     "inst_net_m": -280631999.0,
+     "fore_net_w": -135859576.0,
+     "fore_net_m": -218164846.0,
+     "trust_net_w": 7663500.0,
+     "trust_net_m": 7663500.0
     },
     {
      "stock_id": "3081",
@@ -6042,7 +8535,15 @@
      "inst_net_d": 870074240,
      "fore_net_d": 0,
      "foreign_ratio": null,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 15458719310.0,
+     "value_m": 45575640795.0,
+     "inst_net_w": -433391360.0,
+     "inst_net_m": -1471652800.0,
+     "fore_net_w": 0.0,
+     "fore_net_m": -83628880.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": -83628880.0
     },
     {
      "stock_id": "2308",
@@ -6057,7 +8558,15 @@
      "inst_net_d": -8622733560,
      "fore_net_d": -9329013480,
      "foreign_ratio": 62.99,
-     "trust_net_d": 408833880
+     "trust_net_d": 408833880,
+     "value_w": 96133116898.0,
+     "value_m": 235167065630.0,
+     "inst_net_w": -10230403080.0,
+     "inst_net_m": -20583714540.0,
+     "fore_net_w": -13099080180.0,
+     "fore_net_m": -23109736920.0,
+     "trust_net_w": 2175572460.0,
+     "trust_net_m": 1541098860.0
     },
     {
      "stock_id": "2489",
@@ -6072,7 +8581,15 @@
      "inst_net_d": 172712533,
      "fore_net_d": 182489058,
      "foreign_ratio": 6.16,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 2146580862.0,
+     "value_m": 5698007485.0,
+     "inst_net_w": 264687510.0,
+     "inst_net_m": -31540050.0,
+     "fore_net_w": 272653090.0,
+     "fore_net_m": -12029533.0,
+     "trust_net_w": 192900.0,
+     "trust_net_m": 225050.0
     },
     {
      "stock_id": "2401",
@@ -6087,7 +8604,15 @@
      "inst_net_d": -38047996,
      "fore_net_d": -27192801,
      "foreign_ratio": 18.12,
-     "trust_net_d": 137000
+     "trust_net_d": 137000,
+     "value_w": 1225051366.0,
+     "value_m": 4192984510.0,
+     "inst_net_w": -163949599.0,
+     "inst_net_m": -35074685.0,
+     "fore_net_w": -124084599.0,
+     "fore_net_m": -3168454.0,
+     "trust_net_w": 274000.0,
+     "trust_net_m": 685000.0
     },
     {
      "stock_id": "6285",
@@ -6102,7 +8627,15 @@
      "inst_net_d": -207528044,
      "fore_net_d": -210292565,
      "foreign_ratio": 23.23,
-     "trust_net_d": 12428500
+     "trust_net_d": 12428500,
+     "value_w": 13893314386.0,
+     "value_m": 31910042859.0,
+     "inst_net_w": -835026360.0,
+     "inst_net_m": -1474226929.0,
+     "fore_net_w": -404305671.0,
+     "fore_net_m": -947103994.0,
+     "trust_net_w": -493622500.0,
+     "trust_net_m": -522558393.0
     },
     {
      "stock_id": "2059",
@@ -6117,7 +8650,15 @@
      "inst_net_d": 40870200,
      "fore_net_d": -363113580,
      "foreign_ratio": 23.88,
-     "trust_net_d": 135400290
+     "trust_net_d": 135400290,
+     "value_w": 26933618790.0,
+     "value_m": 60221137335.0,
+     "inst_net_w": -232336830.0,
+     "inst_net_m": -1314118950.0,
+     "fore_net_w": -2603329170.0,
+     "fore_net_m": -6012811200.0,
+     "trust_net_w": 2154522300.0,
+     "trust_net_m": 4433564580.0
     },
     {
      "stock_id": "2332",
@@ -6132,7 +8673,15 @@
      "inst_net_d": 153782206,
      "fore_net_d": 158502658,
      "foreign_ratio": 12.35,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 8176075568.0,
+     "value_m": 11096272133.0,
+     "inst_net_w": 109103932.0,
+     "inst_net_m": 137024480.0,
+     "fore_net_w": 141645550.0,
+     "fore_net_m": 122222046.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": 0.0
     },
     {
      "stock_id": "1717",
@@ -6147,7 +8696,15 @@
      "inst_net_d": -525458216,
      "fore_net_d": -481787588,
      "foreign_ratio": 10.84,
-     "trust_net_d": 224202
+     "trust_net_d": 224202,
+     "value_w": 4637662034.0,
+     "value_m": 26809930073.0,
+     "inst_net_w": -1079501218.0,
+     "inst_net_m": 64449303.0,
+     "fore_net_w": -989404200.0,
+     "fore_net_m": 31464390.0,
+     "trust_net_w": -127258.0,
+     "trust_net_m": 45181928.0
     },
     {
      "stock_id": "2454",
@@ -6162,7 +8719,15 @@
      "inst_net_d": -2582080520,
      "fore_net_d": -992343680,
      "foreign_ratio": 55.53,
-     "trust_net_d": -422554190
+     "trust_net_d": -422554190,
+     "value_w": 160499118619.0,
+     "value_m": 416534983165.0,
+     "inst_net_w": -9754427930.0,
+     "inst_net_m": -27289791570.0,
+     "fore_net_w": -9367380060.0,
+     "fore_net_m": -24605064220.0,
+     "trust_net_w": -1367754940.0,
+     "trust_net_m": -3178294180.0
     },
     {
      "stock_id": "2441",
@@ -6177,7 +8742,15 @@
      "inst_net_d": -444489502,
      "fore_net_d": -491367618,
      "foreign_ratio": 11.38,
-     "trust_net_d": 107019000
+     "trust_net_d": 107019000,
+     "value_w": 6146375670.0,
+     "value_m": 19148699260.0,
+     "inst_net_w": -769569202.0,
+     "inst_net_m": 203857912.0,
+     "fore_net_w": -880043802.0,
+     "fore_net_m": -185071650.0,
+     "trust_net_w": 209737000.0,
+     "trust_net_m": 428708500.0
     },
     {
      "stock_id": "6239",
@@ -6192,7 +8765,15 @@
      "inst_net_d": -1360563264,
      "fore_net_d": -1077670368,
      "foreign_ratio": 37.15,
-     "trust_net_d": -275669280
+     "trust_net_d": -275669280,
+     "value_w": 34554041317.0,
+     "value_m": 93864686018.0,
+     "inst_net_w": -1562839200.0,
+     "inst_net_m": -913182624.0,
+     "fore_net_w": -655067232.0,
+     "fore_net_m": 3364365312.0,
+     "trust_net_w": -503822880.0,
+     "trust_net_m": -3729033216.0
     },
     {
      "stock_id": "3714",
@@ -6207,7 +8788,15 @@
      "inst_net_d": 122688878,
      "fore_net_d": 134231948,
      "foreign_ratio": 11.76,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 2435083364.0,
+     "value_m": 5863945002.0,
+     "inst_net_w": 63166582.0,
+     "inst_net_m": 77283622.0,
+     "fore_net_w": 74520862.0,
+     "fore_net_m": 76785135.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": 0.0
     },
     {
      "stock_id": "5371",
@@ -6222,7 +8811,15 @@
      "inst_net_d": -14762258,
      "fore_net_d": 0,
      "foreign_ratio": null,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 17525837422.0,
+     "value_m": 51289809468.0,
+     "inst_net_w": -265924312.0,
+     "inst_net_m": -796046360.0,
+     "fore_net_w": 0.0,
+     "fore_net_m": -36740363.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": -36740363.0
     },
     {
      "stock_id": "6526",
@@ -6237,7 +8834,15 @@
      "inst_net_d": -9962285,
      "fore_net_d": -23426993,
      "foreign_ratio": 7.19,
-     "trust_net_d": 11823000
+     "trust_net_d": 11823000,
+     "value_w": 2432692936.0,
+     "value_m": 6062249168.0,
+     "inst_net_w": -150900327.0,
+     "inst_net_m": 308603383.0,
+     "fore_net_w": -293170427.0,
+     "fore_net_m": 61931689.0,
+     "trust_net_w": 145817000.0,
+     "trust_net_m": 288987900.0
     },
     {
      "stock_id": "5483",
@@ -6252,7 +8857,15 @@
      "inst_net_d": 1407655328,
      "fore_net_d": 0,
      "foreign_ratio": null,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 62010918759.0,
+     "value_m": 127521240917.0,
+     "inst_net_w": 5105613153.0,
+     "inst_net_m": 9752935534.0,
+     "fore_net_w": 0.0,
+     "fore_net_m": 1800143396.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": 1800143396.0
     },
     {
      "stock_id": "8358",
@@ -6267,7 +8880,15 @@
      "inst_net_d": 1075553094,
      "fore_net_d": 0,
      "foreign_ratio": null,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 18584400444.0,
+     "value_m": 56339855221.0,
+     "inst_net_w": 828869639.0,
+     "inst_net_m": -1580719589.0,
+     "fore_net_w": 0.0,
+     "fore_net_m": -44604504.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": -44604504.0
     },
     {
      "stock_id": "2388",
@@ -6282,7 +8903,15 @@
      "inst_net_d": -159058612,
      "fore_net_d": -119426352,
      "foreign_ratio": 14.8,
-     "trust_net_d": -17134000
+     "trust_net_d": -17134000,
+     "value_w": 2943135445.0,
+     "value_m": 5353325023.0,
+     "inst_net_w": -271274450.0,
+     "inst_net_m": -463943579.0,
+     "fore_net_w": -275202486.0,
+     "fore_net_m": -464972673.0,
+     "trust_net_w": -18517900.0,
+     "trust_net_m": -17199900.0
     },
     {
      "stock_id": "3374",
@@ -6297,7 +8926,15 @@
      "inst_net_d": 484899213,
      "fore_net_d": 0,
      "foreign_ratio": null,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 40914001869.0,
+     "value_m": 77780778814.0,
+     "inst_net_w": -1256699882.0,
+     "inst_net_m": 1459191795.0,
+     "fore_net_w": 0.0,
+     "fore_net_m": 340841724.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": 340841724.0
     },
     {
      "stock_id": "2481",
@@ -6312,7 +8949,15 @@
      "inst_net_d": 548934192,
      "fore_net_d": 682542194,
      "foreign_ratio": 25.05,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 17608987406.0,
+     "value_m": 30705036384.0,
+     "inst_net_w": -1626958.0,
+     "inst_net_m": 454663468.0,
+     "fore_net_w": 897717492.0,
+     "fore_net_m": 1261978032.0,
+     "trust_net_w": -377538000.0,
+     "trust_net_m": -743077200.0
     },
     {
      "stock_id": "5425",
@@ -6327,7 +8972,15 @@
      "inst_net_d": 240281052,
      "fore_net_d": 0,
      "foreign_ratio": null,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 8569306557.0,
+     "value_m": 17996736216.0,
+     "inst_net_w": -50488072.0,
+     "inst_net_m": 605800722.0,
+     "fore_net_w": 0.0,
+     "fore_net_m": 81420072.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": 81420072.0
     },
     {
      "stock_id": "6271",
@@ -6342,7 +8995,15 @@
      "inst_net_d": 167159538,
      "fore_net_d": 294509558,
      "foreign_ratio": 31.88,
-     "trust_net_d": -74704000
+     "trust_net_d": -74704000,
+     "value_w": 9852643957.0,
+     "value_m": 54353539447.0,
+     "inst_net_w": 671034364.0,
+     "inst_net_m": -1300958386.0,
+     "fore_net_w": 1079706250.0,
+     "fore_net_m": -1028004383.0,
+     "trust_net_w": -262479000.0,
+     "trust_net_m": -78358000.0
     },
     {
      "stock_id": "6488",
@@ -6357,7 +9018,15 @@
      "inst_net_d": 3700908960,
      "fore_net_d": 0,
      "foreign_ratio": null,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 80390960135.0,
+     "value_m": 157387237530.0,
+     "inst_net_w": 8618855600.0,
+     "inst_net_m": 11835894240.0,
+     "fore_net_w": 0.0,
+     "fore_net_m": 1094100360.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": 1094100360.0
     },
     {
      "stock_id": "3035",
@@ -6372,7 +9041,15 @@
      "inst_net_d": -307095816,
      "fore_net_d": -256046120,
      "foreign_ratio": 12.18,
-     "trust_net_d": 23000000
+     "trust_net_d": 23000000,
+     "value_w": 5862232334.0,
+     "value_m": 17979262078.0,
+     "inst_net_w": -480813344.0,
+     "inst_net_m": 265611360.0,
+     "fore_net_w": -382460744.0,
+     "fore_net_m": 222002440.0,
+     "trust_net_w": 23184000.0,
+     "trust_net_m": 23404800.0
     },
     {
      "stock_id": "3211",
@@ -6387,7 +9064,15 @@
      "inst_net_d": -462903774,
      "fore_net_d": 0,
      "foreign_ratio": null,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 18683313019.0,
+     "value_m": 47440812815.0,
+     "inst_net_w": -2428272596.0,
+     "inst_net_m": -527994678.0,
+     "fore_net_w": 0.0,
+     "fore_net_m": -1152946076.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": -1152946076.0
     },
     {
      "stock_id": "3042",
@@ -6402,7 +9087,15 @@
      "inst_net_d": 689450102,
      "fore_net_d": 730996978,
      "foreign_ratio": 18.28,
-     "trust_net_d": 15670500
+     "trust_net_d": 15670500,
+     "value_w": 14020608854.0,
+     "value_m": 88559917309.0,
+     "inst_net_w": 11080560.0,
+     "inst_net_m": -1298470099.0,
+     "fore_net_w": 432641274.0,
+     "fore_net_m": -1310133500.0,
+     "trust_net_w": -2527500.0,
+     "trust_net_m": 516958000.0
     },
     {
      "stock_id": "6274",
@@ -6417,7 +9110,15 @@
      "inst_net_d": 1787244030,
      "fore_net_d": 0,
      "foreign_ratio": null,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 41865568975.0,
+     "value_m": 115450907405.0,
+     "inst_net_w": 3293913870.0,
+     "inst_net_m": 972824580.0,
+     "fore_net_w": 0.0,
+     "fore_net_m": 1778136750.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": 1778136750.0
     },
     {
      "stock_id": "6669",
@@ -6432,7 +9133,15 @@
      "inst_net_d": -608523300,
      "fore_net_d": -18309060,
      "foreign_ratio": 28.02,
-     "trust_net_d": -344661240
+     "trust_net_d": -344661240,
+     "value_w": 26598361805.0,
+     "value_m": 97615977190.0,
+     "inst_net_w": 761546940.0,
+     "inst_net_m": 5825736840.0,
+     "fore_net_w": 450168180.0,
+     "fore_net_m": -8244279120.0,
+     "trust_net_w": 370209840.0,
+     "trust_net_m": 14038295040.0
     },
     {
      "stock_id": "6290",
@@ -6447,7 +9156,15 @@
      "inst_net_d": 190908772,
      "fore_net_d": 0,
      "foreign_ratio": null,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 4857556056.0,
+     "value_m": 15077057697.0,
+     "inst_net_w": 186039292.0,
+     "inst_net_m": -286378852.0,
+     "fore_net_w": 0.0,
+     "fore_net_m": -200766308.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": -200766308.0
     },
     {
      "stock_id": "3665",
@@ -6462,7 +9179,15 @@
      "inst_net_d": -365390300,
      "fore_net_d": -729322710,
      "foreign_ratio": 53.61,
-     "trust_net_d": 460146090
+     "trust_net_d": 460146090,
+     "value_w": 25427491460.0,
+     "value_m": 60344185360.0,
+     "inst_net_w": 672920370.0,
+     "inst_net_m": 2016576040.0,
+     "fore_net_w": -675020720.0,
+     "fore_net_m": -473958980.0,
+     "trust_net_w": 1420943255.0,
+     "trust_net_m": 2574879075.0
     },
     {
      "stock_id": "8150",
@@ -6477,7 +9202,15 @@
      "inst_net_d": -1415961034,
      "fore_net_d": -1242680016,
      "foreign_ratio": 43.52,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 56336495610.0,
+     "value_m": 110310489769.0,
+     "inst_net_w": 118804296.0,
+     "inst_net_m": 3104429984.0,
+     "fore_net_w": -249616296.0,
+     "fore_net_m": 1252902924.0,
+     "trust_net_w": 354926000.0,
+     "trust_net_m": 1787006000.0
     },
     {
      "stock_id": "8046",
@@ -6492,7 +9225,15 @@
      "inst_net_d": 1285778200,
      "fore_net_d": 1131387250,
      "foreign_ratio": 13.81,
-     "trust_net_d": 94390850
+     "trust_net_d": 94390850,
+     "value_w": 133991407195.0,
+     "value_m": 275556310290.0,
+     "inst_net_w": -3063758700.0,
+     "inst_net_m": -56534000.0,
+     "fore_net_w": -12235415800.0,
+     "fore_net_m": -16617878350.0,
+     "trust_net_w": 9404970250.0,
+     "trust_net_m": 17126901700.0
     },
     {
      "stock_id": "6147",
@@ -6507,7 +9248,15 @@
      "inst_net_d": 788844514,
      "fore_net_d": 0,
      "foreign_ratio": null,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 27447828397.0,
+     "value_m": 80075457186.0,
+     "inst_net_w": 2085413358.0,
+     "inst_net_m": -74166214.0,
+     "fore_net_w": 0.0,
+     "fore_net_m": 713834352.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": 713834352.0
     },
     {
      "stock_id": "8299",
@@ -6522,7 +9271,15 @@
      "inst_net_d": 645452430,
      "fore_net_d": 0,
      "foreign_ratio": null,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 54175532595.0,
+     "value_m": 124045859475.0,
+     "inst_net_w": -2607485160.0,
+     "inst_net_m": -6327698265.0,
+     "fore_net_w": 0.0,
+     "fore_net_m": -2795070810.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": -2795070810.0
     },
     {
      "stock_id": "4958",
@@ -6537,7 +9294,15 @@
      "inst_net_d": -1720326370,
      "fore_net_d": -1790901030,
      "foreign_ratio": 58.89,
-     "trust_net_d": 257986175
+     "trust_net_d": 257986175,
+     "value_w": 149369487663.0,
+     "value_m": 285899455642.0,
+     "inst_net_w": 3596317120.0,
+     "inst_net_m": -2317126139.0,
+     "fore_net_w": -94868890.0,
+     "fore_net_m": -3638170092.0,
+     "trust_net_w": 3792310026.0,
+     "trust_net_m": 1872960093.0
     },
     {
      "stock_id": "2301",
@@ -6552,7 +9317,15 @@
      "inst_net_d": -2029727100,
      "fore_net_d": -1649747386,
      "foreign_ratio": 40.9,
-     "trust_net_d": -474102034
+     "trust_net_d": -474102034,
+     "value_w": 25468507016.0,
+     "value_m": 51551460906.0,
+     "inst_net_w": -1810045012.0,
+     "inst_net_m": 207157964.0,
+     "fore_net_w": -1016418062.0,
+     "fore_net_m": 1562965716.0,
+     "trust_net_w": -1083358341.0,
+     "trust_net_m": -1920070668.0
     },
     {
      "stock_id": "5347",
@@ -6567,7 +9340,15 @@
      "inst_net_d": -1010378330,
      "fore_net_d": 0,
      "foreign_ratio": null,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 28659656419.0,
+     "value_m": 61897485644.0,
+     "inst_net_w": -1628006744.0,
+     "inst_net_m": -3054905854.0,
+     "fore_net_w": 0.0,
+     "fore_net_m": 237219385.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": 237219385.0
     },
     {
      "stock_id": "6257",
@@ -6582,7 +9363,15 @@
      "inst_net_d": -874660644,
      "fore_net_d": -806329524,
      "foreign_ratio": 30.62,
-     "trust_net_d": -37851314
+     "trust_net_d": -37851314,
+     "value_w": 7910045132.0,
+     "value_m": 30614164546.0,
+     "inst_net_w": -1331398497.0,
+     "inst_net_m": -87091290.0,
+     "fore_net_w": -1286555770.0,
+     "fore_net_m": -142057130.0,
+     "trust_net_w": 64149228.0,
+     "trust_net_m": 122184777.0
     },
     {
      "stock_id": "2344",
@@ -6597,7 +9386,15 @@
      "inst_net_d": -5035260870,
      "fore_net_d": -4398298290,
      "foreign_ratio": 17.87,
-     "trust_net_d": -222952310
+     "trust_net_d": -222952310,
+     "value_w": 108771450135.0,
+     "value_m": 320668341252.0,
+     "inst_net_w": -7039281135.0,
+     "inst_net_m": -21534719625.0,
+     "fore_net_w": -5974526150.0,
+     "fore_net_m": -7373108200.0,
+     "trust_net_w": -915558650.0,
+     "trust_net_m": -13719671550.0
     },
     {
      "stock_id": "1560",
@@ -6612,7 +9409,15 @@
      "inst_net_d": -617485584,
      "fore_net_d": -616891904,
      "foreign_ratio": 39.18,
-     "trust_net_d": 40672000
+     "trust_net_d": 40672000,
+     "value_w": 6567308936.0,
+     "value_m": 11370912403.0,
+     "inst_net_w": -383584192.0,
+     "inst_net_m": -768016592.0,
+     "fore_net_w": -54919664.0,
+     "fore_net_m": -465317856.0,
+     "trust_net_w": -279456000.0,
+     "trust_net_m": -188928000.0
     },
     {
      "stock_id": "3105",
@@ -6627,7 +9432,15 @@
      "inst_net_d": 5919830,
      "fore_net_d": 0,
      "foreign_ratio": null,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 28246298799.0,
+     "value_m": 82182047166.0,
+     "inst_net_w": 545304322.0,
+     "inst_net_m": -488248985.0,
+     "fore_net_w": 0.0,
+     "fore_net_m": -379067622.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": -379067622.0
     },
     {
      "stock_id": "3264",
@@ -6642,7 +9455,15 @@
      "inst_net_d": -713996876,
      "fore_net_d": 0,
      "foreign_ratio": null,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 8062219093.0,
+     "value_m": 26059618458.0,
+     "inst_net_w": -494727126.0,
+     "inst_net_m": 370547420.0,
+     "fore_net_w": 0.0,
+     "fore_net_m": -312150672.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": -312150672.0
     },
     {
      "stock_id": "4919",
@@ -6657,7 +9478,15 @@
      "inst_net_d": 93381198,
      "fore_net_d": 110239158,
      "foreign_ratio": 1.98,
-     "trust_net_d": 282000
+     "trust_net_d": 282000,
+     "value_w": 7032689993.0,
+     "value_m": 24587761997.0,
+     "inst_net_w": 208072572.0,
+     "inst_net_m": -1026951222.0,
+     "fore_net_w": -26519985.0,
+     "fore_net_m": -648743256.0,
+     "trust_net_w": 4230000.0,
+     "trust_net_m": -391416000.0
     },
     {
      "stock_id": "2455",
@@ -6672,7 +9501,15 @@
      "inst_net_d": 257751948,
      "fore_net_d": 242771262,
      "foreign_ratio": 27.79,
-     "trust_net_d": 13254000
+     "trust_net_d": 13254000,
+     "value_w": 8173208886.0,
+     "value_m": 22704242061.0,
+     "inst_net_w": 768857490.0,
+     "inst_net_m": -558717576.0,
+     "fore_net_w": 1018016052.0,
+     "fore_net_m": -160837854.0,
+     "trust_net_w": -27354000.0,
+     "trust_net_m": 116353200.0
     },
     {
      "stock_id": "2449",
@@ -6687,7 +9524,15 @@
      "inst_net_d": -6454034492,
      "fore_net_d": -4854144288,
      "foreign_ratio": 32.88,
-     "trust_net_d": -1004301684
+     "trust_net_d": -1004301684,
+     "value_w": 42717299441.0,
+     "value_m": 123030054849.0,
+     "inst_net_w": -7516689636.0,
+     "inst_net_m": -10487457128.0,
+     "fore_net_w": -7230537447.0,
+     "fore_net_m": -10755548930.0,
+     "trust_net_w": -68492409.0,
+     "trust_net_m": 510460488.0
     },
     {
      "stock_id": "2408",
@@ -6702,7 +9547,15 @@
      "inst_net_d": -3426512730,
      "fore_net_d": -3425536240,
      "foreign_ratio": 12.66,
-     "trust_net_d": 98688324
+     "trust_net_d": 98688324,
+     "value_w": 257870688041.0,
+     "value_m": 475859365619.0,
+     "inst_net_w": -17174654735.0,
+     "inst_net_m": -17496433535.0,
+     "fore_net_w": -21670042600.0,
+     "fore_net_m": -17382831302.0,
+     "trust_net_w": 3090835268.0,
+     "trust_net_m": -2150522944.0
     },
     {
      "stock_id": "2345",
@@ -6717,7 +9570,15 @@
      "inst_net_d": -445483500,
      "fore_net_d": -887046160,
      "foreign_ratio": 58.01,
-     "trust_net_d": 289074170
+     "trust_net_d": 289074170,
+     "value_w": 27407170595.0,
+     "value_m": 91463636661.0,
+     "inst_net_w": -1258625170.0,
+     "inst_net_m": -2673229130.0,
+     "fore_net_w": -1238099280.0,
+     "fore_net_m": -4444061050.0,
+     "trust_net_w": 494159600.0,
+     "trust_net_m": 2072905890.0
     },
     {
      "stock_id": "2383",
@@ -6732,7 +9593,15 @@
      "inst_net_d": 1638184770,
      "fore_net_d": 1122365540,
      "foreign_ratio": 43.89,
-     "trust_net_d": 176424255
+     "trust_net_d": 176424255,
+     "value_w": 50253444034.0,
+     "value_m": 146061644940.0,
+     "inst_net_w": 2413163225.0,
+     "inst_net_m": -1329567060.0,
+     "fore_net_w": 929503070.0,
+     "fore_net_m": -5913927660.0,
+     "trust_net_w": 921857075.0,
+     "trust_net_m": 3324070480.0
     },
     {
      "stock_id": "2327",
@@ -6747,7 +9616,15 @@
      "inst_net_d": -4005983679,
      "fore_net_d": -1688542146,
      "foreign_ratio": 48.22,
-     "trust_net_d": -1809376179
+     "trust_net_d": -1809376179,
+     "value_w": 233803548921.0,
+     "value_m": 631231425956.0,
+     "inst_net_w": -13785430554.0,
+     "inst_net_m": -12205668186.0,
+     "fore_net_w": -3812406813.0,
+     "fore_net_m": 8123315961.0,
+     "trust_net_w": -8636503587.0,
+     "trust_net_m": -15943026165.0
     },
     {
      "stock_id": "6770",
@@ -6762,7 +9639,15 @@
      "inst_net_d": -8385140680,
      "fore_net_d": -7943096814,
      "foreign_ratio": 15.0,
-     "trust_net_d": 50917100
+     "trust_net_d": 50917100,
+     "value_w": 88857976804.0,
+     "value_m": 172079677756.0,
+     "inst_net_w": -2088778050.0,
+     "inst_net_m": -7646501537.0,
+     "fore_net_w": -2820892294.0,
+     "fore_net_m": -7989618163.0,
+     "trust_net_w": 814466900.0,
+     "trust_net_m": 616599880.0
     },
     {
      "stock_id": "6182",
@@ -6777,7 +9662,15 @@
      "inst_net_d": 72182936,
      "fore_net_d": 0,
      "foreign_ratio": null,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 94888981705.0,
+     "value_m": 239859996620.0,
+     "inst_net_w": -1503264510.0,
+     "inst_net_m": 2430601648.0,
+     "fore_net_w": 0.0,
+     "fore_net_m": 59953836.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": 59953836.0
     },
     {
      "stock_id": "2486",
@@ -6792,7 +9685,15 @@
      "inst_net_d": -886892529,
      "fore_net_d": -857823116,
      "foreign_ratio": 11.63,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 14875408937.0,
+     "value_m": 29609224316.0,
+     "inst_net_w": -546306777.0,
+     "inst_net_m": 138510032.0,
+     "fore_net_w": -687752316.0,
+     "fore_net_m": 153931749.0,
+     "trust_net_w": 39799500.0,
+     "trust_net_m": -122460000.0
     },
     {
      "stock_id": "1303",
@@ -6807,7 +9708,15 @@
      "inst_net_d": -948908416,
      "fore_net_d": -9975901442,
      "foreign_ratio": 32.45,
-     "trust_net_d": 9707549544
+     "trust_net_d": 9707549544,
+     "value_w": 137660198850.0,
+     "value_m": 215742880680.0,
+     "inst_net_w": -2508787428.0,
+     "inst_net_m": -285252968.0,
+     "fore_net_w": -31097418167.0,
+     "fore_net_m": -34505249586.0,
+     "trust_net_w": 27970658925.0,
+     "trust_net_m": 33658469960.0
     },
     {
      "stock_id": "2492",
@@ -6822,7 +9731,15 @@
      "inst_net_d": 36433522,
      "fore_net_d": 61822568,
      "foreign_ratio": 24.34,
-     "trust_net_d": 3382500
+     "trust_net_d": 3382500,
+     "value_w": 30422925555.0,
+     "value_m": 55080429852.0,
+     "inst_net_w": -352696658.0,
+     "inst_net_m": -41277878.0,
+     "fore_net_w": 735361035.0,
+     "fore_net_m": 614896065.0,
+     "trust_net_w": -1781040000.0,
+     "trust_net_m": -776652750.0
     },
     {
      "stock_id": "3691",
@@ -6837,7 +9754,15 @@
      "inst_net_d": 7578985,
      "fore_net_d": 0,
      "foreign_ratio": null,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 671475454.0,
+     "value_m": 2192681351.0,
+     "inst_net_w": 11357785.0,
+     "inst_net_m": -24957588.0,
+     "fore_net_w": 0.0,
+     "fore_net_m": -32265735.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": -32265735.0
     },
     {
      "stock_id": "6223",
@@ -6852,7 +9777,15 @@
      "inst_net_d": 734753600,
      "fore_net_d": 0,
      "foreign_ratio": null,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 25209436330.0,
+     "value_m": 66382496760.0,
+     "inst_net_w": -1694504000.0,
+     "inst_net_m": 1362172000.0,
+     "fore_net_w": 0.0,
+     "fore_net_m": -142811200.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": -142811200.0
     },
     {
      "stock_id": "3711",
@@ -6867,7 +9800,15 @@
      "inst_net_d": -7602682466,
      "fore_net_d": -7209941050,
      "foreign_ratio": 77.22,
-     "trust_net_d": -37384618
+     "trust_net_d": -37384618,
+     "value_w": 83938724074.0,
+     "value_m": 215020538557.0,
+     "inst_net_w": -6892888642.0,
+     "inst_net_m": -16846394750.0,
+     "fore_net_w": -9085615880.0,
+     "fore_net_m": -26203336616.0,
+     "trust_net_w": 1891913288.0,
+     "trust_net_m": 8604083310.0
     },
     {
      "stock_id": "6173",
@@ -6882,7 +9823,15 @@
      "inst_net_d": -27328392,
      "fore_net_d": 0,
      "foreign_ratio": null,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 10725473219.0,
+     "value_m": 40852588995.0,
+     "inst_net_w": 971540360.0,
+     "inst_net_m": -164431102.0,
+     "fore_net_w": 0.0,
+     "fore_net_m": 31236134.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": 31236134.0
     },
     {
      "stock_id": "3037",
@@ -6897,7 +9846,15 @@
      "inst_net_d": -3453907146,
      "fore_net_d": -3675001210,
      "foreign_ratio": 36.54,
-     "trust_net_d": 532368266
+     "trust_net_d": 532368266,
+     "value_w": 139771854816.0,
+     "value_m": 343550560369.0,
+     "inst_net_w": -9618713706.0,
+     "inst_net_m": -39935699694.0,
+     "fore_net_w": -15384432840.0,
+     "fore_net_m": -49099423610.0,
+     "trust_net_w": 5827152502.0,
+     "trust_net_m": 9242483158.0
     },
     {
      "stock_id": "3532",
@@ -6912,7 +9869,15 @@
      "inst_net_d": 570825688,
      "fore_net_d": 424277296,
      "foreign_ratio": 43.49,
-     "trust_net_d": 150096000
+     "trust_net_d": 150096000,
+     "value_w": 25851298893.0,
+     "value_m": 45073231074.0,
+     "inst_net_w": 2443270744.0,
+     "inst_net_m": 2876883248.0,
+     "fore_net_w": 406064376.0,
+     "fore_net_m": -399470328.0,
+     "trust_net_w": 2208616000.0,
+     "trust_net_m": 3601625600.0
     },
     {
      "stock_id": "2313",
@@ -6927,7 +9892,15 @@
      "inst_net_d": -3525540072,
      "fore_net_d": -3214142176,
      "foreign_ratio": 17.23,
-     "trust_net_d": 16960000
+     "trust_net_d": 16960000,
+     "value_w": 62252418903.0,
+     "value_m": 109224972948.0,
+     "inst_net_w": 1559535176.0,
+     "inst_net_m": -2893787280.0,
+     "fore_net_w": -1253690196.0,
+     "fore_net_m": -5224789820.0,
+     "trust_net_w": 2825112000.0,
+     "trust_net_m": 2829140000.0
     },
     {
      "stock_id": "3680",
@@ -6942,7 +9915,15 @@
      "inst_net_d": -821342370,
      "fore_net_d": 0,
      "foreign_ratio": null,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 8228182727.0,
+     "value_m": 16985718771.0,
+     "inst_net_w": -940507523.0,
+     "inst_net_m": -956757591.0,
+     "fore_net_w": 0.0,
+     "fore_net_m": 69942552.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": 69942552.0
     },
     {
      "stock_id": "2338",
@@ -6957,7 +9938,15 @@
      "inst_net_d": -144443650,
      "fore_net_d": -142208093,
      "foreign_ratio": 5.21,
-     "trust_net_d": 0
+     "trust_net_d": 0,
+     "value_w": 973733309.0,
+     "value_m": 2375745610.0,
+     "inst_net_w": -289184213.0,
+     "inst_net_m": -279207734.0,
+     "fore_net_w": -282628224.0,
+     "fore_net_m": -269438702.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": 0.0
     },
     {
      "stock_id": "2303",
@@ -6972,7 +9961,15 @@
      "inst_net_d": -8113078512,
      "fore_net_d": -6614674848,
      "foreign_ratio": 41.47,
-     "trust_net_d": 841895280
+     "trust_net_d": 841895280,
+     "value_w": 92308067340.0,
+     "value_m": 206980241183.0,
+     "inst_net_w": -10063884960.0,
+     "inst_net_m": -11238217776.0,
+     "fore_net_w": -6866361360.0,
+     "fore_net_m": 8250628032.0,
+     "trust_net_w": -1567828512.0,
+     "trust_net_m": -16348059648.0
     },
     {
      "stock_id": "3006",
@@ -6987,7 +9984,15 @@
      "inst_net_d": -402173838,
      "fore_net_d": -347667012,
      "foreign_ratio": 34.6,
-     "trust_net_d": -22968000
+     "trust_net_d": -22968000,
+     "value_w": 16165676170.0,
+     "value_m": 36280877947.0,
+     "inst_net_w": -270199314.0,
+     "inst_net_m": 431808102.0,
+     "fore_net_w": -62075574.0,
+     "fore_net_m": 903555378.0,
+     "trust_net_w": -25542000.0,
+     "trust_net_m": -329076000.0
     },
     {
      "stock_id": "3189",
@@ -7002,7 +10007,15 @@
      "inst_net_d": 511261443,
      "fore_net_d": 808005429,
      "foreign_ratio": 21.28,
-     "trust_net_d": -100911888
+     "trust_net_d": -100911888,
+     "value_w": 13874632586.0,
+     "value_m": 88013941436.0,
+     "inst_net_w": 1364483043.0,
+     "inst_net_m": -2137688091.0,
+     "fore_net_w": 957812625.0,
+     "fore_net_m": -2282026824.0,
+     "trust_net_w": 211891680.0,
+     "trust_net_m": 301141071.0
     }
    ],
    "daily": {
