@@ -166,7 +166,7 @@ td.up{color:var(--up)}td.down{color:var(--down)}
 
   <div class="state" id="state">資料載入中…</div>
 
-  <div class="foot">本頁母體為期交所「股票期貨標的」證券(個股/ETF),行情與法人資料為證券交易所、櫃買中心公開資訊之統計整理,僅供參考,不構成任何投資建議。法人買賣超金額為估算值(買賣超股數 × 收盤價)。投資人應獨立判斷,審慎評估並自負投資風險。</div>
+  <div class="foot">本頁母體為期交所「股票期貨標的」證券(個股/ETF),行情與法人資料為證券交易所、櫃買中心公開資訊之統計整理,僅供參考,不構成任何投資建議。法人買賣超金額為估算值(買賣超股數 × 收盤價);外資/投信佔比 = 當日買賣超金額 ÷ 當日成交金額。投資人應獨立判斷,審慎評估並自負投資風險。</div>
 </div>
 
 <!-- 個股詳情浮層 -->
@@ -187,7 +187,7 @@ let DATA=null, MAP=null, view="heat", mode="themes", period="daily", openName=nu
 let dSort={key:"chg_daily",dir:-1};   // 明細表排序狀態
 const DCOLS=[["stock","個股"],["close","收盤"],["chg_daily","當日%"],["chg_wtd","當周%"],
   ["chg_mtd","當月%"],["chg_qtd","當季%"],["chg_ytd","當年%"],
-  ["value_d","成交金額(億)"],["foreign_ratio","外資比例"],["trust_net_d","投信(億)"],
+  ["value_d","成交金額(億)"],["fore_pct","外資佔比"],["trust_pct","投信佔比"],
   ["inst_net_d","三大法人(億)"]];
 let stockLookup={};   // stock_id → 統計資料
 let stockThemes={};   // stock_id → [題材名]
@@ -198,6 +198,13 @@ let stockThemes={};   // stock_id → [題材名]
     const r1=await fetch("output/futures_stats.json?t="+Date.now());
     if(!r1.ok) throw new Error("stats HTTP "+r1.status);
     DATA=await r1.json();
+    /* 計算外資/投信買賣超佔成交金額比(%) — 供欄位顯示與排序 */
+    Object.values(DATA).forEach(v=>{if(Array.isArray(v))v.forEach(g=>{
+      if(g&&Array.isArray(g.stocks))g.stocks.forEach(s=>{
+        s.fore_pct=(s.value_d>0&&s.fore_net_d!=null)?Math.max(-100,Math.min(100,s.fore_net_d/s.value_d*100)):null;
+        s.trust_pct=(s.value_d>0&&s.trust_net_d!=null)?Math.max(-100,Math.min(100,s.trust_net_d/s.value_d*100)):null;
+      });});});
+
 
     (DATA.themes||[]).forEach(t=>t.stocks.forEach(s=>{
       stockLookup[s.stock_id]=s;
@@ -307,6 +314,13 @@ function renderHeat(){
     ? "資金焦點 — 本期間無逐日累計的成交金額與法人資料,計分改以漲跌幅(78%)、齊漲率(22%)排名計算。"
     : "資金焦點 — 綜合漲跌幅(42%)、成交金額(28%)、法人買賣超(18%)、齊漲率(12%)排名計分,衡量資金關注度而非單純漲勢;弱勢盤中抗跌且法人買超的族群同樣會入榜。";
   const items=(DATA[mode]||[]).filter(x=>x[period]&&x[period].avg_change_pct!=null);
+  if(!items.length){
+    $("strong").innerHTML="";$("legend").innerHTML="";
+    $("grid").innerHTML=`<div class="state">此分類目前無資料(可能為來源統計暫時缺漏),請切換其他分類,或等待下一次盤後更新。</div>`;
+    const dr=$("drawer");if(dr)dr.style.display="none";
+    return;
+  }
+  {const dr=$("drawer");if(dr)dr.style.display="";}
   const sc=scores(items);
   const order=items.map((x,i)=>({x,s:sc[i]})).sort((a,b)=>(b.x[period].avg_change_pct??-99)-(a.x[period].avg_change_pct??-99));
   const top=[...items.map((x,i)=>({x,s:sc[i]}))].sort((a,b)=>b.s-a.s).slice(0,3);
@@ -373,8 +387,8 @@ function renderHeat(){
         <td class="num ${c(s.chg_qtd)}">${pct(s.chg_qtd)}</td>
         <td class="num ${c(s.chg_ytd)}">${pct(s.chg_ytd)}</td>
         <td class="num">${yi(s.value_d)}</td>
-        <td class="num">${s.foreign_ratio==null?"—":s.foreign_ratio.toFixed(2)+"%"}</td>
-        <td class="num ${c(s.trust_net_d)}">${yi(s.trust_net_d)}</td>
+        <td class="num ${c(s.fore_pct)}">${s.fore_pct==null?"—":s.fore_pct.toFixed(1)+"%"}</td>
+        <td class="num ${c(s.trust_pct)}">${s.trust_pct==null?"—":s.trust_pct.toFixed(1)+"%"}</td>
         <td class="num ${c(s.inst_net_d)}">${yi(s.inst_net_d)}</td></tr>`;
     }).join("");
   }

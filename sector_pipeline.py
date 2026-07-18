@@ -329,8 +329,17 @@ def fetch_tpex_inst(d: date) -> list[dict]:
     return out
 
 
+INDUSTRY_CACHE_FILE = BASE_DIR / "industry_cache.json"
+
+
 def fetch_industry_map() -> pd.DataFrame:
-    """產業分類對照表(FinMind 免費版可用;失敗則回傳空表)。"""
+    """
+    產業分類對照表(FinMind 免費版)。
+    FinMind 以 IP 計流量,GitHub Actions 共用 IP 偶爾會被限流;
+    成功時寫入 industry_cache.json 快取,失敗時改讀快取,
+    避免官方類股檢視整個消失。
+    """
+    empty = pd.DataFrame(columns=["stock_id", "sector"])
     try:
         params = {"dataset": "TaiwanStockInfo"}
         token = os.environ.get("FINMIND_TOKEN", "")
@@ -340,13 +349,34 @@ def fetch_industry_map() -> pd.DataFrame:
                          params=params, timeout=60)
         r.raise_for_status()
         df = pd.DataFrame(r.json().get("data", []))
-        if df.empty:
-            return pd.DataFrame(columns=["stock_id", "sector"])
-        df = df[["stock_id", "industry_category"]].drop_duplicates("stock_id")
-        return df.rename(columns={"industry_category": "sector"})
+        if not df.empty:
+            df = df[["stock_id", "industry_category"]].drop_duplicates("stock_id")
+            df = df.rename(columns={"industry_category": "sector"})
+            try:  # 寫回快取
+                INDUSTRY_CACHE_FILE.write_text(json.dumps({
+                    "source": "FinMind TaiwanStockInfo",
+                    "updated_at": datetime.now().isoformat(timespec="seconds"),
+                    "map": df.set_index("stock_id")["sector"].to_dict(),
+                }, ensure_ascii=False), encoding="utf-8")
+            except Exception as e:  # noqa: BLE001
+                print(f"[warn] 產業分類快取寫入失敗({str(e)[:150]})。")
+            print(f"[ind] 產業分類 {len(df)} 檔(FinMind 即時)。")
+            return df
+        print("[warn] FinMind 產業分類回傳空資料,改用快取備援。")
     except Exception as e:  # noqa: BLE001
-        print(f"[warn] 產業分類抓取失敗({str(e)[:300]}),官方類股統計將標為「未分類」。")
-        return pd.DataFrame(columns=["stock_id", "sector"])
+        print(f"[warn] 產業分類抓取失敗({str(e)[:300]}),改用快取備援。")
+    if INDUSTRY_CACHE_FILE.exists():
+        try:
+            m = json.loads(INDUSTRY_CACHE_FILE.read_text(encoding="utf-8"))                     .get("map", {})
+            if m:
+                df = pd.DataFrame([{"stock_id": k, "sector": v}
+                                   for k, v in m.items()])
+                print(f"[ind] 快取備援產業分類 {len(df)} 檔。")
+                return df
+        except Exception as e:  # noqa: BLE001
+            print(f"[warn] 產業分類快取讀取失敗({str(e)[:150]})。")
+    print("[warn] 無產業分類備援,官方類股統計將為空。")
+    return empty
 
 
 def _mark(cell) -> bool:
