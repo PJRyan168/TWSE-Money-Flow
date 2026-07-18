@@ -47,6 +47,7 @@ jobs:
             git add output/
             [ -f futures_universe.json ] && git add futures_universe.json
             [ -f cb_universe.json ] && git add cb_universe.json
+            [ -f industry_cache.json ] && git add industry_cache.json
             git diff --cached --quiet || git commit -m "盤後統計 $(TZ=Asia/Taipei date +%F)"
             git pull --rebase
             git push
