@@ -760,9 +760,12 @@ def fetch_cb_universe() -> pd.DataFrame:
 
 
 TPEX_FOREIGN_CANDIDATES = [
+    # Actions log 已驗證:OpenAPI 端點鍵名含 PercentageOfSharesOC/FMIHeld
+    "https://www.tpex.org.tw/openapi/v1/tpex_3insti_qfii",
+    # Actions log 已驗證:網站端點回傳「僑外資及陸資持股比例排行表」
+    "https://www.tpex.org.tw/www/zh-tw/insti/qfii",
     "https://www.tpex.org.tw/www/zh-tw/insti/qfiiStat",
     "https://www.tpex.org.tw/www/zh-tw/insti/qfiiPct",
-    "https://www.tpex.org.tw/www/zh-tw/insti/qfii",
 ]
 
 
@@ -784,8 +787,10 @@ def _parse_foreign_payload(payload) -> dict:
             for k, v in row.items():
                 kk = str(k)
                 if ratio is None and ("持股比率" in kk or "持股比例" in kk
-                                      or "SharesRatio" in kk) \
-                        and "上限" not in kk and "尚可" not in kk:
+                                      or "SharesRatio" in kk
+                                      or "PercentageOfShares" in kk) \
+                        and "上限" not in kk and "尚可" not in kk \
+                        and "Available" not in kk and "UpperLimit" not in kk:
                     ratio = v
                 if code is None and ("代號" in kk or "Code" in kk):
                     code = v
@@ -822,6 +827,9 @@ def _parse_foreign_payload(payload) -> dict:
             val = to_num(r[i_ratio])
             if val is not None:
                 out[sid] = val
+        if not out and rows:
+            print(f"[fore] 表格解析 0 筆。欄位:{fields}")
+            print(f"[fore] 首列樣本:{rows[0]}")
     return out
 
 
