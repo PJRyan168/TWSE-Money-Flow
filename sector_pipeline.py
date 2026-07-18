@@ -341,12 +341,16 @@ def fetch_industry_map() -> pd.DataFrame:
     """
     empty = pd.DataFrame(columns=["stock_id", "sector"])
     try:
+        fm_url = "https://api.finmindtrade.com/api/v4/data"
         params = {"dataset": "TaiwanStockInfo"}
         token = os.environ.get("FINMIND_TOKEN", "")
-        if token:
-            params["token"] = token
-        r = requests.get("https://api.finmindtrade.com/api/v4/data",
-                         params=params, timeout=60)
+        fm_headers = {"Authorization": f"Bearer {token}"} if token else {}
+        r = requests.get(fm_url, params=params, headers=fm_headers, timeout=60)
+        if r.status_code != 200 and token:
+            # token 異常(如 400/401)時改匿名重試;此資料集一次呼叫即可
+            print(f"[ind] FinMind 帶 token 回應 HTTP {r.status_code},改匿名重試...")
+            time.sleep(2)
+            r = requests.get(fm_url, params=params, timeout=60)
         r.raise_for_status()
         df = pd.DataFrame(r.json().get("data", []))
         if not df.empty:
@@ -797,7 +801,7 @@ def _parse_foreign_payload(payload) -> dict:
             if code is None or ratio is None:
                 continue
             sid = re.sub(r"\s", "", str(code))
-            val = to_num(ratio)
+            val = to_num(str(ratio).replace("%", "").strip())
             if SEC_ID_RE.match(sid) and val is not None:
                 out[sid] = val
         return out
@@ -824,7 +828,7 @@ def _parse_foreign_payload(payload) -> dict:
             sid = str(r[i_id]).strip()
             if not SEC_ID_RE.match(sid):
                 continue
-            val = to_num(r[i_ratio])
+            val = to_num(str(r[i_ratio]).replace("%", "").strip())
             if val is not None:
                 out[sid] = val
         if not out and rows:
