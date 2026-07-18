@@ -1027,6 +1027,14 @@ def aggregate(stats: pd.DataFrame, mapping: pd.DataFrame, group_col: str) -> lis
                 "fore_net_d": int(r["fore_net_daily"]) if not pd.isna(r["fore_net_daily"]) else 0,
                 "foreign_ratio": num(r.get("foreign_ratio")),
                 "trust_net_d": int(r["trust_net_daily"]) if not pd.isna(r["trust_net_daily"]) else 0,
+                "value_w": num(r.get("value_wtd")),
+                "value_m": num(r.get("value_mtd")),
+                "inst_net_w": num(r.get("inst_net_wtd")),
+                "inst_net_m": num(r.get("inst_net_mtd")),
+                "fore_net_w": num(r.get("fore_net_wtd")),
+                "fore_net_m": num(r.get("fore_net_mtd")),
+                "trust_net_w": num(r.get("trust_net_wtd")),
+                "trust_net_m": num(r.get("trust_net_mtd")),
             })
         results.append(item)
     results.sort(key=lambda x: (x["daily"]["avg_change_pct"]
@@ -1142,6 +1150,15 @@ def main() -> None:
     # 外資持股比例(上市 MI_QFIIS + 上櫃對應報表,自動回溯最近公布日)
     fore_ratios, fore_date = fetch_foreign_ratios(t)
     stats["foreign_ratio"] = stats["stock_id"].map(fore_ratios)
+
+    # 各期間交易日數(供前端把期間加總換算為日均)
+    period_days = {"daily": 1}
+    for pkey in ("wtd", "mtd"):
+        b = bases.get(pkey)
+        period_days[pkey] = (int(px.loc[(px["date"] > b) &
+                                        (px["date"] <= today_s), "date"].nunique())
+                             if b else None)
+    print(f"[+] 期間交易日數:{period_days}")
     # 主站沿用原母體(4 碼普通股);ETF 只用於期貨標的頁
     stats_main = stats[stats["stock_id"].str.match(r"^\d{4}$")]
 
@@ -1162,6 +1179,7 @@ def main() -> None:
         "generated_at": datetime.now().isoformat(timespec="seconds"),
         "trade_date": today_s,
         "base_dates": bases,
+        "period_days": period_days,
         "note": "法人金額為估算值:買賣超股數 × 當日收盤價;foreign=外資、trust=投信、inst=三大法人合計;"
                 "外資比例=全體外資及陸資持股比率(官方統計)",
         "foreign_ratio_date": fore_date,
@@ -1197,6 +1215,7 @@ def main() -> None:
             "generated_at": datetime.now().isoformat(timespec="seconds"),
             "trade_date": today_s,
             "base_dates": bases,
+        "period_days": period_days,
             "universe_count": int(len(fut_ids)),
             "foreign_ratio_date": fore_date,
             "matched_count": int(stats_fut["stock_id"].nunique()),
@@ -1248,6 +1267,7 @@ def main() -> None:
             "generated_at": datetime.now().isoformat(timespec="seconds"),
             "trade_date": today_s,
             "base_dates": bases,
+        "period_days": period_days,
             "universe_count": int(len(cb_stock_ids)),
             "foreign_ratio_date": fore_date,
             "cb_count": cb_count,

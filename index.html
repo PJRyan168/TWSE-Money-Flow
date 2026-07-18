@@ -171,7 +171,7 @@ td.up{color:var(--up)}td.down{color:var(--down)}
 
   <div class="state" id="state">資料載入中…</div>
 
-  <div class="foot">本站內容為證券交易所、櫃買中心公開資訊之統計整理,僅供參考,不構成任何投資建議。法人買賣超金額為估算值(買賣超股數 × 收盤價);外資/投信佔比 = 當日買賣超金額 ÷ 當日成交金額。投資人應獨立判斷,審慎評估並自負投資風險。</div>
+  <div class="foot">本站內容為證券交易所、櫃買中心公開資訊之統計整理,僅供參考,不構成任何投資建議。法人買賣超金額為估算值(買賣超股數 × 收盤價);外資/投信佔比 = 期間買賣超金額 ÷ 期間成交金額;成交金額與三大法人於周/月檢視顯示為期間日均值,季/年檢視無逐日資料故不提供。投資人應獨立判斷,審慎評估並自負投資風險。</div>
 </div>
 
 <!-- 個股詳情浮層 -->
@@ -190,10 +190,14 @@ td.up{color:var(--up)}td.down{color:var(--down)}
 const $=id=>document.getElementById(id);
 let DATA=null, MAP=null, view="heat", mode="themes", period="daily", openName=null;
 let dSort={key:"chg_daily",dir:-1};   // 明細表排序狀態
-const DCOLS=[["stock","個股"],["close","收盤"],["chg_daily","當日%"],["chg_wtd","當周%"],
-  ["chg_mtd","當月%"],["chg_qtd","當季%"],["chg_ytd","當年%"],
-  ["value_d","成交金額(億)"],["fore_pct","外資佔比"],["trust_pct","投信佔比"],
-  ["inst_net_d","三大法人(億)"]];
+const SFX={daily:"d",wtd:"w",mtd:"m",qtd:null,ytd:null};
+function DCOLS(){
+  const x=SFX[period],avg=period==="daily"?"":"日均";
+  return [["stock","個股"],["close","收盤"],["chg_daily","當日%"],["chg_wtd","當周%"],
+    ["chg_mtd","當月%"],["chg_qtd","當季%"],["chg_ytd","當年%"],
+    [x?("value_"+x):"_na1",avg+"成交金額(億)"],[x?("fore_pct_"+x):"_na2","外資佔比"],
+    [x?("trust_pct_"+x):"_na3","投信佔比"],[x?("inst_net_"+x):"_na4",avg+"三大法人(億)"]];
+}
 let stockLookup={};   // stock_id → 統計資料
 let stockThemes={};   // stock_id → [題材名]
 
@@ -206,11 +210,14 @@ let stockThemes={};   // stock_id → [題材名]
     ]);
     if(!r1.ok) throw new Error("stats HTTP "+r1.status);
     DATA=await r1.json();
-    /* 計算外資/投信買賣超佔成交金額比(%) — 供欄位顯示與排序 */
+    /* 計算各期間外資/投信買賣超佔成交金額比(%) — 供欄位顯示與排序 */
     Object.values(DATA).forEach(v=>{if(Array.isArray(v))v.forEach(g=>{
       if(g&&Array.isArray(g.stocks))g.stocks.forEach(s=>{
-        s.fore_pct=(s.value_d>0&&s.fore_net_d!=null)?Math.max(-100,Math.min(100,s.fore_net_d/s.value_d*100)):null;
-        s.trust_pct=(s.value_d>0&&s.trust_net_d!=null)?Math.max(-100,Math.min(100,s.trust_net_d/s.value_d*100)):null;
+        ["d","w","m"].forEach(x=>{
+          const vv=s["value_"+x],f=s["fore_net_"+x],t=s["trust_net_"+x];
+          s["fore_pct_"+x]=(vv>0&&f!=null)?Math.max(-100,Math.min(100,f/vv*100)):null;
+          s["trust_pct_"+x]=(vv>0&&t!=null)?Math.max(-100,Math.min(100,t/vv*100)):null;
+        });
       });});});
 
     MAP=r2.ok?await r2.json():null;
@@ -377,7 +384,7 @@ function renderHeat(){
   $("drawer").classList.toggle("open",!!cur);
   if(cur){
     $("dTitle").textContent=cur.name+" 成分股明細";
-    $("dHead").innerHTML="<tr>"+DCOLS.map(([k,label])=>
+    $("dHead").innerHTML="<tr>"+DCOLS().map(([k,label])=>
       `<th class="sortable" data-key="${k}">${label}${dSort.key===k?(dSort.dir<0?" ▼":" ▲"):""}</th>`).join("")+"</tr>";
     $("dHead").querySelectorAll("th").forEach(h=>h.addEventListener("click",()=>{
       const k=h.dataset.key;
@@ -392,8 +399,11 @@ function renderHeat(){
       if(y==null)return -1;
       return (x<y?-1:x>y?1:0)*dSort.dir*(dSort.key==="stock"?-1:1);
     });
+    const px_=SFX[period],nd_=((DATA.period_days||{})[period])||1;
     $("dBody").innerHTML=sorted.map(s=>{
       const c=v=>v==null?"":v>0?"up":v<0?"down":"";
+      const vv=px_==null?null:s["value_"+px_],iv=px_==null?null:s["inst_net_"+px_];
+      const fp=px_==null?null:s["fore_pct_"+px_],tp=px_==null?null:s["trust_pct_"+px_];
       return `<tr><td>${s.stock_id} ${s.stock_name||""}</td>
         <td class="num">${s.close==null?"—":s.close}</td>
         <td class="num ${c(s.chg_daily)}">${pct(s.chg_daily)}</td>
@@ -401,10 +411,10 @@ function renderHeat(){
         <td class="num ${c(s.chg_mtd)}">${pct(s.chg_mtd)}</td>
         <td class="num ${c(s.chg_qtd)}">${pct(s.chg_qtd)}</td>
         <td class="num ${c(s.chg_ytd)}">${pct(s.chg_ytd)}</td>
-        <td class="num">${yi(s.value_d)}</td>
-        <td class="num ${c(s.fore_pct)}">${s.fore_pct==null?"—":s.fore_pct.toFixed(1)+"%"}</td>
-        <td class="num ${c(s.trust_pct)}">${s.trust_pct==null?"—":s.trust_pct.toFixed(1)+"%"}</td>
-        <td class="num ${c(s.inst_net_d)}">${yi(s.inst_net_d)}</td></tr>`;
+        <td class="num">${vv==null?"—":yi(vv/nd_)}</td>
+        <td class="num ${c(fp)}">${fp==null?"—":fp.toFixed(1)+"%"}</td>
+        <td class="num ${c(tp)}">${tp==null?"—":tp.toFixed(1)+"%"}</td>
+        <td class="num ${c(iv)}">${iv==null?"—":yi(iv/nd_)}</td></tr>`;
     }).join("");
   }
 }
