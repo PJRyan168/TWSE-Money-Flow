@@ -1,8 +1,8 @@
 {
  "source": "TPEx 最近上櫃轉(交)換公司債",
- "updated_at": "2026-07-18T14:22:24",
- "cb_count": 385,
- "stock_count": 308,
+ "updated_at": "2026-07-21T19:39:03",
+ "cb_count": 383,
+ "stock_count": 307,
  "bonds": [
   {
    "cb_id": "11011",
@@ -283,11 +283,6 @@
    "cb_id": "24762",
    "cb_name": "鉅祥",
    "stock_id": "2476"
-  },
-  {
-   "cb_id": "24866",
-   "cb_name": "一詮",
-   "stock_id": "2486"
   },
   {
    "cb_id": "24867",
@@ -958,11 +953,6 @@
    "cb_id": "49311",
    "cb_name": "新盛力",
    "stock_id": "4931"
-  },
-  {
-   "cb_id": "49674",
-   "cb_name": "十銓",
-   "stock_id": "4967"
   },
   {
    "cb_id": "49793",
