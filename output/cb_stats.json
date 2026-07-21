@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-22T00:14:39",
+ "generated_at": "2026-07-22T00:51:03",
  "trade_date": "2026-07-21",
  "base_dates": {
   "daily": "2026-07-20",
@@ -1701,7 +1701,7 @@
   },
   {
    "name": "電子工業",
-   "stock_count": 31,
+   "stock_count": 33,
    "stocks": [
     {
      "stock_id": "3037",
@@ -1957,6 +1957,29 @@
      "trust_net_m": 171399000.0
     },
     {
+     "stock_id": "6269",
+     "stock_name": "台郡",
+     "close": 55.9,
+     "chg_daily": 3.33,
+     "chg_wtd": -0.53,
+     "chg_mtd": -21.27,
+     "chg_qtd": -21.27,
+     "chg_ytd": -5.25,
+     "value_d": 140330020,
+     "inst_net_d": -9893350,
+     "fore_net_d": -12401415,
+     "foreign_ratio": 14.25,
+     "trust_net_d": 0,
+     "value_w": 414499402.0,
+     "value_m": 4057160119.0,
+     "inst_net_w": -79048302.0,
+     "inst_net_m": -1051816245.0,
+     "fore_net_w": -73095567.0,
+     "fore_net_m": -983677107.0,
+     "trust_net_w": -55900.0,
+     "trust_net_m": -167700.0
+    },
+    {
      "stock_id": "6477",
      "stock_name": "安集",
      "close": 42.35,
@@ -2139,6 +2162,29 @@
      "fore_net_m": 184935766.0,
      "trust_net_w": 0.0,
      "trust_net_m": -174400.0
+    },
+    {
+     "stock_id": "6197",
+     "stock_name": "佳必琪",
+     "close": 307.5,
+     "chg_daily": 2.16,
+     "chg_wtd": 0.99,
+     "chg_mtd": -12.14,
+     "chg_qtd": -12.14,
+     "chg_ytd": 121.22,
+     "value_d": 824801312,
+     "inst_net_d": 927112,
+     "fore_net_d": 265065,
+     "foreign_ratio": 6.26,
+     "trust_net_d": 0,
+     "value_w": 1699209888.0,
+     "value_m": 15765134763.0,
+     "inst_net_w": 42732045.0,
+     "inst_net_m": -169665892.0,
+     "fore_net_w": 55823242.0,
+     "fore_net_m": -130840942.0,
+     "trust_net_w": 922500.0,
+     "trust_net_m": -5535000.0
     },
     {
      "stock_id": "8028",
@@ -2418,39 +2464,39 @@
     }
    ],
    "daily": {
-    "avg_change_pct": 3.2,
+    "avg_change_pct": 3.17,
     "median_change_pct": 2.84,
-    "up_ratio": 96.8,
-    "trading_value": 35331494896,
-    "trading_volume": 120726715,
-    "inst_net_value": -205186791,
-    "foreign_net_value": 244736131,
+    "up_ratio": 97.0,
+    "trading_value": 36296626228,
+    "trading_volume": 125964498,
+    "inst_net_value": -214153029,
+    "foreign_net_value": 232599781,
     "trust_net_value": -283307294
    },
    "wtd": {
-    "avg_change_pct": 0.71,
+    "avg_change_pct": 0.68,
     "median_change_pct": 0.79,
-    "up_ratio": 54.8,
-    "trading_value": 77771625416,
-    "trading_volume": 261780698,
-    "inst_net_value": 1666048419,
-    "foreign_net_value": 2405609058,
-    "trust_net_value": -610584628
+    "up_ratio": 54.5,
+    "trading_value": 79885334706,
+    "trading_volume": 275062300,
+    "inst_net_value": 1629732162,
+    "foreign_net_value": 2388336733,
+    "trust_net_value": -609718028
    },
    "mtd": {
-    "avg_change_pct": -9.61,
-    "median_change_pct": -10.53,
-    "up_ratio": 16.1,
-    "trading_value": 691917572867,
-    "trading_volume": 2262745630,
-    "inst_net_value": -38709487503,
-    "foreign_net_value": -46209330152,
-    "trust_net_value": 9338333175
+    "avg_change_pct": -10.04,
+    "median_change_pct": -12.14,
+    "up_ratio": 15.2,
+    "trading_value": 711739867749,
+    "trading_volume": 2373221873,
+    "inst_net_value": -39930969640,
+    "foreign_net_value": -47323848201,
+    "trust_net_value": 9332630475
    },
    "qtd": {
-    "avg_change_pct": -9.61,
-    "median_change_pct": -10.53,
-    "up_ratio": 16.1,
+    "avg_change_pct": -10.04,
+    "median_change_pct": -12.14,
+    "up_ratio": 15.2,
     "trading_value": null,
     "trading_volume": null,
     "inst_net_value": null,
@@ -2458,9 +2504,9 @@
     "trust_net_value": null
    },
    "ytd": {
-    "avg_change_pct": 34.96,
+    "avg_change_pct": 36.35,
     "median_change_pct": 14.66,
-    "up_ratio": 67.7,
+    "up_ratio": 66.7,
     "trading_value": null,
     "trading_volume": null,
     "inst_net_value": null,
@@ -3098,7 +3144,7 @@
   },
   {
    "name": "電子零組件業",
-   "stock_count": 40,
+   "stock_count": 38,
    "stocks": [
     {
      "stock_id": "4542",
@@ -3400,29 +3446,6 @@
      "trust_net_m": -2428000.0
     },
     {
-     "stock_id": "6269",
-     "stock_name": "台郡",
-     "close": 55.9,
-     "chg_daily": 3.33,
-     "chg_wtd": -0.53,
-     "chg_mtd": -21.27,
-     "chg_qtd": -21.27,
-     "chg_ytd": -5.25,
-     "value_d": 140330020,
-     "inst_net_d": -9893350,
-     "fore_net_d": -12401415,
-     "foreign_ratio": 14.25,
-     "trust_net_d": 0,
-     "value_w": 414499402.0,
-     "value_m": 4057160119.0,
-     "inst_net_w": -79048302.0,
-     "inst_net_m": -1051816245.0,
-     "fore_net_w": -73095567.0,
-     "fore_net_m": -983677107.0,
-     "trust_net_w": -55900.0,
-     "trust_net_m": -167700.0
-    },
-    {
      "stock_id": "3689",
      "stock_name": "湧德",
      "close": 109.5,
@@ -3605,29 +3628,6 @@
      "fore_net_m": 5896200.0,
      "trust_net_w": 0.0,
      "trust_net_m": 5896200.0
-    },
-    {
-     "stock_id": "6197",
-     "stock_name": "佳必琪",
-     "close": 307.5,
-     "chg_daily": 2.16,
-     "chg_wtd": 0.99,
-     "chg_mtd": -12.14,
-     "chg_qtd": -12.14,
-     "chg_ytd": 121.22,
-     "value_d": 824801312,
-     "inst_net_d": 927112,
-     "fore_net_d": 265065,
-     "foreign_ratio": 6.26,
-     "trust_net_d": 0,
-     "value_w": 1699209888.0,
-     "value_m": 15765134763.0,
-     "inst_net_w": 42732045.0,
-     "inst_net_m": -169665892.0,
-     "fore_net_w": 55823242.0,
-     "fore_net_m": -130840942.0,
-     "trust_net_w": 922500.0,
-     "trust_net_m": -5535000.0
     },
     {
      "stock_id": "3390",
@@ -4022,39 +4022,39 @@
     }
    ],
    "daily": {
-    "avg_change_pct": 2.53,
+    "avg_change_pct": 2.52,
     "median_change_pct": 2.53,
-    "up_ratio": 82.5,
-    "trading_value": 7120158597,
-    "trading_volume": 50840612,
-    "inst_net_value": -818788554,
-    "foreign_net_value": -154198253,
+    "up_ratio": 81.6,
+    "trading_value": 6155027265,
+    "trading_volume": 45602829,
+    "inst_net_value": -809822316,
+    "foreign_net_value": -142061903,
     "trust_net_value": -7717500
    },
    "wtd": {
-    "avg_change_pct": -0.54,
+    "avg_change_pct": -0.58,
     "median_change_pct": -0.16,
-    "up_ratio": 47.5,
-    "trading_value": 16106246551,
-    "trading_volume": 119249312,
-    "inst_net_value": -29732935,
-    "foreign_net_value": 112476345,
-    "trust_net_value": -10648400
+    "up_ratio": 47.4,
+    "trading_value": 13992537261,
+    "trading_volume": 105967710,
+    "inst_net_value": 6583322,
+    "foreign_net_value": 129748670,
+    "trust_net_value": -11515000
    },
    "mtd": {
-    "avg_change_pct": -15.65,
+    "avg_change_pct": -15.59,
     "median_change_pct": -14.5,
-    "up_ratio": 7.5,
-    "trading_value": 190286356723,
-    "trading_volume": 1235416956,
-    "inst_net_value": -6409902408,
-    "foreign_net_value": -2931006006,
-    "trust_net_value": -182697542
+    "up_ratio": 7.9,
+    "trading_value": 170464061841,
+    "trading_volume": 1124940713,
+    "inst_net_value": -5188420271,
+    "foreign_net_value": -1816487957,
+    "trust_net_value": -176994842
    },
    "qtd": {
-    "avg_change_pct": -15.65,
+    "avg_change_pct": -15.59,
     "median_change_pct": -14.5,
-    "up_ratio": 7.5,
+    "up_ratio": 7.9,
     "trading_value": null,
     "trading_volume": null,
     "inst_net_value": null,
@@ -4062,9 +4062,9 @@
     "trust_net_value": null
    },
    "ytd": {
-    "avg_change_pct": 38.22,
+    "avg_change_pct": 37.18,
     "median_change_pct": 16.64,
-    "up_ratio": 67.5,
+    "up_ratio": 68.4,
     "trading_value": null,
     "trading_volume": null,
     "inst_net_value": null,
