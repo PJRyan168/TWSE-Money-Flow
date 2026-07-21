@@ -111,6 +111,8 @@ th{color:var(--muted);font-weight:500;font-size:12px;border-bottom:1px solid var
 th:first-child,td:first-child{text-align:left}
 tbody tr:hover{background:var(--panel-2)}
 td.up{color:var(--up)}td.down{color:var(--down)}
+td a.slink{color:inherit;text-decoration:none;border-bottom:1px dotted var(--muted)}
+td a.slink:hover{color:var(--gold);border-bottom-color:var(--gold)}
 .state{padding:60px 20px;text-align:center;color:var(--muted);font-size:15px;line-height:1.9}
 .foot{margin-top:40px;color:var(--muted);font-size:11.5px;line-height:1.8;border-top:1px solid var(--line);padding-top:14px}
 
@@ -171,7 +173,7 @@ td.up{color:var(--up)}td.down{color:var(--down)}
 
   <div class="state" id="state">資料載入中…</div>
 
-  <div class="foot">本站內容為證券交易所、櫃買中心公開資訊之統計整理,僅供參考,不構成任何投資建議。法人買賣超金額為估算值(買賣超股數 × 收盤價);外資/投信佔比 = 期間買賣超金額 ÷ 期間成交金額;成交金額與三大法人於周/月檢視顯示為期間日均值,季/年檢視無逐日資料故不提供。投資人應獨立判斷,審慎評估並自負投資風險。</div>
+  <div class="foot">本站內容為證券交易所、櫃買中心公開資訊之統計整理,僅供參考,不構成任何投資建議。法人買賣超金額為估算值(買賣超股數 × 收盤價)。投資人應獨立判斷,審慎評估並自負投資風險。</div>
 </div>
 
 <!-- 個股詳情浮層 -->
@@ -188,16 +190,14 @@ td.up{color:var(--up)}td.down{color:var(--down)}
 <script>
 "use strict";
 const $=id=>document.getElementById(id);
+// 個股技術線圖連結(只用代號,上市/上櫃/ETF 通用;要換平台改這行即可)
+const chartUrl=code=>`https://www.wantgoo.com/stock/${code}/technical-chart`;
 let DATA=null, MAP=null, view="heat", mode="themes", period="daily", openName=null;
 let dSort={key:"chg_daily",dir:-1};   // 明細表排序狀態
-const SFX={daily:"d",wtd:"w",mtd:"m",qtd:null,ytd:null};
-function DCOLS(){
-  const x=SFX[period],avg=period==="daily"?"":"日均";
-  return [["stock","個股"],["close","收盤"],["chg_daily","當日%"],["chg_wtd","當周%"],
-    ["chg_mtd","當月%"],["chg_qtd","當季%"],["chg_ytd","當年%"],
-    [x?("value_"+x):"_na1",avg+"成交金額(億)"],[x?("fore_pct_"+x):"_na2","外資佔比"],
-    [x?("trust_pct_"+x):"_na3","投信佔比"],[x?("inst_net_"+x):"_na4",avg+"三大法人(億)"]];
-}
+const DCOLS=[["stock","個股"],["close","收盤"],["chg_daily","當日%"],["chg_wtd","當周%"],
+  ["chg_mtd","當月%"],["chg_qtd","當季%"],["chg_ytd","當年%"],
+  ["value_d","成交金額(億)"],["fore_net_d","外資(億)"],["trust_net_d","投信(億)"],
+  ["inst_net_d","三大法人(億)"]];
 let stockLookup={};   // stock_id → 統計資料
 let stockThemes={};   // stock_id → [題材名]
 
@@ -210,16 +210,6 @@ let stockThemes={};   // stock_id → [題材名]
     ]);
     if(!r1.ok) throw new Error("stats HTTP "+r1.status);
     DATA=await r1.json();
-    /* 計算各期間外資/投信買賣超佔成交金額比(%) — 供欄位顯示與排序 */
-    Object.values(DATA).forEach(v=>{if(Array.isArray(v))v.forEach(g=>{
-      if(g&&Array.isArray(g.stocks))g.stocks.forEach(s=>{
-        ["d","w","m"].forEach(x=>{
-          const vv=s["value_"+x],f=s["fore_net_"+x],t=s["trust_net_"+x];
-          s["fore_pct_"+x]=(vv>0&&f!=null)?Math.max(-100,Math.min(100,f/vv*100)):null;
-          s["trust_pct_"+x]=(vv>0&&t!=null)?Math.max(-100,Math.min(100,t/vv*100)):null;
-        });
-      });});});
-
     MAP=r2.ok?await r2.json():null;
 
     (DATA.themes||[]).forEach(t=>t.stocks.forEach(s=>{
@@ -233,7 +223,7 @@ let stockThemes={};   // stock_id → [題材名]
     $("state").style.display="none";
     $("meta").innerHTML=`交易日 <b class="num">${DATA.trade_date}</b>・更新於 <b class="num">${(DATA.generated_at||"").replace("T"," ")}</b>`;
     const b=DATA.base_dates||{};
-    $("basebar").textContent=`比較基準 — 日:${b.daily}・周:${b.wtd}・月:${b.mtd}`+(b.qtd?`・季:${b.qtd}`:"")+(b.ytd?`・年:${b.ytd}`:"")+(DATA.foreign_ratio_date?`・外資比例基準:${DATA.foreign_ratio_date}`:"")+`(各期間自基準日收盤起算;季/年檢視僅提供漲跌幅)`;
+    $("basebar").textContent=`比較基準 — 日:${b.daily}・周:${b.wtd}・月:${b.mtd}`+(b.qtd?`・季:${b.qtd}`:"")+(b.ytd?`・年:${b.ytd}`:"")+`(各期間自基準日收盤起算;季/年檢視僅提供漲跌幅)`;
     render();
   }catch(e){
     $("state").innerHTML=`讀取資料失敗(${e.message})。請確認管線已成功執行,且 industry_map.json 已上傳。`;
@@ -312,7 +302,6 @@ function openStock(sid,name,role){
       `<div class="p-row"><span>收盤價</span><span class="num">${s.close==null?"—":s.close}</span></div>
        <div class="p-row"><span>當日成交金額</span><span class="num">${yi(s.value_d)} 億</span></div>
        <div class="p-row"><span>當日外資買賣超</span><span class="num ${cls(s.fore_net_d)}">${yi(s.fore_net_d)} 億</span></div>
-       <div class="p-row"><span>外資持股比例</span><span class="num">${s.foreign_ratio==null?"—":s.foreign_ratio.toFixed(2)+"%"}</span></div>
        <div class="p-row"><span>當日投信買賣超</span><span class="num ${cls(s.trust_net_d)}">${yi(s.trust_net_d)} 億</span></div>
        <div class="p-row"><span>當日三大法人合計</span><span class="num ${cls(s.inst_net_d)}">${yi(s.inst_net_d)} 億</span></div>`;
   }else{
@@ -336,13 +325,6 @@ function renderHeat(){
     ? "資金焦點 — 本期間無逐日累計的成交金額與法人資料,計分改以漲跌幅(78%)、齊漲率(22%)排名計算。"
     : "資金焦點 — 綜合漲跌幅(42%)、成交金額(28%)、法人買賣超(18%)、齊漲率(12%)排名計分,衡量資金關注度而非單純漲勢;弱勢盤中抗跌且法人買超的族群同樣會入榜。";
   const items=(DATA[mode]||[]).filter(x=>x[period]&&x[period].avg_change_pct!=null);
-  if(!items.length){
-    $("strong").innerHTML="";$("legend").innerHTML="";
-    $("grid").innerHTML=`<div class="state">此分類目前無資料(可能為來源統計暫時缺漏),請切換其他分類,或等待下一次盤後更新。</div>`;
-    const dr=$("drawer");if(dr)dr.style.display="none";
-    return;
-  }
-  {const dr=$("drawer");if(dr)dr.style.display="";}
   const sc=scores(items);
   const order=items.map((x,i)=>({x,s:sc[i]})).sort((a,b)=>(b.x[period].avg_change_pct??-99)-(a.x[period].avg_change_pct??-99));
   const top=[...items.map((x,i)=>({x,s:sc[i]}))].sort((a,b)=>b.s-a.s).slice(0,3);
@@ -384,7 +366,7 @@ function renderHeat(){
   $("drawer").classList.toggle("open",!!cur);
   if(cur){
     $("dTitle").textContent=cur.name+" 成分股明細";
-    $("dHead").innerHTML="<tr>"+DCOLS().map(([k,label])=>
+    $("dHead").innerHTML="<tr>"+DCOLS.map(([k,label])=>
       `<th class="sortable" data-key="${k}">${label}${dSort.key===k?(dSort.dir<0?" ▼":" ▲"):""}</th>`).join("")+"</tr>";
     $("dHead").querySelectorAll("th").forEach(h=>h.addEventListener("click",()=>{
       const k=h.dataset.key;
@@ -399,22 +381,19 @@ function renderHeat(){
       if(y==null)return -1;
       return (x<y?-1:x>y?1:0)*dSort.dir*(dSort.key==="stock"?-1:1);
     });
-    const px_=SFX[period],nd_=((DATA.period_days||{})[period])||1;
     $("dBody").innerHTML=sorted.map(s=>{
       const c=v=>v==null?"":v>0?"up":v<0?"down":"";
-      const vv=px_==null?null:s["value_"+px_],iv=px_==null?null:s["inst_net_"+px_];
-      const fp=px_==null?null:s["fore_pct_"+px_],tp=px_==null?null:s["trust_pct_"+px_];
-      return `<tr><td>${s.stock_id} ${s.stock_name||""}</td>
+      return `<tr><td><a class="slink" href="${chartUrl(s.stock_id)}" target="_blank" rel="noopener">${s.stock_id} ${s.stock_name||""}</a></td>
         <td class="num">${s.close==null?"—":s.close}</td>
         <td class="num ${c(s.chg_daily)}">${pct(s.chg_daily)}</td>
         <td class="num ${c(s.chg_wtd)}">${pct(s.chg_wtd)}</td>
         <td class="num ${c(s.chg_mtd)}">${pct(s.chg_mtd)}</td>
         <td class="num ${c(s.chg_qtd)}">${pct(s.chg_qtd)}</td>
         <td class="num ${c(s.chg_ytd)}">${pct(s.chg_ytd)}</td>
-        <td class="num">${vv==null?"—":yi(vv/nd_)}</td>
-        <td class="num ${c(fp)}">${fp==null?"—":fp.toFixed(1)+"%"}</td>
-        <td class="num ${c(tp)}">${tp==null?"—":tp.toFixed(1)+"%"}</td>
-        <td class="num ${c(iv)}">${iv==null?"—":yi(iv/nd_)}</td></tr>`;
+        <td class="num">${yi(s.value_d)}</td>
+        <td class="num ${c(s.fore_net_d)}">${yi(s.fore_net_d)}</td>
+        <td class="num ${c(s.trust_net_d)}">${yi(s.trust_net_d)}</td>
+        <td class="num ${c(s.inst_net_d)}">${yi(s.inst_net_d)}</td></tr>`;
     }).join("");
   }
 }
