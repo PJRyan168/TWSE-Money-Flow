@@ -113,8 +113,11 @@ tbody tr:hover{background:var(--panel-2)}
 td.up{color:var(--up)}td.down{color:var(--down)}
 .slink{color:inherit;text-decoration:none;border-bottom:1px dotted var(--muted)}
 .slink:hover{color:var(--gold);border-bottom-color:var(--gold)}
-.p-yahoo{margin-left:auto;margin-right:12px;color:var(--gold);text-decoration:none;font-size:13px;white-space:nowrap;align-self:center}
-.p-yahoo:hover{text-decoration:underline}
+.glink{margin-left:7px;font-size:11px;color:var(--muted);text-decoration:none;border:1px solid var(--line);border-radius:3px;padding:0 4px}
+.glink:hover{color:var(--gold);border-color:var(--gold)}
+.p-chart{margin-left:10px;color:var(--gold);text-decoration:none;font-size:13px;white-space:nowrap;align-self:center}
+.p-chart:hover{text-decoration:underline}
+.p-chart+.p-close,.p-chart~.p-close{margin-left:10px}
 .state{padding:60px 20px;text-align:center;color:var(--muted);font-size:15px;line-height:1.9}
 .foot{margin-top:40px;color:var(--muted);font-size:11.5px;line-height:1.8;border-top:1px solid var(--line);padding-top:14px}
 
@@ -177,7 +180,7 @@ td.up{color:var(--up)}td.down{color:var(--down)}
 <!-- 個股詳情浮層 -->
 <div class="pop" id="pop" role="dialog" aria-modal="true">
   <div class="box">
-    <div class="p-title"><h3 id="pName"></h3><a id="pYahoo" class="p-yahoo" target="_blank" rel="noopener" title="在 Yahoo 股市看技術線圖">📈 技術線圖</a><button class="p-close" id="pClose">關閉</button></div>
+    <div class="p-title"><h3 id="pName"></h3><a id="pYahoo" class="p-chart" target="_blank" rel="noopener" title="Yahoo 技術線圖">📈 Yahoo</a><a id="pGood" class="p-chart" target="_blank" rel="noopener" title="Goodinfo 技術線圖">📊 Goodinfo</a><button class="p-close" id="pClose">關閉</button></div>
     <div class="p-role" id="pRole"></div>
     <div class="p-themes" id="pThemes"></div>
     <div class="p-grid" id="pGrid"></div>
@@ -271,6 +274,8 @@ $("pop").addEventListener("click",e=>{if(e.target===$("pop"))$("pop").classList.
 /* ---------- 工具 ---------- */
 const yi=v=>v==null?"—":(v/1e8).toFixed(Math.abs(v)>=1e10?0:1);
 const pct=v=>v==null?"—":(v>0?"+":"")+v.toFixed(2)+"%";
+const yahooUrl=(sid,market)=>`https://tw.stock.yahoo.com/quote/${sid}.${(market==="上櫃"||market==="櫃")?"TWO":"TW"}/technical-analysis`;
+const goodinfoUrl=sid=>`https://goodinfo.tw/tw/ShowK_Chart.asp?STOCK_ID=${sid}&CHT_CAT=DATE`;
 /* 個股 → Yahoo 股市技術分析頁;上市.TW / 上櫃.TWO */
 function yahooUrl(sid,market){
   const suffix=(market==="上櫃"||market==="櫃")?"TWO":"TW";
@@ -312,6 +317,7 @@ function openStock(sid,name,role){
   const s=stockLookup[sid];
   $("pName").textContent=`${sid} ${name||(s&&s.stock_name)||""}`;
   $("pYahoo").href=yahooUrl(sid,(s&&s.market)||"");
+  $("pGood").href=goodinfoUrl(sid);
   $("pRole").textContent=role||"";
   const ths=stockThemes[sid]||[];
   const cbs=(DATA.cb_of_stock||{})[sid]||[];
@@ -414,7 +420,7 @@ function renderHeat(){
       const c=v=>v==null?"":v>0?"up":v<0?"down":"";
       const vv=px_==null?null:s["value_"+px_],iv=px_==null?null:s["inst_net_"+px_];
       const fp=px_==null?null:s["fore_pct_"+px_],tp=px_==null?null:s["trust_pct_"+px_];
-      return `<tr><td><a class="slink" href="${yahooUrl(s.stock_id,s.market)}" target="_blank" rel="noopener" title="在 Yahoo 股市看技術線圖" onclick="event.stopPropagation()">${s.stock_id} ${s.stock_name||""}</a></td>
+      return `<tr><td><a class="slink" href="${yahooUrl(s.stock_id,s.market)}" target="_blank" rel="noopener" title="Yahoo 技術線圖" onclick="event.stopPropagation()">${s.stock_id} ${s.stock_name||""}</a><a class="glink" href="${goodinfoUrl(s.stock_id)}" target="_blank" rel="noopener" title="Goodinfo 技術線圖" onclick="event.stopPropagation()">G</a></td>
         <td class="num">${s.close==null?"—":s.close}</td>
         <td class="num ${c(s.chg_daily)}">${pct(s.chg_daily)}</td>
         <td class="num ${c(s.chg_wtd)}">${pct(s.chg_wtd)}</td>
