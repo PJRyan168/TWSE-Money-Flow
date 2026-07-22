@@ -1,8 +1,8 @@
 {
  "source": "TPEx 最近上櫃轉(交)換公司債",
- "updated_at": "2026-07-22T00:51:02",
- "cb_count": 383,
- "stock_count": 307,
+ "updated_at": "2026-07-22T19:36:21",
+ "cb_count": 385,
+ "stock_count": 309,
  "bonds": [
   {
    "cb_id": "11011",
@@ -1020,6 +1020,11 @@
    "stock_id": "5289"
   },
   {
+   "cb_id": "52912",
+   "cb_name": "邑昇",
+   "stock_id": "5291"
+  },
+  {
    "cb_id": "53064",
    "cb_name": "桂盟",
    "stock_id": "5306"
@@ -1808,6 +1813,11 @@
    "cb_id": "84333",
    "cb_name": "弘帆",
    "stock_id": "8433"
+  },
+  {
+   "cb_id": "84381",
+   "cb_name": "昶昕",
+   "stock_id": "8438"
   },
   {
    "cb_id": "84422",
