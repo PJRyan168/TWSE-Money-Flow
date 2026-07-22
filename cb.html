@@ -277,10 +277,6 @@ const pct=v=>v==null?"—":(v>0?"+":"")+v.toFixed(2)+"%";
 const yahooUrl=(sid,market)=>`https://tw.stock.yahoo.com/quote/${sid}.${(market==="上櫃"||market==="櫃")?"TWO":"TW"}/technical-analysis`;
 const goodinfoUrl=sid=>`https://goodinfo.tw/tw/ShowK_Chart.asp?STOCK_ID=${sid}&CHT_CAT=DATE`;
 /* 個股 → Yahoo 股市技術分析頁;上市.TW / 上櫃.TWO */
-function yahooUrl(sid,market){
-  const suffix=(market==="上櫃"||market==="櫃")?"TWO":"TW";
-  return `https://tw.stock.yahoo.com/quote/${sid}.${suffix}/technical-analysis`;
-}
 const chgOf=s=>({daily:s.chg_daily,wtd:s.chg_wtd,mtd:s.chg_mtd,qtd:s.chg_qtd,ytd:s.chg_ytd})[period];
 const cls=v=>v==null?"c-flat":v>0.001?"c-up":v<-0.001?"c-down":"c-flat";
 function tileColor(chg){
