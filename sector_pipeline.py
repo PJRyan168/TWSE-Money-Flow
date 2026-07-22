@@ -162,6 +162,7 @@ def fetch_twse_prices(d: date) -> list[dict]:
             "close": to_num(r[i_close]),
             "volume": to_num(r[i_vol]) or 0,
             "value": to_num(r[i_val]) or 0,
+            "market": "上市",
         })
     return out
 
@@ -196,6 +197,7 @@ def fetch_tpex_prices(d: date) -> list[dict]:
             "close": to_num(r[i_close]),
             "volume": to_num(r[i_vol]) or 0,
             "value": to_num(r[i_val]) or 0,
+            "market": "上櫃",
         })
     return out
 
@@ -952,6 +954,8 @@ def stock_period_stats(px: pd.DataFrame, inst: pd.DataFrame,
         "close": close_today.values,
         "volume_d": today_px["volume"].values,
         "value_d": today_px["value"].values,
+        "market": (today_px["market"].values
+                   if "market" in today_px.columns else ""),
     }).set_index("stock_id")
 
     for period, base_date in bases.items():
@@ -1031,6 +1035,7 @@ def aggregate(stats: pd.DataFrame, mapping: pd.DataFrame, group_col: str) -> lis
                 "fore_net_d": int(r["fore_net_daily"]) if not pd.isna(r["fore_net_daily"]) else 0,
                 "foreign_ratio": num(r.get("foreign_ratio")),
                 "trust_net_d": int(r["trust_net_daily"]) if not pd.isna(r["trust_net_daily"]) else 0,
+                "market": r.get("market", "") or "",
                 "value_w": num(r.get("value_wtd")),
                 "value_m": num(r.get("value_mtd")),
                 "inst_net_w": num(r.get("inst_net_wtd")),
