@@ -991,7 +991,12 @@ def stock_period_stats(px: pd.DataFrame, inst: pd.DataFrame,
 
 
 def aggregate(stats: pd.DataFrame, mapping: pd.DataFrame, group_col: str) -> list[dict]:
-    df = stats.merge(mapping, on="stock_id", how="inner")
+    # 避免欄位名稱衝突(如 stats 與 mapping 都有 market):
+    # 移除 stats 中與 mapping 重疊的非 key 欄,改以 mapping 的值為準。
+    dup = [c for c in mapping.columns
+           if c != "stock_id" and c in stats.columns]
+    base = stats.drop(columns=dup) if dup else stats
+    df = base.merge(mapping, on="stock_id", how="inner")
 
     def opt_sum(g, col):
         return int(g[col].sum(skipna=True)) if g[col].notna().any() else None
@@ -1249,10 +1254,12 @@ def main() -> None:
         cb_stock_ids = set(cb_uni["stock_id"])
         stats_cb = stats[stats["stock_id"].isin(cb_stock_ids)]
 
-        # 市場別(上市/上櫃):以當日證交所行情是否出現該代號判斷
+        # 市場別(上市/上櫃):優先用 stats 既有的 market 欄;
+        # 若缺(舊資料相容),再以當日證交所行情是否出現該代號回填。
         twse_ids = {r["stock_id"] for r in today_rows}
         market_map = pd.DataFrame(
-            [{"stock_id": sid, "market": ("上市" if sid in twse_ids else "上櫃")}
+            [{"stock_id": sid,
+              "cb_market": ("上市" if sid in twse_ids else "上櫃")}
              for sid in cb_stock_ids])
 
         cb_official = (aggregate(stats_cb, industry, "sector")
@@ -1262,7 +1269,7 @@ def main() -> None:
             rows = [{"stock_id": sid, "theme": theme}
                     for theme, sids in themes_cfg.items() for sid in sids]
             cb_themes = aggregate(stats_cb, pd.DataFrame(rows), "theme")
-        cb_markets = aggregate(stats_cb, market_map, "market")
+        cb_markets = aggregate(stats_cb, market_map, "cb_market")
 
         # 個股 → 發行中可轉債對照(供前端浮層顯示)
         cb_of_stock = {
