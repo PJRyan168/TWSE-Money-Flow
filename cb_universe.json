@@ -1,8 +1,8 @@
 {
  "source": "TPEx 最近上櫃轉(交)換公司債",
- "updated_at": "2026-07-22T21:21:34",
- "cb_count": 385,
- "stock_count": 309,
+ "updated_at": "2026-07-23T19:35:41",
+ "cb_count": 386,
+ "stock_count": 310,
  "bonds": [
   {
    "cb_id": "11011",
@@ -658,6 +658,11 @@
    "cb_id": "35642",
    "cb_name": "其陽",
    "stock_id": "3564"
+  },
+  {
+   "cb_id": "35833",
+   "cb_name": "辛耘",
+   "stock_id": "3583"
   },
   {
    "cb_id": "35872",
