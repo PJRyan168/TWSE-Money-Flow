@@ -1,8 +1,8 @@
 {
  "source": "TPEx 最近上櫃轉(交)換公司債",
- "updated_at": "2026-07-23T19:35:41",
- "cb_count": 386,
- "stock_count": 310,
+ "updated_at": "2026-07-24T19:29:03",
+ "cb_count": 385,
+ "stock_count": 309,
  "bonds": [
   {
    "cb_id": "11011",
@@ -988,11 +988,6 @@
    "cb_id": "52121",
    "cb_name": "凌網",
    "stock_id": "5212"
-  },
-  {
-   "cb_id": "52303",
-   "cb_name": "雷笛克光學",
-   "stock_id": "5230"
   },
   {
    "cb_id": "52441",
