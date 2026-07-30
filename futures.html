@@ -380,7 +380,7 @@ function renderHeat(){
     });
     $("dBody").innerHTML=sorted.map(s=>{
       const c=v=>v==null?"":v>0?"up":v<0?"down":"";
-      return `<tr><td><a class="slink" href="${yahooUrl(s.stock_id,s.market)}" target="_blank" rel="noopener" title="Yahoo 技術線圖" onclick="event.stopPropagation()">${s.stock_id} ${s.stock_name||""}</a><a class="glink" href="${goodinfoUrl(s.stock_id)}" target="_blank" rel="noopener" title="Goodinfo 技術線圖" onclick="event.stopPropagation()">G</a></td>
+      return `<tr><td><a class="slink" href="${goodinfoUrl(s.stock_id)}" target="_blank" rel="noopener" title="Goodinfo 技術線圖" onclick="event.stopPropagation()">${s.stock_id} ${s.stock_name||""}</a><a class="glink" href="${yahooUrl(s.stock_id,s.market)}" target="_blank" rel="noopener" title="Yahoo 技術線圖" onclick="event.stopPropagation()">Y</a></td>
         <td class="num">${s.close==null?"—":s.close}</td>
         <td class="num ${c(s.chg_daily)}">${pct(s.chg_daily)}</td>
         <td class="num ${c(s.chg_wtd)}">${pct(s.chg_wtd)}</td>
