@@ -1,7 +1,7 @@
 {
  "source": "TAIFEX stockLists 股票期貨標的",
- "updated_at": "2026-07-30T19:38:13",
- "count": 268,
+ "updated_at": "2026-07-31T19:47:28",
+ "count": 270,
  "universe": [
   {
    "stock_id": "1303",
@@ -1608,6 +1608,18 @@
   {
    "stock_id": "2395",
    "stock_name": "研華",
+   "kind": "個股",
+   "market": "上市"
+  },
+  {
+   "stock_id": "8932",
+   "stock_name": "智通*",
+   "kind": "個股",
+   "market": "上櫃"
+  },
+  {
+   "stock_id": "1519",
+   "stock_name": "華城",
    "kind": "個股",
    "market": "上市"
   }
