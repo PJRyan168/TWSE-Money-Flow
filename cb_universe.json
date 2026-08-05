@@ -1,8 +1,8 @@
 {
  "source": "TPEx 最近上櫃轉(交)換公司債",
- "updated_at": "2026-08-04T19:44:22",
- "cb_count": 383,
- "stock_count": 309,
+ "updated_at": "2026-08-05T19:42:25",
+ "cb_count": 384,
+ "stock_count": 310,
  "bonds": [
   {
    "cb_id": "11011",
@@ -433,6 +433,11 @@
    "cb_id": "30455",
    "cb_name": "台灣大",
    "stock_id": "3045"
+  },
+  {
+   "cb_id": "30811",
+   "cb_name": "聯亞",
+   "stock_id": "3081"
   },
   {
    "cb_id": "30882",
