@@ -1,8 +1,8 @@
 {
  "source": "TPEx 最近上櫃轉(交)換公司債",
- "updated_at": "2026-08-06T19:44:47",
- "cb_count": 386,
- "stock_count": 310,
+ "updated_at": "2026-08-07T18:31:49",
+ "cb_count": 388,
+ "stock_count": 312,
  "bonds": [
   {
    "cb_id": "11011",
@@ -1360,6 +1360,11 @@
    "stock_id": "6552"
   },
   {
+   "cb_id": "65702",
+   "cb_name": "維田",
+   "stock_id": "6570"
+  },
+  {
    "cb_id": "65761",
    "cb_name": "逸達",
    "stock_id": "6576"
@@ -1888,6 +1893,11 @@
    "cb_id": "89278",
    "cb_name": "北基",
    "stock_id": "8927"
+  },
+  {
+   "cb_id": "89365",
+   "cb_name": "國統",
+   "stock_id": "8936"
   },
   {
    "cb_id": "89964",

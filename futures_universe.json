@@ -1,6 +1,6 @@
 {
  "source": "TAIFEX stockLists 股票期貨標的",
- "updated_at": "2026-08-06T19:43:13",
+ "updated_at": "2026-08-07T18:29:53",
  "count": 270,
  "universe": [
   {
@@ -1379,7 +1379,7 @@
   },
   {
    "stock_id": "5904",
-   "stock_name": "寶雅",
+   "stock_name": "寶雅*",
    "kind": "個股",
    "market": "上櫃"
   },
