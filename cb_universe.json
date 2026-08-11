@@ -1,8 +1,8 @@
 {
  "source": "TPEx 最近上櫃轉(交)換公司債",
- "updated_at": "2026-08-10T18:49:55",
+ "updated_at": "2026-08-11T18:32:23",
  "cb_count": 385,
- "stock_count": 311,
+ "stock_count": 310,
  "bonds": [
   {
    "cb_id": "11011",
@@ -255,11 +255,6 @@
    "stock_id": "2455"
   },
   {
-   "cb_id": "24624",
-   "cb_name": "良得電",
-   "stock_id": "2462"
-  },
-  {
    "cb_id": "24672",
    "cb_name": "志聖",
    "stock_id": "2467"
@@ -381,6 +376,11 @@
   },
   {
    "cb_id": "30165",
+   "cb_name": "嘉晶",
+   "stock_id": "3016"
+  },
+  {
+   "cb_id": "30166",
    "cb_name": "嘉晶",
    "stock_id": "3016"
   },
