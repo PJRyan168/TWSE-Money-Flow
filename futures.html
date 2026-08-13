@@ -195,8 +195,16 @@ let DATA=null, MAP=null, view="heat", mode="themes", period="daily", openName=nu
 let dSort={key:"chg_daily",dir:-1};   // 明細表排序狀態
 const DCOLS=[["stock","個股"],["close","收盤"],["chg_daily","當日%"],["chg_wtd","當周%"],
   ["chg_mtd","當月%"],["chg_qtd","當季%"],["chg_ytd","當年%"],
-  ["value_d","成交金額(億)"],["fore_net_d","外資(億)"],["trust_net_d","投信(億)"],
-  ["inst_net_d","三大法人(億)"]];
+  ["fin_value","成交金額(億)"],["fin_fore","外資(億)"],["fin_trust","投信(億)"],
+  ["fin_inst","三大法人(億)"]];
+// 明細表量能/法人欄位跟著 period 切換(當日 _d / 當周 _w / 當月 _m;季/年個股層級無資料)
+const FIN_SUF={daily:"d",wtd:"w",mtd:"m"};
+const PLABEL={daily:"當日",wtd:"當周",mtd:"當月",qtd:"當季",ytd:"當年"};
+const finField=k=>{const suf=FIN_SUF[period];if(!suf)return null;
+  return {fin_value:"value_"+suf,fin_fore:"fore_net_"+suf,fin_trust:"trust_net_"+suf,fin_inst:"inst_net_"+suf}[k];};
+const cellVal=(s,k)=>{if(k==="stock")return s.stock_id;
+  if(k.indexOf("fin_")===0){const f=finField(k);return f?s[f]:null;}
+  return s[k];};
 let stockLookup={};   // stock_id → 統計資料
 let stockThemes={};   // stock_id → [題材名]
 
@@ -363,14 +371,15 @@ function renderHeat(){
   $("drawer").classList.toggle("open",!!cur);
   if(cur){
     $("dTitle").textContent=cur.name+" 成分股明細";
-    $("dHead").innerHTML="<tr>"+DCOLS.map(([k,label])=>
-      `<th class="sortable" data-key="${k}">${label}${dSort.key===k?(dSort.dir<0?" ▼":" ▲"):""}</th>`).join("")+"</tr>";
+    $("dHead").innerHTML="<tr>"+DCOLS.map(([k,label])=>{
+      const lbl=k.indexOf("fin_")===0?(PLABEL[period]||"")+label:label;
+      return `<th class="sortable" data-key="${k}">${lbl}${dSort.key===k?(dSort.dir<0?" ▼":" ▲"):""}</th>`;}).join("")+"</tr>";
     $("dHead").querySelectorAll("th").forEach(h=>h.addEventListener("click",()=>{
       const k=h.dataset.key;
       dSort=dSort.key===k?{key:k,dir:-dSort.dir}:{key:k,dir:-1};
       renderHeat();
     }));
-    const val=(s,k)=>k==="stock"?s.stock_id:s[k];
+    const val=cellVal;
     const sorted=[...cur.stocks].sort((a,b)=>{
       const x=val(a,dSort.key),y=val(b,dSort.key);
       if(x==null&&y==null)return 0;
@@ -387,10 +396,10 @@ function renderHeat(){
         <td class="num ${c(s.chg_mtd)}">${pct(s.chg_mtd)}</td>
         <td class="num ${c(s.chg_qtd)}">${pct(s.chg_qtd)}</td>
         <td class="num ${c(s.chg_ytd)}">${pct(s.chg_ytd)}</td>
-        <td class="num">${yi(s.value_d)}</td>
-        <td class="num ${c(s.fore_net_d)}">${yi(s.fore_net_d)}</td>
-        <td class="num ${c(s.trust_net_d)}">${yi(s.trust_net_d)}</td>
-        <td class="num ${c(s.inst_net_d)}">${yi(s.inst_net_d)}</td></tr>`;
+        <td class="num">${yi(cellVal(s,"fin_value"))}</td>
+        <td class="num ${c(cellVal(s,"fin_fore"))}">${yi(cellVal(s,"fin_fore"))}</td>
+        <td class="num ${c(cellVal(s,"fin_trust"))}">${yi(cellVal(s,"fin_trust"))}</td>
+        <td class="num ${c(cellVal(s,"fin_inst"))}">${yi(cellVal(s,"fin_inst"))}</td></tr>`;
     }).join("");
   }
 }
