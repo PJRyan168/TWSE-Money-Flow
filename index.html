@@ -79,7 +79,11 @@ h1 .fire{color:var(--gold)}
 .srole{font-size:11px;color:var(--muted);flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
 .schg{font-size:13px;font-weight:600;margin-left:auto;flex:none}
 .c-up{color:var(--up)}.c-down{color:var(--down)}.c-flat{color:var(--muted)}
-.pop h3 .pop h3 .chart-ico{color:var(--muted);text-decoration:none;font-size:11px;margin-left:4px;padding:0 3px}
+.stock-link{color:inherit;text-decoration:none;border-bottom:1px dotted var(--muted)}
+.stock-link:hover{color:var(--gold);border-bottom-color:var(--gold)}
+.pop h3 .stock-link{color:var(--text)}
+.pop h3 .stock-link:hover{color:var(--gold)}
+.chart-ico{color:var(--muted);text-decoration:none;font-size:11px;margin-left:4px;padding:0 3px}
 .chart-ico:hover{color:var(--gold)}
 
 /* 個股詳情浮層 */
@@ -113,13 +117,6 @@ th{color:var(--muted);font-weight:500;font-size:12px;border-bottom:1px solid var
 th:first-child,td:first-child{text-align:left}
 tbody tr:hover{background:var(--panel-2)}
 td.up{color:var(--up)}td.down{color:var(--down)}
-.slink{color:inherit;text-decoration:none;border-bottom:1px dotted var(--muted)}
-.slink:hover{color:var(--gold);border-bottom-color:var(--gold)}
-.glink{margin-left:7px;font-size:11px;color:var(--muted);text-decoration:none;border:1px solid var(--line);border-radius:3px;padding:0 4px}
-.glink:hover{color:var(--gold);border-color:var(--gold)}
-.p-chart{margin-left:10px;color:var(--gold);text-decoration:none;font-size:13px;white-space:nowrap;align-self:center}
-.p-chart:hover{text-decoration:underline}
-.p-chart+.p-close,.p-chart~.p-close{margin-left:10px}
 .state{padding:60px 20px;text-align:center;color:var(--muted);font-size:15px;line-height:1.9}
 .foot{margin-top:40px;color:var(--muted);font-size:11.5px;line-height:1.8;border-top:1px solid var(--line);padding-top:14px}
 
@@ -186,7 +183,7 @@ td.up{color:var(--up)}td.down{color:var(--down)}
 <!-- 個股詳情浮層 -->
 <div class="pop" id="pop" role="dialog" aria-modal="true">
   <div class="box">
-    <div class="p-title"><h3 id="pName"></h3><a id="pYahoo" class="p-chart" target="_blank" rel="noopener" title="Yahoo 技術線圖">📈 Yahoo</a><a id="pGood" class="p-chart" target="_blank" rel="noopener" title="Goodinfo 技術線圖">📊 Goodinfo</a><button class="p-close" id="pClose">關閉</button></div>
+    <div class="p-title"><h3 id="pName"></h3><button class="p-close" id="pClose">關閉</button></div>
     <div class="p-role" id="pRole"></div>
     <div class="p-themes" id="pThemes"></div>
     <div class="p-grid" id="pGrid"></div>
@@ -201,33 +198,32 @@ let DATA=null, MAP=null, view="heat", mode="themes", period="daily", openName=nu
 let dSort={key:"chg_daily",dir:-1};   // 明細表排序狀態
 const DCOLS=[["stock","個股"],["close","收盤"],["chg_daily","當日%"],["chg_wtd","當周%"],
   ["chg_mtd","當月%"],["chg_qtd","當季%"],["chg_ytd","當年%"],
-  ["fin_value","成交金額(億)"],["fin_fore","外資(億)"],["fin_trust","投信(億)"],
-  ["fin_inst","三大法人(億)"]];
-// 明細表量能/法人欄位跟著 period 切換(當日 _d / 當周 _w / 當月 _m;季/年個股層級無資料)
-const FIN_SUF={daily:"d",wtd:"w",mtd:"m"};
-const PLABEL={daily:"當日",wtd:"當周",mtd:"當月",qtd:"當季",ytd:"當年"};
-const finField=k=>{const suf=FIN_SUF[period];if(!suf)return null;
-  return {fin_value:"value_"+suf,fin_fore:"fore_net_"+suf,fin_trust:"trust_net_"+suf,fin_inst:"inst_net_"+suf}[k];};
-const cellVal=(s,k)=>{if(k==="stock")return s.stock_id;
-  if(k.indexOf("fin_")===0){const f=finField(k);return f?s[f]:null;}
-  return s[k];};
+  ["value_d","成交金額(億)"],["fore_net_d","外資(億)"],["trust_net_d","投信(億)"],
+  ["inst_net_d","三大法人(億)"]];
 let stockLookup={};   // stock_id → 統計資料
 let stockThemes={};   // stock_id → [題材名]
 
 /* ---------- 載入 ---------- */
 (async function load(){
   try{
-    const [r1,r2]=await Promise.all([
-      fetch("output/sector_stats.json?t="+Date.now()),
-      fetch("industry_map.json?t="+Date.now()),
-    ]);
+    const r1=await fetch("output/sector_stats.json?t="+Date.now());
     if(!r1.ok) throw new Error("stats HTTP "+r1.status);
     DATA=await r1.json();
-    /* 回填個股市場別(Yahoo 連結需分 .TW/.TWO) */
-    {const mkMap={};(DATA.markets||[]).forEach(g=>(g.stocks||[]).forEach(s=>{if(s.market)mkMap[s.stock_id]=s.market;}));
-     Object.values(DATA).forEach(v=>{if(Array.isArray(v))v.forEach(g=>{if(g&&Array.isArray(g.stocks))g.stocks.forEach(s=>{if(!s.market&&mkMap[s.stock_id])s.market=mkMap[s.stock_id];});});});}
 
-    MAP=r2.ok?await r2.json():null;
+    // 產業地圖獨立抓取,失敗不影響主資料;錯誤訊息保留供地圖區顯示
+    MAP=null;
+    try{
+      const r2=await fetch("industry_map.json?t="+Date.now());
+      if(r2.ok){
+        MAP=await r2.json();
+      }else{
+        console.warn("industry_map.json 回應狀態",r2.status);
+        MAP={__error:`找不到 industry_map.json(HTTP ${r2.status}),請確認檔案已上傳至網站根目錄。`};
+      }
+    }catch(err){
+      console.error("industry_map.json 解析失敗",err);
+      MAP={__error:"industry_map.json 讀取或格式解析失敗:"+err.message};
+    }
 
     (DATA.themes||[]).forEach(t=>t.stocks.forEach(s=>{
       stockLookup[s.stock_id]=s;
@@ -274,8 +270,8 @@ $("pop").addEventListener("click",e=>{if(e.target===$("pop"))$("pop").classList.
 /* ---------- 工具 ---------- */
 const yi=v=>v==null?"—":(v/1e8).toFixed(Math.abs(v)>=1e10?0:1);
 const pct=v=>v==null?"—":(v>0?"+":"")+v.toFixed(2)+"%";
-const yahooUrl=(sid,market)=>`https://tw.stock.yahoo.com/quote/${sid}.${(market==="上櫃"||market==="櫃")?"TWO":"TW"}/technical-analysis`;
-const goodinfoUrl=sid=>`https://goodinfo.tw/tw/ShowK_Chart.asp?STOCK_ID=${sid}&CHT_CAT=DATE`;
+const GI_CAT={daily:"DATE",wtd:"WEEK",mtd:"MONTH",qtd:"QUAR",ytd:"YEAR"};
+const goodinfo=id=>`https://goodinfo.tw/tw/ShowK_Chart.asp?STOCK_ID=${id}&CHT_CAT2=${GI_CAT[period]||"DATE"}`;
 const chgOf=s=>({daily:s.chg_daily,wtd:s.chg_wtd,mtd:s.chg_mtd,qtd:s.chg_qtd,ytd:s.chg_ytd})[period];
 const cls=v=>v==null?"c-flat":v>0.001?"c-up":v<-0.001?"c-down":"c-flat";
 function tileColor(chg){
@@ -310,9 +306,7 @@ function scores(items){
 /* ---------- 個股詳情浮層 ---------- */
 function openStock(sid,name,role){
   const s=stockLookup[sid];
-  $("pName").textContent=`${sid} ${name||(s&&s.stock_name)||""}`;
-  $("pYahoo").href=yahooUrl(sid,(s&&s.market)||"");
-  $("pGood").href=goodinfoUrl(sid);
+  $("pName").innerHTML=`<a class="stock-link" href="${goodinfo(sid)}" target="_blank" rel="noopener">${sid} ${name||(s&&s.stock_name)||""} ↗</a>`;
   $("pRole").textContent=role||"";
   const ths=stockThemes[sid]||[];
   $("pThemes").textContent=ths.length?`所屬題材(${ths.length}):${ths.join("、")}`:"";
@@ -387,15 +381,14 @@ function renderHeat(){
   $("drawer").classList.toggle("open",!!cur);
   if(cur){
     $("dTitle").textContent=cur.name+" 成分股明細";
-    $("dHead").innerHTML="<tr>"+DCOLS.map(([k,label])=>{
-      const lbl=k.indexOf("fin_")===0?(PLABEL[period]||"")+label:label;
-      return `<th class="sortable" data-key="${k}">${lbl}${dSort.key===k?(dSort.dir<0?" ▼":" ▲"):""}</th>`;}).join("")+"</tr>";
+    $("dHead").innerHTML="<tr>"+DCOLS.map(([k,label])=>
+      `<th class="sortable" data-key="${k}">${label}${dSort.key===k?(dSort.dir<0?" ▼":" ▲"):""}</th>`).join("")+"</tr>";
     $("dHead").querySelectorAll("th").forEach(h=>h.addEventListener("click",()=>{
       const k=h.dataset.key;
       dSort=dSort.key===k?{key:k,dir:-dSort.dir}:{key:k,dir:-1};
       renderHeat();
     }));
-    const val=cellVal;
+    const val=(s,k)=>k==="stock"?s.stock_id:s[k];
     const sorted=[...cur.stocks].sort((a,b)=>{
       const x=val(a,dSort.key),y=val(b,dSort.key);
       if(x==null&&y==null)return 0;
@@ -405,24 +398,25 @@ function renderHeat(){
     });
     $("dBody").innerHTML=sorted.map(s=>{
       const c=v=>v==null?"":v>0?"up":v<0?"down":"";
-      return `<tr><td><a class="slink" href="${goodinfoUrl(s.stock_id)}" target="_blank" rel="noopener" title="Goodinfo 技術線圖" onclick="event.stopPropagation()">${s.stock_id} ${s.stock_name||""}</a><a class="glink" href="${yahooUrl(s.stock_id,s.market)}" target="_blank" rel="noopener" title="Yahoo 技術線圖" onclick="event.stopPropagation()">Y</a></td>
+      return `<tr><td><a class="stock-link" href="${goodinfo(s.stock_id)}" target="_blank" rel="noopener">${s.stock_id} ${s.stock_name||""}</a></td>
         <td class="num">${s.close==null?"—":s.close}</td>
         <td class="num ${c(s.chg_daily)}">${pct(s.chg_daily)}</td>
         <td class="num ${c(s.chg_wtd)}">${pct(s.chg_wtd)}</td>
         <td class="num ${c(s.chg_mtd)}">${pct(s.chg_mtd)}</td>
         <td class="num ${c(s.chg_qtd)}">${pct(s.chg_qtd)}</td>
         <td class="num ${c(s.chg_ytd)}">${pct(s.chg_ytd)}</td>
-        <td class="num">${yi(cellVal(s,"fin_value"))}</td>
-        <td class="num ${c(cellVal(s,"fin_fore"))}">${yi(cellVal(s,"fin_fore"))}</td>
-        <td class="num ${c(cellVal(s,"fin_trust"))}">${yi(cellVal(s,"fin_trust"))}</td>
-        <td class="num ${c(cellVal(s,"fin_inst"))}">${yi(cellVal(s,"fin_inst"))}</td></tr>`;
+        <td class="num">${yi(s.value_d)}</td>
+        <td class="num ${c(s.fore_net_d)}">${yi(s.fore_net_d)}</td>
+        <td class="num ${c(s.trust_net_d)}">${yi(s.trust_net_d)}</td>
+        <td class="num ${c(s.inst_net_d)}">${yi(s.inst_net_d)}</td></tr>`;
     }).join("");
   }
 }
 
 /* ===== 產業地圖 ===== */
 function renderMap(){
-  if(!MAP){$("viewMap").innerHTML=`<div class="state">尚未上傳 industry_map.json,無法顯示產業地圖。</div>`;return;}
+  if(!MAP||MAP.__error){$("viewMap").innerHTML=`<div class="state">${MAP&&MAP.__error?MAP.__error:"尚未上傳 industry_map.json,無法顯示產業地圖。"}</div>`;return;}
+  if(!MAP.categories||!MAP.categories.length){$("viewMap").innerHTML=`<div class="state">industry_map.json 內容為空或格式不符。</div>`;return;}
   const themeStats={};
   (DATA.themes||[]).forEach(t=>themeStats[t.name]=t[period]||{});
   $("viewMap").innerHTML=MAP.categories.map(cat=>`
