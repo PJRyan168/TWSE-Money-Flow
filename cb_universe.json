@@ -1,8 +1,8 @@
 {
  "source": "TPEx 最近上櫃轉(交)換公司債",
- "updated_at": "2026-08-16T12:53:25",
- "cb_count": 386,
- "stock_count": 311,
+ "updated_at": "2026-08-16T17:22:07",
+ "cb_count": 385,
+ "stock_count": 310,
  "bonds": [
   {
    "cb_id": "11011",
@@ -1268,11 +1268,6 @@
    "cb_id": "629010",
    "cb_name": "良維",
    "stock_id": "6290"
-  },
-  {
-   "cb_id": "64145",
-   "cb_name": "樺漢",
-   "stock_id": "6414"
   },
   {
    "cb_id": "64251",

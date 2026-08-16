@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-16T12:51:37",
+ "generated_at": "2026-08-16T17:20:41",
  "trade_date": "2026-08-14",
  "base_dates": {
   "daily": "2026-08-13",
@@ -519,12 +519,12 @@
      "market": "上櫃",
      "value_w": 13368905852.0,
      "value_m": 13368905852.0,
-     "inst_net_w": -3559155005.0,
-     "inst_net_m": -3559155005.0,
-     "fore_net_w": -3620729975.0,
-     "fore_net_m": -3620729975.0,
-     "trust_net_w": 60119000.0,
-     "trust_net_m": 60119000.0
+     "inst_net_w": -1544471172.0,
+     "inst_net_m": -1544471172.0,
+     "fore_net_w": -1580038078.0,
+     "fore_net_m": -1580038078.0,
+     "trust_net_w": 12087000.0,
+     "trust_net_m": 12087000.0
     }
    ],
    "daily": {
@@ -543,9 +543,9 @@
     "up_ratio": 50.0,
     "trading_value": 14880574306,
     "trading_volume": 189808004,
-    "inst_net_value": -3265069809,
-    "foreign_net_value": -3336243935,
-    "trust_net_value": 59672096
+    "inst_net_value": -1250385976,
+    "foreign_net_value": -1295552038,
+    "trust_net_value": 11640096
    },
    "mtd": {
     "avg_change_pct": 6.76,
@@ -553,9 +553,9 @@
     "up_ratio": 50.0,
     "trading_value": 15428662516,
     "trading_volume": 207396686,
-    "inst_net_value": -3263540872,
-    "foreign_net_value": -3321747233,
-    "trust_net_value": 59731596
+    "inst_net_value": -1248857039,
+    "foreign_net_value": -1281055336,
+    "trust_net_value": 11699596
    },
    "qtd": {
     "avg_change_pct": -24.13,
@@ -727,12 +727,12 @@
      "market": "上櫃",
      "value_w": 1286510859.0,
      "value_m": 2389786461.0,
-     "inst_net_w": 185726412.0,
-     "inst_net_m": 203093244.0,
-     "fore_net_w": 159984396.0,
-     "fore_net_m": 114753456.0,
+     "inst_net_w": 132685884.0,
+     "inst_net_m": 138438288.0,
+     "fore_net_w": 116418924.0,
+     "fore_net_m": 64356228.0,
      "trust_net_w": 0.0,
-     "trust_net_m": -54000.0
+     "trust_net_m": 324000.0
     },
     {
      "stock_id": "9938",
@@ -847,8 +847,8 @@
     "up_ratio": 85.7,
     "trading_value": 14976442691,
     "trading_volume": 268785878,
-    "inst_net_value": 1293131456,
-    "foreign_net_value": 1180875222,
+    "inst_net_value": 1240090928,
+    "foreign_net_value": 1137309750,
     "trust_net_value": 60257813
    },
    "mtd": {
@@ -857,9 +857,9 @@
     "up_ratio": 71.4,
     "trading_value": 25299014909,
     "trading_volume": 478768735,
-    "inst_net_value": 488118826,
-    "foreign_net_value": 678855854,
-    "trust_net_value": -203744130
+    "inst_net_value": 423463870,
+    "foreign_net_value": 628458626,
+    "trust_net_value": -203366130
    },
    "qtd": {
     "avg_change_pct": 1.42,
@@ -1799,12 +1799,12 @@
      "market": "上櫃",
      "value_w": 23550914615.0,
      "value_m": 78848942320.0,
-     "inst_net_w": -841647300.0,
-     "inst_net_m": -5228892725.0,
-     "fore_net_w": -974556875.0,
-     "fore_net_m": -10959134725.0,
-     "trust_net_w": -87686250.0,
-     "trust_net_m": 5609742500.0
+     "inst_net_w": -269462275.0,
+     "inst_net_m": -2448692550.0,
+     "fore_net_w": -587219825.0,
+     "fore_net_m": -5578885650.0,
+     "trust_net_w": -40786250.0,
+     "trust_net_m": 2527407500.0
     },
     {
      "stock_id": "8358",
@@ -1823,12 +1823,12 @@
      "market": "上櫃",
      "value_w": 68678009411.0,
      "value_m": 108187228043.0,
-     "inst_net_w": -3936816754.0,
-     "inst_net_m": -11885419338.0,
-     "fore_net_w": -2535185970.0,
-     "fore_net_m": -7207677234.0,
-     "trust_net_w": -1504035000.0,
-     "trust_net_m": -4775118300.0
+     "inst_net_w": -3033455197.0,
+     "inst_net_m": -9740396330.0,
+     "fore_net_w": -1933134900.0,
+     "fore_net_m": -6162401190.0,
+     "trust_net_w": -1159949500.0,
+     "trust_net_m": -3588601800.0
     },
     {
      "stock_id": "2368",
@@ -1871,10 +1871,10 @@
      "market": "上櫃",
      "value_w": 193715780.0,
      "value_m": 339696902.0,
-     "inst_net_w": 16758360.0,
-     "inst_net_m": 62090892.0,
-     "fore_net_w": 4636108.0,
-     "fore_net_m": 49612286.0,
+     "inst_net_w": 12789772.0,
+     "inst_net_m": 43903027.0,
+     "fore_net_w": 1762336.0,
+     "fore_net_m": 32734292.0,
      "trust_net_w": -247924.0,
      "trust_net_m": -61012.0
     },
@@ -1919,12 +1919,12 @@
      "market": "上櫃",
      "value_w": 3058534286.0,
      "value_m": 7056640183.0,
-     "inst_net_w": 256548060.0,
-     "inst_net_m": 180971532.0,
-     "fore_net_w": 231558871.0,
-     "fore_net_m": 153454516.0,
+     "inst_net_w": 331752046.0,
+     "inst_net_m": 65212418.0,
+     "fore_net_w": 301002322.0,
+     "fore_net_m": 25843743.0,
      "trust_net_w": -5462500.0,
-     "trust_net_m": -5529142.0
+     "trust_net_m": -5310642.0
     },
     {
      "stock_id": "5457",
@@ -1943,10 +1943,10 @@
      "market": "上櫃",
      "value_w": 49784103.0,
      "value_m": 102305858.0,
-     "inst_net_w": -4516321.0,
-     "inst_net_m": -6838623.0,
-     "fore_net_w": -4869037.0,
-     "fore_net_m": -6922516.0,
+     "inst_net_w": -4553695.0,
+     "inst_net_m": -7428876.0,
+     "fore_net_w": -4088393.0,
+     "fore_net_m": -6572693.0,
      "trust_net_w": 0.0,
      "trust_net_m": 0.0
     },
@@ -1967,10 +1967,10 @@
      "market": "上櫃",
      "value_w": 977558835.0,
      "value_m": 1617838059.0,
-     "inst_net_w": 199411912.0,
-     "inst_net_m": 495945675.0,
-     "fore_net_w": 183130035.0,
-     "fore_net_m": 469505235.0,
+     "inst_net_w": 157309118.0,
+     "inst_net_m": 442631805.0,
+     "fore_net_w": 143548298.0,
+     "fore_net_m": 424139332.0,
      "trust_net_w": -255000.0,
      "trust_net_m": -1147500.0
     },
@@ -1991,10 +1991,10 @@
      "market": "上櫃",
      "value_w": 21326537826.0,
      "value_m": 26106164783.0,
-     "inst_net_w": -1374485910.0,
-     "inst_net_m": -2617926780.0,
-     "fore_net_w": -1627790640.0,
-     "fore_net_m": -2611698600.0,
+     "inst_net_w": -1257972870.0,
+     "inst_net_m": -2463655740.0,
+     "fore_net_w": -1522994550.0,
+     "fore_net_m": -2453856930.0,
      "trust_net_w": 403620000.0,
      "trust_net_m": 403572750.0
     }
@@ -2015,9 +2015,9 @@
     "up_ratio": 80.0,
     "trading_value": 196109162591,
     "trading_volume": 490715478,
-    "inst_net_value": -9959819082,
-    "foreign_net_value": -13785767832,
-    "trust_net_value": 3695636348
+    "inst_net_value": -8338664230,
+    "foreign_net_value": -12663815036,
+    "trust_net_value": 4086621848
    },
    "mtd": {
     "avg_change_pct": 22.29,
@@ -2025,9 +2025,9 @@
     "up_ratio": 90.0,
     "trading_value": 356849333758,
     "trading_volume": 821254072,
-    "inst_net_value": -28178427519,
-    "foreign_net_value": -32372796367,
-    "trust_net_value": 4515132493
+    "inst_net_value": -23286784398,
+    "foreign_net_value": -25978934425,
+    "trust_net_value": 2619532493
    },
    "qtd": {
     "avg_change_pct": -12.18,
@@ -2351,10 +2351,10 @@
      "market": "上櫃",
      "value_w": 37453353.0,
      "value_m": 94541470.0,
-     "inst_net_w": -2394757.0,
-     "inst_net_m": 6524474.0,
-     "fore_net_w": -1870808.0,
-     "fore_net_m": 6773871.0,
+     "inst_net_w": -647602.0,
+     "inst_net_m": 6730361.0,
+     "fore_net_w": -178008.0,
+     "fore_net_m": 6932571.0,
      "trust_net_w": 0.0,
      "trust_net_m": 0.0
     }
@@ -2375,8 +2375,8 @@
     "up_ratio": 0.0,
     "trading_value": 37453353,
     "trading_volume": 1392952,
-    "inst_net_value": -2394757,
-    "foreign_net_value": -1870808,
+    "inst_net_value": -647602,
+    "foreign_net_value": -178008,
     "trust_net_value": 0
    },
    "mtd": {
@@ -2385,8 +2385,8 @@
     "up_ratio": 100.0,
     "trading_value": 94541470,
     "trading_volume": 3474554,
-    "inst_net_value": 6524474,
-    "foreign_net_value": 6773871,
+    "inst_net_value": 6730361,
+    "foreign_net_value": 6932571,
     "trust_net_value": 0
    },
    "qtd": {
@@ -4159,10 +4159,10 @@
      "market": "上櫃",
      "value_w": 3483625658.0,
      "value_m": 5776565862.0,
-     "inst_net_w": -2089977648.0,
-     "inst_net_m": -2226199987.0,
-     "fore_net_w": -626008370.0,
-     "fore_net_m": -788585644.0,
+     "inst_net_w": -1804351572.0,
+     "inst_net_m": -1961274904.0,
+     "fore_net_w": -477163050.0,
+     "fore_net_m": -649664314.0,
      "trust_net_w": 0.0,
      "trust_net_m": 0.0
     },
@@ -4183,10 +4183,10 @@
      "market": "上櫃",
      "value_w": 323996939.0,
      "value_m": 647060093.0,
-     "inst_net_w": -124649896.0,
-     "inst_net_m": -44652981.0,
-     "fore_net_w": -68461470.0,
-     "fore_net_m": -70898290.0,
+     "inst_net_w": -113932301.0,
+     "inst_net_m": -52293268.0,
+     "fore_net_w": -57331130.0,
+     "fore_net_m": -73269250.0,
      "trust_net_w": 0.0,
      "trust_net_m": 0.0
     },
@@ -4207,10 +4207,10 @@
      "market": "上櫃",
      "value_w": 1873974188.0,
      "value_m": 5277980729.0,
-     "inst_net_w": -431441926.0,
-     "inst_net_m": -46567541.0,
-     "fore_net_w": -110057446.0,
-     "fore_net_m": -835696874.0,
+     "inst_net_w": -486872506.0,
+     "inst_net_m": -204370052.0,
+     "fore_net_w": -126601246.0,
+     "fore_net_m": -864477834.0,
      "trust_net_w": 0.0,
      "trust_net_m": 0.0
     },
@@ -4231,10 +4231,10 @@
      "market": "上櫃",
      "value_w": 1312967866.0,
      "value_m": 4071274572.0,
-     "inst_net_w": 79319394.0,
-     "inst_net_m": 515495891.0,
-     "fore_net_w": -15437050.0,
-     "fore_net_m": -907488250.0,
+     "inst_net_w": 19683913.0,
+     "inst_net_m": 354027983.0,
+     "fore_net_w": -30060021.0,
+     "fore_net_m": -1059362481.0,
      "trust_net_w": 0.0,
      "trust_net_m": 0.0
     },
@@ -4255,10 +4255,10 @@
      "market": "上櫃",
      "value_w": 306005561.0,
      "value_m": 896504315.0,
-     "inst_net_w": -85765857.0,
-     "inst_net_m": 106898986.0,
-     "fore_net_w": -26487427.0,
-     "fore_net_m": -73824359.0,
+     "inst_net_w": -63182476.0,
+     "inst_net_m": 61755142.0,
+     "fore_net_w": -25672515.0,
+     "fore_net_m": -138217448.0,
      "trust_net_w": 0.0,
      "trust_net_m": 0.0
     }
@@ -4279,8 +4279,8 @@
     "up_ratio": 0.0,
     "trading_value": 7300570212,
     "trading_volume": 377862827,
-    "inst_net_value": -2652515933,
-    "foreign_net_value": -846451763,
+    "inst_net_value": -2448654942,
+    "foreign_net_value": -716827962,
     "trust_net_value": 0
    },
    "mtd": {
@@ -4289,8 +4289,8 @@
     "up_ratio": 0.0,
     "trading_value": 16669385571,
     "trading_volume": 791122939,
-    "inst_net_value": -1695025632,
-    "foreign_net_value": -2676493417,
+    "inst_net_value": -1802155099,
+    "foreign_net_value": -2784991327,
     "trust_net_value": 0
    },
    "qtd": {
@@ -4759,12 +4759,12 @@
      "market": "上櫃",
      "value_w": 6235306322.0,
      "value_m": 12061550580.0,
-     "inst_net_w": 238231968.0,
-     "inst_net_m": 1300577462.0,
-     "fore_net_w": 262853956.0,
-     "fore_net_m": 1818182230.0,
+     "inst_net_w": 259602607.0,
+     "inst_net_m": 1328067873.0,
+     "fore_net_w": 275441376.0,
+     "fore_net_m": 1808213386.0,
      "trust_net_w": -165964200.0,
-     "trust_net_m": -849552900.0
+     "trust_net_m": -760353900.0
     },
     {
      "stock_id": "6278",
@@ -5023,12 +5023,12 @@
      "market": "上櫃",
      "value_w": 12442417201.0,
      "value_m": 23944857251.0,
-     "inst_net_w": -4337121466.0,
-     "inst_net_m": -5053904945.0,
-     "fore_net_w": -4195789266.0,
-     "fore_net_m": -4667944878.0,
-     "trust_net_w": -20765120.0,
-     "trust_net_m": -245525374.0
+     "inst_net_w": -3808251156.0,
+     "inst_net_m": -4270412222.0,
+     "fore_net_w": -3638531898.0,
+     "fore_net_m": -3869779918.0,
+     "trust_net_w": -19136765.0,
+     "trust_net_m": -230657019.0
     },
     {
      "stock_id": "2340",
@@ -5071,10 +5071,10 @@
      "market": "上櫃",
      "value_w": 382796105.0,
      "value_m": 659950897.0,
-     "inst_net_w": -25061960.0,
-     "inst_net_m": -36569500.0,
-     "fore_net_w": -28958820.0,
-     "fore_net_m": -48140730.0,
+     "inst_net_w": -24583570.0,
+     "inst_net_m": -37822400.0,
+     "fore_net_w": -28626730.0,
+     "fore_net_m": -49274940.0,
      "trust_net_w": 0.0,
      "trust_net_m": 0.0
     }
@@ -5095,9 +5095,9 @@
     "up_ratio": 73.3,
     "trading_value": 184254008783,
     "trading_volume": 2865449117,
-    "inst_net_value": -2035953971,
-    "foreign_net_value": -4429961808,
-    "trust_net_value": 1272122568
+    "inst_net_value": -1485234632,
+    "foreign_net_value": -3859784930,
+    "trust_net_value": 1273750923
    },
    "mtd": {
     "avg_change_pct": 12.78,
@@ -5105,9 +5105,9 @@
     "up_ratio": 93.3,
     "trading_value": 384045500121,
     "trading_volume": 5910102835,
-    "inst_net_value": -9112092977,
-    "foreign_net_value": -13508672026,
-    "trust_net_value": 3331028299
+    "inst_net_value": -8302362743,
+    "foreign_net_value": -12721610120,
+    "trust_net_value": 3435095654
    },
    "qtd": {
     "avg_change_pct": -14.89,
@@ -6015,10 +6015,10 @@
      "market": "上櫃",
      "value_w": 138372675.0,
      "value_m": 336887990.0,
-     "inst_net_w": 16390125.0,
-     "inst_net_m": -14164425.0,
-     "fore_net_w": 19471275.0,
-     "fore_net_m": -12164400.0,
+     "inst_net_w": 12519225.0,
+     "inst_net_m": -12427650.0,
+     "fore_net_w": 15165000.0,
+     "fore_net_m": -10177425.0,
      "trust_net_w": 0.0,
      "trust_net_m": 0.0
     },
@@ -6039,10 +6039,10 @@
      "market": "上櫃",
      "value_w": 515376745.0,
      "value_m": 787302173.0,
-     "inst_net_w": 92207076.0,
-     "inst_net_m": 210431533.0,
-     "fore_net_w": 88725507.0,
-     "fore_net_m": 203926047.0,
+     "inst_net_w": 85921712.0,
+     "inst_net_m": 195986258.0,
+     "fore_net_w": 80944240.0,
+     "fore_net_m": 189042217.0,
      "trust_net_w": 0.0,
      "trust_net_m": -322536.0
     },
@@ -6063,12 +6063,12 @@
      "market": "上櫃",
      "value_w": 23777278470.0,
      "value_m": 52870451515.0,
-     "inst_net_w": 2360274680.0,
-     "inst_net_m": 6091709940.0,
-     "fore_net_w": -840262480.0,
-     "fore_net_m": 1185517060.0,
-     "trust_net_w": 2061042360.0,
-     "trust_net_m": 3609086000.0
+     "inst_net_w": 1356982300.0,
+     "inst_net_m": 1687372800.0,
+     "fore_net_w": -945431180.0,
+     "fore_net_m": -1753024180.0,
+     "trust_net_w": 1573362360.0,
+     "trust_net_m": 2565146000.0
     }
    ],
    "daily": {
@@ -6087,9 +6087,9 @@
     "up_ratio": 69.2,
     "trading_value": 87642315666,
     "trading_volume": 399233447,
-    "inst_net_value": -4285908283,
-    "foreign_net_value": -7028082923,
-    "trust_net_value": 1038074100
+    "inst_net_value": -5299356927,
+    "foreign_net_value": -7145339165,
+    "trust_net_value": 550394100
    },
    "mtd": {
     "avg_change_pct": 9.57,
@@ -6097,9 +6097,9 @@
     "up_ratio": 76.9,
     "trading_value": 214566848532,
     "trading_volume": 961214944,
-    "inst_net_value": -2585880582,
-    "foreign_net_value": -7061732357,
-    "trust_net_value": 2874259553
+    "inst_net_value": -7002926222,
+    "foreign_net_value": -10013170452,
+    "trust_net_value": 1830319553
    },
    "qtd": {
     "avg_change_pct": -4.39,
@@ -6215,10 +6215,10 @@
      "market": "上櫃",
      "value_w": 201170978.0,
      "value_m": 543547454.0,
-     "inst_net_w": 6042150.0,
-     "inst_net_m": 40143981.0,
-     "fore_net_w": 2430278.0,
-     "fore_net_m": 34926918.0,
+     "inst_net_w": -4097843.0,
+     "inst_net_m": 24639366.0,
+     "fore_net_w": -7710067.0,
+     "fore_net_m": 19576973.0,
      "trust_net_w": 0.0,
      "trust_net_m": 0.0
     },
@@ -6239,12 +6239,12 @@
      "market": "上櫃",
      "value_w": 25124819895.0,
      "value_m": 39292325408.0,
-     "inst_net_w": 1734904145.0,
-     "inst_net_m": 1670924815.0,
-     "fore_net_w": -2065735110.0,
-     "fore_net_m": -2448806412.0,
-     "trust_net_w": 3827811800.0,
-     "trust_net_m": 4068667800.0
+     "inst_net_w": 1788180241.0,
+     "inst_net_m": 1979597810.0,
+     "fore_net_w": -1357530495.0,
+     "fore_net_m": -1590570014.0,
+     "trust_net_w": 3121274800.0,
+     "trust_net_m": 3419920600.0
     },
     {
      "stock_id": "6121",
@@ -6263,12 +6263,12 @@
      "market": "上櫃",
      "value_w": 3092187074.0,
      "value_m": 4494694169.0,
-     "inst_net_w": 1000616572.0,
-     "inst_net_m": 1624889272.0,
-     "fore_net_w": 1005074000.0,
-     "fore_net_m": 1691011564.0,
-     "trust_net_w": 25173200.0,
-     "trust_net_m": -35930520.0
+     "inst_net_w": 913545728.0,
+     "inst_net_m": 1269727556.0,
+     "fore_net_w": 899420308.0,
+     "fore_net_m": 1314094600.0,
+     "trust_net_w": 17345200.0,
+     "trust_net_m": -40050520.0
     }
    ],
    "daily": {
@@ -6287,9 +6287,9 @@
     "up_ratio": 83.3,
     "trading_value": 77323367248,
     "trading_volume": 305225713,
-    "inst_net_value": 6735181393,
-    "foreign_net_value": 2511680451,
-    "trust_net_value": 4261098967
+    "inst_net_value": 6691246652,
+    "foreign_net_value": 3104091029,
+    "trust_net_value": 3546733967
    },
    "mtd": {
     "avg_change_pct": 15.8,
@@ -6297,9 +6297,9 @@
     "up_ratio": 100.0,
     "trading_value": 159394843730,
     "trading_volume": 650369359,
-    "inst_net_value": 23712844078,
-    "foreign_net_value": 18929361036,
-    "trust_net_value": 4604410778
+    "inst_net_value": 23650850742,
+    "foreign_net_value": 19395330525,
+    "trust_net_value": 3951543578
    },
    "qtd": {
     "avg_change_pct": 1.05,
@@ -6343,12 +6343,12 @@
      "market": "上櫃",
      "value_w": 8482006990.0,
      "value_m": 15656035215.0,
-     "inst_net_w": 610112490.0,
-     "inst_net_m": -122745480.0,
-     "fore_net_w": -203765510.0,
-     "fore_net_m": -1778033400.0,
-     "trust_net_w": 654804020.0,
-     "trust_net_m": 1451127730.0
+     "inst_net_w": 379422030.0,
+     "inst_net_m": -474695390.0,
+     "fore_net_w": -44186220.0,
+     "fore_net_m": -1768743470.0,
+     "trust_net_w": 349818040.0,
+     "trust_net_m": 1226764110.0
     },
     {
      "stock_id": "6770",
@@ -6463,12 +6463,12 @@
      "market": "上櫃",
      "value_w": 22691023955.0,
      "value_m": 45387484795.0,
-     "inst_net_w": 2542442180.0,
-     "inst_net_m": 6113257130.0,
-     "fore_net_w": 50274980.0,
-     "fore_net_m": 702027650.0,
-     "trust_net_w": 2543857380.0,
-     "trust_net_m": 5730427840.0
+     "inst_net_w": 1956832420.0,
+     "inst_net_m": 4690485810.0,
+     "fore_net_w": 641775510.0,
+     "fore_net_m": 1516510630.0,
+     "trust_net_w": 1429352000.0,
+     "trust_net_m": 3547181110.0
     },
     {
      "stock_id": "2329",
@@ -6559,12 +6559,12 @@
      "market": "上櫃",
      "value_w": 30864943617.0,
      "value_m": 60596584633.0,
-     "inst_net_w": -2235069208.0,
-     "inst_net_m": -2503353668.0,
-     "fore_net_w": -2043972284.0,
-     "fore_net_m": -1388190308.0,
-     "trust_net_w": -263628264.0,
-     "trust_net_m": -1172193724.0
+     "inst_net_w": -3054137080.0,
+     "inst_net_m": -3181903384.0,
+     "fore_net_w": -2757526848.0,
+     "fore_net_m": -2292766220.0,
+     "trust_net_w": -320076016.0,
+     "trust_net_m": -851512912.0
     },
     {
      "stock_id": "3374",
@@ -6583,12 +6583,12 @@
      "market": "上櫃",
      "value_w": 22789771017.0,
      "value_m": 42952551669.0,
-     "inst_net_w": -1313920725.0,
-     "inst_net_m": -3067003225.0,
-     "fore_net_w": -1332206850.0,
-     "fore_net_m": -2850041025.0,
-     "trust_net_w": -1519700.0,
-     "trust_net_m": 3132350.0
+     "inst_net_w": -1085038500.0,
+     "inst_net_m": -2267082025.0,
+     "fore_net_w": -1019959525.0,
+     "fore_net_m": -2075520200.0,
+     "trust_net_w": -544700.0,
+     "trust_net_m": 4432350.0
     },
     {
      "stock_id": "2388",
@@ -6703,12 +6703,12 @@
      "market": "上櫃",
      "value_w": 19690567015.0,
      "value_m": 40515272310.0,
-     "inst_net_w": 178188360.0,
-     "inst_net_m": -842223200.0,
-     "fore_net_w": 391841800.0,
-     "fore_net_m": -2167961600.0,
-     "trust_net_w": -209725040.0,
-     "trust_net_m": 1395367680.0
+     "inst_net_w": -380307760.0,
+     "inst_net_m": -1083942160.0,
+     "fore_net_w": -42697200.0,
+     "fore_net_m": -2272598720.0,
+     "trust_net_w": -305706800.0,
+     "trust_net_m": 1310565760.0
     },
     {
      "stock_id": "6182",
@@ -6727,12 +6727,12 @@
      "market": "上櫃",
      "value_w": 33020979285.0,
      "value_m": 36135976420.0,
-     "inst_net_w": -3232787404.0,
-     "inst_net_m": -3325008608.0,
-     "fore_net_w": -2810922136.0,
-     "fore_net_m": -2740228794.0,
-     "trust_net_w": 19735500.0,
-     "trust_net_m": 18063000.0
+     "inst_net_w": -3184032468.0,
+     "inst_net_m": -3258098238.0,
+     "fore_net_w": -2832413538.0,
+     "fore_net_m": -2754045763.0,
+     "trust_net_w": 7359000.0,
+     "trust_net_m": 5909500.0
     },
     {
      "stock_id": "3006",
@@ -6775,12 +6775,12 @@
      "market": "上櫃",
      "value_w": 49388428067.0,
      "value_m": 112804765378.0,
-     "inst_net_w": 782995430.0,
-     "inst_net_m": -5995328690.0,
-     "fore_net_w": 2730254220.0,
-     "fore_net_m": -1812055140.0,
-     "trust_net_w": -1802654060.0,
-     "trust_net_m": -3179994090.0
+     "inst_net_w": 290417420.0,
+     "inst_net_m": -7064696490.0,
+     "fore_net_w": 1742415640.0,
+     "fore_net_m": -4306876340.0,
+     "trust_net_w": -1163954300.0,
+     "trust_net_m": -1547312930.0
     },
     {
      "stock_id": "2401",
@@ -6823,12 +6823,12 @@
      "market": "上櫃",
      "value_w": 17499034931.0,
      "value_m": 41519717494.0,
-     "inst_net_w": 1785089828.0,
-     "inst_net_m": -1827023502.0,
-     "fore_net_w": 1538149022.0,
-     "fore_net_m": 1135554192.0,
-     "trust_net_w": 319805880.0,
-     "trust_net_m": -2543853417.0
+     "inst_net_w": 2211118460.0,
+     "inst_net_m": -303667124.0,
+     "fore_net_w": 2185222587.0,
+     "fore_net_m": 1264871610.0,
+     "trust_net_w": 55432848.0,
+     "trust_net_m": -1314906843.0
     },
     {
      "stock_id": "3711",
@@ -6895,12 +6895,12 @@
      "market": "上櫃",
      "value_w": 13636793131.0,
      "value_m": 26732933296.0,
-     "inst_net_w": -1493742825.0,
-     "inst_net_m": -1793832165.0,
-     "fore_net_w": -2246854815.0,
-     "fore_net_m": -3125861595.0,
-     "trust_net_w": 755867880.0,
-     "trust_net_m": 1264717215.0
+     "inst_net_w": -1457791470.0,
+     "inst_net_m": -2031465285.0,
+     "fore_net_w": -2227688370.0,
+     "fore_net_m": -3342652965.0,
+     "trust_net_w": 763824915.0,
+     "trust_net_m": 1240891245.0
     },
     {
      "stock_id": "3260",
@@ -6919,12 +6919,12 @@
      "market": "上櫃",
      "value_w": 20633509420.0,
      "value_m": 53433167123.0,
-     "inst_net_w": 163231296.0,
-     "inst_net_m": 2427467352.0,
-     "fore_net_w": 177409434.0,
-     "fore_net_m": 2445648606.0,
+     "inst_net_w": -1384819248.0,
+     "inst_net_m": -1374253482.0,
+     "fore_net_w": -1341666960.0,
+     "fore_net_m": -1164809472.0,
      "trust_net_w": -9366600.0,
-     "trust_net_m": -63584340.0
+     "trust_net_m": -61976340.0
     },
     {
      "stock_id": "3227",
@@ -6943,12 +6943,12 @@
      "market": "上櫃",
      "value_w": 1273621632.0,
      "value_m": 2712610445.0,
-     "inst_net_w": -50620284.0,
-     "inst_net_m": 432736128.0,
-     "fore_net_w": 78932700.0,
-     "fore_net_m": 703041768.0,
+     "inst_net_w": 35254494.0,
+     "inst_net_m": 574783110.0,
+     "fore_net_w": 156944700.0,
+     "fore_net_m": 826506846.0,
      "trust_net_w": -118998000.0,
-     "trust_net_m": -269834400.0
+     "trust_net_m": -269280000.0
     },
     {
      "stock_id": "6239",
@@ -6991,12 +6991,12 @@
      "market": "上櫃",
      "value_w": 2198188781.0,
      "value_m": 4255067183.0,
-     "inst_net_w": 231478389.0,
-     "inst_net_m": 518140624.0,
-     "fore_net_w": 241451982.0,
-     "fore_net_m": 503449992.0,
+     "inst_net_w": 117019845.0,
+     "inst_net_m": 373298265.0,
+     "fore_net_w": 141062054.0,
+     "fore_net_m": 385052162.0,
      "trust_net_w": 0.0,
-     "trust_net_m": 121437.0
+     "trust_net_m": 330012.0
     },
     {
      "stock_id": "3035",
@@ -7039,12 +7039,12 @@
      "market": "上櫃",
      "value_w": 12742820345.0,
      "value_m": 19567008203.0,
-     "inst_net_w": 1572153979.0,
-     "inst_net_m": 1898747658.0,
-     "fore_net_w": -809615807.0,
-     "fore_net_m": -1275882382.0,
-     "trust_net_w": 2298127552.0,
-     "trust_net_m": 3005556230.0
+     "inst_net_w": 1301857502.0,
+     "inst_net_m": 1691298257.0,
+     "fore_net_w": -1120459439.0,
+     "fore_net_m": -1181621128.0,
+     "trust_net_w": 2331949620.0,
+     "trust_net_m": 2725184864.0
     },
     {
      "stock_id": "6526",
@@ -7087,12 +7087,12 @@
      "market": "上櫃",
      "value_w": 49831688383.0,
      "value_m": 87458204010.0,
-     "inst_net_w": -1598862132.0,
-     "inst_net_m": -2724961554.0,
-     "fore_net_w": -2358780480.0,
-     "fore_net_m": -4094235936.0,
-     "trust_net_w": 903746970.0,
-     "trust_net_m": 1351928718.0
+     "inst_net_w": -3970660554.0,
+     "inst_net_m": -5011823376.0,
+     "fore_net_w": -4308724098.0,
+     "fore_net_m": -5637318876.0,
+     "trust_net_w": 591755598.0,
+     "trust_net_m": 756650538.0
     },
     {
      "stock_id": "6271",
@@ -7135,12 +7135,12 @@
      "market": "上櫃",
      "value_w": 1909877860.0,
      "value_m": 4083738077.0,
-     "inst_net_w": -52879470.0,
-     "inst_net_m": -473735550.0,
-     "fore_net_w": -61151082.0,
-     "fore_net_m": -474720054.0,
+     "inst_net_w": -16483488.0,
+     "inst_net_m": -423180654.0,
+     "fore_net_w": -24086262.0,
+     "fore_net_m": -424485840.0,
      "trust_net_w": 0.0,
-     "trust_net_m": 57000.0
+     "trust_net_m": 193800.0
     },
     {
      "stock_id": "2449",
@@ -7303,10 +7303,10 @@
      "market": "上櫃",
      "value_w": 3695490204.0,
      "value_m": 7323746366.0,
-     "inst_net_w": -11505308.0,
-     "inst_net_m": -304305786.0,
-     "fore_net_w": 6261165.0,
-     "fore_net_m": -308579931.0,
+     "inst_net_w": -94096854.0,
+     "inst_net_m": -386255484.0,
+     "fore_net_w": -66467272.0,
+     "fore_net_m": -374230678.0,
      "trust_net_w": 0.0,
      "trust_net_m": 25650000.0
     },
@@ -7327,12 +7327,12 @@
      "market": "上櫃",
      "value_w": 21721047147.0,
      "value_m": 41521662238.0,
-     "inst_net_w": -925066958.0,
-     "inst_net_m": -2523717472.0,
-     "fore_net_w": -1097229578.0,
-     "fore_net_m": -1417087192.0,
-     "trust_net_w": 91417252.0,
-     "trust_net_m": -831497940.0
+     "inst_net_w": -559621440.0,
+     "inst_net_m": -1076032912.0,
+     "fore_net_w": -806626642.0,
+     "fore_net_m": -294627848.0,
+     "trust_net_w": 91413630.0,
+     "trust_net_m": -622398105.0
     },
     {
      "stock_id": "2441",
@@ -7423,12 +7423,12 @@
      "market": "上櫃",
      "value_w": 81535450175.0,
      "value_m": 132980757380.0,
-     "inst_net_w": -7670936000.0,
-     "inst_net_m": -7125872000.0,
-     "fore_net_w": -4743593920.0,
-     "fore_net_m": -2658165120.0,
-     "trust_net_w": -1510371200.0,
-     "trust_net_m": -2659094880.0
+     "inst_net_w": -8863535200.0,
+     "inst_net_m": -9938011200.0,
+     "fore_net_w": -5705442080.0,
+     "fore_net_m": -4933633120.0,
+     "trust_net_w": -1510398240.0,
+     "trust_net_m": -2542718880.0
     }
    ],
    "daily": {
@@ -7447,9 +7447,9 @@
     "up_ratio": 80.4,
     "trading_value": 1881190400987,
     "trading_volume": 6672325648,
-    "inst_net_value": 118387136534,
-    "foreign_net_value": 129998422956,
-    "trust_net_value": -12918609750
+    "inst_net_value": 111348233005,
+    "foreign_net_value": 125061416152,
+    "trust_net_value": -14397848325
    },
    "mtd": {
     "avg_change_pct": 17.71,
@@ -7457,9 +7457,9 @@
     "up_ratio": 91.3,
     "trading_value": 3814413476202,
     "trading_volume": 13144484343,
-    "inst_net_value": 86020370910,
-    "foreign_net_value": 94139855546,
-    "trust_net_value": 6351522119
+    "inst_net_value": 76713891156,
+    "foreign_net_value": 85910186423,
+    "trust_net_value": 6459072989
    },
    "qtd": {
     "avg_change_pct": -9.43,
@@ -7503,12 +7503,12 @@
      "market": "上櫃",
      "value_w": 6391765754.0,
      "value_m": 13013828882.0,
-     "inst_net_w": 23814750.0,
-     "inst_net_m": 2335199250.0,
-     "fore_net_w": -1494750.0,
-     "fore_net_m": 2480649000.0,
-     "trust_net_w": 54000000.0,
-     "trust_net_m": -133650000.0
+     "inst_net_w": 213045750.0,
+     "inst_net_m": 2020884000.0,
+     "fore_net_w": 178623000.0,
+     "fore_net_m": 2185892250.0,
+     "trust_net_w": 45750000.0,
+     "trust_net_m": -158400000.0
     }
    ],
    "daily": {
@@ -7527,9 +7527,9 @@
     "up_ratio": 0.0,
     "trading_value": 6391765754,
     "trading_volume": 8210807,
-    "inst_net_value": 23814750,
-    "foreign_net_value": -1494750,
-    "trust_net_value": 54000000
+    "inst_net_value": 213045750,
+    "foreign_net_value": 178623000,
+    "trust_net_value": 45750000
    },
    "mtd": {
     "avg_change_pct": -3.35,
@@ -7537,9 +7537,9 @@
     "up_ratio": 0.0,
     "trading_value": 13013828882,
     "trading_volume": 16683986,
-    "inst_net_value": 2335199250,
-    "foreign_net_value": 2480649000,
-    "trust_net_value": -133650000
+    "inst_net_value": 2020884000,
+    "foreign_net_value": 2185892250,
+    "trust_net_value": -158400000
    },
    "qtd": {
     "avg_change_pct": -4.94,
@@ -7583,10 +7583,10 @@
      "market": "上櫃",
      "value_w": 17513804.0,
      "value_m": 45706183.0,
-     "inst_net_w": 5518890.0,
-     "inst_net_m": 7054830.0,
-     "fore_net_w": 5449680.0,
-     "fore_net_m": 7114680.0,
+     "inst_net_w": 3792780.0,
+     "inst_net_m": 4868280.0,
+     "fore_net_w": 3690000.0,
+     "fore_net_m": 4905000.0,
      "trust_net_w": 0.0,
      "trust_net_m": 0.0
     },
@@ -7607,12 +7607,12 @@
      "market": "上櫃",
      "value_w": 15095801355.0,
      "value_m": 35617260298.0,
-     "inst_net_w": 91820110.0,
-     "inst_net_m": 2967810260.0,
-     "fore_net_w": 13768320.0,
-     "fore_net_m": 2497110870.0,
+     "inst_net_w": 163957340.0,
+     "inst_net_m": 1130377860.0,
+     "fore_net_w": 55830780.0,
+     "fore_net_m": 986228640.0,
      "trust_net_w": 314110.0,
-     "trust_net_m": 397940.0
+     "trust_net_m": 902940.0
     }
    ],
    "daily": {
@@ -7631,8 +7631,8 @@
     "up_ratio": 50.0,
     "trading_value": 15113315159,
     "trading_volume": 14893803,
-    "inst_net_value": 97339000,
-    "foreign_net_value": 19218000,
+    "inst_net_value": 167750120,
+    "foreign_net_value": 59520780,
     "trust_net_value": 314110
    },
    "mtd": {
@@ -7641,9 +7641,9 @@
     "up_ratio": 100.0,
     "trading_value": 35662966481,
     "trading_volume": 35749904,
-    "inst_net_value": 2974865090,
-    "foreign_net_value": 2504225550,
-    "trust_net_value": 397940
+    "inst_net_value": 1135246140,
+    "foreign_net_value": 991133640,
+    "trust_net_value": 902940
    },
    "qtd": {
     "avg_change_pct": -2.83,
@@ -7687,12 +7687,12 @@
      "market": "上櫃",
      "value_w": 868963123.0,
      "value_m": 1360396475.0,
-     "inst_net_w": -78437549.0,
-     "inst_net_m": -41348273.0,
-     "fore_net_w": -104957348.0,
-     "fore_net_m": -89517718.0,
-     "trust_net_w": 1131900.0,
-     "trust_net_m": 21197400.0
+     "inst_net_w": -83675056.0,
+     "inst_net_m": -31091578.0,
+     "fore_net_w": -110681538.0,
+     "fore_net_m": -78709308.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": 20065500.0
     },
     {
      "stock_id": "4128",
@@ -7711,10 +7711,10 @@
      "market": "上櫃",
      "value_w": 95789300.0,
      "value_m": 199918544.0,
-     "inst_net_w": 123876.0,
-     "inst_net_m": -14736271.0,
-     "fore_net_w": 515070.0,
-     "fore_net_m": -14138618.0,
+     "inst_net_w": 3485977.0,
+     "inst_net_m": -9140865.0,
+     "fore_net_w": 3733404.0,
+     "fore_net_m": -8840158.0,
      "trust_net_w": 0.0,
      "trust_net_m": 0.0
     },
@@ -7735,10 +7735,10 @@
      "market": "上櫃",
      "value_w": 673165226.0,
      "value_m": 1975631607.0,
-     "inst_net_w": 34425742.0,
-     "inst_net_m": 128723478.0,
-     "fore_net_w": 69110425.0,
-     "fore_net_m": 186063938.0,
+     "inst_net_w": 53512260.0,
+     "inst_net_m": 220875002.0,
+     "fore_net_w": 87144592.0,
+     "fore_net_m": 272097675.0,
      "trust_net_w": 0.0,
      "trust_net_m": 0.0
     },
@@ -7783,10 +7783,10 @@
      "market": "上櫃",
      "value_w": 60660160.0,
      "value_m": 119356486.0,
-     "inst_net_w": 16127408.0,
-     "inst_net_m": 22477244.0,
-     "fore_net_w": 15057860.0,
-     "fore_net_m": 21102800.0,
+     "inst_net_w": 9175538.0,
+     "inst_net_m": 15303726.0,
+     "fore_net_w": 9192660.0,
+     "fore_net_m": 14963260.0,
      "trust_net_w": 0.0,
      "trust_net_m": 0.0
     },
@@ -7807,12 +7807,12 @@
      "market": "上櫃",
      "value_w": 946051563.0,
      "value_m": 1262589176.0,
-     "inst_net_w": -175777920.0,
-     "inst_net_m": -175330800.0,
-     "fore_net_w": -190283880.0,
-     "fore_net_m": -217202160.0,
-     "trust_net_w": 960000.0,
-     "trust_net_m": 23640000.0
+     "inst_net_w": -131734080.0,
+     "inst_net_m": -142478760.0,
+     "fore_net_w": -141923880.0,
+     "fore_net_m": -180426240.0,
+     "trust_net_w": -240000.0,
+     "trust_net_m": 22440000.0
     },
     {
      "stock_id": "4162",
@@ -7831,10 +7831,10 @@
      "market": "上櫃",
      "value_w": 149568577.0,
      "value_m": 259781804.0,
-     "inst_net_w": 23101386.0,
-     "inst_net_m": 34883930.0,
-     "fore_net_w": 23906637.0,
-     "fore_net_m": 35643537.0,
+     "inst_net_w": 14465201.0,
+     "inst_net_m": 26755040.0,
+     "fore_net_w": 15074961.0,
+     "fore_net_m": 27246561.0,
      "trust_net_w": 0.0,
      "trust_net_m": 0.0
     },
@@ -7855,10 +7855,10 @@
      "market": "上櫃",
      "value_w": 326286475.0,
      "value_m": 824079439.0,
-     "inst_net_w": 58146064.0,
-     "inst_net_m": 46353339.0,
-     "fore_net_w": 57938860.0,
-     "fore_net_m": 46399839.0,
+     "inst_net_w": 46037418.0,
+     "inst_net_m": 43146188.0,
+     "fore_net_w": 45618732.0,
+     "fore_net_m": 42542710.0,
      "trust_net_w": 0.0,
      "trust_net_m": 0.0
     },
@@ -7903,9 +7903,9 @@
     "up_ratio": 55.6,
     "trading_value": 5055931439,
     "trading_volume": 68040096,
-    "inst_net_value": 87060006,
-    "foreign_net_value": 107503232,
-    "trust_net_value": 2076767
+    "inst_net_value": 120618257,
+    "foreign_net_value": 144374539,
+    "trust_net_value": -255133
    },
    "mtd": {
     "avg_change_pct": 5.2,
@@ -7913,9 +7913,9 @@
     "up_ratio": 88.9,
     "trading_value": 9678858452,
     "trading_volume": 134181754,
-    "inst_net_value": 524858308,
-    "foreign_net_value": 497766127,
-    "trust_net_value": 44822267
+    "inst_net_value": 647204414,
+    "foreign_net_value": 618289009,
+    "trust_net_value": 42490367
    },
    "qtd": {
     "avg_change_pct": -0.43,
@@ -8063,10 +8063,10 @@
      "market": "上櫃",
      "value_w": 287168741.0,
      "value_m": 588857151.0,
-     "inst_net_w": 3198623.0,
-     "inst_net_m": 61735991.0,
-     "fore_net_w": 12216879.0,
-     "fore_net_m": 70719280.0,
+     "inst_net_w": -6036463.0,
+     "inst_net_m": 79662017.0,
+     "fore_net_w": 2552479.0,
+     "fore_net_m": 86990701.0,
      "trust_net_w": 0.0,
      "trust_net_m": 0.0
     },
@@ -8183,8 +8183,8 @@
     "up_ratio": 20.0,
     "trading_value": 16293165037,
     "trading_volume": 511212670,
-    "inst_net_value": 2087532364,
-    "foreign_net_value": 2802802482,
+    "inst_net_value": 2078297278,
+    "foreign_net_value": 2793138082,
     "trust_net_value": -606813203
    },
    "mtd": {
@@ -8193,8 +8193,8 @@
     "up_ratio": 80.0,
     "trading_value": 27901397064,
     "trading_volume": 809962317,
-    "inst_net_value": 5088698244,
-    "foreign_net_value": 6149081386,
+    "inst_net_value": 5106624270,
+    "foreign_net_value": 6165352807,
     "trust_net_value": -822887134
    },
    "qtd": {
@@ -8497,12 +8497,12 @@
      "market": "上櫃",
      "value_w": 23550914615.0,
      "value_m": 78848942320.0,
-     "inst_net_w": -841647300.0,
-     "inst_net_m": -5228892725.0,
-     "fore_net_w": -974556875.0,
-     "fore_net_m": -10959134725.0,
-     "trust_net_w": -87686250.0,
-     "trust_net_m": 5609742500.0
+     "inst_net_w": -269462275.0,
+     "inst_net_m": -2448692550.0,
+     "fore_net_w": -587219825.0,
+     "fore_net_m": -5578885650.0,
+     "trust_net_w": -40786250.0,
+     "trust_net_m": 2527407500.0
     },
     {
      "stock_id": "6213",
@@ -8545,12 +8545,12 @@
      "market": "上櫃",
      "value_w": 68678009411.0,
      "value_m": 108187228043.0,
-     "inst_net_w": -3936816754.0,
-     "inst_net_m": -11885419338.0,
-     "fore_net_w": -2535185970.0,
-     "fore_net_m": -7207677234.0,
-     "trust_net_w": -1504035000.0,
-     "trust_net_m": -4775118300.0
+     "inst_net_w": -3033455197.0,
+     "inst_net_m": -9740396330.0,
+     "fore_net_w": -1933134900.0,
+     "fore_net_m": -6162401190.0,
+     "trust_net_w": -1159949500.0,
+     "trust_net_m": -3588601800.0
     }
    ],
    "daily": {
@@ -8569,9 +8569,9 @@
     "up_ratio": 100.0,
     "trading_value": 282465664513,
     "trading_volume": 791392601,
-    "inst_net_value": 9682130178,
-    "foreign_net_value": 6038673623,
-    "trust_net_value": 1950022153
+    "inst_net_value": 11157676760,
+    "foreign_net_value": 7028061743,
+    "trust_net_value": 2341007653
    },
    "mtd": {
     "avg_change_pct": 47.44,
@@ -8579,9 +8579,9 @@
     "up_ratio": 100.0,
     "trading_value": 581010229637,
     "trading_volume": 1599192195,
-    "inst_net_value": -15970699280,
-    "foreign_net_value": -28368292374,
-    "trust_net_value": 11820725197
+    "inst_net_value": -11045476097,
+    "foreign_net_value": -21942767255,
+    "trust_net_value": 9924906697
    },
    "qtd": {
     "avg_change_pct": 7.94,
@@ -8649,12 +8649,12 @@
      "market": "上櫃",
      "value_w": 6235306322.0,
      "value_m": 12061550580.0,
-     "inst_net_w": 238231968.0,
-     "inst_net_m": 1300577462.0,
-     "fore_net_w": 262853956.0,
-     "fore_net_m": 1818182230.0,
+     "inst_net_w": 259602607.0,
+     "inst_net_m": 1328067873.0,
+     "fore_net_w": 275441376.0,
+     "fore_net_m": 1808213386.0,
      "trust_net_w": -165964200.0,
-     "trust_net_m": -849552900.0
+     "trust_net_m": -760353900.0
     },
     {
      "stock_id": "3019",
@@ -8697,8 +8697,8 @@
     "up_ratio": 100.0,
     "trading_value": 19112332389,
     "trading_volume": 252131244,
-    "inst_net_value": 1680726309,
-    "foreign_net_value": 1527474345,
+    "inst_net_value": 1702096948,
+    "foreign_net_value": 1540061765,
     "trust_net_value": -168085305
    },
    "mtd": {
@@ -8707,9 +8707,9 @@
     "up_ratio": 100.0,
     "trading_value": 33645916710,
     "trading_volume": 445212554,
-    "inst_net_value": 3112823557,
-    "foreign_net_value": 3549370772,
-    "trust_net_value": -958562405
+    "inst_net_value": 3140313968,
+    "foreign_net_value": 3539401928,
+    "trust_net_value": -869363405
    },
    "qtd": {
     "avg_change_pct": 8.19,
@@ -9625,12 +9625,12 @@
      "market": "上櫃",
      "value_w": 30864943617.0,
      "value_m": 60596584633.0,
-     "inst_net_w": -2235069208.0,
-     "inst_net_m": -2503353668.0,
-     "fore_net_w": -2043972284.0,
-     "fore_net_m": -1388190308.0,
-     "trust_net_w": -263628264.0,
-     "trust_net_m": -1172193724.0
+     "inst_net_w": -3054137080.0,
+     "inst_net_m": -3181903384.0,
+     "fore_net_w": -2757526848.0,
+     "fore_net_m": -2292766220.0,
+     "trust_net_w": -320076016.0,
+     "trust_net_m": -851512912.0
     },
     {
      "stock_id": "6182",
@@ -9649,12 +9649,12 @@
      "market": "上櫃",
      "value_w": 33020979285.0,
      "value_m": 36135976420.0,
-     "inst_net_w": -3232787404.0,
-     "inst_net_m": -3325008608.0,
-     "fore_net_w": -2810922136.0,
-     "fore_net_m": -2740228794.0,
-     "trust_net_w": 19735500.0,
-     "trust_net_m": 18063000.0
+     "inst_net_w": -3184032468.0,
+     "inst_net_m": -3258098238.0,
+     "fore_net_w": -2832413538.0,
+     "fore_net_m": -2754045763.0,
+     "trust_net_w": 7359000.0,
+     "trust_net_m": 5909500.0
     },
     {
      "stock_id": "6488",
@@ -9673,12 +9673,12 @@
      "market": "上櫃",
      "value_w": 49388428067.0,
      "value_m": 112804765378.0,
-     "inst_net_w": 782995430.0,
-     "inst_net_m": -5995328690.0,
-     "fore_net_w": 2730254220.0,
-     "fore_net_m": -1812055140.0,
-     "trust_net_w": -1802654060.0,
-     "trust_net_m": -3179994090.0
+     "inst_net_w": 290417420.0,
+     "inst_net_m": -7064696490.0,
+     "fore_net_w": 1742415640.0,
+     "fore_net_m": -4306876340.0,
+     "trust_net_w": -1163954300.0,
+     "trust_net_m": -1547312930.0
     }
    ],
    "daily": {
@@ -9697,9 +9697,9 @@
     "up_ratio": 100.0,
     "trading_value": 126906803571,
     "trading_volume": 574547823,
-    "inst_net_value": -5448985990,
-    "foreign_net_value": -2772914776,
-    "trust_net_value": -2108986376
+    "inst_net_value": -6711876936,
+    "foreign_net_value": -4495799322,
+    "trust_net_value": -1539110868
    },
    "mtd": {
     "avg_change_pct": 23.57,
@@ -9707,9 +9707,9 @@
     "up_ratio": 100.0,
     "trading_value": 224615304172,
     "trading_volume": 849624476,
-    "inst_net_value": -12684976718,
-    "foreign_net_value": -6456819490,
-    "trust_net_value": -4665700366
+    "inst_net_value": -14365983864,
+    "foreign_net_value": -9870033571,
+    "trust_net_value": -2724491894
    },
    "qtd": {
     "avg_change_pct": -1.65,
@@ -9977,10 +9977,10 @@
      "market": "上櫃",
      "value_w": 193715780.0,
      "value_m": 339696902.0,
-     "inst_net_w": 16758360.0,
-     "inst_net_m": 62090892.0,
-     "fore_net_w": 4636108.0,
-     "fore_net_m": 49612286.0,
+     "inst_net_w": 12789772.0,
+     "inst_net_m": 43903027.0,
+     "fore_net_w": 1762336.0,
+     "fore_net_m": 32734292.0,
      "trust_net_w": -247924.0,
      "trust_net_m": -61012.0
     },
@@ -10097,8 +10097,8 @@
     "up_ratio": 80.0,
     "trading_value": 172927699208,
     "trading_volume": 318506109,
-    "inst_net_value": 263420554,
-    "foreign_net_value": -4203263050,
+    "inst_net_value": 259451966,
+    "foreign_net_value": -4206136822,
     "trust_net_value": 4206197968
    },
    "mtd": {
@@ -10107,8 +10107,8 @@
     "up_ratio": 100.0,
     "trading_value": 364790520814,
     "trading_volume": 716891363,
-    "inst_net_value": 11809319841,
-    "foreign_net_value": 9498084826,
+    "inst_net_value": 11791131976,
+    "foreign_net_value": 9481206832,
     "trust_net_value": 1971310658
    },
    "qtd": {
@@ -10297,12 +10297,12 @@
      "market": "上櫃",
      "value_w": 20633509420.0,
      "value_m": 53433167123.0,
-     "inst_net_w": 163231296.0,
-     "inst_net_m": 2427467352.0,
-     "fore_net_w": 177409434.0,
-     "fore_net_m": 2445648606.0,
+     "inst_net_w": -1384819248.0,
+     "inst_net_m": -1374253482.0,
+     "fore_net_w": -1341666960.0,
+     "fore_net_m": -1164809472.0,
      "trust_net_w": -9366600.0,
-     "trust_net_m": -63584340.0
+     "trust_net_m": -61976340.0
     },
     {
      "stock_id": "6239",
@@ -10345,12 +10345,12 @@
      "market": "上櫃",
      "value_w": 81535450175.0,
      "value_m": 132980757380.0,
-     "inst_net_w": -7670936000.0,
-     "inst_net_m": -7125872000.0,
-     "fore_net_w": -4743593920.0,
-     "fore_net_m": -2658165120.0,
-     "trust_net_w": -1510371200.0,
-     "trust_net_m": -2659094880.0
+     "inst_net_w": -8863535200.0,
+     "inst_net_m": -9938011200.0,
+     "fore_net_w": -5705442080.0,
+     "fore_net_m": -4933633120.0,
+     "trust_net_w": -1510398240.0,
+     "trust_net_m": -2542718880.0
     }
    ],
    "daily": {
@@ -10369,9 +10369,9 @@
     "up_ratio": 88.9,
     "trading_value": 838325775450,
     "trading_volume": 4468411136,
-    "inst_net_value": 67542005753,
-    "foreign_net_value": 72747636571,
-    "trust_net_value": -6423588181
+    "inst_net_value": 64801356009,
+    "foreign_net_value": 70266712017,
+    "trust_net_value": -6423615221
    },
    "mtd": {
     "avg_change_pct": 31.96,
@@ -10379,9 +10379,9 @@
     "up_ratio": 100.0,
     "trading_value": 1490178286405,
     "trading_volume": 8142091769,
-    "inst_net_value": 97815415622,
-    "foreign_net_value": 98691955460,
-    "trust_net_value": -620412780
+    "inst_net_value": 91201555588,
+    "foreign_net_value": 92806029382,
+    "trust_net_value": -502428780
    },
    "qtd": {
     "avg_change_pct": -3.41,
@@ -10545,10 +10545,10 @@
      "market": "上櫃",
      "value_w": 201170978.0,
      "value_m": 543547454.0,
-     "inst_net_w": 6042150.0,
-     "inst_net_m": 40143981.0,
-     "fore_net_w": 2430278.0,
-     "fore_net_m": 34926918.0,
+     "inst_net_w": -4097843.0,
+     "inst_net_m": 24639366.0,
+     "fore_net_w": -7710067.0,
+     "fore_net_m": 19576973.0,
      "trust_net_w": 0.0,
      "trust_net_m": 0.0
     }
@@ -10569,8 +10569,8 @@
     "up_ratio": 33.3,
     "trading_value": 220606113770,
     "trading_volume": 435653344,
-    "inst_net_value": -1368661731,
-    "foreign_net_value": -2903797402,
+    "inst_net_value": -1378801724,
+    "foreign_net_value": -2913937747,
     "trust_net_value": 1540748974
    },
    "mtd": {
@@ -10579,8 +10579,8 @@
     "up_ratio": 100.0,
     "trading_value": 446477641781,
     "trading_volume": 883149339,
-    "inst_net_value": 12845523320,
-    "foreign_net_value": 14988349107,
+    "inst_net_value": 12830018705,
+    "foreign_net_value": 14972999162,
     "trust_net_value": -1559419028
    },
    "qtd": {
@@ -10697,12 +10697,12 @@
      "market": "上櫃",
      "value_w": 13636793131.0,
      "value_m": 26732933296.0,
-     "inst_net_w": -1493742825.0,
-     "inst_net_m": -1793832165.0,
-     "fore_net_w": -2246854815.0,
-     "fore_net_m": -3125861595.0,
-     "trust_net_w": 755867880.0,
-     "trust_net_m": 1264717215.0
+     "inst_net_w": -1457791470.0,
+     "inst_net_m": -2031465285.0,
+     "fore_net_w": -2227688370.0,
+     "fore_net_m": -3342652965.0,
+     "trust_net_w": 763824915.0,
+     "trust_net_m": 1240891245.0
     },
     {
      "stock_id": "3035",
@@ -10745,9 +10745,9 @@
     "up_ratio": 80.0,
     "trading_value": 330305323931,
     "trading_volume": 96187484,
-    "inst_net_value": 34839170964,
-    "foreign_net_value": 41056680502,
-    "trust_net_value": -5268700647
+    "inst_net_value": 34875122319,
+    "foreign_net_value": 41075846947,
+    "trust_net_value": -5260743612
    },
    "mtd": {
     "avg_change_pct": 24.59,
@@ -10755,9 +10755,9 @@
     "up_ratio": 100.0,
     "trading_value": 630575721995,
     "trading_volume": 200676190,
-    "inst_net_value": 53077551783,
-    "foreign_net_value": 52184221807,
-    "trust_net_value": 2466581838
+    "inst_net_value": 52839918663,
+    "foreign_net_value": 51967430437,
+    "trust_net_value": 2442755868
    },
    "qtd": {
     "avg_change_pct": -2.86,
@@ -10849,12 +10849,12 @@
      "market": "上櫃",
      "value_w": 15095801355.0,
      "value_m": 35617260298.0,
-     "inst_net_w": 91820110.0,
-     "inst_net_m": 2967810260.0,
-     "fore_net_w": 13768320.0,
-     "fore_net_m": 2497110870.0,
+     "inst_net_w": 163957340.0,
+     "inst_net_m": 1130377860.0,
+     "fore_net_w": 55830780.0,
+     "fore_net_m": 986228640.0,
      "trust_net_w": 314110.0,
-     "trust_net_m": 397940.0
+     "trust_net_m": 902940.0
     }
    ],
    "daily": {
@@ -10873,8 +10873,8 @@
     "up_ratio": 33.3,
     "trading_value": 104009859158,
     "trading_volume": 56322247,
-    "inst_net_value": 14900819395,
-    "foreign_net_value": 9168440170,
+    "inst_net_value": 14972956625,
+    "foreign_net_value": 9210502630,
     "trust_net_value": 5004450113
    },
    "mtd": {
@@ -10883,9 +10883,9 @@
     "up_ratio": 100.0,
     "trading_value": 208800888215,
     "trading_volume": 130140998,
-    "inst_net_value": 42612384074,
-    "foreign_net_value": 26536570040,
-    "trust_net_value": 14887288293
+    "inst_net_value": 40774951674,
+    "foreign_net_value": 25025687810,
+    "trust_net_value": 14887793293
    },
    "qtd": {
     "avg_change_pct": 10.31,
@@ -10929,12 +10929,12 @@
      "market": "上櫃",
      "value_w": 22789771017.0,
      "value_m": 42952551669.0,
-     "inst_net_w": -1313920725.0,
-     "inst_net_m": -3067003225.0,
-     "fore_net_w": -1332206850.0,
-     "fore_net_m": -2850041025.0,
-     "trust_net_w": -1519700.0,
-     "trust_net_m": 3132350.0
+     "inst_net_w": -1085038500.0,
+     "inst_net_m": -2267082025.0,
+     "fore_net_w": -1019959525.0,
+     "fore_net_m": -2075520200.0,
+     "trust_net_w": -544700.0,
+     "trust_net_m": 4432350.0
     },
     {
      "stock_id": "3711",
@@ -11025,9 +11025,9 @@
     "up_ratio": 100.0,
     "trading_value": 370146582588,
     "trading_volume": 371484715,
-    "inst_net_value": 17046584913,
-    "foreign_net_value": 16640700862,
-    "trust_net_value": 1036702756
+    "inst_net_value": 17275467138,
+    "foreign_net_value": 16952948187,
+    "trust_net_value": 1037677756
    },
    "mtd": {
     "avg_change_pct": 11.28,
@@ -11035,9 +11035,9 @@
     "up_ratio": 75.0,
     "trading_value": 885370790033,
     "trading_volume": 848840874,
-    "inst_net_value": -38142987610,
-    "foreign_net_value": -30432336007,
-    "trust_net_value": 4246219935
+    "inst_net_value": -37343066410,
+    "foreign_net_value": -29657815182,
+    "trust_net_value": 4247519935
    },
    "qtd": {
     "avg_change_pct": -3.56,
@@ -11105,12 +11105,12 @@
      "market": "上櫃",
      "value_w": 19690567015.0,
      "value_m": 40515272310.0,
-     "inst_net_w": 178188360.0,
-     "inst_net_m": -842223200.0,
-     "fore_net_w": 391841800.0,
-     "fore_net_m": -2167961600.0,
-     "trust_net_w": -209725040.0,
-     "trust_net_m": 1395367680.0
+     "inst_net_w": -380307760.0,
+     "inst_net_m": -1083942160.0,
+     "fore_net_w": -42697200.0,
+     "fore_net_m": -2272598720.0,
+     "trust_net_w": -305706800.0,
+     "trust_net_m": 1310565760.0
     },
     {
      "stock_id": "3711",
@@ -11177,12 +11177,12 @@
      "market": "上櫃",
      "value_w": 23777278470.0,
      "value_m": 52870451515.0,
-     "inst_net_w": 2360274680.0,
-     "inst_net_m": 6091709940.0,
-     "fore_net_w": -840262480.0,
-     "fore_net_m": 1185517060.0,
-     "trust_net_w": 2061042360.0,
-     "trust_net_m": 3609086000.0
+     "inst_net_w": 1356982300.0,
+     "inst_net_m": 1687372800.0,
+     "fore_net_w": -945431180.0,
+     "fore_net_m": -1753024180.0,
+     "trust_net_w": 1573362360.0,
+     "trust_net_m": 2565146000.0
     }
    ],
    "daily": {
@@ -11201,9 +11201,9 @@
     "up_ratio": 100.0,
     "trading_value": 388979797053,
     "trading_volume": 231884480,
-    "inst_net_value": 25450747254,
-    "foreign_net_value": 21124405184,
-    "trust_net_value": 3809178212
+    "inst_net_value": 23888958754,
+    "foreign_net_value": 20584697484,
+    "trust_net_value": 3225516452
    },
    "mtd": {
     "avg_change_pct": 19.42,
@@ -11211,9 +11211,9 @@
     "up_ratio": 80.0,
     "trading_value": 944611721521,
     "trading_volume": 564670226,
-    "inst_net_value": -25571555567,
-    "foreign_net_value": -15247878638,
-    "trust_net_value": 272272027
+    "inst_net_value": -30217611667,
+    "foreign_net_value": -18291056998,
+    "trust_net_value": -856469893
    },
    "qtd": {
     "avg_change_pct": 5.59,
@@ -11281,12 +11281,12 @@
      "market": "上櫃",
      "value_w": 22789771017.0,
      "value_m": 42952551669.0,
-     "inst_net_w": -1313920725.0,
-     "inst_net_m": -3067003225.0,
-     "fore_net_w": -1332206850.0,
-     "fore_net_m": -2850041025.0,
-     "trust_net_w": -1519700.0,
-     "trust_net_m": 3132350.0
+     "inst_net_w": -1085038500.0,
+     "inst_net_m": -2267082025.0,
+     "fore_net_w": -1019959525.0,
+     "fore_net_m": -2075520200.0,
+     "trust_net_w": -544700.0,
+     "trust_net_m": 4432350.0
     },
     {
      "stock_id": "8150",
@@ -11377,12 +11377,12 @@
      "market": "上櫃",
      "value_w": 12742820345.0,
      "value_m": 19567008203.0,
-     "inst_net_w": 1572153979.0,
-     "inst_net_m": 1898747658.0,
-     "fore_net_w": -809615807.0,
-     "fore_net_m": -1275882382.0,
-     "trust_net_w": 2298127552.0,
-     "trust_net_m": 3005556230.0
+     "inst_net_w": 1301857502.0,
+     "inst_net_m": 1691298257.0,
+     "fore_net_w": -1120459439.0,
+     "fore_net_m": -1181621128.0,
+     "trust_net_w": 2331949620.0,
+     "trust_net_m": 2725184864.0
     },
     {
      "stock_id": "6271",
@@ -11449,12 +11449,12 @@
      "market": "上櫃",
      "value_w": 21721047147.0,
      "value_m": 41521662238.0,
-     "inst_net_w": -925066958.0,
-     "inst_net_m": -2523717472.0,
-     "fore_net_w": -1097229578.0,
-     "fore_net_m": -1417087192.0,
-     "trust_net_w": 91417252.0,
-     "trust_net_m": -831497940.0
+     "inst_net_w": -559621440.0,
+     "inst_net_m": -1076032912.0,
+     "fore_net_w": -806626642.0,
+     "fore_net_m": -294627848.0,
+     "trust_net_w": 91413630.0,
+     "trust_net_m": -622398105.0
     },
     {
      "stock_id": "2441",
@@ -11497,9 +11497,9 @@
     "up_ratio": 100.0,
     "trading_value": 220928976239,
     "trading_volume": 1000845947,
-    "inst_net_value": -8832164503,
-    "foreign_net_value": -7819760951,
-    "trust_net_value": -999549349
+    "inst_net_value": -8508133237,
+    "foreign_net_value": -7527754322,
+    "trust_net_value": -964755903
    },
    "mtd": {
     "avg_change_pct": 18.39,
@@ -11507,9 +11507,9 @@
     "up_ratio": 100.0,
     "trading_value": 435330305835,
     "trading_volume": 1898510030,
-    "inst_net_value": -26482490048,
-    "foreign_net_value": -29737342384,
-    "trust_net_value": 4454726363
+    "inst_net_value": -24442333689,
+    "foreign_net_value": -27746100961,
+    "trust_net_value": 4384754832
    },
    "qtd": {
     "avg_change_pct": -12.75,
@@ -11601,12 +11601,12 @@
      "market": "上櫃",
      "value_w": 25124819895.0,
      "value_m": 39292325408.0,
-     "inst_net_w": 1734904145.0,
-     "inst_net_m": 1670924815.0,
-     "fore_net_w": -2065735110.0,
-     "fore_net_m": -2448806412.0,
-     "trust_net_w": 3827811800.0,
-     "trust_net_m": 4068667800.0
+     "inst_net_w": 1788180241.0,
+     "inst_net_m": 1979597810.0,
+     "fore_net_w": -1357530495.0,
+     "fore_net_m": -1590570014.0,
+     "trust_net_w": 3121274800.0,
+     "trust_net_m": 3419920600.0
     },
     {
      "stock_id": "6121",
@@ -11625,12 +11625,12 @@
      "market": "上櫃",
      "value_w": 3092187074.0,
      "value_m": 4494694169.0,
-     "inst_net_w": 1000616572.0,
-     "inst_net_m": 1624889272.0,
-     "fore_net_w": 1005074000.0,
-     "fore_net_m": 1691011564.0,
-     "trust_net_w": 25173200.0,
-     "trust_net_m": -35930520.0
+     "inst_net_w": 913545728.0,
+     "inst_net_m": 1269727556.0,
+     "fore_net_w": 899420308.0,
+     "fore_net_m": 1314094600.0,
+     "trust_net_w": 17345200.0,
+     "trust_net_m": -40050520.0
     }
    ],
    "daily": {
@@ -11649,9 +11649,9 @@
     "up_ratio": 100.0,
     "trading_value": 197361477139,
     "trading_volume": 309678860,
-    "inst_net_value": 3131199026,
-    "foreign_net_value": -5129726204,
-    "trust_net_value": 8062421690
+    "inst_net_value": 3097404278,
+    "foreign_net_value": -4527175281,
+    "trust_net_value": 7348056690
    },
    "mtd": {
     "avg_change_pct": 23.37,
@@ -11659,9 +11659,9 @@
     "up_ratio": 100.0,
     "trading_value": 401777380200,
     "trading_volume": 686449832,
-    "inst_net_value": 15013154254,
-    "foreign_net_value": 8709416841,
-    "trust_net_value": 5982100348
+    "inst_net_value": 14966665533,
+    "foreign_net_value": 9190736275,
+    "trust_net_value": 5329233148
    },
    "qtd": {
     "avg_change_pct": 2.57,
@@ -11809,10 +11809,10 @@
      "market": "上櫃",
      "value_w": 3695490204.0,
      "value_m": 7323746366.0,
-     "inst_net_w": -11505308.0,
-     "inst_net_m": -304305786.0,
-     "fore_net_w": 6261165.0,
-     "fore_net_m": -308579931.0,
+     "inst_net_w": -94096854.0,
+     "inst_net_m": -386255484.0,
+     "fore_net_w": -66467272.0,
+     "fore_net_m": -374230678.0,
      "trust_net_w": 0.0,
      "trust_net_m": 25650000.0
     }
@@ -11833,8 +11833,8 @@
     "up_ratio": 100.0,
     "trading_value": 18502277149,
     "trading_volume": 146418134,
-    "inst_net_value": -1480904054,
-    "foreign_net_value": -1444101033,
+    "inst_net_value": -1563495600,
+    "foreign_net_value": -1516829470,
     "trust_net_value": -23978880
    },
    "mtd": {
@@ -11843,8 +11843,8 @@
     "up_ratio": 100.0,
     "trading_value": 37035005372,
     "trading_volume": 303527503,
-    "inst_net_value": -2744703030,
-    "foreign_net_value": -3083307981,
+    "inst_net_value": -2826652728,
+    "foreign_net_value": -3148958728,
     "trust_net_value": 347368020
    },
    "qtd": {
@@ -11889,12 +11889,12 @@
      "market": "上櫃",
      "value_w": 23777278470.0,
      "value_m": 52870451515.0,
-     "inst_net_w": 2360274680.0,
-     "inst_net_m": 6091709940.0,
-     "fore_net_w": -840262480.0,
-     "fore_net_m": 1185517060.0,
-     "trust_net_w": 2061042360.0,
-     "trust_net_m": 3609086000.0
+     "inst_net_w": 1356982300.0,
+     "inst_net_m": 1687372800.0,
+     "fore_net_w": -945431180.0,
+     "fore_net_m": -1753024180.0,
+     "trust_net_w": 1573362360.0,
+     "trust_net_m": 2565146000.0
     }
    ],
    "daily": {
@@ -11913,9 +11913,9 @@
     "up_ratio": 100.0,
     "trading_value": 23777278470,
     "trading_volume": 9194428,
-    "inst_net_value": 2360274680,
-    "foreign_net_value": -840262480,
-    "trust_net_value": 2061042360
+    "inst_net_value": 1356982300,
+    "foreign_net_value": -945431180,
+    "trust_net_value": 1573362360
    },
    "mtd": {
     "avg_change_pct": 55.83,
@@ -11923,9 +11923,9 @@
     "up_ratio": 100.0,
     "trading_value": 52870451515,
     "trading_volume": 21697643,
-    "inst_net_value": 6091709940,
-    "foreign_net_value": 1185517060,
-    "trust_net_value": 3609086000
+    "inst_net_value": 1687372800,
+    "foreign_net_value": -1753024180,
+    "trust_net_value": 2565146000
    },
    "qtd": {
     "avg_change_pct": 25.74,
@@ -11993,10 +11993,10 @@
      "market": "上櫃",
      "value_w": 21326537826.0,
      "value_m": 26106164783.0,
-     "inst_net_w": -1374485910.0,
-     "inst_net_m": -2617926780.0,
-     "fore_net_w": -1627790640.0,
-     "fore_net_m": -2611698600.0,
+     "inst_net_w": -1257972870.0,
+     "inst_net_m": -2463655740.0,
+     "fore_net_w": -1522994550.0,
+     "fore_net_m": -2453856930.0,
      "trust_net_w": 403620000.0,
      "trust_net_m": 403572750.0
     },
@@ -12041,8 +12041,8 @@
     "up_ratio": 100.0,
     "trading_value": 269968713457,
     "trading_volume": 625273307,
-    "inst_net_value": -26493665997,
-    "foreign_net_value": -30101329946,
+    "inst_net_value": -26377152957,
+    "foreign_net_value": -29996533856,
     "trust_net_value": 5147122622
    },
    "mtd": {
@@ -12051,8 +12051,8 @@
     "up_ratio": 100.0,
     "trading_value": 463128107106,
     "trading_volume": 1051485594,
-    "inst_net_value": -48827336527,
-    "foreign_net_value": -50499916438,
+    "inst_net_value": -48673065487,
+    "foreign_net_value": -50342074768,
     "trust_net_value": 4532014332
    },
    "qtd": {
@@ -12121,10 +12121,10 @@
      "market": "上櫃",
      "value_w": 21326537826.0,
      "value_m": 26106164783.0,
-     "inst_net_w": -1374485910.0,
-     "inst_net_m": -2617926780.0,
-     "fore_net_w": -1627790640.0,
-     "fore_net_m": -2611698600.0,
+     "inst_net_w": -1257972870.0,
+     "inst_net_m": -2463655740.0,
+     "fore_net_w": -1522994550.0,
+     "fore_net_m": -2453856930.0,
      "trust_net_w": 403620000.0,
      "trust_net_m": 403572750.0
     },
@@ -12169,8 +12169,8 @@
     "up_ratio": 100.0,
     "trading_value": 269968713457,
     "trading_volume": 625273307,
-    "inst_net_value": -26493665997,
-    "foreign_net_value": -30101329946,
+    "inst_net_value": -26377152957,
+    "foreign_net_value": -29996533856,
     "trust_net_value": 5147122622
    },
    "mtd": {
@@ -12179,8 +12179,8 @@
     "up_ratio": 100.0,
     "trading_value": 463128107106,
     "trading_volume": 1051485594,
-    "inst_net_value": -48827336527,
-    "foreign_net_value": -50499916438,
+    "inst_net_value": -48673065487,
+    "foreign_net_value": -50342074768,
     "trust_net_value": 4532014332
    },
    "qtd": {
@@ -12515,12 +12515,12 @@
      "market": "上櫃",
      "value_w": 8482006990.0,
      "value_m": 15656035215.0,
-     "inst_net_w": 610112490.0,
-     "inst_net_m": -122745480.0,
-     "fore_net_w": -203765510.0,
-     "fore_net_m": -1778033400.0,
-     "trust_net_w": 654804020.0,
-     "trust_net_m": 1451127730.0
+     "inst_net_w": 379422030.0,
+     "inst_net_m": -474695390.0,
+     "fore_net_w": -44186220.0,
+     "fore_net_m": -1768743470.0,
+     "trust_net_w": 349818040.0,
+     "trust_net_m": 1226764110.0
     },
     {
      "stock_id": "6669",
@@ -12659,12 +12659,12 @@
      "market": "上櫃",
      "value_w": 23550914615.0,
      "value_m": 78848942320.0,
-     "inst_net_w": -841647300.0,
-     "inst_net_m": -5228892725.0,
-     "fore_net_w": -974556875.0,
-     "fore_net_m": -10959134725.0,
-     "trust_net_w": -87686250.0,
-     "trust_net_m": 5609742500.0
+     "inst_net_w": -269462275.0,
+     "inst_net_m": -2448692550.0,
+     "fore_net_w": -587219825.0,
+     "fore_net_m": -5578885650.0,
+     "trust_net_w": -40786250.0,
+     "trust_net_m": 2527407500.0
     },
     {
      "stock_id": "6770",
@@ -12731,12 +12731,12 @@
      "market": "上櫃",
      "value_w": 6235306322.0,
      "value_m": 12061550580.0,
-     "inst_net_w": 238231968.0,
-     "inst_net_m": 1300577462.0,
-     "fore_net_w": 262853956.0,
-     "fore_net_m": 1818182230.0,
+     "inst_net_w": 259602607.0,
+     "inst_net_m": 1328067873.0,
+     "fore_net_w": 275441376.0,
+     "fore_net_m": 1808213386.0,
      "trust_net_w": -165964200.0,
-     "trust_net_m": -849552900.0
+     "trust_net_m": -760353900.0
     },
     {
      "stock_id": "1301",
@@ -12947,12 +12947,12 @@
      "market": "上櫃",
      "value_w": 1286510859.0,
      "value_m": 2389786461.0,
-     "inst_net_w": 185726412.0,
-     "inst_net_m": 203093244.0,
-     "fore_net_w": 159984396.0,
-     "fore_net_m": 114753456.0,
+     "inst_net_w": 132685884.0,
+     "inst_net_m": 138438288.0,
+     "fore_net_w": 116418924.0,
+     "fore_net_m": 64356228.0,
      "trust_net_w": 0.0,
-     "trust_net_m": -54000.0
+     "trust_net_m": 324000.0
     },
     {
      "stock_id": "2352",
@@ -13211,12 +13211,12 @@
      "market": "上櫃",
      "value_w": 68678009411.0,
      "value_m": 108187228043.0,
-     "inst_net_w": -3936816754.0,
-     "inst_net_m": -11885419338.0,
-     "fore_net_w": -2535185970.0,
-     "fore_net_m": -7207677234.0,
-     "trust_net_w": -1504035000.0,
-     "trust_net_m": -4775118300.0
+     "inst_net_w": -3033455197.0,
+     "inst_net_m": -9740396330.0,
+     "fore_net_w": -1933134900.0,
+     "fore_net_m": -6162401190.0,
+     "trust_net_w": -1159949500.0,
+     "trust_net_m": -3588601800.0
     },
     {
      "stock_id": "1802",
@@ -13595,12 +13595,12 @@
      "market": "上櫃",
      "value_w": 22691023955.0,
      "value_m": 45387484795.0,
-     "inst_net_w": 2542442180.0,
-     "inst_net_m": 6113257130.0,
-     "fore_net_w": 50274980.0,
-     "fore_net_m": 702027650.0,
-     "trust_net_w": 2543857380.0,
-     "trust_net_m": 5730427840.0
+     "inst_net_w": 1956832420.0,
+     "inst_net_m": 4690485810.0,
+     "fore_net_w": 641775510.0,
+     "fore_net_m": 1516510630.0,
+     "trust_net_w": 1429352000.0,
+     "trust_net_m": 3547181110.0
     },
     {
      "stock_id": "2329",
@@ -14195,10 +14195,10 @@
      "market": "上櫃",
      "value_w": 193715780.0,
      "value_m": 339696902.0,
-     "inst_net_w": 16758360.0,
-     "inst_net_m": 62090892.0,
-     "fore_net_w": 4636108.0,
-     "fore_net_m": 49612286.0,
+     "inst_net_w": 12789772.0,
+     "inst_net_m": 43903027.0,
+     "fore_net_w": 1762336.0,
+     "fore_net_m": 32734292.0,
      "trust_net_w": -247924.0,
      "trust_net_m": -61012.0
     },
@@ -14267,12 +14267,12 @@
      "market": "上櫃",
      "value_w": 30864943617.0,
      "value_m": 60596584633.0,
-     "inst_net_w": -2235069208.0,
-     "inst_net_m": -2503353668.0,
-     "fore_net_w": -2043972284.0,
-     "fore_net_m": -1388190308.0,
-     "trust_net_w": -263628264.0,
-     "trust_net_m": -1172193724.0
+     "inst_net_w": -3054137080.0,
+     "inst_net_m": -3181903384.0,
+     "fore_net_w": -2757526848.0,
+     "fore_net_m": -2292766220.0,
+     "trust_net_w": -320076016.0,
+     "trust_net_m": -851512912.0
     },
     {
      "stock_id": "1314",
@@ -14363,10 +14363,10 @@
      "market": "上櫃",
      "value_w": 37453353.0,
      "value_m": 94541470.0,
-     "inst_net_w": -2394757.0,
-     "inst_net_m": 6524474.0,
-     "fore_net_w": -1870808.0,
-     "fore_net_m": 6773871.0,
+     "inst_net_w": -647602.0,
+     "inst_net_m": 6730361.0,
+     "fore_net_w": -178008.0,
+     "fore_net_m": 6932571.0,
      "trust_net_w": 0.0,
      "trust_net_m": 0.0
     },
@@ -14411,12 +14411,12 @@
      "market": "上櫃",
      "value_w": 22789771017.0,
      "value_m": 42952551669.0,
-     "inst_net_w": -1313920725.0,
-     "inst_net_m": -3067003225.0,
-     "fore_net_w": -1332206850.0,
-     "fore_net_m": -2850041025.0,
-     "trust_net_w": -1519700.0,
-     "trust_net_m": 3132350.0
+     "inst_net_w": -1085038500.0,
+     "inst_net_m": -2267082025.0,
+     "fore_net_w": -1019959525.0,
+     "fore_net_m": -2075520200.0,
+     "trust_net_w": -544700.0,
+     "trust_net_m": 4432350.0
     },
     {
      "stock_id": "4938",
@@ -15347,10 +15347,10 @@
      "market": "上櫃",
      "value_w": 287168741.0,
      "value_m": 588857151.0,
-     "inst_net_w": 3198623.0,
-     "inst_net_m": 61735991.0,
-     "fore_net_w": 12216879.0,
-     "fore_net_m": 70719280.0,
+     "inst_net_w": -6036463.0,
+     "inst_net_m": 79662017.0,
+     "fore_net_w": 2552479.0,
+     "fore_net_m": 86990701.0,
      "trust_net_w": 0.0,
      "trust_net_m": 0.0
     },
@@ -15395,12 +15395,12 @@
      "market": "上櫃",
      "value_w": 19690567015.0,
      "value_m": 40515272310.0,
-     "inst_net_w": 178188360.0,
-     "inst_net_m": -842223200.0,
-     "fore_net_w": 391841800.0,
-     "fore_net_m": -2167961600.0,
-     "trust_net_w": -209725040.0,
-     "trust_net_m": 1395367680.0
+     "inst_net_w": -380307760.0,
+     "inst_net_m": -1083942160.0,
+     "fore_net_w": -42697200.0,
+     "fore_net_m": -2272598720.0,
+     "trust_net_w": -305706800.0,
+     "trust_net_m": 1310565760.0
     },
     {
      "stock_id": "6139",
@@ -15467,12 +15467,12 @@
      "market": "上櫃",
      "value_w": 3058534286.0,
      "value_m": 7056640183.0,
-     "inst_net_w": 256548060.0,
-     "inst_net_m": 180971532.0,
-     "fore_net_w": 231558871.0,
-     "fore_net_m": 153454516.0,
+     "inst_net_w": 331752046.0,
+     "inst_net_m": 65212418.0,
+     "fore_net_w": 301002322.0,
+     "fore_net_m": 25843743.0,
      "trust_net_w": -5462500.0,
-     "trust_net_m": -5529142.0
+     "trust_net_m": -5310642.0
     },
     {
      "stock_id": "2834",
@@ -15755,10 +15755,10 @@
      "market": "上櫃",
      "value_w": 17513804.0,
      "value_m": 45706183.0,
-     "inst_net_w": 5518890.0,
-     "inst_net_m": 7054830.0,
-     "fore_net_w": 5449680.0,
-     "fore_net_m": 7114680.0,
+     "inst_net_w": 3792780.0,
+     "inst_net_m": 4868280.0,
+     "fore_net_w": 3690000.0,
+     "fore_net_m": 4905000.0,
      "trust_net_w": 0.0,
      "trust_net_m": 0.0
     },
@@ -15779,12 +15779,12 @@
      "market": "上櫃",
      "value_w": 868963123.0,
      "value_m": 1360396475.0,
-     "inst_net_w": -78437549.0,
-     "inst_net_m": -41348273.0,
-     "fore_net_w": -104957348.0,
-     "fore_net_m": -89517718.0,
-     "trust_net_w": 1131900.0,
-     "trust_net_m": 21197400.0
+     "inst_net_w": -83675056.0,
+     "inst_net_m": -31091578.0,
+     "fore_net_w": -110681538.0,
+     "fore_net_m": -78709308.0,
+     "trust_net_w": 0.0,
+     "trust_net_m": 20065500.0
     },
     {
      "stock_id": "2455",
@@ -15851,12 +15851,12 @@
      "market": "上櫃",
      "value_w": 33020979285.0,
      "value_m": 36135976420.0,
-     "inst_net_w": -3232787404.0,
-     "inst_net_m": -3325008608.0,
-     "fore_net_w": -2810922136.0,
-     "fore_net_m": -2740228794.0,
-     "trust_net_w": 19735500.0,
-     "trust_net_m": 18063000.0
+     "inst_net_w": -3184032468.0,
+     "inst_net_m": -3258098238.0,
+     "fore_net_w": -2832413538.0,
+     "fore_net_m": -2754045763.0,
+     "trust_net_w": 7359000.0,
+     "trust_net_m": 5909500.0
     },
     {
      "stock_id": "4128",
@@ -15875,10 +15875,10 @@
      "market": "上櫃",
      "value_w": 95789300.0,
      "value_m": 199918544.0,
-     "inst_net_w": 123876.0,
-     "inst_net_m": -14736271.0,
-     "fore_net_w": 515070.0,
-     "fore_net_m": -14138618.0,
+     "inst_net_w": 3485977.0,
+     "inst_net_m": -9140865.0,
+     "fore_net_w": 3733404.0,
+     "fore_net_m": -8840158.0,
      "trust_net_w": 0.0,
      "trust_net_m": 0.0
     },
@@ -15899,10 +15899,10 @@
      "market": "上櫃",
      "value_w": 673165226.0,
      "value_m": 1975631607.0,
-     "inst_net_w": 34425742.0,
-     "inst_net_m": 128723478.0,
-     "fore_net_w": 69110425.0,
-     "fore_net_m": 186063938.0,
+     "inst_net_w": 53512260.0,
+     "inst_net_m": 220875002.0,
+     "fore_net_w": 87144592.0,
+     "fore_net_m": 272097675.0,
      "trust_net_w": 0.0,
      "trust_net_m": 0.0
     },
@@ -16115,10 +16115,10 @@
      "market": "上櫃",
      "value_w": 49784103.0,
      "value_m": 102305858.0,
-     "inst_net_w": -4516321.0,
-     "inst_net_m": -6838623.0,
-     "fore_net_w": -4869037.0,
-     "fore_net_m": -6922516.0,
+     "inst_net_w": -4553695.0,
+     "inst_net_m": -7428876.0,
+     "fore_net_w": -4088393.0,
+     "fore_net_m": -6572693.0,
      "trust_net_w": 0.0,
      "trust_net_m": 0.0
     },
@@ -16163,10 +16163,10 @@
      "market": "上櫃",
      "value_w": 60660160.0,
      "value_m": 119356486.0,
-     "inst_net_w": 16127408.0,
-     "inst_net_m": 22477244.0,
-     "fore_net_w": 15057860.0,
-     "fore_net_m": 21102800.0,
+     "inst_net_w": 9175538.0,
+     "inst_net_m": 15303726.0,
+     "fore_net_w": 9192660.0,
+     "fore_net_m": 14963260.0,
      "trust_net_w": 0.0,
      "trust_net_m": 0.0
     },
@@ -16187,12 +16187,12 @@
      "market": "上櫃",
      "value_w": 49388428067.0,
      "value_m": 112804765378.0,
-     "inst_net_w": 782995430.0,
-     "inst_net_m": -5995328690.0,
-     "fore_net_w": 2730254220.0,
-     "fore_net_m": -1812055140.0,
-     "trust_net_w": -1802654060.0,
-     "trust_net_m": -3179994090.0
+     "inst_net_w": 290417420.0,
+     "inst_net_m": -7064696490.0,
+     "fore_net_w": 1742415640.0,
+     "fore_net_m": -4306876340.0,
+     "trust_net_w": -1163954300.0,
+     "trust_net_m": -1547312930.0
     },
     {
      "stock_id": "2401",
@@ -16283,12 +16283,12 @@
      "market": "上櫃",
      "value_w": 17499034931.0,
      "value_m": 41519717494.0,
-     "inst_net_w": 1785089828.0,
-     "inst_net_m": -1827023502.0,
-     "fore_net_w": 1538149022.0,
-     "fore_net_m": 1135554192.0,
-     "trust_net_w": 319805880.0,
-     "trust_net_m": -2543853417.0
+     "inst_net_w": 2211118460.0,
+     "inst_net_m": -303667124.0,
+     "fore_net_w": 2185222587.0,
+     "fore_net_m": 1264871610.0,
+     "trust_net_w": 55432848.0,
+     "trust_net_m": -1314906843.0
     },
     {
      "stock_id": "6279",
@@ -16307,10 +16307,10 @@
      "market": "上櫃",
      "value_w": 977558835.0,
      "value_m": 1617838059.0,
-     "inst_net_w": 199411912.0,
-     "inst_net_m": 495945675.0,
-     "fore_net_w": 183130035.0,
-     "fore_net_m": 469505235.0,
+     "inst_net_w": 157309118.0,
+     "inst_net_m": 442631805.0,
+     "fore_net_w": 143548298.0,
+     "fore_net_m": 424139332.0,
      "trust_net_w": -255000.0,
      "trust_net_m": -1147500.0
     },
@@ -16355,12 +16355,12 @@
      "market": "上櫃",
      "value_w": 6391765754.0,
      "value_m": 13013828882.0,
-     "inst_net_w": 23814750.0,
-     "inst_net_m": 2335199250.0,
-     "fore_net_w": -1494750.0,
-     "fore_net_m": 2480649000.0,
-     "trust_net_w": 54000000.0,
-     "trust_net_m": -133650000.0
+     "inst_net_w": 213045750.0,
+     "inst_net_m": 2020884000.0,
+     "fore_net_w": 178623000.0,
+     "fore_net_m": 2185892250.0,
+     "trust_net_w": 45750000.0,
+     "trust_net_m": -158400000.0
     },
     {
      "stock_id": "3673",
@@ -16499,12 +16499,12 @@
      "market": "上櫃",
      "value_w": 13636793131.0,
      "value_m": 26732933296.0,
-     "inst_net_w": -1493742825.0,
-     "inst_net_m": -1793832165.0,
-     "fore_net_w": -2246854815.0,
-     "fore_net_m": -3125861595.0,
-     "trust_net_w": 755867880.0,
-     "trust_net_m": 1264717215.0
+     "inst_net_w": -1457791470.0,
+     "inst_net_m": -2031465285.0,
+     "fore_net_w": -2227688370.0,
+     "fore_net_m": -3342652965.0,
+     "trust_net_w": 763824915.0,
+     "trust_net_m": 1240891245.0
     },
     {
      "stock_id": "3260",
@@ -16523,12 +16523,12 @@
      "market": "上櫃",
      "value_w": 20633509420.0,
      "value_m": 53433167123.0,
-     "inst_net_w": 163231296.0,
-     "inst_net_m": 2427467352.0,
-     "fore_net_w": 177409434.0,
-     "fore_net_m": 2445648606.0,
+     "inst_net_w": -1384819248.0,
+     "inst_net_m": -1374253482.0,
+     "fore_net_w": -1341666960.0,
+     "fore_net_m": -1164809472.0,
      "trust_net_w": -9366600.0,
-     "trust_net_m": -63584340.0
+     "trust_net_m": -61976340.0
     },
     {
      "stock_id": "3227",
@@ -16547,12 +16547,12 @@
      "market": "上櫃",
      "value_w": 1273621632.0,
      "value_m": 2712610445.0,
-     "inst_net_w": -50620284.0,
-     "inst_net_m": 432736128.0,
-     "fore_net_w": 78932700.0,
-     "fore_net_m": 703041768.0,
+     "inst_net_w": 35254494.0,
+     "inst_net_m": 574783110.0,
+     "fore_net_w": 156944700.0,
+     "fore_net_m": 826506846.0,
      "trust_net_w": -118998000.0,
-     "trust_net_m": -269834400.0
+     "trust_net_m": -269280000.0
     },
     {
      "stock_id": "6239",
@@ -16643,12 +16643,12 @@
      "market": "上櫃",
      "value_w": 2198188781.0,
      "value_m": 4255067183.0,
-     "inst_net_w": 231478389.0,
-     "inst_net_m": 518140624.0,
-     "fore_net_w": 241451982.0,
-     "fore_net_m": 503449992.0,
+     "inst_net_w": 117019845.0,
+     "inst_net_m": 373298265.0,
+     "fore_net_w": 141062054.0,
+     "fore_net_m": 385052162.0,
      "trust_net_w": 0.0,
-     "trust_net_m": 121437.0
+     "trust_net_m": 330012.0
     },
     {
      "stock_id": "6443",
@@ -16739,12 +16739,12 @@
      "market": "上櫃",
      "value_w": 946051563.0,
      "value_m": 1262589176.0,
-     "inst_net_w": -175777920.0,
-     "inst_net_m": -175330800.0,
-     "fore_net_w": -190283880.0,
-     "fore_net_m": -217202160.0,
-     "trust_net_w": 960000.0,
-     "trust_net_m": 23640000.0
+     "inst_net_w": -131734080.0,
+     "inst_net_m": -142478760.0,
+     "fore_net_w": -141923880.0,
+     "fore_net_m": -180426240.0,
+     "trust_net_w": -240000.0,
+     "trust_net_m": 22440000.0
     },
     {
      "stock_id": "8112",
@@ -16811,12 +16811,12 @@
      "market": "上櫃",
      "value_w": 12742820345.0,
      "value_m": 19567008203.0,
-     "inst_net_w": 1572153979.0,
-     "inst_net_m": 1898747658.0,
-     "fore_net_w": -809615807.0,
-     "fore_net_m": -1275882382.0,
-     "trust_net_w": 2298127552.0,
-     "trust_net_m": 3005556230.0
+     "inst_net_w": 1301857502.0,
+     "inst_net_m": 1691298257.0,
+     "fore_net_w": -1120459439.0,
+     "fore_net_m": -1181621128.0,
+     "trust_net_w": 2331949620.0,
+     "trust_net_m": 2725184864.0
     },
     {
      "stock_id": "5871",
@@ -16955,12 +16955,12 @@
      "market": "上櫃",
      "value_w": 49831688383.0,
      "value_m": 87458204010.0,
-     "inst_net_w": -1598862132.0,
-     "inst_net_m": -2724961554.0,
-     "fore_net_w": -2358780480.0,
-     "fore_net_m": -4094235936.0,
-     "trust_net_w": 903746970.0,
-     "trust_net_m": 1351928718.0
+     "inst_net_w": -3970660554.0,
+     "inst_net_m": -5011823376.0,
+     "fore_net_w": -4308724098.0,
+     "fore_net_m": -5637318876.0,
+     "trust_net_w": 591755598.0,
+     "trust_net_m": 756650538.0
     },
     {
      "stock_id": "2421",
@@ -17027,10 +17027,10 @@
      "market": "上櫃",
      "value_w": 149568577.0,
      "value_m": 259781804.0,
-     "inst_net_w": 23101386.0,
-     "inst_net_m": 34883930.0,
-     "fore_net_w": 23906637.0,
-     "fore_net_m": 35643537.0,
+     "inst_net_w": 14465201.0,
+     "inst_net_m": 26755040.0,
+     "fore_net_w": 15074961.0,
+     "fore_net_m": 27246561.0,
      "trust_net_w": 0.0,
      "trust_net_m": 0.0
     },
@@ -17051,12 +17051,12 @@
      "market": "上櫃",
      "value_w": 15095801355.0,
      "value_m": 35617260298.0,
-     "inst_net_w": 91820110.0,
-     "inst_net_m": 2967810260.0,
-     "fore_net_w": 13768320.0,
-     "fore_net_m": 2497110870.0,
+     "inst_net_w": 163957340.0,
+     "inst_net_m": 1130377860.0,
+     "fore_net_w": 55830780.0,
+     "fore_net_m": 986228640.0,
      "trust_net_w": 314110.0,
-     "trust_net_m": 397940.0
+     "trust_net_m": 902940.0
     },
     {
      "stock_id": "6188",
@@ -17075,10 +17075,10 @@
      "market": "上櫃",
      "value_w": 201170978.0,
      "value_m": 543547454.0,
-     "inst_net_w": 6042150.0,
-     "inst_net_m": 40143981.0,
-     "fore_net_w": 2430278.0,
-     "fore_net_m": 34926918.0,
+     "inst_net_w": -4097843.0,
+     "inst_net_m": 24639366.0,
+     "fore_net_w": -7710067.0,
+     "fore_net_m": 19576973.0,
      "trust_net_w": 0.0,
      "trust_net_m": 0.0
     },
@@ -17123,12 +17123,12 @@
      "market": "上櫃",
      "value_w": 1909877860.0,
      "value_m": 4083738077.0,
-     "inst_net_w": -52879470.0,
-     "inst_net_m": -473735550.0,
-     "fore_net_w": -61151082.0,
-     "fore_net_m": -474720054.0,
+     "inst_net_w": -16483488.0,
+     "inst_net_m": -423180654.0,
+     "fore_net_w": -24086262.0,
+     "fore_net_m": -424485840.0,
      "trust_net_w": 0.0,
-     "trust_net_m": 57000.0
+     "trust_net_m": 193800.0
     },
     {
      "stock_id": "2449",
@@ -17243,10 +17243,10 @@
      "market": "上櫃",
      "value_w": 138372675.0,
      "value_m": 336887990.0,
-     "inst_net_w": 16390125.0,
-     "inst_net_m": -14164425.0,
-     "fore_net_w": 19471275.0,
-     "fore_net_m": -12164400.0,
+     "inst_net_w": 12519225.0,
+     "inst_net_m": -12427650.0,
+     "fore_net_w": 15165000.0,
+     "fore_net_m": -10177425.0,
      "trust_net_w": 0.0,
      "trust_net_m": 0.0
     },
@@ -17387,10 +17387,10 @@
      "market": "上櫃",
      "value_w": 515376745.0,
      "value_m": 787302173.0,
-     "inst_net_w": 92207076.0,
-     "inst_net_m": 210431533.0,
-     "fore_net_w": 88725507.0,
-     "fore_net_m": 203926047.0,
+     "inst_net_w": 85921712.0,
+     "inst_net_m": 195986258.0,
+     "fore_net_w": 80944240.0,
+     "fore_net_m": 189042217.0,
      "trust_net_w": 0.0,
      "trust_net_m": -322536.0
     },
@@ -17411,10 +17411,10 @@
      "market": "上櫃",
      "value_w": 326286475.0,
      "value_m": 824079439.0,
-     "inst_net_w": 58146064.0,
-     "inst_net_m": 46353339.0,
-     "fore_net_w": 57938860.0,
-     "fore_net_m": 46399839.0,
+     "inst_net_w": 46037418.0,
+     "inst_net_m": 43146188.0,
+     "fore_net_w": 45618732.0,
+     "fore_net_m": 42542710.0,
      "trust_net_w": 0.0,
      "trust_net_m": 0.0
     },
@@ -17531,12 +17531,12 @@
      "market": "上櫃",
      "value_w": 12442417201.0,
      "value_m": 23944857251.0,
-     "inst_net_w": -4337121466.0,
-     "inst_net_m": -5053904945.0,
-     "fore_net_w": -4195789266.0,
-     "fore_net_m": -4667944878.0,
-     "trust_net_w": -20765120.0,
-     "trust_net_m": -245525374.0
+     "inst_net_w": -3808251156.0,
+     "inst_net_m": -4270412222.0,
+     "fore_net_w": -3638531898.0,
+     "fore_net_m": -3869779918.0,
+     "trust_net_w": -19136765.0,
+     "trust_net_m": -230657019.0
     },
     {
      "stock_id": "3042",
@@ -17603,12 +17603,12 @@
      "market": "上櫃",
      "value_w": 13368905852.0,
      "value_m": 13368905852.0,
-     "inst_net_w": -3559155005.0,
-     "inst_net_m": -3559155005.0,
-     "fore_net_w": -3620729975.0,
-     "fore_net_m": -3620729975.0,
-     "trust_net_w": 60119000.0,
-     "trust_net_m": 60119000.0
+     "inst_net_w": -1544471172.0,
+     "inst_net_m": -1544471172.0,
+     "fore_net_w": -1580038078.0,
+     "fore_net_m": -1580038078.0,
+     "trust_net_w": 12087000.0,
+     "trust_net_m": 12087000.0
     },
     {
      "stock_id": "2481",
@@ -17675,10 +17675,10 @@
      "market": "上櫃",
      "value_w": 3695490204.0,
      "value_m": 7323746366.0,
-     "inst_net_w": -11505308.0,
-     "inst_net_m": -304305786.0,
-     "fore_net_w": 6261165.0,
-     "fore_net_m": -308579931.0,
+     "inst_net_w": -94096854.0,
+     "inst_net_m": -386255484.0,
+     "fore_net_w": -66467272.0,
+     "fore_net_m": -374230678.0,
      "trust_net_w": 0.0,
      "trust_net_m": 25650000.0
     },
@@ -17699,12 +17699,12 @@
      "market": "上櫃",
      "value_w": 25124819895.0,
      "value_m": 39292325408.0,
-     "inst_net_w": 1734904145.0,
-     "inst_net_m": 1670924815.0,
-     "fore_net_w": -2065735110.0,
-     "fore_net_m": -2448806412.0,
-     "trust_net_w": 3827811800.0,
-     "trust_net_m": 4068667800.0
+     "inst_net_w": 1788180241.0,
+     "inst_net_m": 1979597810.0,
+     "fore_net_w": -1357530495.0,
+     "fore_net_m": -1590570014.0,
+     "trust_net_w": 3121274800.0,
+     "trust_net_m": 3419920600.0
     },
     {
      "stock_id": "1795",
@@ -17747,12 +17747,12 @@
      "market": "上櫃",
      "value_w": 21721047147.0,
      "value_m": 41521662238.0,
-     "inst_net_w": -925066958.0,
-     "inst_net_m": -2523717472.0,
-     "fore_net_w": -1097229578.0,
-     "fore_net_m": -1417087192.0,
-     "trust_net_w": 91417252.0,
-     "trust_net_m": -831497940.0
+     "inst_net_w": -559621440.0,
+     "inst_net_m": -1076032912.0,
+     "fore_net_w": -806626642.0,
+     "fore_net_m": -294627848.0,
+     "trust_net_w": 91413630.0,
+     "trust_net_m": -622398105.0
     },
     {
      "stock_id": "2441",
@@ -17819,12 +17819,12 @@
      "market": "上櫃",
      "value_w": 3092187074.0,
      "value_m": 4494694169.0,
-     "inst_net_w": 1000616572.0,
-     "inst_net_m": 1624889272.0,
-     "fore_net_w": 1005074000.0,
-     "fore_net_m": 1691011564.0,
-     "trust_net_w": 25173200.0,
-     "trust_net_m": -35930520.0
+     "inst_net_w": 913545728.0,
+     "inst_net_m": 1269727556.0,
+     "fore_net_w": 899420308.0,
+     "fore_net_m": 1314094600.0,
+     "trust_net_w": 17345200.0,
+     "trust_net_m": -40050520.0
     },
     {
      "stock_id": "3081",
@@ -17843,12 +17843,12 @@
      "market": "上櫃",
      "value_w": 23777278470.0,
      "value_m": 52870451515.0,
-     "inst_net_w": 2360274680.0,
-     "inst_net_m": 6091709940.0,
-     "fore_net_w": -840262480.0,
-     "fore_net_m": 1185517060.0,
-     "trust_net_w": 2061042360.0,
-     "trust_net_m": 3609086000.0
+     "inst_net_w": 1356982300.0,
+     "inst_net_m": 1687372800.0,
+     "fore_net_w": -945431180.0,
+     "fore_net_m": -1753024180.0,
+     "trust_net_w": 1573362360.0,
+     "trust_net_m": 2565146000.0
     },
     {
      "stock_id": "3034",
@@ -18011,10 +18011,10 @@
      "market": "上櫃",
      "value_w": 21326537826.0,
      "value_m": 26106164783.0,
-     "inst_net_w": -1374485910.0,
-     "inst_net_m": -2617926780.0,
-     "fore_net_w": -1627790640.0,
-     "fore_net_m": -2611698600.0,
+     "inst_net_w": -1257972870.0,
+     "inst_net_m": -2463655740.0,
+     "fore_net_w": -1522994550.0,
+     "fore_net_m": -2453856930.0,
      "trust_net_w": 403620000.0,
      "trust_net_m": 403572750.0
     },
@@ -18107,12 +18107,12 @@
      "market": "上櫃",
      "value_w": 81535450175.0,
      "value_m": 132980757380.0,
-     "inst_net_w": -7670936000.0,
-     "inst_net_m": -7125872000.0,
-     "fore_net_w": -4743593920.0,
-     "fore_net_m": -2658165120.0,
-     "trust_net_w": -1510371200.0,
-     "trust_net_m": -2659094880.0
+     "inst_net_w": -8863535200.0,
+     "inst_net_m": -9938011200.0,
+     "fore_net_w": -5705442080.0,
+     "fore_net_m": -4933633120.0,
+     "trust_net_w": -1510398240.0,
+     "trust_net_m": -2542718880.0
     },
     {
      "stock_id": "6414",
@@ -18155,10 +18155,10 @@
      "market": "上櫃",
      "value_w": 382796105.0,
      "value_m": 659950897.0,
-     "inst_net_w": -25061960.0,
-     "inst_net_m": -36569500.0,
-     "fore_net_w": -28958820.0,
-     "fore_net_m": -48140730.0,
+     "inst_net_w": -24583570.0,
+     "inst_net_m": -37822400.0,
+     "fore_net_w": -28626730.0,
+     "fore_net_m": -49274940.0,
      "trust_net_w": 0.0,
      "trust_net_m": 0.0
     }
@@ -18179,9 +18179,9 @@
     "up_ratio": 69.6,
     "trading_value": 4494977507796,
     "trading_volume": 22824319608,
-    "inst_net_value": 179496070826,
-    "foreign_net_value": 155215876105,
-    "trust_net_value": 18438338419
+    "inst_net_value": 175819013848,
+    "foreign_net_value": 154692599973,
+    "trust_net_value": 16091054799
    },
    "mtd": {
     "avg_change_pct": 12.02,
@@ -18189,9 +18189,9 @@
     "up_ratio": 82.6,
     "trading_value": 9014519352897,
     "trading_volume": 44103438085,
-    "inst_net_value": 214799928431,
-    "foreign_net_value": 141722402897,
-    "trust_net_value": 89500132921
+    "inst_net_value": 206652355752,
+    "foreign_net_value": 138507588028,
+    "trust_net_value": 86045113046
    },
    "qtd": {
     "avg_change_pct": -2.65,
@@ -18331,10 +18331,10 @@
      "market": "上櫃",
      "value_w": 3483625658.0,
      "value_m": 5776565862.0,
-     "inst_net_w": -2089977648.0,
-     "inst_net_m": -2226199987.0,
-     "fore_net_w": -626008370.0,
-     "fore_net_m": -788585644.0,
+     "inst_net_w": -1804351572.0,
+     "inst_net_m": -1961274904.0,
+     "fore_net_w": -477163050.0,
+     "fore_net_m": -649664314.0,
      "trust_net_w": 0.0,
      "trust_net_m": 0.0
     },
@@ -18355,10 +18355,10 @@
      "market": "上櫃",
      "value_w": 323996939.0,
      "value_m": 647060093.0,
-     "inst_net_w": -124649896.0,
-     "inst_net_m": -44652981.0,
-     "fore_net_w": -68461470.0,
-     "fore_net_m": -70898290.0,
+     "inst_net_w": -113932301.0,
+     "inst_net_m": -52293268.0,
+     "fore_net_w": -57331130.0,
+     "fore_net_m": -73269250.0,
      "trust_net_w": 0.0,
      "trust_net_m": 0.0
     },
@@ -18427,10 +18427,10 @@
      "market": "上櫃",
      "value_w": 1873974188.0,
      "value_m": 5277980729.0,
-     "inst_net_w": -431441926.0,
-     "inst_net_m": -46567541.0,
-     "fore_net_w": -110057446.0,
-     "fore_net_m": -835696874.0,
+     "inst_net_w": -486872506.0,
+     "inst_net_m": -204370052.0,
+     "fore_net_w": -126601246.0,
+     "fore_net_m": -864477834.0,
      "trust_net_w": 0.0,
      "trust_net_m": 0.0
     },
@@ -18451,10 +18451,10 @@
      "market": "上櫃",
      "value_w": 1312967866.0,
      "value_m": 4071274572.0,
-     "inst_net_w": 79319394.0,
-     "inst_net_m": 515495891.0,
-     "fore_net_w": -15437050.0,
-     "fore_net_m": -907488250.0,
+     "inst_net_w": 19683913.0,
+     "inst_net_m": 354027983.0,
+     "fore_net_w": -30060021.0,
+     "fore_net_m": -1059362481.0,
      "trust_net_w": 0.0,
      "trust_net_m": 0.0
     },
@@ -18475,10 +18475,10 @@
      "market": "上櫃",
      "value_w": 306005561.0,
      "value_m": 896504315.0,
-     "inst_net_w": -85765857.0,
-     "inst_net_m": 106898986.0,
-     "fore_net_w": -26487427.0,
-     "fore_net_m": -73824359.0,
+     "inst_net_w": -63182476.0,
+     "inst_net_m": 61755142.0,
+     "fore_net_w": -25672515.0,
+     "fore_net_m": -138217448.0,
      "trust_net_w": 0.0,
      "trust_net_m": 0.0
     },
@@ -18739,8 +18739,8 @@
     "up_ratio": 47.6,
     "trading_value": 90883008091,
     "trading_volume": 1897752104,
-    "inst_net_value": 19432561242,
-    "foreign_net_value": 14744138390,
+    "inst_net_value": 19636422233,
+    "foreign_net_value": 14873762191,
     "trust_net_value": -580993650
    },
    "mtd": {
@@ -18749,8 +18749,8 @@
     "up_ratio": 57.1,
     "trading_value": 206819533167,
     "trading_volume": 4115609557,
-    "inst_net_value": 17063675342,
-    "foreign_net_value": 25528508637,
+    "inst_net_value": 16956545875,
+    "foreign_net_value": 25420010727,
     "trust_net_value": 2719110130
    },
    "qtd": {
