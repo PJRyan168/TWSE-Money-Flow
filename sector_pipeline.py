@@ -258,17 +258,11 @@ def fetch_tpex_inst(d: date) -> list[dict]:
     """
     櫃買中心上櫃三大法人買賣超(股數),拆分外資 / 投信。
 
-    TPEx 欄位名稱不含法人前綴(皆為「買進股數/賣出股數/買賣超股數」重複六組),
-    只能依固定順序判讀。實際欄位順序:
-      [0]代號 [1]名稱
-      [2:5]   外資及陸資(不含外資自營商)   → 買賣超在 index 4
-      [5:8]   外資自營商
-      [8:11]  投信                          → 買賣超在 index 10
-      [11:14] 自營商(自行買賣)
-      [14:17] 自營商(避險)
-      [17:20] 自營商合計
-      [-1]    三大法人買賣超股數合計
-    以「合計 ≈ 外資+投信+自營」交叉驗證,對不上則該日退回僅取合計。
+    TPEx 欄位皆為「買進/賣出/買賣超股數」重複多組、無法人前綴,只能依順序判讀,
+    且版面會不定期增減「外資合計 / 自營商合計」等小計欄。為避免寫死欄位在改版後
+    整組歸零,改用「逐列自我驗證」自動選版:對每組候選欄位檢查
+    (外資+投信+自營) 是否等於官方三大法人合計,命中率達標者採用;
+    全部不符則僅取合計、外資/投信以 0 計(等同保守退回,不會產生錯誤數字)。
     """
     try:
         payload = http_get_json(
@@ -283,23 +277,64 @@ def fetch_tpex_inst(d: date) -> list[dict]:
     if not payload:
         return []
     fields, rows = find_table(payload, "代號")
-    if not fields:
+    if not fields or not rows:
         return []
 
     i_id = col_idx(fields, "代號")
+    # 三大法人合計買賣超 = 名稱含「三大法人」者,否則取最後一個「買賣超」欄
     i_net = None
     for i, f in enumerate(fields):
-        if "三大法人" in f:
+        if "三大法人" in str(f):
             i_net = i
+    if i_net is None:
+        for i, f in enumerate(fields):
+            if "買賣超" in str(f):
+                i_net = i
     if i_net is None:
         i_net = len(fields) - 1
 
-    # 依固定順序定位;若欄位數不符預期則不拆分,僅取合計
-    i_fore, i_trust = (4, 10) if i_net >= 20 else (None, None)
-    if i_fore is None:
-        print(f"[warn] 上櫃法人欄位數 {len(fields)} 與預期不符,{d} 僅取合計不拆分。")
+    def cell(r, i):
+        return (to_num(r[i]) or 0.0) if (i is not None and len(r) > i) else 0.0
 
-    out, checked = [], False
+    def hit_rate(parts):
+        """樣本列中「分項合計 == 官方三大法人合計」的命中率。"""
+        ok = tot = 0
+        for r in rows:
+            if len(r) <= i_net:
+                continue
+            sid = str(r[i_id]).strip()
+            if not SEC_ID_RE.match(sid):
+                continue
+            net = to_num(r[i_net])
+            if net is None:
+                continue
+            tot += 1
+            s = sum(cell(r, i) for i in parts)
+            if abs(s - net) <= max(abs(net) * 0.02, 1000):
+                ok += 1
+            if tot >= 60:
+                break
+        return (ok / tot) if tot else 0.0
+
+    # 候選版面:(外資欄, 投信欄, 驗證用分項欄)。外資統一取「不含外資自營商」(idx 4),與上市一致。
+    #   新版(含 外資合計/自營合計 小計):投信在 idx 13,驗證 外資合計10 + 投信13 + 自營合計22
+    #   舊版(無小計)              :投信在 idx 10,驗證 4 + 7 + 10 + 19
+    candidates = [
+        (4, 13, (10, 13, 22)),
+        (4, 10, (4, 7, 10, 19)),
+    ]
+    i_fore = i_trust = None
+    for cf, ct, parts in candidates:
+        if max(parts) <= i_net and hit_rate(parts) >= 0.8:
+            i_fore, i_trust = cf, ct
+            print(f"[tpex] {d} 法人拆分版面命中:外資 idx={cf}、投信 idx={ct}")
+            break
+    if i_fore is None:
+        preview = [str(x) for x in rows[0][:28]] if rows else []
+        print(f"[warn] 上櫃法人欄位無法對上已知版面(欄數 {len(fields)}),"
+              f"{d} 僅取三大法人合計、外資/投信以 0 計。首列前 28 欄:{preview}")
+
+    out = []
     for r in rows:
         if len(r) <= i_net:
             continue
@@ -309,25 +344,11 @@ def fetch_tpex_inst(d: date) -> list[dict]:
         net = to_num(r[i_net])
         if net is None:
             continue
-        rec = {"date": d.isoformat(), "stock_id": sid, "net_shares": net,
-               "foreign_shares": 0.0, "trust_shares": 0.0}
-        if i_fore is not None:
-            fore = to_num(r[i_fore]) or 0.0
-            trust = to_num(r[i_trust]) or 0.0
-            # 首筆交叉驗證:外資+外資自營+投信+自營合計 應等於三大法人合計
-            if not checked:
-                checked = True
-                parts = sum((to_num(r[i]) or 0.0) for i in (4, 7, 10, 19)
-                            if len(r) > i)
-                if abs(parts - net) > max(abs(net) * 0.02, 1000):
-                    print(f"[warn] 上櫃法人欄位交叉驗證失敗"
-                          f"(分項合計 {parts:.0f} vs 官方合計 {net:.0f}),"
-                          f"{d} 起停用拆分,僅取合計。")
-                    i_fore = i_trust = None
-            if i_fore is not None:
-                rec["foreign_shares"] = fore
-                rec["trust_shares"] = trust
-        out.append(rec)
+        out.append({
+            "date": d.isoformat(), "stock_id": sid, "net_shares": net,
+            "foreign_shares": cell(r, i_fore) if i_fore is not None else 0.0,
+            "trust_shares": cell(r, i_trust) if i_trust is not None else 0.0,
+        })
     return out
 
 
