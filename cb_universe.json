@@ -1,8 +1,8 @@
 {
  "source": "TPEx 最近上櫃轉(交)換公司債",
- "updated_at": "2026-08-17T18:14:00",
- "cb_count": 385,
- "stock_count": 310,
+ "updated_at": "2026-08-18T18:10:52",
+ "cb_count": 386,
+ "stock_count": 311,
  "bonds": [
   {
    "cb_id": "11011",
@@ -493,6 +493,11 @@
    "cb_id": "32071",
    "cb_name": "耀勝",
    "stock_id": "3207"
+  },
+  {
+   "cb_id": "32191",
+   "cb_name": "倚強科",
+   "stock_id": "3219"
   },
   {
    "cb_id": "32571",
