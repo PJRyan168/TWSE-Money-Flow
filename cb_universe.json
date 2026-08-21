@@ -1,8 +1,8 @@
 {
  "source": "TPEx 最近上櫃轉(交)換公司債",
- "updated_at": "2026-08-20T18:40:05",
- "cb_count": 389,
- "stock_count": 313,
+ "updated_at": "2026-08-21T18:14:53",
+ "cb_count": 388,
+ "stock_count": 312,
  "bonds": [
   {
    "cb_id": "11011",
@@ -198,11 +198,6 @@
    "cb_id": "23511",
    "cb_name": "順德",
    "stock_id": "2351"
-  },
-  {
-   "cb_id": "23683",
-   "cb_name": "金像電",
-   "stock_id": "2368"
   },
   {
    "cb_id": "23742",
