@@ -23,6 +23,11 @@ h1{font-size:26px;font-weight:900;letter-spacing:.06em}
 h1 .fire{color:var(--gold)}
 .meta{color:var(--muted);font-size:13px}
 .meta b{color:var(--text);font-weight:500}
+.topnav{margin-left:auto;display:flex;gap:18px;flex-wrap:wrap}
+.topnav a{color:var(--gold);font-size:13.5px;font-weight:500;text-decoration:none;white-space:nowrap;transition:opacity .15s}
+.topnav a:hover{opacity:.7;text-decoration:underline}
+.topnav a:focus-visible{outline:2px solid var(--gold);outline-offset:2px;border-radius:3px}
+@media (max-width:640px){.topnav{margin-left:0;width:100%;gap:14px}.topnav a{font-size:12.5px}}
 .basebar{color:var(--muted);font-size:12px;margin-bottom:18px}
 .controls{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:20px}
 .seg{display:flex;background:var(--panel);border:1px solid var(--line);border-radius:10px;overflow:hidden}
@@ -136,6 +141,10 @@ td.up{color:var(--up)}td.down{color:var(--down)}
   <header>
     <h1>盤後族群資金<span class="fire">熱力</span></h1>
     <span class="meta" id="meta"></span>
+    <nav class="topnav">
+      <a href="cb.html">可轉債標的熱力 →</a>
+      <a href="futures.html">期貨標的熱力 →</a>
+    </nav>
   </header>
   <div class="basebar" id="basebar"></div>
 
