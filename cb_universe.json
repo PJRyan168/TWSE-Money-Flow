@@ -1,7 +1,7 @@
 {
  "source": "TPEx 最近上櫃轉(交)換公司債",
- "updated_at": "2026-08-24T20:22:20",
- "cb_count": 388,
+ "updated_at": "2026-08-25T18:16:56",
+ "cb_count": 387,
  "stock_count": 312,
  "bonds": [
   {
@@ -1473,11 +1473,6 @@
    "cb_id": "67711",
    "cb_name": "平和環保-創",
    "stock_id": "6771"
-  },
-  {
-   "cb_id": "67961",
-   "cb_name": "晉弘",
-   "stock_id": "6796"
   },
   {
    "cb_id": "67962",
