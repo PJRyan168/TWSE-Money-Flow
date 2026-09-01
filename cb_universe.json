@@ -1,8 +1,8 @@
 {
  "source": "TPEx 最近上櫃轉(交)換公司債",
- "updated_at": "2026-09-01T01:24:25",
- "cb_count": 386,
- "stock_count": 310,
+ "updated_at": "2026-09-01T20:19:54",
+ "cb_count": 385,
+ "stock_count": 309,
  "bonds": [
   {
    "cb_id": "11011",
@@ -1483,11 +1483,6 @@
    "cb_id": "68032",
    "cb_name": "崑鼎",
    "stock_id": "6803"
-  },
-  {
-   "cb_id": "68061",
-   "cb_name": "森崴能源",
-   "stock_id": "6806"
   },
   {
    "cb_id": "68211",
