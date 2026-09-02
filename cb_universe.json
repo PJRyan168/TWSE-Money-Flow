@@ -1,7 +1,7 @@
 {
  "source": "TPEx 最近上櫃轉(交)換公司債",
- "updated_at": "2026-09-01T22:18:59",
- "cb_count": 385,
+ "updated_at": "2026-09-02T18:48:41",
+ "cb_count": 384,
  "stock_count": 309,
  "bonds": [
   {
@@ -1430,16 +1430,6 @@
    "stock_id": "6670"
   },
   {
-   "cb_id": "66721",
-   "cb_name": "騰輝電子-KY",
-   "stock_id": "6672"
-  },
-  {
-   "cb_id": "66722",
-   "cb_name": "騰輝電子-KY",
-   "stock_id": "6672"
-  },
-  {
    "cb_id": "66801",
    "cb_name": "鑫創電子",
    "stock_id": "6680"
@@ -1763,6 +1753,11 @@
    "cb_id": "82103",
    "cb_name": "勤誠",
    "stock_id": "8210"
+  },
+  {
+   "cb_id": "82221",
+   "cb_name": "寶一",
+   "stock_id": "8222"
   },
   {
    "cb_id": "82711",

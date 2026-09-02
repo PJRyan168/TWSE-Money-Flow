@@ -1,6 +1,6 @@
 {
  "source": "TAIFEX stockLists 股票期貨標的",
- "updated_at": "2026-09-01T22:17:13",
+ "updated_at": "2026-09-02T18:47:08",
  "count": 270,
  "universe": [
   {
@@ -946,12 +946,6 @@
    "market": "上櫃"
   },
   {
-   "stock_id": "5371",
-   "stock_name": "中光電",
-   "kind": "個股",
-   "market": "上櫃"
-  },
-  {
    "stock_id": "5483",
    "stock_name": "中美晶",
    "kind": "個股",
@@ -1622,6 +1616,12 @@
    "stock_name": "華城",
    "kind": "個股",
    "market": "上市"
+  },
+  {
+   "stock_id": "3718",
+   "stock_name": "中光電投控",
+   "kind": "個股",
+   "market": "上櫃"
   }
  ]
 }
