@@ -1,8 +1,8 @@
 {
  "source": "TPEx 最近上櫃轉(交)換公司債",
- "updated_at": "2026-09-07T23:16:35",
- "cb_count": 385,
- "stock_count": 311,
+ "updated_at": "2026-09-08T20:44:43",
+ "cb_count": 386,
+ "stock_count": 312,
  "bonds": [
   {
    "cb_id": "11011",
@@ -863,6 +863,11 @@
    "cb_id": "45102",
    "cb_name": "高鋒",
    "stock_id": "4510"
+  },
+  {
+   "cb_id": "45415",
+   "cb_name": "晟田",
+   "stock_id": "4541"
   },
   {
    "cb_id": "45421",
