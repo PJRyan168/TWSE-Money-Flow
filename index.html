@@ -219,6 +219,12 @@ let stockThemes={};   // stock_id → [題材名]
     if(!r1.ok) throw new Error("stats HTTP "+r1.status);
     DATA=await r1.json();
 
+    // 市場別對照(決定 Yahoo 連結 .TW/.TWO);抓不到就全視為上市
+    try{
+      const rm=await fetch("output/market_map.json?t="+Date.now());
+      if(rm.ok) marketMap=await rm.json();
+    }catch(e){console.warn("market_map 載入失敗,連結預設 .TW",e);}
+
     // 產業地圖獨立抓取,失敗不影響主資料;錯誤訊息保留供地圖區顯示
     MAP=null;
     try{
@@ -279,8 +285,14 @@ $("pop").addEventListener("click",e=>{if(e.target===$("pop"))$("pop").classList.
 /* ---------- 工具 ---------- */
 const yi=v=>v==null?"—":(v/1e8).toFixed(Math.abs(v)>=1e10?0:1);
 const pct=v=>v==null?"—":(v>0?"+":"")+v.toFixed(2)+"%";
-const GI_CAT={daily:"DATE",wtd:"WEEK",mtd:"MONTH",qtd:"QUAR",ytd:"YEAR"};
-const goodinfo=id=>`https://goodinfo.tw/tw/ShowK_Chart.asp?STOCK_ID=${id}&CHT_CAT2=${GI_CAT[period]||"DATE"}`;
+// Yahoo 股市技術分析頁。上市用 .TW、上櫃用 .TWO。
+// 市場別優先讀 industry_map 的 otc 標記;無標記時預設上市(.TW)。
+let marketMap={};  // 股號 → "twse"/"tpex",由 market_map.json 載入
+function yahooChart(id){
+  const suf=marketMap[String(id)]==="tpex"?".TWO":".TW";
+  return `https://tw.stock.yahoo.com/quote/${id}${suf}/technical-analysis`;
+}
+const goodinfo=id=>yahooChart(id);  // 沿用呼叫點名稱,最小改動
 const chgOf=s=>({daily:s.chg_daily,wtd:s.chg_wtd,mtd:s.chg_mtd,qtd:s.chg_qtd,ytd:s.chg_ytd})[period];
 const cls=v=>v==null?"c-flat":v>0.001?"c-up":v<-0.001?"c-down":"c-flat";
 function tileColor(chg){
@@ -439,7 +451,7 @@ function renderMap(){
           return `<div class="srow" tabindex="0" role="button" data-sid="${s.id}" data-sname="${s.name}" data-role="${(s.role||"").replace(/"/g,"&quot;")}">
             <span class="sdot" style="background:${chg==null?"var(--flat)":chg>0?"var(--up)":chg<0?"var(--down)":"var(--flat)"}"></span>
             <span class="sname">${s.name} <span class="scode num">${s.id}</span>
-              <a class="chart-ico" href="${goodinfo(s.id)}" target="_blank" rel="noopener" title="Goodinfo 技術線圖" onclick="event.stopPropagation()">↗</a></span>
+              <a class="chart-ico" href="${goodinfo(s.id)}" target="_blank" rel="noopener" title="Yahoo 股市技術分析" onclick="event.stopPropagation()">↗</a></span>
             ${xn>=3?`<span class="sx">×${xn}</span>`:""}
             <span class="srole">${s.role||""}</span>
             <span class="schg num ${cls(chg)}">${pct(chg)}</span></div>`;
