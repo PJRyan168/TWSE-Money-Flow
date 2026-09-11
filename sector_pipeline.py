@@ -458,6 +458,145 @@ def aggregate(stats: pd.DataFrame, mapping: pd.DataFrame, group_col: str) -> lis
 # ---------------------------------------------------------------------- main
 
 
+# ============================ 期貨 / 可轉債 母體與子集統計 ============================
+
+FUTURES_UNIVERSE_FILE = BASE_DIR / "futures_universe.json"
+CB_UNIVERSE_FILE = BASE_DIR / "cb_universe.json"
+
+
+def fetch_futures_universe() -> dict:
+    """
+    即時重抓期交所股票期貨標的清單(個股 + ETF)。
+    來源:期交所 OpenAPI。失敗則退回讀本地 futures_universe.json。
+    回傳 {"universe":[{stock_id,stock_name,kind,market}], "count", ...}
+    """
+    endpoints = [
+        "https://openapi.taifex.com.tw/v1/DailyMarketReportSErvicesStockFutures",
+        "https://openapi.taifex.com.tw/v1/SingleStockFutures",
+    ]
+    for url in endpoints:
+        try:
+            r = requests.get(url, timeout=40,
+                             headers={"User-Agent": "Mozilla/5.0", "Accept": "application/json"})
+            r.raise_for_status()
+            data = r.json()
+            if not isinstance(data, list) or not data:
+                continue
+            uni, seen = [], set()
+            for row in data:
+                # 欄位名稱在期交所 OpenAPI 可能為中文或英文,逐一嘗試
+                sid = (row.get("StockID") or row.get("stock_id")
+                       or row.get("證券代號") or row.get("股票代號") or "").strip()
+                name = (row.get("StockName") or row.get("stock_name")
+                        or row.get("證券名稱") or row.get("股票名稱") or "").strip()
+                if not (sid.isdigit() and len(sid) == 4) or sid in seen:
+                    continue
+                seen.add(sid)
+                # ETF 代號多為 00 開頭;其餘視為個股
+                kind = "ETF" if sid.startswith("00") else "個股"
+                uni.append({"stock_id": sid, "stock_name": name,
+                            "kind": kind, "market": ""})
+            if len(uni) >= 100:  # 合理性檢查:股票期貨標的通常 200+ 檔
+                print(f"[universe] 期交所即時重抓成功:{len(uni)} 檔")
+                out = {"source": "TAIFEX OpenAPI 股票期貨標的",
+                       "effective_date": date.today().isoformat(),
+                       "note": "管線即時重抓", "count": len(uni), "universe": uni}
+                try:
+                    FUTURES_UNIVERSE_FILE.write_text(
+                        json.dumps(out, ensure_ascii=False, indent=1), encoding="utf-8")
+                except Exception:  # noqa: BLE001
+                    pass
+                return out
+        except Exception as e:  # noqa: BLE001
+            print(f"[warn] 期貨母體重抓失敗({url}):{e}")
+    # 退回本地檔
+    if FUTURES_UNIVERSE_FILE.exists():
+        print("[universe] 期貨母體改用本地 futures_universe.json")
+        return json.loads(FUTURES_UNIVERSE_FILE.read_text(encoding="utf-8"))
+    return {"universe": [], "count": 0}
+
+
+def fetch_cb_universe() -> dict:
+    """
+    即時重抓櫃買中心「最近上櫃轉(交)換公司債」清單。
+    失敗則退回讀本地 cb_universe.json。
+    回傳 {"bonds":[{cb_id,cb_name,stock_id}], "cb_count", "stock_count", ...}
+    """
+    url = "https://www.tpex.org.tw/www/zh-tw/bond/bondInfo"
+    try:
+        payload = http_get_json(url, {"response": "json", "type": "Rate"}, retries=1)
+        fields, rows = find_table(payload or {}, "債券代號") if payload else (None, None)
+        if fields and rows:
+            i_cb = col_idx(fields, "債券代號", "代號")
+            i_cbn = col_idx(fields, "債券簡稱", "簡稱", "名稱")
+            i_sid = col_idx(fields, "標的證券代號", "股票代號")
+            bonds, sset = [], set()
+            for r in rows:
+                if i_cb is None or len(r) <= max(x for x in (i_cb, i_sid) if x is not None):
+                    continue
+                cb_id = str(r[i_cb]).strip()
+                sid = str(r[i_sid]).strip()[:4] if i_sid is not None else ""
+                if not (sid.isdigit() and len(sid) == 4):
+                    continue
+                bonds.append({"cb_id": cb_id,
+                              "cb_name": str(r[i_cbn]).strip() if i_cbn is not None else "",
+                              "stock_id": sid})
+                sset.add(sid)
+            if len(bonds) >= 50:
+                print(f"[universe] 可轉債即時重抓成功:{len(bonds)} 檔 / {len(sset)} 家")
+                out = {"source": "TPEx 最近上櫃轉(交)換公司債",
+                       "updated_at": datetime.now().isoformat(timespec="seconds"),
+                       "cb_count": len(bonds), "stock_count": len(sset), "bonds": bonds}
+                try:
+                    CB_UNIVERSE_FILE.write_text(
+                        json.dumps(out, ensure_ascii=False, indent=1), encoding="utf-8")
+                except Exception:  # noqa: BLE001
+                    pass
+                return out
+    except Exception as e:  # noqa: BLE001
+        print(f"[warn] 可轉債母體重抓失敗:{e}")
+    if CB_UNIVERSE_FILE.exists():
+        print("[universe] 可轉債母體改用本地 cb_universe.json")
+        return json.loads(CB_UNIVERSE_FILE.read_text(encoding="utf-8"))
+    return {"bonds": [], "cb_count": 0, "stock_count": 0}
+
+
+def subset_result(stats: pd.DataFrame, ids: set, today_s: str, bases: dict,
+                  themes_cfg: dict, industry: pd.DataFrame,
+                  extra_group: tuple = None) -> dict:
+    """
+    針對某個母體(股票代號集合)產生一份完整統計結果。
+    extra_group = (欄位名, {stock_id: 分組值}) 用於產生 product_types / markets 分組。
+    """
+    sub = stats[stats["stock_id"].isin(ids)].copy()
+    matched = int(sub["stock_id"].nunique())
+
+    # 焦點產業族群(僅計母體內成分)
+    theme_rows = [{"stock_id": sid, "theme": th}
+                  for th, sids in themes_cfg.items() for sid in sids if sid in ids]
+    themes_result = aggregate(sub, pd.DataFrame(theme_rows), "theme") if theme_rows else []
+
+    official = aggregate(sub, industry, "sector") if not industry.empty else []
+
+    result = {
+        "generated_at": datetime.now().isoformat(timespec="seconds"),
+        "trade_date": today_s,
+        "base_dates": bases,
+        "note": "法人金額為估算值:買賣超股數 × 當日收盤價;foreign=外資、trust=投信、inst=三大法人合計",
+        "official_sectors": official,
+        "themes": themes_result,
+        "matched_count": matched,
+    }
+
+    # 額外分組(期貨:個股/ETF;可轉債:上市/上櫃)
+    if extra_group:
+        col, mapping = extra_group
+        grp_rows = [{"stock_id": sid, col: g} for sid, g in mapping.items() if sid in ids]
+        groups = aggregate(sub, pd.DataFrame(grp_rows), col) if grp_rows else []
+        result[col if col in ("markets", "product_types") else col] = groups
+    return result
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--date", default=None, help="統計基準日 YYYY-MM-DD,預設今天")
@@ -603,6 +742,54 @@ def main() -> None:
     (OUTPUT_DIR / f"sector_stats_{today_s}.json").write_text(
         json.dumps(result, ensure_ascii=False), encoding="utf-8")
     print("完成 → output/sector_stats.json")
+
+    # themes_cfg 供子集統計重用
+    themes_cfg = json.loads(THEMES_FILE.read_text(encoding="utf-8")) \
+        if THEMES_FILE.exists() else {}
+
+    # ---------------- 期貨標的統計 ----------------
+    print("[期貨] 重抓母體並統計...")
+    fu = fetch_futures_universe()
+    fu_list = fu.get("universe", [])
+    fu_ids = {x["stock_id"] for x in fu_list}
+    fu_kind = {x["stock_id"]: x.get("kind", "個股") for x in fu_list}
+    if fu_ids:
+        fut_result = subset_result(
+            stats, fu_ids, today_s, bases, themes_cfg, industry,
+            extra_group=("product_types", fu_kind))
+        fut_result["universe_count"] = len(fu_ids)
+        (OUTPUT_DIR / "futures_stats.json").write_text(
+            json.dumps(fut_result, ensure_ascii=False, indent=1), encoding="utf-8")
+        (OUTPUT_DIR / f"futures_stats_{today_s}.json").write_text(
+            json.dumps(fut_result, ensure_ascii=False), encoding="utf-8")
+        print(f"完成 → output/futures_stats.json "
+              f"(母體 {len(fu_ids)} / 命中 {fut_result['matched_count']})")
+    else:
+        print("[warn] 期貨母體為空,略過。")
+
+    # ---------------- 可轉債標的統計 ----------------
+    print("[可轉債] 重抓母體並統計...")
+    cu = fetch_cb_universe()
+    bonds = cu.get("bonds", [])
+    cb_ids = {b["stock_id"] for b in bonds}
+    # 市場別:用 market_map(twse=上市 / tpex=上櫃)
+    cb_market = {sid: ("上市" if market_map.get(sid) == "twse" else "上櫃")
+                 for sid in cb_ids}
+    if cb_ids:
+        cb_result = subset_result(
+            stats, cb_ids, today_s, bases, themes_cfg, industry,
+            extra_group=("markets", cb_market))
+        cb_result["universe_count"] = len(cb_ids)
+        cb_result["cb_count"] = cu.get("cb_count", len(bonds))
+        (OUTPUT_DIR / "cb_stats.json").write_text(
+            json.dumps(cb_result, ensure_ascii=False, indent=1), encoding="utf-8")
+        (OUTPUT_DIR / f"cb_stats_{today_s}.json").write_text(
+            json.dumps(cb_result, ensure_ascii=False), encoding="utf-8")
+        print(f"完成 → output/cb_stats.json "
+              f"(母體 {len(cb_ids)} 家 / 可轉債 {cb_result['cb_count']} / "
+              f"命中 {cb_result['matched_count']})")
+    else:
+        print("[warn] 可轉債母體為空,略過。")
 
 
 if __name__ == "__main__":
