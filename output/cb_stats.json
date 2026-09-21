@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-21T19:41:48",
+ "generated_at": "2026-09-22T00:06:34",
  "trade_date": "2026-09-21",
  "base_dates": {
   "daily": "2026-09-18",
@@ -4466,9 +4466,9 @@
      "chg_qtd": 64.84,
      "chg_ytd": 277.56,
      "value_d": 8885686478,
-     "inst_net_d": 104245284,
+     "inst_net_d": 327325284,
      "fore_net_d": -517459800,
-     "trust_net_d": 649220000
+     "trust_net_d": 872300000
     },
     {
      "stock_id": "7631",
@@ -4998,9 +4998,9 @@
      "chg_qtd": -4.56,
      "chg_ytd": 218.78,
      "value_d": 24727121404,
-     "inst_net_d": 551678846,
+     "inst_net_d": 907754846,
      "fore_net_d": -898909466,
-     "trust_net_d": 884348972
+     "trust_net_d": 1240424972
     },
     {
      "stock_id": "3416",
@@ -5236,9 +5236,9 @@
      "chg_qtd": -18.77,
      "chg_ytd": 44.66,
      "value_d": 3187827406,
-     "inst_net_d": -955565762,
+     "inst_net_d": -185383262,
      "fore_net_d": -932397715,
-     "trust_net_d": -14420000
+     "trust_net_d": 755762500
     },
     {
      "stock_id": "2727",
@@ -6409,9 +6409,9 @@
     "up_ratio": 47.4,
     "trading_value": 109378957619,
     "trading_volume": 530668372,
-    "inst_net_value": -4387909634,
+    "inst_net_value": -3038571134,
     "foreign_net_value": -4429476695,
-    "trust_net_value": -753631904
+    "trust_net_value": 595706596
    },
    "wtd": {
     "avg_change_pct": 0.37,
@@ -6419,9 +6419,9 @@
     "up_ratio": 47.4,
     "trading_value": 109378957619,
     "trading_volume": 530668372,
-    "inst_net_value": -4387909634,
+    "inst_net_value": -3038571134,
     "foreign_net_value": -4429476695,
-    "trust_net_value": -753631904
+    "trust_net_value": 595706596
    },
    "mtd": {
     "avg_change_pct": -1.05,
@@ -6429,9 +6429,9 @@
     "up_ratio": 38.2,
     "trading_value": 1682337257247,
     "trading_volume": 8640287446,
-    "inst_net_value": 6828373707,
+    "inst_net_value": 8177712207,
     "foreign_net_value": -7331865433,
-    "trust_net_value": 11969145573
+    "trust_net_value": 13318484073
    },
    "qtd": {
     "avg_change_pct": -5.84,
