@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-02T19:37:56",
+ "generated_at": "2026-10-02T23:57:36",
  "trade_date": "2026-10-02",
  "base_dates": {
   "daily": "2026-10-01",
@@ -4326,9 +4326,9 @@
      "chg_qtd": 2.36,
      "chg_ytd": 113.73,
      "value_d": 4125392075,
-     "inst_net_d": 628973400,
+     "inst_net_d": 617980630,
      "fore_net_d": 595297040,
-     "trust_net_d": 0
+     "trust_net_d": -10992770
     },
     {
      "stock_id": "8438",
@@ -6367,9 +6367,9 @@
     "up_ratio": 47.1,
     "trading_value": 95732833110,
     "trading_volume": 461924264,
-    "inst_net_value": 12522790356,
+    "inst_net_value": 12511797586,
     "foreign_net_value": 10536826475,
-    "trust_net_value": 962091113
+    "trust_net_value": 951098343
    },
    "wtd": {
     "avg_change_pct": 2.45,
@@ -6377,9 +6377,9 @@
     "up_ratio": 61.8,
     "trading_value": 358120870831,
     "trading_volume": 2077676460,
-    "inst_net_value": 18854124576,
+    "inst_net_value": 18843131806,
     "foreign_net_value": 16218125202,
-    "trust_net_value": 1108326955
+    "trust_net_value": 1097334185
    },
    "mtd": {
     "avg_change_pct": 0.87,
@@ -6387,9 +6387,9 @@
     "up_ratio": 49.0,
     "trading_value": 185948399666,
     "trading_volume": 962520611,
-    "inst_net_value": 18854124576,
+    "inst_net_value": 18843131806,
     "foreign_net_value": 16218125202,
-    "trust_net_value": 1108326955
+    "trust_net_value": 1097334185
    },
    "qtd": {
     "avg_change_pct": 0.87,
