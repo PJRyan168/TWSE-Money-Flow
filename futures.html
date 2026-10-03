@@ -182,7 +182,7 @@ td.up{color:var(--up)}td.down{color:var(--down)}
 <!-- 個股詳情浮層 -->
 <div class="pop" id="pop" role="dialog" aria-modal="true">
   <div class="box">
-    <div class="p-title"><h3 id="pName"></h3><a id="pYahoo" class="p-chart" target="_blank" rel="noopener" title="Yahoo 技術線圖">📈 Yahoo</a><a id="pGood" class="p-chart" target="_blank" rel="noopener" title="Goodinfo 技術線圖">📊 Goodinfo</a><button class="p-close" id="pClose">關閉</button></div>
+    <div class="p-title"><h3 id="pName"></h3><a id="pYahoo" class="p-chart" target="_blank" rel="noopener" title="Yahoo 技術線圖">📈 Yahoo</a><button class="p-close" id="pClose">關閉</button></div>
     <div class="p-role" id="pRole"></div>
     <div class="p-themes" id="pThemes"></div>
     <div class="p-grid" id="pGrid"></div>
@@ -301,7 +301,6 @@ function openStock(sid,name,role){
   const s=stockLookup[sid];
   $("pName").textContent=`${sid} ${name||(s&&s.stock_name)||""}`;
   $("pYahoo").href=yahooUrl(sid,(s&&s.market)||"");
-  $("pGood").href=goodinfoUrl(sid);
   $("pRole").textContent=role||"";
   const ths=stockThemes[sid]||[];
   $("pThemes").textContent=ths.length?`所屬題材(${ths.length}):${ths.join("、")}`:"";
@@ -392,7 +391,7 @@ function renderHeat(){
     });
     $("dBody").innerHTML=sorted.map(s=>{
       const c=v=>v==null?"":v>0?"up":v<0?"down":"";
-      return `<tr><td><a class="slink" href="${goodinfoUrl(s.stock_id)}" target="_blank" rel="noopener" title="Goodinfo 技術線圖" onclick="event.stopPropagation()">${s.stock_id} ${s.stock_name||""}</a><a class="glink" href="${yahooUrl(s.stock_id,s.market)}" target="_blank" rel="noopener" title="Yahoo 技術線圖" onclick="event.stopPropagation()">Y</a></td>
+      return `<tr><td><a class="slink" href="${yahooUrl(s.stock_id,s.market)}" target="_blank" rel="noopener" title="Yahoo 技術線圖" onclick="event.stopPropagation()">${s.stock_id} ${s.stock_name||""}</a></td>
         <td class="num">${s.close==null?"—":s.close}</td>
         <td class="num ${c(s.chg_daily)}">${pct(s.chg_daily)}</td>
         <td class="num ${c(s.chg_wtd)}">${pct(s.chg_wtd)}</td>
