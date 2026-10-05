@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-05T19:29:48",
+ "generated_at": "2026-10-06T02:46:48",
  "trade_date": "2026-10-05",
  "base_dates": {
   "daily": "2026-10-02",
@@ -6384,9 +6384,9 @@
      "chg_qtd": -1.29,
      "chg_ytd": 209.64,
      "value_d": 51160542375,
-     "inst_net_d": -18081119800,
+     "inst_net_d": -18404572300,
      "fore_net_d": -12438226655,
-     "trust_net_d": -5155914742
+     "trust_net_d": -5479367242
     },
     {
      "stock_id": "2236",
@@ -6409,9 +6409,9 @@
     "up_ratio": 33.1,
     "trading_value": 151407296142,
     "trading_volume": 771947443,
-    "inst_net_value": -15216418752,
+    "inst_net_value": -15539871252,
     "foreign_net_value": -7443092680,
-    "trust_net_value": -7328260892
+    "trust_net_value": -7651713392
    },
    "wtd": {
     "avg_change_pct": -0.12,
@@ -6419,9 +6419,9 @@
     "up_ratio": 33.1,
     "trading_value": 151407296142,
     "trading_volume": 771947443,
-    "inst_net_value": -15216418752,
+    "inst_net_value": -15539871252,
     "foreign_net_value": -7443092680,
-    "trust_net_value": -7328260892
+    "trust_net_value": -7651713392
    },
    "mtd": {
     "avg_change_pct": 0.76,
@@ -6429,9 +6429,9 @@
     "up_ratio": 42.7,
     "trading_value": 337355695808,
     "trading_volume": 1734468054,
-    "inst_net_value": 3491343375,
+    "inst_net_value": 3167890875,
     "foreign_net_value": 8720271618,
-    "trust_net_value": -6303586974
+    "trust_net_value": -6627039474
    },
    "qtd": {
     "avg_change_pct": 0.76,
