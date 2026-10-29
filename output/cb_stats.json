@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-29T18:52:09",
+ "generated_at": "2026-10-30T00:31:19",
  "trade_date": "2026-10-29",
  "base_dates": {
   "daily": "2026-10-28",
@@ -4102,9 +4102,9 @@
      "chg_qtd": -12.32,
      "chg_ytd": 219.47,
      "value_d": 8476151476,
-     "inst_net_d": -1741767896,
+     "inst_net_d": -351719896,
      "fore_net_d": -1842810156,
-     "trust_net_d": 4255812
+     "trust_net_d": 1394303812
     },
     {
      "stock_id": "6515",
@@ -4116,9 +4116,9 @@
      "chg_qtd": -21.5,
      "chg_ytd": 63.91,
      "value_d": 2681138565,
-     "inst_net_d": 302593620,
+     "inst_net_d": 248409420,
      "fore_net_d": 513693215,
-     "trust_net_d": -102410000
+     "trust_net_d": -156594200
     },
     {
      "stock_id": "6209",
@@ -4172,9 +4172,9 @@
      "chg_qtd": -25.24,
      "chg_ytd": 134.52,
      "value_d": 40961075315,
-     "inst_net_d": -18305521888,
+     "inst_net_d": -21112171888,
      "fore_net_d": -14930904681,
-     "trust_net_d": -2369709804
+     "trust_net_d": -5176359804
     }
    ],
    "daily": {
@@ -4183,9 +4183,9 @@
     "up_ratio": 16.6,
     "trading_value": 107658074644,
     "trading_volume": 704018321,
-    "inst_net_value": -24476263598,
+    "inst_net_value": -25947049798,
     "foreign_net_value": -21165906134,
-    "trust_net_value": -1982805725
+    "trust_net_value": -3453591925
    },
    "wtd": {
     "avg_change_pct": -0.18,
@@ -4193,9 +4193,9 @@
     "up_ratio": 37.8,
     "trading_value": 296408581029,
     "trading_volume": 1856510789,
-    "inst_net_value": -24160735541,
+    "inst_net_value": -25631521741,
     "foreign_net_value": -24919035288,
-    "trust_net_value": 1581045086
+    "trust_net_value": 110258886
    },
    "mtd": {
     "avg_change_pct": -4.15,
@@ -4203,9 +4203,9 @@
     "up_ratio": 25.5,
     "trading_value": 1743188679173,
     "trading_volume": 10369871125,
-    "inst_net_value": -69691719398,
+    "inst_net_value": -71162505598,
     "foreign_net_value": -43742453724,
-    "trust_net_value": -21468765899
+    "trust_net_value": -22939552099
    },
    "qtd": {
     "avg_change_pct": -4.15,
