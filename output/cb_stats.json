@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-24T19:20:50",
+ "generated_at": "2026-11-25T04:26:24",
  "trade_date": "2026-11-24",
  "base_dates": {
   "daily": "2026-11-23",
@@ -1061,7 +1061,7 @@
      "chg_qtd": -7.67,
      "chg_ytd": 103.98,
      "value_d": 568637425,
-     "inst_net_d": 60910915,
+     "inst_net_d": 101075915,
      "fore_net_d": 0,
      "trust_net_d": 0
     },
@@ -1086,7 +1086,7 @@
     "up_ratio": 100.0,
     "trading_value": 1008862318,
     "trading_volume": 1026410,
-    "inst_net_value": -165018768,
+    "inst_net_value": -124853768,
     "foreign_net_value": 0,
     "trust_net_value": 0
    },
@@ -1096,7 +1096,7 @@
     "up_ratio": 100.0,
     "trading_value": 13350361272,
     "trading_volume": 18609134,
-    "inst_net_value": 979565712,
+    "inst_net_value": 1019730712,
     "foreign_net_value": 3205843012,
     "trust_net_value": 3205843012
    },
@@ -1106,7 +1106,7 @@
     "up_ratio": 33.3,
     "trading_value": 195799680056,
     "trading_volume": 194424084,
-    "inst_net_value": 2360220733,
+    "inst_net_value": 2400385733,
     "foreign_net_value": 3287353737,
     "trust_net_value": 3287353737
    },
@@ -1579,7 +1579,7 @@
      "chg_qtd": -7.67,
      "chg_ytd": 103.98,
      "value_d": 568637425,
-     "inst_net_d": 60910915,
+     "inst_net_d": 101075915,
      "fore_net_d": 0,
      "trust_net_d": 0
     },
@@ -1604,7 +1604,7 @@
     "up_ratio": 100.0,
     "trading_value": 669742479,
     "trading_volume": 2773607,
-    "inst_net_value": 55665830,
+    "inst_net_value": 95830830,
     "foreign_net_value": -6393747,
     "trust_net_value": 0
    },
@@ -1614,7 +1614,7 @@
     "up_ratio": 100.0,
     "trading_value": 1903386017,
     "trading_volume": 7164884,
-    "inst_net_value": -84180158,
+    "inst_net_value": -44015158,
     "foreign_net_value": -106660814,
     "trust_net_value": -99926365
    },
@@ -1624,7 +1624,7 @@
     "up_ratio": 33.3,
     "trading_value": 53554244104,
     "trading_volume": 89390123,
-    "inst_net_value": 2403863757,
+    "inst_net_value": 2444028757,
     "foreign_net_value": 80924762,
     "trust_net_value": -111839660
    },
@@ -2520,7 +2520,7 @@
      "chg_qtd": -7.67,
      "chg_ytd": 103.98,
      "value_d": 568637425,
-     "inst_net_d": 60910915,
+     "inst_net_d": 101075915,
      "fore_net_d": 0,
      "trust_net_d": 0
     },
@@ -4155,7 +4155,7 @@
     "up_ratio": 98.1,
     "trading_value": 9193339176,
     "trading_volume": 70220768,
-    "inst_net_value": -1319317695,
+    "inst_net_value": -1279152695,
     "foreign_net_value": 0,
     "trust_net_value": 0
    },
@@ -4165,7 +4165,7 @@
     "up_ratio": 94.2,
     "trading_value": 66433637618,
     "trading_volume": 291361499,
-    "inst_net_value": 3425002637,
+    "inst_net_value": 3465167637,
     "foreign_net_value": 6109326309,
     "trust_net_value": 6109326309
    },
@@ -4175,7 +4175,7 @@
     "up_ratio": 10.3,
     "trading_value": 943382424609,
     "trading_volume": 3513134180,
-    "inst_net_value": 15452323450,
+    "inst_net_value": 15492488450,
     "foreign_net_value": 7262964285,
     "trust_net_value": 7262964285
    },
